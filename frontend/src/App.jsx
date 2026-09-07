@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import AppShell from './layout/AppShell';
+import LoginPage from './components/LoginPage';
+
 import DashboardView from './components/DashboardView';
+import KpiComparisonView from './components/KpiComparisonView';
 import SilosView from './components/SilosView';
 import PriorityView from './components/PriorityView';
 import ExplainabilityDrawer from './components/ExplainabilityDrawer';
@@ -9,6 +13,7 @@ import GanttBoard from './components/GanttBoard';
 import PlannerReviewModal from './components/PlannerReviewModal';
 import ReplanningView from './components/ReplanningView';
 import AuditTrailView from './components/AuditTrailView';
+import StagePlaceholder from './components/StagePlaceholder';
 
 import {
   fetchDashboardStats,
@@ -22,10 +27,11 @@ import {
   triggerEmergencyReplan,
   fetchAuditTrail,
   resetDemoData
-} from './api';
+} from './lib/api';
 
-export default function App() {
-  const [activeTab, setActiveTab] = useState('dashboard');
+function AppContent({ user, onLogout }) {
+  const navigate = useNavigate();
+
   const [dashboardStats, setDashboardStats] = useState(null);
   const [workItems, setWorkItems] = useState([]);
   const [conflictsData, setConflictsData] = useState(null);
@@ -166,8 +172,8 @@ export default function App() {
       setWorkItems(updatedItems);
       setAuditLogs(updatedLogs);
       setDashboardStats(updatedStats);
-      setActiveTab('replan');
-      showNotification(`Dynamic Re-planning generated Plan V${res.new_version}. Emergency item scheduled.`, 'success');
+      navigate('/plans');
+      showNotification(`Dynamic Re-planning generated Plan V${res.new_version}. Emergency item accommodated.`, 'success');
     } catch (err) {
       showNotification(`Re-planning error: ${err.message}`, 'error');
     } finally {
@@ -188,22 +194,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
-      {/* Global Navigation Header */}
-      <Header
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        onRunOptimizer={() => handleRunOptimizer(false)}
-        onSimulateEmergency={handleTriggerReplan}
-        onResetDemo={handleResetDemo}
-        isOptimizing={isOptimizing}
-        planStatus={currentPlan?.status || 'OPTIMIZED'}
-        planVersion={currentPlan?.version || 1}
-      />
-
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
       {/* Floating Notification Toast */}
       {notification && (
-        <div className="fixed bottom-6 right-6 z-50 animate-bounce">
+        <div className="fixed bottom-6 right-6 z-50">
           <div className={`px-4 py-3 rounded-xl shadow-2xl border text-xs font-semibold flex items-center space-x-2 ${
             notification.type === 'success' 
               ? 'bg-emerald-950 border-emerald-500 text-emerald-300' 
@@ -214,77 +208,120 @@ export default function App() {
         </div>
       )}
 
-      {/* Main Container */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
-        {activeTab === 'dashboard' && (
-          <DashboardView
-            stats={dashboardStats}
-            currentPlan={currentPlan}
+      {/* Routes nested inside AppShell layout */}
+      <Routes>
+        <Route element={
+          <AppShell
             onRunOptimizer={() => handleRunOptimizer(false)}
-            setActiveTab={setActiveTab}
-          />
-        )}
-
-        {activeTab === 'silos' && (
-          <SilosView
-            workItems={workItems}
-            onGoToPriority={() => setActiveTab('priority')}
-          />
-        )}
-
-        {activeTab === 'priority' && (
-          <PriorityView
-            workItems={workItems}
-            onSelectExplain={handleSelectExplain}
-          />
-        )}
-
-        {activeTab === 'conflicts' && (
-          <ConflictsView
-            conflictsData={conflictsData}
-            onTriggerOptimize={() => {
-              handleRunOptimizer(false);
-              setActiveTab('gantt');
-            }}
-          />
-        )}
-
-        {activeTab === 'gantt' && (
-          <GanttBoard
+            onSimulateEmergency={handleTriggerReplan}
+            onResetDemo={handleResetDemo}
+            isOptimizing={isOptimizing}
             currentPlan={currentPlan}
-            onModifyClick={(item) => {
-              setModifyingItem(item);
-              setActiveTab('review');
-            }}
+            planStatus={currentPlan?.status || 'OPTIMIZED'}
+            planVersion={currentPlan?.version || 1}
+            user={user}
+            onLogout={onLogout}
           />
-        )}
+        }>
+          {/* 1. Dashboard */}
+          <Route path="/" element={<DashboardView />} />
+          <Route path="/dashboard" element={<Navigate to="/" replace />} />
 
-        {activeTab === 'review' && (
-          <PlannerReviewModal
-            currentPlan={currentPlan}
-            modifyingItem={modifyingItem}
-            onCloseModal={() => setModifyingItem(null)}
-            onSubmitModification={handleModifySlot}
-            onApprovePlan={handleApprovePlan}
-            isSubmitting={isSubmittingMod}
-          />
-        )}
+          {/* 2. Intake: 5 Siloed Systems & Priority Intelligence */}
+          <Route path="/intake" element={
+            <StagePlaceholder stageNumber="2" stageTitle="Intake & Ingestion" description="TMS / SMMS / TDMS / COA / BDMS Silos Normalized">
+              <div className="space-y-6">
+                <SilosView
+                  workItems={workItems}
+                  onGoToPriority={() => {}}
+                />
+                <PriorityView
+                  workItems={workItems}
+                  onSelectExplain={handleSelectExplain}
+                />
+              </div>
+            </StagePlaceholder>
+          } />
 
-        {activeTab === 'replan' && (
-          <ReplanningView
-            replanResult={replanResult}
-            onTriggerReplan={handleTriggerReplan}
-            isReplanning={isReplanning}
-            currentPlan={currentPlan}
-          />
-        )}
+          {/* 3. Planning Board: Interactive Gantt Corridor Board */}
+          <Route path="/planning-board" element={
+            <StagePlaceholder stageNumber="3" stageTitle="Planning Board" description="Visual Corridor Timeline with Train Blackouts">
+              <GanttBoard
+                currentPlan={currentPlan}
+                onModifyClick={(item) => {
+                  setModifyingItem(item);
+                  navigate('/plans');
+                }}
+              />
+            </StagePlaceholder>
+          } />
 
-        {activeTab === 'audit' && (
-          <AuditTrailView
-            auditLogs={auditLogs}
-          />
-        )}
-      </main>
+          {/* 4. Optimizer: CP-SAT Optimization & Conflict Topology */}
+          <Route path="/optimizer" element={
+            <StagePlaceholder stageNumber="4" stageTitle="Constraint Optimizer" description="Google OR-Tools CP-SAT Formulation">
+              <ConflictsView
+                conflictsData={conflictsData}
+                onTriggerOptimize={() => {
+                  handleRunOptimizer(false);
+                  navigate('/planning-board');
+                }}
+              />
+            </StagePlaceholder>
+          } />
+
+          {/* 5. Weekly/Monthly Plans: Human Planner Review & Approval */}
+          <Route path="/plans" element={
+            <StagePlaceholder stageNumber="5" stageTitle="Weekly & Monthly Plans" description="Human-in-the-Loop Override & Authorizing Sign-Off">
+              <PlannerReviewModal
+                currentPlan={currentPlan}
+                modifyingItem={modifyingItem}
+                onCloseModal={() => setModifyingItem(null)}
+                onSubmitModification={handleModifySlot}
+                onApprovePlan={handleApprovePlan}
+                isSubmitting={isSubmittingMod}
+              />
+            </StagePlaceholder>
+          } />
+
+          {/* 6. KPIs: Before vs After Comparison */}
+          <Route path="/kpis" element={
+            <StagePlaceholder stageNumber="6" stageTitle="KPI Comparison Story" description="Measurable Conflict Elimination & Block Reduction">
+              <KpiComparisonView
+                stats={dashboardStats}
+                currentPlan={currentPlan}
+                onRunOptimizer={() => handleRunOptimizer(false)}
+                setActiveTab={(tab) => {
+                  if (tab === 'silos') navigate('/intake');
+                  else if (tab === 'conflicts') navigate('/optimizer');
+                  else if (tab === 'gantt') navigate('/planning-board');
+                  else if (tab === 'review') navigate('/plans');
+                }}
+              />
+            </StagePlaceholder>
+          } />
+
+          {/* 7. Audit Trail: Immutable Decision Log */}
+          <Route path="/audit-trail" element={
+            <StagePlaceholder stageNumber="7" stageTitle="Audit Trail" description="Cryptographic Event Log & Accountability">
+              <AuditTrailView
+                auditLogs={auditLogs}
+              />
+            </StagePlaceholder>
+          } />
+
+          {/* Dynamic Re-planning sub-view */}
+          <Route path="/replan" element={
+            <StagePlaceholder stageNumber="8" stageTitle="Dynamic Re-planning" description="Real-time Defect Accommodation & Diff Tracking">
+              <ReplanningView
+                replanResult={replanResult}
+                onTriggerReplan={handleTriggerReplan}
+                isReplanning={isReplanning}
+                currentPlan={currentPlan}
+              />
+            </StagePlaceholder>
+          } />
+        </Route>
+      </Routes>
 
       {/* Transparent Explainability Drawer */}
       <ExplainabilityDrawer
@@ -292,11 +329,32 @@ export default function App() {
         isOpen={isExplainOpen}
         onClose={() => setIsExplainOpen(false)}
       />
-
-      {/* Footer */}
-      <footer className="border-t border-slate-900 bg-slate-950 py-4 text-center text-xs text-slate-500">
-        RailBlock AI • Smart India Hackathon Prototype • Northern & Western Railway Divisions
-      </footer>
     </div>
+  );
+}
+
+export default function App() {
+  const [user, setUser] = useState(() => {
+    try { return JSON.parse(sessionStorage.getItem('railblock_user')) || null; } catch { return null; }
+  });
+
+  const handleLogin = (userData) => {
+    sessionStorage.setItem('railblock_user', JSON.stringify(userData));
+    setUser(userData);
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('railblock_user');
+    setUser(null);
+  };
+
+  if (!user) {
+    return <LoginPage onLogin={handleLogin} />;
+  }
+
+  return (
+    <BrowserRouter>
+      <AppContent user={user} onLogout={handleLogout} />
+    </BrowserRouter>
   );
 }

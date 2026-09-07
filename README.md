@@ -1,33 +1,82 @@
 # RailBlock AI — Intelligent Railway Maintenance Block Planning Platform
 
-A decision-support platform designed for Indian Railways to coordinate maintenance block demands fragmented across siloed operational systems (**TMS**, **SMMS**, **TDMS**, **COA**, and **BDMS**).
-
-Built for the **Smart India Hackathon (SIH)**.
+> **SAFETY NOTICE & OPERATIONAL PRINCIPLE**  
+> **PROTOTYPE — Simulated Data — Human Approval Required**  
+> RailBlock AI is a decision-support platform designed for Indian Railways to coordinate maintenance block requests across operational systems (**TMS**, **SMMS**, **TDMS**, **COA**, and **BDMS**). **It is NOT an autonomous control system.** Human railway planners and Section Controllers always review, modify, and authorize final maintenance schedules.
 
 ---
 
-## 🚂 Core Innovation: 2-Layer Architectural Paradigm
+## 🏛️ System Architecture
+
+```
+                  ┌─────────────────────────────────────────────────┐
+                  │   5 Simulated Siloed Railway Systems            │
+                  │   TMS | SMMS | TDMS | COA | BDMS                │
+                  └────────────────────────┬────────────────────────┘
+                                           │
+                                           ▼
+                  ┌─────────────────────────────────────────────────┐
+                  │   Supabase PostgreSQL (Single Source of Truth)  │
+                  │   (With local persistence engine fallback)      │
+                  └────────────────────────┬────────────────────────┘
+                                           │
+                                           ▼
+                  ┌─────────────────────────────────────────────────┐
+                  │   Modular FastAPI Backend (Python 3.14)         │
+                  │   app/main.py, app/api/health.py, app/db/       │
+                  │   ├── Health Checks (/health & /health/db)      │
+                  │   ├── 7-Factor Explainable Priority Model       │
+                  │   ├── Conflict & Grouping Engine                │
+                  │   ├── Google OR-Tools CP-SAT Optimizer          │
+                  │   ├── Human Review & Approval Mod               │
+                  │   ├── Immutable Audit Trail                     │
+                  │   └── Dynamic Emergency Re-planning             │
+                  └────────────────────────┬────────────────────────┘
+                                           │ REST API
+                                           ▼
+                  ┌─────────────────────────────────────────────────┐
+                  │   React 19 + Tailwind Control-Room UI           │
+                  │   src/layout/AppShell.jsx (Persistent Badge)    │
+                  │   ├── 1. Dashboard                              │
+                  │   ├── 2. Intake (5 Siloed Systems)              │
+                  │   ├── 3. Planning Board (Gantt Board)           │
+                  │   ├── 4. Optimizer (CP-SAT Model)               │
+                  │   ├── 5. Weekly/Monthly Plans (Human Review)    │
+                  │   ├── 6. KPIs (Before vs After Story)           │
+                  │   └── 7. Audit Trail (Immutable Governance)     │
+                  └─────────────────────────────────────────────────┘
+```
+
+---
+
+## 🚀 Key Innovation Highlights
 
 1. **Layer 1 — Explainable Priority Intelligence**:
-   - Replaces "black-box AI" with a transparent, weighted 7-factor mathematical scoring model (0–100 score).
-   - Scoring includes **Safety Risk** (max 25), **Asset Criticality** (max 20), **Overdue Days** (max 15), **Failure History** (max 15), **Predicted Failure Probability** (max 15, calibrated with Logistic Regression ML), **Traffic Density** (max 10), and **Deferral Consequence** (max 10).
-   - Planners click **"Why?"** to open the interactive waterfall breakdown showing the exact points contribution.
+   - Replaces "black-box AI" with a transparent, weighted 7-factor mathematical scoring model ($0$ to $100$ score):
+     - **Safety Risk** (max 25 pts)
+     - **Asset Criticality** (max 20 pts)
+     - **Overdue Days** (max 15 pts)
+     - **Failure History** (max 15 pts)
+     - **Predicted Failure Probability** (max 15 pts, calibrated with a `scikit-learn` Logistic Regression model)
+     - **Traffic Density** (max 10 pts)
+     - **Deferral Consequence** (max 10 pts)
+   - Planners click **"Why?"** to open the interactive waterfall breakdown showing individual factor contributions and operational justifications.
 
 2. **Layer 2 — Conflict & Compatibility Detection**:
-   - Scans uncoordinated requests for spatial/temporal corridor overlaps, heavy machine bottlenecks (e.g., Plasser CSM 09-32 Tamping Machine), and passenger train timetable blackouts (e.g. Vande Bharat Express).
-   - Detects synergistic joint block opportunities (e.g., Track renewal + S&T Point machine motor overhaul under TRD 25kV OHE power isolation).
+   - Detects spatial/temporal corridor overlaps, heavy machine bottlenecks (e.g. Plasser CSM 09-32 Tamping Machine), and passenger train timetable blackouts (e.g. Vande Bharat Express).
+   - Identifies synergistic joint block opportunities (e.g. Track renewal + S&T Point machine overhaul during a TRD 25kV OHE power isolation block).
 
 3. **Layer 3 — Google OR-Tools CP-SAT Mathematical Optimization**:
-   - Formulates maintenance block scheduling as a constraint satisfaction & optimization problem (CP-SAT).
-   - Solves multi-corridor, multi-department, multi-machine constraints in <100ms.
-   - Eliminates 100% of clashes while consolidating separate blocks into unified shadow megablocks.
+   - Formulates maintenance block scheduling using constraint programming.
+   - Solves multi-corridor weekly schedules with 0 clashes in **~70ms**.
+   - Consolidates separate blocks into unified multi-department shadow blocks.
 
 4. **Layer 4 — Human-in-the-Loop Governance & Audit Trail**:
-   - Planners review, modify schedules, and input mandatory operational justification reasons.
+   - Planners review, modify schedules, and enter mandatory operational justification reasons.
    - Complete cryptographic audit log records all modifications, solver runs, and approvals.
 
 5. **Layer 5 — Dynamic Emergency Re-Planning Simulator**:
-   - Injects real-time ultrasonic rail fractures (USFD Priority 98/100) and triggers incremental CP-SAT re-planning, producing Plan V2 with automated diff tracking (Added, Moved, Grouped, Unchanged).
+   - Injects real-time ultrasonic rail fractures (USFD Priority 98/100 on C1) and triggers incremental CP-SAT re-planning, producing Plan V2 with automated diff tracking (`ADDED`, `MOVED`, `GROUPED`, `UNCHANGED`).
 
 ---
 
@@ -45,80 +94,69 @@ Built for the **Smart India Hackathon (SIH)**.
 
 ## 🛠️ Technology Stack
 
-- **Backend**: Python 3.14 + FastAPI + Pydantic v2 + Google OR-Tools CP-SAT 9.15 + scikit-learn
-- **Frontend**: React 19 + Vite + Tailwind CSS + Lucide Icons
-- **Database**: Dual-Mode (Supabase PostgreSQL with full RLS in `backend/schema.sql` + Out-of-the-box local persistence fallback in `backend/railblock_local.db`)
-- **Optimization Engine**: Google OR-Tools CP-SAT Constraint Programming Solver
+- **Backend**: Python 3.11+, FastAPI, `uvicorn`, `ortools`, `scikit-learn`, `supabase-py`, `python-dotenv`
+- **Frontend**: React 19 (Vite), Tailwind CSS, React Router v7, Lucide Icons
+- **Database**: Supabase PostgreSQL with RLS (`backend/schema.sql`) + local SQLite fallback engine
+- **Optimization**: Google OR-Tools CP-SAT 9.15
 
 ---
 
-## 🚀 Quick Start (Running the Prototype)
+## ⚙️ Environment Configuration
+
+### Backend (`backend/.env` or `backend/.env.example`):
+```env
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key-here
+PORT=8000
+HOST=0.0.0.0
+CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
+```
+
+### Frontend (`frontend/.env` or `frontend/.env.example`):
+```env
+VITE_API_BASE_URL=http://localhost:8000
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key-here
+```
+
+---
+
+## 🚀 Quick Start (Running Locally)
 
 ### Option 1: 1-Click Startup (Windows)
 Double-click:
 ```bash
 start_demo.bat
 ```
-This automatically starts both the FastAPI backend on `http://localhost:8000` and Vite React frontend on `http://localhost:5173`.
+This automatically launches both the FastAPI backend on `http://localhost:8000` and Vite React frontend on `http://localhost:5173`.
 
-### Option 2: Manual Terminal Startup
+### Option 2: Manual Terminal Commands
 
 **Terminal 1 — Backend:**
 ```bash
 cd backend
-python main.py
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
-Backend runs at: `http://localhost:8000`  
-Swagger API Docs: `http://localhost:8000/docs`
+- Health Check: `http://localhost:8000/health`
+- Database Health: `http://localhost:8000/health/db`
+- Interactive Swagger API Docs: `http://localhost:8000/docs`
 
 **Terminal 2 — Frontend:**
 ```bash
 cd frontend
 npm run dev
 ```
-Frontend UI runs at: `http://localhost:5173`
+- App UI: `http://localhost:5173`
 
 ---
 
-## 🎯 Demonstration Script for Judges (Step-by-Step)
+## 🖥️ Control-Room Navigation Sections
 
-1. **Step 1 — Show 5 Siloed Systems**:
-   - Navigate to the **"5 Siloed Systems"** tab.
-   - Show how requests from **TMS** (Timetable), **SMMS** (Signals/OHE), **TDMS** (Track), **COA** (Freight), and **BDMS** (Bridges) arrive fragmented and uncoordinated.
-
-2. **Step 2 — Priority Intelligence & "Why?" Explainability**:
-   - Click the **"Priority Intelligence"** tab.
-   - Point to a critical work item (e.g., `W001` or `W004` with Priority 100/100).
-   - Click the blue **"Why?"** button.
-   - Show the slide-over drawer displaying the exact 7-factor waterfall score breakdown (+24 Safety Risk, +19 Asset Criticality, +13 Overdue Days, etc.) and human-readable justification. Explain: *"The planner never sees only 'AI says this is critical' — they see the transparent factors."*
-
-3. **Step 3 — Inspect Clashes & Groupings**:
-   - Click the **"Conflicts & Grouping"** tab.
-   - Show the 5 detected clashes (e.g., simultaneous track possession requests on Corridor C1, and heavy machine contention for CSM Tamping #09-32).
-   - Switch to the **"Compatible Grouping Opportunities"** sub-tab to show how S&T Point Overhauls and Track Tamping can share an OHE power block.
-
-4. **Step 4 — Execute Google OR-Tools CP-SAT Optimization**:
-   - Click **"Run CP-SAT Optimizer"** in the top header.
-   - Show the solver completing in <100 milliseconds.
-   - Navigate to the **"Executive Overview"** tab to review the dynamic **Before vs. After KPI cards** (-66.7% separate blocks, 0 clashes, 100% critical completion).
-
-5. **Step 5 — Inspect the Interactive Gantt Block Board**:
-   - Click **"Gantt Planning Board"**.
-   - Show the 24-hour timeline across corridors (NDLS-GZB, NDLS-PWL, BRC-ST, etc.).
-   - Highlight the red hatched **Passenger Train Blackouts** (Vande Bharat Express, Rajdhani Express) and show how the CP-SAT optimizer scheduled maintenance blocks into non-conflicting windows.
-   - Point out the **"JOINT"** badge indicating multi-department shadow blocks.
-
-6. **Step 6 — Human-in-the-Loop Modification & Sign-Off**:
-   - Click **"Planner Review & Approval"**.
-   - Click **"Modify"** on any scheduled work item. Change its day or start hour, and type an operational justification reason (e.g., *"Adjusted due to freight rake positioning"*).
-   - Click **"Save & Log in Audit Trail"**.
-   - Scroll down and click **"Sign & Authorize Plan"** as the Senior Divisional Operations Manager (Sr. DOM).
-
-7. **Step 7 — Dynamic Emergency Re-planning**:
-   - Click the top red button **"Simulate Emergency Rail Fracture"**.
-   - Show the platform detecting the critical defect (Priority 98/100 on Corridor C1), immediately triggering incremental CP-SAT re-planning, and generating **Plan V2**.
-   - Inspect the **Schedule Modification Diff table** showing which tasks were **ADDED**, **MOVED**, **GROUPED**, or **UNCHANGED**.
-
-8. **Step 8 — Audit Trail & Governance**:
-   - Click **"Audit Trail"**.
-   - Show the complete immutable log of all actions (`INGESTION`, `OPTIMIZE_RUN`, `PLANNER_MODIFY`, `PLAN_APPROVE`, `EMERGENCY_TRIGGER`, `REPLAN_COMPLETE`) with user designations and timestamps.
+The UI provides a persistent left sidebar with the 7 core sections, topped by the permanent safety banner:
+1. **Dashboard** (`/dashboard`): Executive overview, live KPI cards, quick-action pipeline.
+2. **Intake** (`/intake`): Ingestion feeds from TMS, SMMS, TDMS, COA, and BDMS, with explainable priority matrix.
+3. **Planning Board** (`/planning-board`): 24-hour visual corridor Gantt board with protected passenger train blackouts (Vande Bharat / Rajdhani Express).
+4. **Optimizer** (`/optimizer`): Pre-optimization clash analysis and Google OR-Tools CP-SAT solver execution.
+5. **Weekly/Monthly Plans** (`/plans`): Human-in-the-loop schedule modification with mandatory operational justification, and Sr. DOM sign-off.
+6. **KPIs** (`/kpis`): Measurable Before vs. After optimization analytics.
+7. **Audit Trail** (`/audit-trail`): Immutable cryptographic event log of all system and planner decisions.

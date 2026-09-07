@@ -36,7 +36,7 @@ export default function Header({
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <h1 className="text-xl font-black tracking-tight text-white m-0">RailBlock AI</h1>
+              <h1 className="text-xl font-black tracking-tight text-white m-0">Train Block System</h1>
               <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold px-2.5 py-0.5 rounded-full">
                 CP-SAT 9.15
               </span>
