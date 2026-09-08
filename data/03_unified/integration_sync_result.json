@@ -1,0 +1,44 @@
+{
+  "last_sync_timestamp": "2026-09-07T21:52:08.489267",
+  "records_received": 140,
+  "records_normalized": 140,
+  "duplicates_detected": 0,
+  "invalid_records_count": 1,
+  "cross_department_matches": 204,
+  "data_quality_score": 99.7,
+  "breakdown": {
+    "tms_records": 55,
+    "tdms_records": 45,
+    "smms_records": 40,
+    "coa_train_movements": 75,
+    "bdms_block_requests": 50
+  },
+  "invalid_records": [
+    {
+      "job_id": "TMS-JOB-155",
+      "source_system": "TMS",
+      "issues": [
+        "Unknown or missing asset_id"
+      ],
+      "raw_data": {
+        "job_id": "TMS-JOB-155",
+        "asset_id": "TMS-C01-TRK-UNKNOWN",
+        "department": "Civil_Engg",
+        "corridor_id": "C01",
+        "station": "OGL",
+        "km": "124.9",
+        "job_type": "EMERGENCY_BOLT_REPLACEMENT",
+        "severity": "high",
+        "priority_score": "75",
+        "due_date": "2026-09-09",
+        "estimated_duration_min": "45",
+        "crew_required": "CREW-ENG-BZA-02",
+        "equipment_required": "TORQUE_WRENCH",
+        "block_required": "YES",
+        "status": "PENDING_BLOCK",
+        "source_system": "TMS",
+        "_source": "TMS"
+      }
+    }
+  ]
+}

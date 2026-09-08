@@ -1,0 +1,12 @@
+crew_id,department,division,base_station,crew_type,size,specialization
+CREW-ENG-BZA-01,Engineering,Vijayawada,BZA,Track Gang & Tamping Operators,18,USFD / Weld Repair / Track Relaying
+CREW-ENG-BZA-02,Engineering,Vijayawada,OGL,P-Way Section Gang,14,Turnout Overhaul / Ballast Dressing
+CREW-TRD-BZA-01,Traction,Vijayawada,BZA,OHE Tower Wagon Crew,8,25kV Catenary Adjustment & Isolators
+CREW-TRD-NLR-01,Traction,Vijayawada,NLR,TRD Power Block Team,7,Cantilever & Contact Wire Replacement
+CREW-SNT-BZA-01,S&T,Vijayawada,BZA,Signal Maintenance Wing,6,Electronic Interlocking & Point Motors
+CREW-SNT-OGL-01,S&T,Vijayawada,OGL,Axle Counter & Track Circuit Gang,5,Digital Axle Counters & OFC
+CREW-ENG-VSKP-01,Engineering,Visakhapatnam,VSKP,Heavy Track Relaying Gang,20,Flash Butt Welding & Tamping
+CREW-TRD-VSKP-01,Traction,Visakhapatnam,VSKP,OHE Maintenance Crew,8,Pantograph Clearance & AT Station
+CREW-SNT-VSKP-01,S&T,Visakhapatnam,VSKP,Signal Tech Team,6,Signalling Cables & Relay Testing
+CREW-ENG-GNT-01,Engineering,Guntur,GNT,Track Gang,12,Deep Screening & Sleeper Renewal
+CREW-ENG-GTL-01,Engineering,Guntakal,GTL,Machine Gang,16,CSM Tamping & Curve Alignment

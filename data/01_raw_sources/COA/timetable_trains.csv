@@ -1,0 +1,161 @@
+train_number,train_name,train_type,days_of_run,section_id,arrival_time,departure_time,direction,priority_score
+12712-010,Pinakini SF Return (BZA-TEL),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_01,18:15,18:44,UP,7
+12711-011,Pinakini SF Express (BZA-TEL),express,"Mon,Tue,Thu,Sat,Sun",SEC_C01_01,21:00,21:43,DN,7
+BCN-Food-409-012,FCI Grain Rake (BZA-TEL),freight,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_01,07:15,07:56,UP,3
+20834-013,Vande Bharat Return (BZA-TEL),express,"Sat,Sun",SEC_C01_01,09:15,09:54,DN,10
+12862-014,Visakhapatnam Link SF Return (BZA-TEL),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_01,18:45,19:20,UP,7
+12862-020,Visakhapatnam Link SF Return (TEL-BPP),express,"Mon,Wed,Fri",SEC_C01_02,08:00,08:27,UP,7
+07577-021,Guntakal - Renigunta Passenger (TEL-BPP),passenger,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_02,13:30,14:20,DN,4
+12727-022,Godavari Express (TEL-BPP),express,"Mon,Tue,Thu,Sat,Sun",SEC_C01_02,11:45,12:12,UP,8
+07461-023,Vijayawada - Ongole MEMU (TEL-BPP),passenger,"Mon,Tue,Thu,Sat,Sun",SEC_C01_02,19:15,20:02,DN,4
+12841-024,Coromandel Express (TEL-BPP),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_02,19:00,19:52,UP,9
+12703-030,Falaknuma Express (BPP-CLX),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_03,14:30,15:00,UP,8
+07766-031,Nandyal - Guntur DMU (BPP-CLX),passenger,"Tue,Thu,Sat",SEC_C01_03,08:00,08:44,DN,4
+12615-032,Grand Trunk Express (BPP-CLX),express,"Sat,Sun",SEC_C01_03,18:45,19:22,UP,8
+12862-033,Visakhapatnam Link SF Return (BPP-CLX),express,"Mon,Tue,Thu,Sat,Sun",SEC_C01_03,18:30,19:21,DN,7
+12728-034,Godavari Express Return (BPP-CLX),express,"Mon,Wed,Fri",SEC_C01_03,19:45,20:18,UP,8
+12841-040,Coromandel Express (CLX-OGL),express,"Mon,Wed,Fri",SEC_C01_04,04:30,05:01,UP,9
+BOXN-IronOre-334-041,NMDC Iron Ore Freight (CLX-OGL),freight,"Mon,Tue,Wed,Thu,Fri",SEC_C01_04,20:15,20:48,DN,3
+12759-042,Charminar Express (CLX-OGL),express,"Mon,Wed,Fri",SEC_C01_04,21:30,22:18,UP,8
+BCN-Food-409-043,FCI Grain Rake (CLX-OGL),freight,"Sat,Sun",SEC_C01_04,12:15,12:56,DN,3
+BOXN-IronOre-334-044,NMDC Iron Ore Freight (CLX-OGL),freight,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_04,17:15,18:00,UP,3
+12615-050,Grand Trunk Express (OGL-SKM),express,"Mon,Tue,Thu,Sat,Sun",SEC_C01_05,11:45,12:22,UP,8
+RO-RO-Auto-205-051,Automobile RO-RO Freight (OGL-SKM),freight,"Sat,Sun",SEC_C01_05,06:00,06:46,DN,3
+12862-052,Visakhapatnam Link SF Return (OGL-SKM),express,"Mon,Tue,Thu,Sat,Sun",SEC_C01_05,08:45,09:15,UP,7
+RO-RO-Auto-205-053,Automobile RO-RO Freight (OGL-SKM),freight,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_05,02:15,02:56,DN,3
+12711-054,Pinakini SF Express (OGL-SKM),express,"Mon,Tue,Thu,Sat,Sun",SEC_C01_05,07:15,07:51,UP,7
+12615-060,Grand Trunk Express (SKM-KVZ),express,"Sat,Sun",SEC_C01_06,04:00,04:44,UP,8
+07881-061,Rajahmundry - VSKP Passenger (SKM-KVZ),passenger,"Mon,Tue,Wed,Thu,Fri",SEC_C01_06,08:30,09:02,DN,4
+12728-062,Godavari Express Return (SKM-KVZ),express,"Mon,Wed,Fri",SEC_C01_06,17:00,17:48,UP,8
+BOXN-IronOre-334-063,NMDC Iron Ore Freight (SKM-KVZ),freight,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_06,04:15,04:44,DN,3
+CONT-Container-991-064,CONCOR Container Rake (SKM-KVZ),freight,"Sat,Sun",SEC_C01_06,09:15,10:09,UP,3
+17255-070,Narsapur - KCG Express (KVZ-NLR),express,"Mon,Tue,Thu,Sat,Sun",SEC_C01_07,08:45,09:38,UP,6
+BTPN-POL-108-071,HPCL Petroleum Special (KVZ-NLR),freight,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_07,06:30,06:55,DN,3
+12703-072,Falaknuma Express (KVZ-NLR),express,"Sat,Sun",SEC_C01_07,06:00,06:32,UP,8
+12841-073,Coromandel Express (KVZ-NLR),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C01_07,17:15,17:48,DN,9
+BOXN-IronOre-334-074,NMDC Iron Ore Freight (KVZ-NLR),freight,"Mon,Wed,Fri",SEC_C01_07,15:45,16:17,UP,3
+CONT-Container-991-080,CONCOR Container Rake (NLR-GDR),freight,"Mon,Tue,Wed,Thu,Fri",SEC_C01_08,06:45,07:21,UP,3
+BCN-Food-409-081,FCI Grain Rake (NLR-GDR),freight,"Mon,Tue,Wed,Thu,Fri",SEC_C01_08,11:00,11:26,DN,3
+07578-082,Renigunta - Guntakal Passenger (NLR-GDR),passenger,"Mon,Tue,Thu,Sat,Sun",SEC_C01_08,06:15,06:46,UP,4
+17255-083,Narsapur - KCG Express (NLR-GDR),express,"Sat,Sun",SEC_C01_08,14:15,14:48,DN,6
+RO-RO-Auto-205-084,Automobile RO-RO Freight (NLR-GDR),freight,"Mon,Wed,Fri",SEC_C01_08,17:45,18:35,UP,3
+12711-010,Pinakini SF Express (VSKP-DVD),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C02_01,21:00,21:27,UP,7
+12704-011,Falaknuma Express Return (VSKP-DVD),express,"Mon,Wed,Fri",SEC_C02_01,14:15,15:07,DN,8
+07578-012,Renigunta - Guntakal Passenger (VSKP-DVD),passenger,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C02_01,06:45,07:18,UP,4
+RO-RO-Auto-205-013,Automobile RO-RO Freight (VSKP-DVD),freight,"Tue,Thu,Sat",SEC_C02_01,15:45,16:14,DN,3
+17255-014,Narsapur - KCG Express (VSKP-DVD),express,"Tue,Thu,Sat",SEC_C02_01,06:00,06:48,UP,6
+07881-020,Rajahmundry - VSKP Passenger (DVD-AKP),passenger,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C02_02,09:15,09:41,UP,4
+12842-021,Coromandel Express Return (DVD-AKP),express,"Mon,Wed,Fri",SEC_C02_02,06:15,06:52,DN,9
+12712-022,Pinakini SF Return (DVD-AKP),express,"Sat,Sun",SEC_C02_02,06:00,06:38,UP,7
+07881-023,Rajahmundry - VSKP Passenger (DVD-AKP),passenger,"Tue,Thu,Sat",SEC_C02_02,08:15,08:48,DN,4
+07578-024,Renigunta - Guntakal Passenger (DVD-AKP),passenger,"Mon,Wed,Fri",SEC_C02_02,19:45,20:20,UP,4
+12841-030,Coromandel Express (AKP-TUNI),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C02_03,15:00,15:27,UP,9
+17256-031,KCG - Narsapur Express (AKP-TUNI),express,"Sat,Sun",SEC_C02_03,08:00,08:53,DN,6
+12704-032,Falaknuma Express Return (AKP-TUNI),express,"Tue,Thu,Sat",SEC_C02_03,09:30,10:14,UP,8
+20833-033,Vande Bharat Express (AKP-TUNI),express,"Mon,Tue,Thu,Sat,Sun",SEC_C02_03,19:00,19:55,DN,10
+12759-034,Charminar Express (AKP-TUNI),express,"Tue,Thu,Sat",SEC_C02_03,06:15,06:48,UP,8
+07461-040,Vijayawada - Ongole MEMU (TUNI-ANV),passenger,"Sat,Sun",SEC_C02_04,08:15,09:01,UP,4
+12861-041,Visakhapatnam Link SF (TUNI-ANV),express,"Sat,Sun",SEC_C02_04,11:00,11:45,DN,7
+BCN-Food-409-042,FCI Grain Rake (TUNI-ANV),freight,"Tue,Thu,Sat",SEC_C02_04,08:15,09:00,UP,3
+12861-043,Visakhapatnam Link SF (TUNI-ANV),express,"Mon,Wed,Fri",SEC_C02_04,21:45,22:27,DN,7
+20833-044,Vande Bharat Express (TUNI-ANV),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C02_04,07:00,07:51,UP,10
+07766-050,Nandyal - Guntur DMU (ANV-SLO),passenger,"Sat,Sun",SEC_C02_05,14:15,14:41,UP,4
+07462-051,Ongole - Vijayawada MEMU (ANV-SLO),passenger,"Tue,Thu,Sat",SEC_C02_05,17:30,18:01,DN,4
+12704-052,Falaknuma Express Return (ANV-SLO),express,"Mon,Tue,Thu,Sat,Sun",SEC_C02_05,09:15,10:09,UP,8
+12704-053,Falaknuma Express Return (ANV-SLO),express,"Mon,Wed,Fri",SEC_C02_05,01:45,02:10,DN,8
+12616-054,Grand Trunk Express Return (ANV-SLO),express,"Mon,Tue,Thu,Sat,Sun",SEC_C02_05,03:15,03:48,UP,8
+12615-060,Grand Trunk Express (SLO-RJY),express,"Mon,Tue,Thu,Sat,Sun",SEC_C02_06,06:45,07:17,UP,8
+17255-061,Narsapur - KCG Express (SLO-RJY),express,"Mon,Tue,Wed,Thu,Fri",SEC_C02_06,07:15,07:40,DN,6
+17255-062,Narsapur - KCG Express (SLO-RJY),express,"Mon,Tue,Wed,Thu,Fri",SEC_C02_06,06:30,07:06,UP,6
+07578-063,Renigunta - Guntakal Passenger (SLO-RJY),passenger,"Mon,Tue,Thu,Sat,Sun",SEC_C02_06,04:30,05:25,DN,4
+20834-064,Vande Bharat Return (SLO-RJY),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C02_06,19:15,19:58,UP,10
+12861-070,Visakhapatnam Link SF (RJY-NDD),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C02_07,09:30,10:18,UP,7
+07881-071,Rajahmundry - VSKP Passenger (RJY-NDD),passenger,"Mon,Tue,Wed,Thu,Fri",SEC_C02_07,21:00,21:37,DN,4
+17255-072,Narsapur - KCG Express (RJY-NDD),express,"Tue,Thu,Sat",SEC_C02_07,09:00,09:41,UP,6
+17255-073,Narsapur - KCG Express (RJY-NDD),express,"Tue,Thu,Sat",SEC_C02_07,13:30,14:16,DN,6
+12712-074,Pinakini SF Return (RJY-NDD),express,"Mon,Tue,Thu,Sat,Sun",SEC_C02_07,04:30,05:16,UP,7
+BOXN-Coal-712-080,Krishnapatnam Coal Freight (NDD-TDD),freight,"Tue,Thu,Sat",SEC_C02_08,13:15,13:46,UP,3
+BOXN-Coal-712-081,Krishnapatnam Coal Freight (NDD-TDD),freight,"Mon,Tue,Thu,Sat,Sun",SEC_C02_08,01:30,02:07,DN,3
+20833-082,Vande Bharat Express (NDD-TDD),express,"Tue,Thu,Sat",SEC_C02_08,09:30,10:09,UP,10
+BTPN-POL-108-083,HPCL Petroleum Special (NDD-TDD),freight,"Mon,Tue,Wed,Thu,Fri",SEC_C02_08,21:45,22:35,DN,3
+12615-084,Grand Trunk Express (NDD-TDD),express,"Mon,Tue,Thu,Sat,Sun",SEC_C02_08,08:00,08:51,UP,8
+12704-090,Falaknuma Express Return (TDD-EE),express,"Mon,Tue,Thu,Sat,Sun",SEC_C02_09,07:15,07:40,UP,8
+12727-091,Godavari Express (TDD-EE),express,"Mon,Wed,Fri",SEC_C02_09,04:00,04:39,DN,8
+BOXN-Coal-712-092,Krishnapatnam Coal Freight (TDD-EE),freight,"Mon,Tue,Thu,Sat,Sun",SEC_C02_09,14:45,15:22,UP,3
+12704-093,Falaknuma Express Return (TDD-EE),express,"Mon,Wed,Fri",SEC_C02_09,17:00,17:49,DN,8
+BCN-Food-409-094,FCI Grain Rake (TDD-EE),freight,"Mon,Wed,Fri",SEC_C02_09,09:00,09:42,UP,3
+12704-100,Falaknuma Express Return (EE-BZA),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C02_10,14:30,15:25,UP,8
+BTPN-POL-108-101,HPCL Petroleum Special (EE-BZA),freight,"Sat,Sun",SEC_C02_10,21:45,22:36,DN,3
+BTPN-POL-108-102,HPCL Petroleum Special (EE-BZA),freight,"Mon,Wed,Fri",SEC_C02_10,20:45,21:18,UP,3
+12704-103,Falaknuma Express Return (EE-BZA),express,"Mon,Tue,Thu,Sat,Sun",SEC_C02_10,09:15,09:48,DN,8
+BTPN-POL-108-104,HPCL Petroleum Special (EE-BZA),freight,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C02_10,18:30,19:05,UP,3
+07881-010,Rajahmundry - VSKP Passenger (GNT-NRT),passenger,"Sat,Sun",SEC_C03_01,07:15,07:52,UP,4
+12760-011,Charminar Express Return (GNT-NRT),express,"Mon,Tue,Thu,Sat,Sun",SEC_C03_01,09:45,10:20,DN,8
+RO-RO-Auto-205-012,Automobile RO-RO Freight (GNT-NRT),freight,"Mon,Tue,Wed,Thu,Fri",SEC_C03_01,09:45,10:38,UP,3
+20834-013,Vande Bharat Return (GNT-NRT),express,"Sat,Sun",SEC_C03_01,11:30,12:04,DN,10
+07577-014,Guntakal - Renigunta Passenger (GNT-NRT),passenger,"Mon,Tue,Wed,Thu,Fri",SEC_C03_01,15:15,15:55,UP,4
+12703-020,Falaknuma Express (NRT-VKN),express,"Tue,Thu,Sat",SEC_C03_02,11:45,12:20,UP,8
+07578-021,Renigunta - Guntakal Passenger (NRT-VKN),passenger,"Mon,Tue,Thu,Sat,Sun",SEC_C03_02,09:15,09:59,DN,4
+20834-022,Vande Bharat Return (NRT-VKN),express,"Mon,Tue,Wed,Thu,Fri",SEC_C03_02,11:00,11:45,UP,10
+BCN-Food-409-023,FCI Grain Rake (NRT-VKN),freight,"Mon,Wed,Fri",SEC_C03_02,18:00,18:33,DN,3
+07577-024,Guntakal - Renigunta Passenger (NRT-VKN),passenger,"Tue,Thu,Sat",SEC_C03_02,08:30,09:19,UP,4
+07577-030,Guntakal - Renigunta Passenger (VKN-DKD),passenger,"Tue,Thu,Sat",SEC_C03_03,20:30,21:21,UP,4
+12842-031,Coromandel Express Return (VKN-DKD),express,"Mon,Tue,Wed,Thu,Fri",SEC_C03_03,06:30,07:02,DN,9
+12841-032,Coromandel Express (VKN-DKD),express,"Mon,Tue,Thu,Sat,Sun",SEC_C03_03,06:15,06:46,UP,9
+20834-033,Vande Bharat Return (VKN-DKD),express,"Sat,Sun",SEC_C03_03,07:45,08:31,DN,10
+12712-034,Pinakini SF Return (VKN-DKD),express,"Sat,Sun",SEC_C03_03,03:30,04:19,UP,7
+07766-040,Nandyal - Guntur DMU (DKD-MRK),passenger,"Mon,Wed,Fri",SEC_C03_04,17:15,18:10,UP,4
+07462-041,Ongole - Vijayawada MEMU (DKD-MRK),passenger,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C03_04,13:45,14:22,DN,4
+17255-042,Narsapur - KCG Express (DKD-MRK),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C03_04,12:00,12:47,UP,6
+07462-043,Ongole - Vijayawada MEMU (DKD-MRK),passenger,"Mon,Tue,Thu,Sat,Sun",SEC_C03_04,17:00,17:36,DN,4
+BCN-Food-409-044,FCI Grain Rake (DKD-MRK),freight,"Mon,Tue,Thu,Sat,Sun",SEC_C03_04,15:30,15:55,UP,3
+BOXN-Coal-712-050,Krishnapatnam Coal Freight (MRK-GID),freight,"Mon,Tue,Wed,Thu,Fri",SEC_C03_05,08:45,09:32,UP,3
+12760-051,Charminar Express Return (MRK-GID),express,"Mon,Tue,Wed,Thu,Fri",SEC_C03_05,08:45,09:24,DN,8
+BCN-Food-409-052,FCI Grain Rake (MRK-GID),freight,"Mon,Tue,Thu,Sat,Sun",SEC_C03_05,13:15,14:06,UP,3
+12842-053,Coromandel Express Return (MRK-GID),express,"Tue,Thu,Sat",SEC_C03_05,18:45,19:28,DN,9
+07577-054,Guntakal - Renigunta Passenger (MRK-GID),passenger,"Tue,Thu,Sat",SEC_C03_05,08:15,08:55,UP,4
+17256-060,KCG - Narsapur Express (GID-NDL),express,"Tue,Thu,Sat",SEC_C03_06,19:30,20:23,UP,6
+12862-061,Visakhapatnam Link SF Return (GID-NDL),express,"Sat,Sun",SEC_C03_06,07:00,07:32,DN,7
+BOXN-Coal-712-062,Krishnapatnam Coal Freight (GID-NDL),freight,"Mon,Tue,Wed,Thu,Fri",SEC_C03_06,12:45,13:30,UP,3
+BOXN-IronOre-334-063,NMDC Iron Ore Freight (GID-NDL),freight,"Mon,Tue,Wed,Thu,Fri",SEC_C03_06,17:30,18:02,DN,3
+07578-064,Renigunta - Guntakal Passenger (GID-NDL),passenger,"Mon,Tue,Thu,Sat,Sun",SEC_C03_06,08:45,09:27,UP,4
+07765-010,Guntur - Nandyal DMU (GTL-GY),passenger,"Mon,Tue,Wed,Thu,Fri",SEC_C04_01,04:30,05:06,UP,4
+RO-RO-Auto-205-011,Automobile RO-RO Freight (GTL-GY),freight,"Tue,Thu,Sat",SEC_C04_01,07:00,07:48,DN,3
+17255-012,Narsapur - KCG Express (GTL-GY),express,"Tue,Thu,Sat",SEC_C04_01,07:15,07:46,UP,6
+CONT-Container-991-013,CONCOR Container Rake (GTL-GY),freight,"Tue,Thu,Sat",SEC_C04_01,21:30,21:58,DN,3
+17255-014,Narsapur - KCG Express (GTL-GY),express,"Tue,Thu,Sat",SEC_C04_01,07:30,07:55,UP,6
+12759-020,Charminar Express (GY-TU),express,"Tue,Thu,Sat",SEC_C04_02,06:30,07:17,UP,8
+12759-021,Charminar Express (GY-TU),express,"Mon,Tue,Thu,Sat,Sun",SEC_C04_02,20:00,20:52,DN,8
+20833-022,Vande Bharat Express (GY-TU),express,"Sat,Sun",SEC_C04_02,09:45,10:20,UP,10
+12616-023,Grand Trunk Express Return (GY-TU),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C04_02,09:00,09:51,DN,8
+12841-024,Coromandel Express (GY-TU),express,"Mon,Tue,Wed,Thu,Fri",SEC_C04_02,15:00,15:29,UP,9
+12760-030,Charminar Express Return (TU-KDP),express,"Sat,Sun",SEC_C04_03,00:15,00:43,UP,8
+BOXN-Coal-712-031,Krishnapatnam Coal Freight (TU-KDP),freight,"Sat,Sun",SEC_C04_03,15:15,16:04,DN,3
+07577-032,Guntakal - Renigunta Passenger (TU-KDP),passenger,"Mon,Tue,Wed,Thu,Fri",SEC_C04_03,02:45,03:19,UP,4
+12728-033,Godavari Express Return (TU-KDP),express,"Sat,Sun",SEC_C04_03,00:15,01:00,DN,8
+17256-034,KCG - Narsapur Express (TU-KDP),express,"Tue,Thu,Sat",SEC_C04_03,18:15,18:45,UP,6
+12841-040,Coromandel Express (KDP-YA),express,"Mon,Wed,Fri",SEC_C04_04,09:45,10:19,UP,9
+12727-041,Godavari Express (KDP-YA),express,"Mon,Wed,Fri",SEC_C04_04,08:45,09:12,DN,8
+12703-042,Falaknuma Express (KDP-YA),express,"Tue,Thu,Sat",SEC_C04_04,21:15,21:53,UP,8
+12712-043,Pinakini SF Return (KDP-YA),express,"Sat,Sun",SEC_C04_04,07:30,08:21,DN,7
+12760-044,Charminar Express Return (KDP-YA),express,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C04_04,08:30,09:09,UP,8
+12712-050,Pinakini SF Return (YA-HX),express,"Mon,Tue,Wed,Thu,Fri",SEC_C04_05,20:30,21:11,UP,7
+BOXN-IronOre-334-051,NMDC Iron Ore Freight (YA-HX),freight,"Mon,Tue,Wed,Thu,Fri",SEC_C04_05,06:45,07:33,DN,3
+07881-052,Rajahmundry - VSKP Passenger (YA-HX),passenger,"Sat,Sun",SEC_C04_05,06:15,07:10,UP,4
+20834-053,Vande Bharat Return (YA-HX),express,"Mon,Tue,Thu,Sat,Sun",SEC_C04_05,21:00,21:49,DN,10
+12616-054,Grand Trunk Express Return (YA-HX),express,"Mon,Tue,Wed,Thu,Fri",SEC_C04_05,14:30,15:00,UP,8
+BCN-Food-409-060,FCI Grain Rake (HX-RJP),freight,"Mon,Tue,Thu,Sat,Sun",SEC_C04_06,17:45,18:21,UP,3
+BOXN-Coal-712-061,Krishnapatnam Coal Freight (HX-RJP),freight,"Tue,Thu,Sat",SEC_C04_06,06:15,06:50,DN,3
+BOXN-Coal-712-062,Krishnapatnam Coal Freight (HX-RJP),freight,"Mon,Tue,Thu,Sat,Sun",SEC_C04_06,14:00,14:39,UP,3
+12842-063,Coromandel Express Return (HX-RJP),express,"Tue,Thu,Sat",SEC_C04_06,06:45,07:37,DN,9
+20833-064,Vande Bharat Express (HX-RJP),express,"Mon,Tue,Thu,Sat,Sun",SEC_C04_06,20:45,21:11,UP,10
+17255-070,Narsapur - KCG Express (RJP-KOU),express,"Sat,Sun",SEC_C04_07,14:45,15:34,UP,6
+12728-071,Godavari Express Return (RJP-KOU),express,"Mon,Wed,Fri",SEC_C04_07,07:30,08:09,DN,8
+BOXN-IronOre-334-072,NMDC Iron Ore Freight (RJP-KOU),freight,"Mon,Tue,Wed,Thu,Fri,Sat,Sun",SEC_C04_07,07:15,07:49,UP,3
+20833-073,Vande Bharat Express (RJP-KOU),express,"Sat,Sun",SEC_C04_07,12:00,12:39,DN,10
+12712-074,Pinakini SF Return (RJP-KOU),express,"Mon,Tue,Thu,Sat,Sun",SEC_C04_07,20:30,21:11,UP,7
+12862-080,Visakhapatnam Link SF Return (KOU-RU),express,"Mon,Tue,Wed,Thu,Fri",SEC_C04_08,20:15,20:54,UP,7
+12760-081,Charminar Express Return (KOU-RU),express,"Mon,Tue,Wed,Thu,Fri",SEC_C04_08,07:00,07:33,DN,8
+BOXN-Coal-712-082,Krishnapatnam Coal Freight (KOU-RU),freight,"Tue,Thu,Sat",SEC_C04_08,04:30,05:21,UP,3
+20833-083,Vande Bharat Express (KOU-RU),express,"Tue,Thu,Sat",SEC_C04_08,21:45,22:37,DN,10
+12760-084,Charminar Express Return (KOU-RU),express,"Mon,Tue,Wed,Thu,Fri",SEC_C04_08,13:30,14:12,UP,8

@@ -1,0 +1,264 @@
+[
+  {
+    "id": "AUD-3E5AF0ED",
+    "timestamp": "2026-09-07T21:52:08.541030",
+    "event_type": "INTEGRATION_SYNC",
+    "action": "Executed Unified Synchronization & Normalization across 5 Railway Systems",
+    "user": "DataIntegrationHub",
+    "details": {
+      "received": 140,
+      "normalized": 140,
+      "quality_score": 99.7,
+      "cross_dept_matches": 204
+    }
+  },
+  {
+    "id": "AUD-02465C98",
+    "timestamp": "2026-09-07T19:10:13.132173",
+    "event_type": "EMERGENCY_REPLAN",
+    "action": "Injected Critical Rail Fracture Defect and Recomputed Plan V2",
+    "user": "EmergencyResponseDesk",
+    "details": {
+      "defect_id": "EMG-USFD-7EFD",
+      "corridor": "C01",
+      "km": 124.4,
+      "new_plan_id": "PLAN-SCOR-V2-7608",
+      "moved_jobs_count": 11,
+      "retained_count": 88
+    }
+  },
+  {
+    "id": "AUD-75CAD470",
+    "timestamp": "2026-09-07T19:10:13.112901",
+    "event_type": "OPTIMIZER_RUN",
+    "action": "Generated Google OR-Tools CP-SAT Block Recommendation Plan",
+    "user": "CP_SAT_SOLVER",
+    "details": {
+      "plan_id": "PLAN-SCOR-V1-2EC8",
+      "solve_ms": 3163,
+      "blocks": 49,
+      "joint_blocks": 38,
+      "reduction_pct": -172.2
+    }
+  },
+  {
+    "id": "AUD-576042C4",
+    "timestamp": "2026-09-07T19:10:09.916901",
+    "event_type": "WHAT_IF_SIMULATION",
+    "action": "Executed What-If simulation with block duration 90 mins",
+    "user": "Planner_Simulation",
+    "details": {
+      "sim_id": "SIM-A7D0A2",
+      "params": {
+        "block_duration_minutes": 90
+      }
+    }
+  },
+  {
+    "id": "AUD-CB043E3D",
+    "timestamp": "2026-09-07T19:10:09.906428",
+    "event_type": "OPTIMIZER_RUN",
+    "action": "Generated Google OR-Tools CP-SAT Block Recommendation Plan",
+    "user": "CP_SAT_SOLVER",
+    "details": {
+      "plan_id": "PLAN-SCOR-V1-4D87",
+      "solve_ms": 3163,
+      "blocks": 49,
+      "joint_blocks": 38,
+      "reduction_pct": -172.2
+    }
+  },
+  {
+    "id": "AUD-DD4A585D",
+    "timestamp": "2026-09-07T19:10:06.717162",
+    "event_type": "OPTIMIZER_RUN",
+    "action": "Generated Google OR-Tools CP-SAT Block Recommendation Plan",
+    "user": "CP_SAT_SOLVER",
+    "details": {
+      "plan_id": "PLAN-SCOR-V1-32B6",
+      "solve_ms": 3158,
+      "blocks": 56,
+      "joint_blocks": 47,
+      "reduction_pct": -211.1
+    }
+  },
+  {
+    "id": "AUD-82CD5E59",
+    "timestamp": "2026-09-07T19:10:03.530993",
+    "event_type": "INTEGRATION_SYNC",
+    "action": "Executed Unified Synchronization & Normalization across 5 Railway Systems",
+    "user": "DataIntegrationHub",
+    "details": {
+      "received": 140,
+      "normalized": 140,
+      "quality_score": 99.7,
+      "cross_dept_matches": 204
+    }
+  },
+  {
+    "id": "AUD-9F13A579",
+    "timestamp": "2026-09-07T18:40:14.369371",
+    "event_type": "EMERGENCY_REPLAN",
+    "action": "Injected Critical Rail Fracture Defect and Recomputed Plan V2",
+    "user": "EmergencyResponseDesk",
+    "details": {
+      "defect_id": "EMG-USFD-CE2F",
+      "corridor": "C01",
+      "km": 124.4,
+      "new_plan_id": "PLAN-SCOR-V2-D90C",
+      "moved_jobs_count": 42,
+      "retained_count": 52
+    }
+  },
+  {
+    "id": "AUD-CA10C3DC",
+    "timestamp": "2026-09-07T18:40:14.350195",
+    "event_type": "OPTIMIZER_RUN",
+    "action": "Generated Google OR-Tools CP-SAT Block Recommendation Plan",
+    "user": "CP_SAT_SOLVER",
+    "details": {
+      "plan_id": "PLAN-SCOR-V1-B236",
+      "solve_ms": 3166,
+      "blocks": 48,
+      "joint_blocks": 40,
+      "reduction_pct": -166.7
+    }
+  },
+  {
+    "id": "AUD-E4A3C684",
+    "timestamp": "2026-09-07T18:40:11.154168",
+    "event_type": "WHAT_IF_SIMULATION",
+    "action": "Executed What-If simulation with block duration 90 mins",
+    "user": "Planner_Simulation",
+    "details": {
+      "sim_id": "SIM-3E089A",
+      "params": {
+        "block_duration_minutes": 90
+      }
+    }
+  },
+  {
+    "id": "AUD-D0634B19",
+    "timestamp": "2026-09-07T18:40:11.145039",
+    "event_type": "OPTIMIZER_RUN",
+    "action": "Generated Google OR-Tools CP-SAT Block Recommendation Plan",
+    "user": "CP_SAT_SOLVER",
+    "details": {
+      "plan_id": "PLAN-SCOR-V1-5357",
+      "solve_ms": 3162,
+      "blocks": 50,
+      "joint_blocks": 38,
+      "reduction_pct": -177.8
+    }
+  },
+  {
+    "id": "AUD-A9D9BA0B",
+    "timestamp": "2026-09-07T18:40:07.957341",
+    "event_type": "OPTIMIZER_RUN",
+    "action": "Generated Google OR-Tools CP-SAT Block Recommendation Plan",
+    "user": "CP_SAT_SOLVER",
+    "details": {
+      "plan_id": "PLAN-SCOR-V1-3908",
+      "solve_ms": 3146,
+      "blocks": 56,
+      "joint_blocks": 47,
+      "reduction_pct": -211.1
+    }
+  },
+  {
+    "id": "AUD-B1584F34",
+    "timestamp": "2026-09-07T18:40:04.783595",
+    "event_type": "INTEGRATION_SYNC",
+    "action": "Executed Unified Synchronization & Normalization across 5 Railway Systems",
+    "user": "DataIntegrationHub",
+    "details": {
+      "received": 140,
+      "normalized": 140,
+      "quality_score": 99.7,
+      "cross_dept_matches": 204
+    }
+  },
+  {
+    "id": "AUD-9E8C32B5",
+    "timestamp": "2026-09-07T18:38:47.458508",
+    "event_type": "EMERGENCY_REPLAN",
+    "action": "Injected Critical Rail Fracture Defect and Recomputed Plan V2",
+    "user": "EmergencyResponseDesk",
+    "details": {
+      "defect_id": "EMG-USFD-F99D",
+      "corridor": "C01",
+      "km": 124.4,
+      "new_plan_id": "PLAN-SCOR-V2-33A0",
+      "moved_jobs_count": 4,
+      "retained_count": 94
+    }
+  },
+  {
+    "id": "AUD-C39A0A92",
+    "timestamp": "2026-09-07T18:38:47.437548",
+    "event_type": "OPTIMIZER_RUN",
+    "action": "Generated Google OR-Tools CP-SAT Block Recommendation Plan",
+    "user": "CP_SAT_SOLVER",
+    "details": {
+      "plan_id": "PLAN-SCOR-V1-AEFA",
+      "solve_ms": 3213,
+      "blocks": 49,
+      "joint_blocks": 36,
+      "reduction_pct": -172.2
+    }
+  },
+  {
+    "id": "AUD-6142338B",
+    "timestamp": "2026-09-07T18:38:44.176699",
+    "event_type": "WHAT_IF_SIMULATION",
+    "action": "Executed What-If simulation with block duration 90 mins",
+    "user": "Planner_Simulation",
+    "details": {
+      "sim_id": "SIM-B8C00D",
+      "params": {
+        "block_duration_minutes": 90
+      }
+    }
+  },
+  {
+    "id": "AUD-FB563651",
+    "timestamp": "2026-09-07T18:38:44.168193",
+    "event_type": "OPTIMIZER_RUN",
+    "action": "Generated Google OR-Tools CP-SAT Block Recommendation Plan",
+    "user": "CP_SAT_SOLVER",
+    "details": {
+      "plan_id": "PLAN-SCOR-V1-9025",
+      "solve_ms": 3184,
+      "blocks": 49,
+      "joint_blocks": 36,
+      "reduction_pct": -172.2
+    }
+  },
+  {
+    "id": "AUD-C1DCF949",
+    "timestamp": "2026-09-07T18:38:40.953391",
+    "event_type": "OPTIMIZER_RUN",
+    "action": "Generated Google OR-Tools CP-SAT Block Recommendation Plan",
+    "user": "CP_SAT_SOLVER",
+    "details": {
+      "plan_id": "PLAN-SCOR-V1-4A73",
+      "solve_ms": 3160,
+      "blocks": 56,
+      "joint_blocks": 48,
+      "reduction_pct": -211.1
+    }
+  },
+  {
+    "id": "AUD-4A9CF833",
+    "timestamp": "2026-09-07T18:38:37.767076",
+    "event_type": "INTEGRATION_SYNC",
+    "action": "Executed Unified Synchronization & Normalization across 5 Railway Systems",
+    "user": "DataIntegrationHub",
+    "details": {
+      "received": 140,
+      "normalized": 140,
+      "quality_score": 99.7,
+      "cross_dept_matches": 204
+    }
+  }
+]

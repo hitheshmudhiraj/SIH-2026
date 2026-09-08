@@ -1,0 +1,33 @@
+section_id,section_name,from_station,to_station,length_km,division,zone,max_speed_kmph,track_type,electrified
+SEC_C01_01,Vijayawada - Tenali,BZA,TEL,31.5,Vijayawada,SCoR,130,double,True
+SEC_C01_02,Tenali - Bapatla,TEL,BPP,42.5,Vijayawada,SCoR,130,double,True
+SEC_C01_03,Bapatla - Chirala,BPP,CLX,15.2,Vijayawada,SCoR,130,double,True
+SEC_C01_04,Chirala - Ongole,CLX,OGL,49.4,Vijayawada,SCoR,130,double,True
+SEC_C01_05,Ongole - Singarayakonda,OGL,SKM,27.8,Vijayawada,SCoR,130,double,True
+SEC_C01_06,Singarayakonda - Kavali,SKM,KVZ,37.9,Vijayawada,SCoR,130,double,True
+SEC_C01_07,Kavali - Nellore,KVZ,NLR,50.7,Vijayawada,SCoR,130,double,True
+SEC_C01_08,Nellore - Gudur,NLR,GDR,38.5,Vijayawada,SCoR,130,double,True
+SEC_C02_01,Visakhapatnam - Duvvada,VSKP,DVD,17.2,Visakhapatnam,SCoR,110,double,True
+SEC_C02_02,Duvvada - Anakapalle,DVD,AKP,15.9,Visakhapatnam,SCoR,130,double,True
+SEC_C02_03,Anakapalle - Tuni,AKP,TUNI,63.7,Visakhapatnam,SCoR,130,double,True
+SEC_C02_04,Tuni - Annavaram,TUNI,ANV,16.8,Vijayawada,SCoR,130,double,True
+SEC_C02_05,Annavaram - Samalkot,ANV,SLO,37.1,Vijayawada,SCoR,130,double,True
+SEC_C02_06,Samalkot - Rajahmundry,SLO,RJY,50.2,Vijayawada,SCoR,130,double,True
+SEC_C02_07,Rajahmundry - Nidadavolu,RJY,NDD,22.3,Vijayawada,SCoR,130,double,True
+SEC_C02_08,Nidadavolu - Tadepalligudem,NDD,TDD,19.8,Vijayawada,SCoR,130,double,True
+SEC_C02_09,Tadepalligudem - Eluru,TDD,EE,47.8,Vijayawada,SCoR,130,double,True
+SEC_C02_10,Eluru - Vijayawada,EE,BZA,59.4,Vijayawada,SCoR,130,double,True
+SEC_C03_01,Guntur - Narasaraopet,GNT,NRT,45.4,Guntur,SCoR,110,single,True
+SEC_C03_02,Narasaraopet - Vinukonda,NRT,VKN,37.5,Guntur,SCoR,110,single,True
+SEC_C03_03,Vinukonda - Donakonda,VKN,DKD,37.8,Guntur,SCoR,100,single,True
+SEC_C03_04,Donakonda - Markapur Road,DKD,MRK,24.2,Guntur,SCoR,100,single,True
+SEC_C03_05,Markapur Road - Giddalur,MRK,GID,59.9,Guntur,SCoR,90,single,True
+SEC_C03_06,Giddalur - Nandyal,GID,NDL,53.2,Guntur,SCoR,100,single,True
+SEC_C04_01,Guntakal - Gooty,GTL,GY,28.5,Guntakal,SCoR,130,double,True
+SEC_C04_02,Gooty - Tadipatri,GY,TU,48.3,Guntakal,SCoR,130,double,True
+SEC_C04_03,Tadipatri - Kondapuram,TU,KDP,27.4,Guntakal,SCoR,130,double,True
+SEC_C04_04,Kondapuram - Yerraguntla,KDP,YA,40.7,Guntakal,SCoR,130,double,True
+SEC_C04_05,Yerraguntla - Kadapa,YA,HX,39.3,Guntakal,SCoR,130,double,True
+SEC_C04_06,Kadapa - Razampeta,HX,RJP,50.8,Guntakal,SCoR,130,double,True
+SEC_C04_07,Razampeta - Koduru,RJP,KOU,33.8,Guntakal,SCoR,120,double,True
+SEC_C04_08,Koduru - Renigunta,KOU,RU,40.8,Guntakal,SCoR,120,double,True

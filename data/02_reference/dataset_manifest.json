@@ -1,0 +1,30 @@
+{
+  "dataset_name": "Indian Railways SCoR Andhra Pradesh Synthetic Planning Dataset",
+  "version": "2.0-SCoR-2026",
+  "organizational_context": {
+    "zone": "South Coast Railway (SCoR)",
+    "headquarters": "Visakhapatnam",
+    "pilot_region": "Andhra Pradesh",
+    "divisions": [
+      "Guntakal",
+      "Guntur",
+      "Vijayawada",
+      "Visakhapatnam"
+    ]
+  },
+  "disclaimer": "SYNTHETIC DEMONSTRATION DATA ONLY. Not connected to internal CRIS/IR production networks. Generated for Smart India Hackathon block scheduling simulation.",
+  "created_at": "2026-09-07T18:36:55.306888",
+  "systems_integrated": [
+    "TMS",
+    "SMMS",
+    "TDMS",
+    "COA",
+    "BDMS"
+  ],
+  "target_corridors": [
+    "C01",
+    "C02",
+    "C03",
+    "C04"
+  ]
+}

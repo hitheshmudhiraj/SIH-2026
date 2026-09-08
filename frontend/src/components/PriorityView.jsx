@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Search, Filter, HelpCircle, AlertOctagon, CheckCircle2, Clock, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { Search, Filter, HelpCircle, AlertOctagon, CheckCircle2, AlertTriangle } from 'lucide-react';
 
 export default function PriorityView({ workItems, onSelectExplain }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -18,50 +18,50 @@ export default function PriorityView({ workItems, onSelectExplain }) {
   const getTierBadge = (tier) => {
     switch (tier) {
       case 'CRITICAL':
-        return 'bg-rose-500/15 text-rose-400 border-rose-500/30';
+        return 'bg-[#FEF2F2] text-[#B91C1C] border-[#FECACA]';
       case 'HIGH':
-        return 'bg-amber-500/15 text-amber-400 border-amber-500/30';
+        return 'bg-[#FFFBEB] text-[#B45309] border-[#FED7AA]';
       case 'MEDIUM':
-        return 'bg-blue-500/15 text-blue-400 border-blue-500/30';
+        return 'bg-[#EFF6FF] text-[#1565C0] border-[#BFDBFE]';
       default:
-        return 'bg-slate-500/15 text-slate-400 border-slate-500/30';
+        return 'bg-[#F8FAFC] text-[#7A8494] border-[#E2E8F0]';
     }
   };
 
   return (
     <div className="space-y-4">
-      {/* Header Info */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-wrap items-center justify-between gap-4">
+      {/* Header */}
+      <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 flex flex-wrap items-center justify-between gap-4 shadow-sm">
         <div>
-          <div className="flex items-center space-x-2 text-blue-400 text-xs font-semibold mb-1">
+          <div className="flex items-center space-x-2 text-[#1565C0] text-xs font-bold mb-1">
             <CheckCircle2 className="w-4 h-4" />
-            <span>Layer 1: Transparent Weighted Scoring Model</span>
+            <span>PRIORITY INTELLIGENCE MATRIX</span>
           </div>
-          <h3 className="text-xl font-bold text-white">
-            Unified Priority Intelligence Matrix
+          <h3 className="text-xl font-bold text-[#172033]">
+            Unified Maintenance Priority Scoring
           </h3>
-          <p className="text-xs text-slate-400 max-w-2xl mt-1">
-            Every maintenance demand is assigned an interpretable 0–100 score based on safety hazard, asset criticality, overdue days, and ML failure risk. Planners never see a black box.
+          <p className="text-xs text-[#7A8494] max-w-2xl mt-1">
+            Transparent 0–100 scoring based on safety hazard, asset criticality, overdue days, and ML failure risk
           </p>
         </div>
 
         {/* Filter Controls */}
         <div className="flex flex-wrap items-center gap-2">
           <div className="relative">
-            <Search className="w-4 h-4 text-slate-500 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-[#7A8494] absolute left-3 top-2.5" />
             <input
               type="text"
               placeholder="Search work or corridor..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-lg pl-9 pr-3 py-2 w-48 focus:outline-none focus:border-blue-500"
+              className="bg-white border border-[#E2E8F0] text-[#172033] text-xs rounded-lg pl-9 pr-3 py-2 w-48 focus:outline-none focus:border-[#1565C0] focus:ring-2 focus:ring-[#EFF6FF]"
             />
           </div>
 
           <select
             value={selectedTier}
             onChange={(e) => setSelectedTier(e.target.value)}
-            className="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500"
+            className="bg-white border border-[#E2E8F0] text-[#172033] text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-[#1565C0] cursor-pointer"
           >
             <option value="ALL">All Tiers</option>
             <option value="CRITICAL">Critical Only (≥80)</option>
@@ -72,7 +72,7 @@ export default function PriorityView({ workItems, onSelectExplain }) {
           <select
             value={selectedCorridor}
             onChange={(e) => setSelectedCorridor(e.target.value)}
-            className="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500"
+            className="bg-white border border-[#E2E8F0] text-[#172033] text-xs rounded-lg px-3 py-2 focus:outline-none focus:border-[#1565C0] cursor-pointer"
           >
             <option value="ALL">All Corridors</option>
             <option value="C1">C1: NDLS-GZB</option>
@@ -86,10 +86,10 @@ export default function PriorityView({ workItems, onSelectExplain }) {
       </div>
 
       {/* Work Items Table */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
+      <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-slate-950/80 text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-800">
+            <thead className="bg-[#F8FAFC] text-[#7A8494] uppercase tracking-wider font-semibold border-b border-[#E2E8F0]">
               <tr>
                 <th className="px-4 py-3">Work ID & Source</th>
                 <th className="px-4 py-3">Maintenance Description</th>
@@ -98,71 +98,47 @@ export default function PriorityView({ workItems, onSelectExplain }) {
                 <th className="px-4 py-3 text-center">Overdue</th>
                 <th className="px-4 py-3 text-center">ML Fail Prob</th>
                 <th className="px-4 py-3 text-center">Priority Score</th>
-                <th className="px-4 py-3 text-right">Explainability</th>
+                <th className="px-4 py-3 text-center">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60">
+            <tbody className="divide-y divide-[#F1F5F9] text-[#172033]">
               {filteredItems.map((item) => (
-                <tr key={item.id} className="hover:bg-slate-850/50 transition-colors">
-                  <td className="px-4 py-3 font-mono">
-                    <div className="font-bold text-white">{item.id}</div>
-                    <span className="text-[10px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded font-sans">
-                      {item.source_system} • {item.department_name?.split(' ')[0]}
-                    </span>
-                  </td>
-
-                  <td className="px-4 py-3 max-w-xs">
-                    <div className="font-semibold text-slate-200 line-clamp-1">{item.title}</div>
-                    <div className="text-[11px] text-slate-400 mt-0.5 flex items-center space-x-2">
-                      <span>Resource: {item.required_resource || 'Standard Gang'}</span>
-                      {item.is_emergency && (
-                        <span className="bg-rose-500/20 text-rose-400 text-[10px] px-1 rounded font-bold">
-                          EMERGENCY
-                        </span>
-                      )}
-                    </div>
-                  </td>
-
+                <tr key={item.id} className="hover:bg-[#F8FAFC] transition-colors">
                   <td className="px-4 py-3">
-                    <div className="font-medium text-slate-300">{item.corridor_name || item.corridor_id}</div>
-                    <div className="text-[11px] text-slate-500">{item.asset_name || item.asset_id}</div>
+                    <div className="font-bold text-[#1565C0]">{item.id}</div>
+                    <div className="text-[10px] text-[#7A8494]">{item.source_system}</div>
                   </td>
-
-                  <td className="px-4 py-3 text-center font-mono text-slate-300">
-                    {Math.round(item.duration_minutes / 60)}h ({item.duration_minutes}m)
+                  <td className="px-4 py-3 max-w-xs">
+                    <div className="font-medium truncate">{item.title}</div>
+                    <div className="text-[10px] text-[#7A8494]">{item.department}</div>
                   </td>
-
+                  <td className="px-4 py-3">
+                    <div className="font-medium">{item.corridor_name}</div>
+                    <div className="text-[10px] text-[#7A8494]">{item.asset_id}</div>
+                  </td>
+                  <td className="px-4 py-3 text-center font-medium">{item.duration_minutes} min</td>
                   <td className="px-4 py-3 text-center">
-                    {item.overdue_days > 0 ? (
-                      <span className="text-amber-400 font-bold bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded text-[11px]">
-                        +{item.overdue_days}d
-                      </span>
-                    ) : (
-                      <span className="text-slate-500 font-mono">Current</span>
-                    )}
-                  </td>
-
-                  <td className="px-4 py-3 text-center font-mono">
-                    <span className={`text-xs font-semibold ${item.failure_probability >= 0.75 ? 'text-rose-400' : (item.failure_probability >= 0.5 ? 'text-amber-400' : 'text-slate-400')}`}>
-                      {Math.round(item.failure_probability * 100)}%
+                    <span className={`px-2 py-1 rounded text-[10px] font-bold ${
+                      item.overdue_days > 0 ? 'bg-[#FEF2F2] text-[#B91C1C] border border-[#FECACA]' : 'bg-[#F0FDF4] text-[#15803D] border border-[#BBF7D0]'
+                    }`}>
+                      {item.overdue_days > 0 ? `+${item.overdue_days}d` : 'On Time'}
                     </span>
                   </td>
-
+                  <td className="px-4 py-3 text-center font-bold text-[#B45309]">
+                    {item.ml_failure_prob}%
+                  </td>
                   <td className="px-4 py-3 text-center">
-                    <div className="inline-flex flex-col items-center">
-                      <span className={`text-xs font-black px-2.5 py-0.5 rounded-full border ${getTierBadge(item.priority_tier)}`}>
-                        {item.priority_score} / 100
-                      </span>
-                      <span className="text-[10px] text-slate-500 mt-0.5 font-medium">
+                    <div className="flex flex-col items-center space-y-1">
+                      <span className="text-lg font-black text-[#172033]">{item.priority_score}</span>
+                      <span className={`px-2 py-0.5 rounded text-[9px] font-bold border ${getTierBadge(item.priority_tier)}`}>
                         {item.priority_tier}
                       </span>
                     </div>
                   </td>
-
-                  <td className="px-4 py-3 text-right">
+                  <td className="px-4 py-3 text-center">
                     <button
                       onClick={() => onSelectExplain(item.id)}
-                      className="inline-flex items-center space-x-1 bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 hover:text-blue-300 border border-blue-500/30 px-2.5 py-1.5 rounded-md font-semibold text-xs transition-colors cursor-pointer"
+                      className="text-[#1565C0] hover:text-[#0D47A1] text-[10px] font-semibold flex items-center space-x-1 mx-auto cursor-pointer"
                     >
                       <HelpCircle className="w-3.5 h-3.5" />
                       <span>Why?</span>
@@ -173,6 +149,13 @@ export default function PriorityView({ workItems, onSelectExplain }) {
             </tbody>
           </table>
         </div>
+
+        {filteredItems.length === 0 && (
+          <div className="p-8 text-center text-[#7A8494]">
+            <Filter className="w-8 h-8 mx-auto mb-2 opacity-50" />
+            <p className="text-sm font-medium">No items match your filters</p>
+          </div>
+        )}
       </div>
     </div>
   );

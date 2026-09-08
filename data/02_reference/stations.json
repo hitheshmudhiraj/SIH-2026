@@ -1,0 +1,474 @@
+[
+  {
+    "code": "BZA",
+    "name": "Vijayawada Junction",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 0.0,
+    "latitude": 16.5186,
+    "longitude": 80.6198,
+    "junction": true,
+    "corridors": [
+      "C01",
+      "C02",
+      "C03"
+    ]
+  },
+  {
+    "code": "TEL",
+    "name": "Tenali Junction",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 31.5,
+    "latitude": 16.2428,
+    "longitude": 80.6402,
+    "junction": true,
+    "corridors": [
+      "C01",
+      "C03"
+    ]
+  },
+  {
+    "code": "BPP",
+    "name": "Bapatla",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 74.0,
+    "latitude": 15.9042,
+    "longitude": 80.4674,
+    "junction": false,
+    "corridors": [
+      "C01"
+    ]
+  },
+  {
+    "code": "CLX",
+    "name": "Chirala",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 89.2,
+    "latitude": 15.8246,
+    "longitude": 80.3522,
+    "junction": false,
+    "corridors": [
+      "C01"
+    ]
+  },
+  {
+    "code": "OGL",
+    "name": "Ongole",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 138.6,
+    "latitude": 15.5057,
+    "longitude": 80.0499,
+    "junction": false,
+    "corridors": [
+      "C01"
+    ]
+  },
+  {
+    "code": "SKM",
+    "name": "Singarayakonda",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 166.4,
+    "latitude": 15.2505,
+    "longitude": 80.0264,
+    "junction": false,
+    "corridors": [
+      "C01"
+    ]
+  },
+  {
+    "code": "KVZ",
+    "name": "Kavali",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 204.3,
+    "latitude": 14.9132,
+    "longitude": 79.9912,
+    "junction": false,
+    "corridors": [
+      "C01"
+    ]
+  },
+  {
+    "code": "NLR",
+    "name": "Nellore",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 255.0,
+    "latitude": 14.4426,
+    "longitude": 79.9865,
+    "junction": false,
+    "corridors": [
+      "C01"
+    ]
+  },
+  {
+    "code": "GDR",
+    "name": "Gudur Junction",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 293.5,
+    "latitude": 14.1463,
+    "longitude": 79.8504,
+    "junction": true,
+    "corridors": [
+      "C01",
+      "C04"
+    ]
+  },
+  {
+    "code": "VSKP",
+    "name": "Visakhapatnam Junction (HQ)",
+    "division": "Visakhapatnam",
+    "zone": "SCoR",
+    "km_mark": 0.0,
+    "latitude": 17.7215,
+    "longitude": 83.2878,
+    "junction": true,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "DVD",
+    "name": "Duvvada",
+    "division": "Visakhapatnam",
+    "zone": "SCoR",
+    "km_mark": 17.2,
+    "latitude": 17.7011,
+    "longitude": 83.1554,
+    "junction": false,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "AKP",
+    "name": "Anakapalle",
+    "division": "Visakhapatnam",
+    "zone": "SCoR",
+    "km_mark": 33.1,
+    "latitude": 17.6913,
+    "longitude": 83.0039,
+    "junction": false,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "TUNI",
+    "name": "Tuni",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 96.8,
+    "latitude": 17.3562,
+    "longitude": 82.5511,
+    "junction": false,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "ANV",
+    "name": "Annavaram",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 113.6,
+    "latitude": 17.2817,
+    "longitude": 82.4087,
+    "junction": false,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "SLO",
+    "name": "Samalkot Junction",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 150.7,
+    "latitude": 17.0543,
+    "longitude": 82.1698,
+    "junction": true,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "RJY",
+    "name": "Rajahmundry",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 200.9,
+    "latitude": 17.0005,
+    "longitude": 81.7774,
+    "junction": false,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "NDD",
+    "name": "Nidadavolu Junction",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 223.2,
+    "latitude": 16.9069,
+    "longitude": 81.6705,
+    "junction": true,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "TDD",
+    "name": "Tadepalligudem",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 243.0,
+    "latitude": 16.8126,
+    "longitude": 81.5283,
+    "junction": false,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "EE",
+    "name": "Eluru",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "km_mark": 290.8,
+    "latitude": 16.7107,
+    "longitude": 81.0952,
+    "junction": false,
+    "corridors": [
+      "C02"
+    ]
+  },
+  {
+    "code": "GNT",
+    "name": "Guntur Junction",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "km_mark": 0.0,
+    "latitude": 16.2997,
+    "longitude": 80.4431,
+    "junction": true,
+    "corridors": [
+      "C03"
+    ]
+  },
+  {
+    "code": "NRT",
+    "name": "Narasaraopet",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "km_mark": 45.4,
+    "latitude": 16.2359,
+    "longitude": 80.0489,
+    "junction": false,
+    "corridors": [
+      "C03"
+    ]
+  },
+  {
+    "code": "VKN",
+    "name": "Vinukonda",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "km_mark": 82.9,
+    "latitude": 16.0526,
+    "longitude": 79.7424,
+    "junction": false,
+    "corridors": [
+      "C03"
+    ]
+  },
+  {
+    "code": "DKD",
+    "name": "Donakonda",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "km_mark": 120.7,
+    "latitude": 15.7958,
+    "longitude": 79.4975,
+    "junction": false,
+    "corridors": [
+      "C03"
+    ]
+  },
+  {
+    "code": "MRK",
+    "name": "Markapur Road",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "km_mark": 144.9,
+    "latitude": 15.7346,
+    "longitude": 79.2785,
+    "junction": false,
+    "corridors": [
+      "C03"
+    ]
+  },
+  {
+    "code": "GID",
+    "name": "Giddalur",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "km_mark": 204.8,
+    "latitude": 15.3789,
+    "longitude": 78.9248,
+    "junction": false,
+    "corridors": [
+      "C03"
+    ]
+  },
+  {
+    "code": "NDL",
+    "name": "Nandyal Junction",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "km_mark": 258.0,
+    "latitude": 15.4882,
+    "longitude": 78.4836,
+    "junction": true,
+    "corridors": [
+      "C03"
+    ]
+  },
+  {
+    "code": "GTL",
+    "name": "Guntakal Junction",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 0.0,
+    "latitude": 15.1674,
+    "longitude": 77.3712,
+    "junction": true,
+    "corridors": [
+      "C04"
+    ]
+  },
+  {
+    "code": "GY",
+    "name": "Gooty Junction",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 28.5,
+    "latitude": 15.1147,
+    "longitude": 77.6324,
+    "junction": true,
+    "corridors": [
+      "C04"
+    ]
+  },
+  {
+    "code": "TU",
+    "name": "Tadipatri",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 76.8,
+    "latitude": 14.9082,
+    "longitude": 78.0125,
+    "junction": false,
+    "corridors": [
+      "C04"
+    ]
+  },
+  {
+    "code": "KDP",
+    "name": "Kondapuram",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 104.2,
+    "latitude": 14.8118,
+    "longitude": 78.2324,
+    "junction": false,
+    "corridors": [
+      "C04"
+    ]
+  },
+  {
+    "code": "YA",
+    "name": "Yerraguntla Junction",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 144.9,
+    "latitude": 14.6341,
+    "longitude": 78.5367,
+    "junction": true,
+    "corridors": [
+      "C04"
+    ]
+  },
+  {
+    "code": "HX",
+    "name": "Kadapa Junction",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 184.2,
+    "latitude": 14.4754,
+    "longitude": 78.8258,
+    "junction": false,
+    "corridors": [
+      "C04"
+    ]
+  },
+  {
+    "code": "RJP",
+    "name": "Razampeta",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 235.0,
+    "latitude": 14.1956,
+    "longitude": 79.1554,
+    "junction": false,
+    "corridors": [
+      "C04"
+    ]
+  },
+  {
+    "code": "KOU",
+    "name": "Koduru",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 268.8,
+    "latitude": 13.9574,
+    "longitude": 79.3512,
+    "junction": false,
+    "corridors": [
+      "C04"
+    ]
+  },
+  {
+    "code": "RU",
+    "name": "Renigunta Junction",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 309.6,
+    "latitude": 13.6493,
+    "longitude": 79.5161,
+    "junction": true,
+    "corridors": [
+      "C04"
+    ]
+  },
+  {
+    "code": "TPTY",
+    "name": "Tirupati Main",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "km_mark": 319.4,
+    "latitude": 13.6288,
+    "longitude": 79.4192,
+    "junction": true,
+    "corridors": [
+      "C04"
+    ]
+  }
+]

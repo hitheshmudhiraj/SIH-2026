@@ -1,0 +1,31 @@
+resource_id,resource_type,department,base_division,max_hours_per_week,available_days,cost_per_hour,specialization
+RES-ENG-GANG-01,crew_gang,Engineering,Vijayawada,48,"Mon,Tue,Wed,Thu,Fri,Sat",1200,Heavy P-Way Track Maintenance Gang
+RES-ENG-GANG-02,crew_gang,Engineering,Vijayawada,48,"Mon,Tue,Wed,Thu,Fri,Sat",1200,Turnout & Deep Screening Gang
+RES-ENG-GANG-03,crew_gang,Engineering,Visakhapatnam,48,"Mon,Tue,Wed,Thu,Fri,Sat",1200,Coastal Track Welders & USFD Crew
+RES-ENG-GANG-04,crew_gang,Engineering,Guntur,48,"Mon,Tue,Wed,Thu,Fri,Sat",1150,Single-line Gauge & Level Maintenance Gang
+RES-ENG-GANG-05,crew_gang,Engineering,Guntakal,48,"Mon,Tue,Wed,Thu,Fri,Sat",1200,Grand Trunk Section P-Way Gang
+RES-ENG-MACH-01,machine,Engineering,Vijayawada,36,"Mon,Tue,Wed,Thu,Fri",4500,CSM 09-32 Continuous Action Tamping Machine
+RES-ENG-MACH-02,machine,Engineering,Visakhapatnam,36,"Mon,Tue,Wed,Thu,Fri",4800,UNIMAT 08-4S Points & Crossing Tamper
+RES-ENG-MACH-03,machine,Engineering,Guntakal,36,"Mon,Tue,Wed,Thu,Fri",4200,Ballast Regulating Machine (BRM)
+RES-ENG-MACH-04,machine,Engineering,Vijayawada,30,"Mon,Tue,Wed,Thu,Fri",5200,Dynamic Track Stabilizer (DTS)
+RES-ENG-MACH-05,machine,Engineering,Guntur,30,"Tue,Wed,Thu,Fri,Sat",4100,Plasser Quick Relaying System (PQRS)
+RES-TRD-GANG-01,crew_gang,Traction,Vijayawada,48,"Mon,Tue,Wed,Thu,Fri,Sat",1300,25kV OHE Catenary Gang BZA
+RES-TRD-GANG-02,crew_gang,Traction,Nellore,48,"Mon,Tue,Wed,Thu,Fri,Sat",1250,South Sector Sub-station & OHE Maintenance Gang
+RES-TRD-GANG-03,crew_gang,Traction,Visakhapatnam,48,"Mon,Tue,Wed,Thu,Fri,Sat",1300,Coastal Corrosion Mitigation TRD Team
+RES-TRD-GANG-04,crew_gang,Traction,Rajahmundry,48,"Mon,Tue,Wed,Thu,Fri,Sat",1250,Godavari Basin Electrification Team
+RES-TRD-GANG-05,crew_gang,Traction,Guntakal,48,"Mon,Tue,Wed,Thu,Fri,Sat",1250,Rayalaseema Power Isolation Crew
+RES-TRD-MACH-01,machine,Traction,Vijayawada,36,"Mon,Tue,Wed,Thu,Fri,Sat",3800,8-Wheeler Self-Propelled OHE Inspection Car (DETC)
+RES-TRD-MACH-02,machine,Traction,Visakhapatnam,36,"Mon,Tue,Wed,Thu,Fri,Sat",3800,Hydraulic Elevated Platform Tower Wagon #04
+RES-TRD-MACH-03,machine,Traction,Guntakal,36,"Mon,Tue,Wed,Thu,Fri,Sat",3600,Heavy Contact Wire Tensioning Winch Wagon
+RES-TRD-MACH-04,machine,Traction,Guntur,30,"Mon,Tue,Wed,Thu,Fri",3500,Light Inspection Tower Car #11
+RES-TRD-MACH-05,machine,Traction,Nellore,30,"Mon,Wed,Fri,Sat,Sun",3600,Power Block Fast Response Wagon
+RES-SNT-GANG-01,crew_gang,S&T,Vijayawada,48,"Mon,Tue,Wed,Thu,Fri,Sat",1100,Electronic Interlocking Specialized Gang
+RES-SNT-GANG-02,crew_gang,S&T,Ongole,48,"Mon,Tue,Wed,Thu,Fri,Sat",1100,Track Circuit & Axle Counter Squad
+RES-SNT-GANG-03,crew_gang,S&T,Visakhapatnam,48,"Mon,Tue,Wed,Thu,Fri,Sat",1150,Yard Point Machine Overhaul Gang
+RES-SNT-GANG-04,crew_gang,S&T,Guntur,48,"Mon,Tue,Wed,Thu,Fri,Sat",1050,Tokenless Block Instrument & Signal Crew
+RES-SNT-GANG-05,crew_gang,S&T,Kadapa,48,"Mon,Tue,Wed,Thu,Fri,Sat",1100,Level Crossing & Boom Barrier Emergency Crew
+RES-SNT-MACH-01,machine,S&T,Vijayawada,36,"Mon,Tue,Wed,Thu,Fri",2800,Optical Time Domain Reflectometer (OTDR) Van
+RES-SNT-MACH-02,machine,S&T,Visakhapatnam,36,"Mon,Tue,Wed,Thu,Fri",2900,Point Machine Torque & Stroke Calibration Vehicle
+RES-SNT-MACH-03,machine,S&T,Guntakal,30,"Mon,Tue,Wed,Thu,Fri",2500,Digital Track Circuit Analyzer Unit
+RES-SNT-MACH-04,machine,S&T,Rajahmundry,30,"Tue,Wed,Thu,Fri,Sat",2600,Underground Cable Fault Locator Mobile Unit
+RES-SNT-MACH-05,machine,S&T,Guntur,30,"Mon,Wed,Fri,Sat,Sun",2500,Axle Counter Multi-Channel Testing Rig

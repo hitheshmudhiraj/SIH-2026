@@ -156,7 +156,128 @@ The UI provides a persistent left sidebar with the 7 core sections, topped by th
 1. **Dashboard** (`/dashboard`): Executive overview, live KPI cards, quick-action pipeline.
 2. **Intake** (`/intake`): Ingestion feeds from TMS, SMMS, TDMS, COA, and BDMS, with explainable priority matrix.
 3. **Planning Board** (`/planning-board`): 24-hour visual corridor Gantt board with protected passenger train blackouts (Vande Bharat / Rajdhani Express).
-4. **Optimizer** (`/optimizer`): Pre-optimization clash analysis and Google OR-Tools CP-SAT solver execution.
-5. **Weekly/Monthly Plans** (`/plans`): Human-in-the-loop schedule modification with mandatory operational justification, and Sr. DOM sign-off.
+4. **Block Planning** (`/optimizer` or `/plans`): End-to-end multi-department CP-SAT scheduling (Weekly Gantt, Monthly 4-Week Calendar, Baseline vs Optimized Comparison, and JSON/CSV Export).
+5. **Optimization Plans** (`/plans`): Human-in-the-loop schedule modification with mandatory operational justification, and Sr. DOM sign-off.
 6. **KPIs** (`/kpis`): Measurable Before vs. After optimization analytics.
 7. **Audit Trail** (`/audit-trail`): Immutable cryptographic event log of all system and planner decisions.
+
+---
+
+## 🚆 End-to-End Block Planning Module (SIH26027)
+
+### 1. Synthetic Data Generation
+
+Generate realistic Indian Railways datasets across 32 sections, 160 trains, 420 maintenance tasks, 30 resource units, and precomputed 30-minute corridor availability:
+
+```bash
+# Run from repository root or backend directory
+python generate_synthetic_data.py
+```
+
+Generated files in `data/`:
+- `data/sections.csv`: 32 section topological records across 4 corridors (BZA, VSKP, GNT, GTL divisions).
+- `data/timetable_trains.csv`: 160 passenger & freight train schedules with days-of-run and direction.
+- `data/maintenance_tasks.csv`: 420 maintenance defects across Engineering, Traction (TRD), and S&T with severity, due dates, and crew requirements.
+- `data/resources.csv`: 30 gangs and specialized machines (CSM tamping machines, tower wagons, testing vans).
+- `data/existing_blocks_baseline.csv`: Uncoordinated historical departmental block requests.
+- `data/corridor_availability.csv`: Derived 30-minute slot occupancy and availability headroom scores.
+
+---
+
+### 2. Corridor Availability Engine
+
+Ingests COA train timetables, models 30-minute operational time slots (48 slots per 24-hour day), and computes capacity headroom:
+- **Headroom Formula**:
+  $$\text{AvailabilityScore} = 1.0 - \text{HeadwayOccupancyPenalty}$$
+  - 0 trains scheduled in slot: `1.0` (High Availability)
+  - 1 train scheduled: `0.8`
+  - 2 trains scheduled: `0.5` (Medium Availability)
+  - 3+ trains scheduled: `0.25` (Low Availability / Congested)
+  - Protected VIP Blackout (Vande Bharat / Rajdhani with priority score $\ge 9$): penalized by 0.3.
+
+---
+
+### 3. Explainable Maintenance Prioritization Formula
+
+Computes transparent priority scores ($0$ to $100$) for every maintenance task:
+$$\text{PriorityScore} = W_{\text{sev}} \cdot S_{\text{sev}} + W_{\text{overdue}} \cdot S_{\text{overdue}} + W_{\text{asset}} \cdot S_{\text{asset}} + W_{\text{sec}} \cdot S_{\text{sec}}$$
+
+- **Severity Factor (max 35 pts)**: Critical = 35, High = 25, Medium = 15, Low = 5.
+- **Overdue Factor (max 25 pts)**: $\min(25, 10 + (\text{overdue\_days} \times 1.5))$.
+- **Asset Criticality (max 20 pts)**: Track segment mainline = 20, Point machine = 20, OHE span = 20, Signals = 16, Cables = 12.
+- **Section Operating Risk (max 20 pts)**: Trunk 130 km/h routes = 17 pts + 3 pts double track bonus.
+
+---
+
+### 4. Google OR-Tools CP-SAT Block Optimization Planner
+
+Mathematical formulation for multi-department block planning:
+- **Decision Variables**:
+  - $x_{t, b} \in \{0, 1\}$: Task $t$ assigned to candidate block window $b$.
+  - $y_b \in \{0, 1\}$: Candidate block window $b$ activated (track blocked).
+  - $\text{dept\_active}_{b, d} \in \{0, 1\}$: Department $d$ has active tasks in block $b$.
+  - $\text{is\_joint}_b \in \{0, 1\}$: Block $b$ bundles tasks from $\ge 2$ departments.
+- **Hard Constraints**:
+  - Task scheduled at most once: $\sum_b x_{t, b} \le 1$.
+  - Block activation linking: $x_{t, b} \le y_b$.
+  - Maximum 1 block per section per day (prevents repeated closures): $\sum_w y_{s, d, w} \le 1$.
+  - Task duration fits block window duration.
+  - Multi-department co-location linking: $\text{is\_joint}_b = 1 \iff \sum_d \text{dept\_active}_{b, d} \ge 2$.
+- **Multi-Criteria Objective**:
+  $$\max \sum_{t, b} \text{priority}(t) \cdot x_{t, b} + 250 \sum_b \text{is\_joint}_b + \sum_b y_b (\text{avail}_b - 40) - 80 \sum_b y_b$$
+
+---
+
+### 5. REST API Endpoints & Example Requests
+
+#### a. Get Sections
+```bash
+curl -X GET "http://localhost:8000/api/sections"
+```
+
+#### b. Get Prioritized Maintenance Tasks
+```bash
+curl -X GET "http://localhost:8000/api/maintenance-tasks?department=Engineering&status=open"
+```
+
+#### c. Get Corridor Availability Profile (30-min slots)
+```bash
+curl -X GET "http://localhost:8000/api/corridor-availability?section_id=SEC_C01_01&date=2026-09-08"
+```
+
+#### d. Generate Coordinated Weekly Block Plan
+```bash
+curl -X POST "http://localhost:8000/api/block-plan/generate-weekly" \
+     -H "Content-Type: application/json" \
+     -d '{"start_date": "2026-09-08", "end_date": "2026-09-14"}'
+```
+
+#### e. Generate 4-Week Monthly Calendar
+```bash
+curl -X POST "http://localhost:8000/api/block-plan/generate-monthly" \
+     -H "Content-Type: application/json" \
+     -d '{"start_date": "2026-09-08"}'
+```
+
+#### f. Compare Baseline vs. Optimized Plan
+```bash
+curl -X GET "http://localhost:8000/api/block-plan/compare?start_date=2026-09-08&end_date=2026-09-14"
+```
+
+---
+
+### 6. Automated Verification Tests
+
+Run the complete block planning automated test suite:
+```bash
+cd backend
+python test_block_planning.py
+```
+Outputs:
+- `test_01_corridor_availability`: 48 30-min slots verified.
+- `test_02_task_prioritizer`: 4-factor scoring verified.
+- `test_03_weekly_block_plan`: CP-SAT multi-department scheduling verified.
+- `test_04_monthly_block_plan`: 4-week calendar rotation verified.
+- `test_05_comparator`: Quantitative before vs after verified.
+- `test_06_rest_endpoints`: All 6 REST APIs verified (200 OK).
+

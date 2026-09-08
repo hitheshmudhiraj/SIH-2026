@@ -1,9 +1,7 @@
-import React from 'react';
-
-export default function DashboardView() {
+export default function DashboardView({ stats, currentPlan, onRunOptimizer, setActiveTab }) {
   return (
-    <div className="w-full h-full min-h-[70vh]">
-      {/* Dashboard cleared */}
+    <div className="space-y-6">
+      {/* Your content goes here */}
     </div>
   );
 }

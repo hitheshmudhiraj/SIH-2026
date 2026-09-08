@@ -1,16 +1,87 @@
 @import "tailwindcss";
 
+/* ============================================================
+   TRAIN BLOCK SYSTEM - LIGHT THEME GOVERNMENT/RAILWAY DESIGN SYSTEM
+   Professional Indian Railways Enterprise Application
+   ============================================================ */
+
 :root {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color-scheme: light;
+
+  /* ===== BACKGROUND COLORS ===== */
+  --background: #F5F7FA;              /* Primary page background */
+  --surface: #FFFFFF;                 /* Main surfaces (cards, panels) */
+  --surface-secondary: #F8FAFC;       /* Secondary surfaces */
+  --surface-hover: #F1F5F9;           /* Hover state for surfaces */
+
+  /* ===== BORDER COLORS ===== */
+  --border: #E2E8F0;                  /* Primary borders */
+  --border-light: #F1F5F9;            /* Lighter borders */
+  --border-dark: #CBD5E1;             /* Darker borders for emphasis */
+
+  /* ===== TEXT COLORS ===== */
+  --text-primary: #172033;            /* Primary text */
+  --text-secondary: #5B6575;          /* Secondary text */
+  --text-muted: #7A8494;              /* Muted/tertiary text */
+  --text-white: #FFFFFF;              /* White text on dark backgrounds */
+
+  /* ===== PRIMARY BRAND COLORS (Railway Blue) ===== */
+  --primary: #1565C0;                 /* Deep Railway Blue */
+  --primary-hover: #0D47A1;           /* Primary hover state */
+  --primary-light: #EFF6FF;           /* Light blue background */
+  --primary-border: #BFDBFE;          /* Primary border accent */
+
+  /* ===== SECONDARY COLORS ===== */
+  --secondary: #1976D2;               /* Professional Blue */
+  --accent: #0F766E;                  /* Operational Teal */
+
+  /* ===== STATUS COLORS ===== */
+  --success: #15803D;
+  --success-bg: #F0FDF4;
+  --success-border: #BBF7D0;
+  --success-text: #166534;
+
+  --warning: #B45309;
+  --warning-bg: #FFFBEB;
+  --warning-border: #FED7AA;
+  --warning-text: #92400E;
+
+  --danger: #B91C1C;
+  --danger-bg: #FEF2F2;
+  --danger-border: #FECACA;
+  --danger-text: #991B1B;
+
+  --info: #0369A1;
+  --info-bg: #F0F9FF;
+  --info-border: #BAE6FD;
+  --info-text: #075985;
+
+  /* ===== PRIORITY COLORS ===== */
+  --priority-low: #64748B;
+  --priority-medium: #CA8A04;
+  --priority-high: #EA580C;
+  --priority-critical: #DC2626;
+
+  /* ===== SHADOWS ===== */
+  --shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 8px 24px rgba(15, 23, 42, 0.10);
+
+  /* ===== SPACING & SIZING ===== */
+  --radius: 8px;
+  --radius-sm: 6px;
+  --radius-lg: 12px;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #0b1120;
-  color: #f8fafc;
+  background-color: var(--background);
+  color: var(--text-primary);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -19,18 +90,31 @@ body {
   flex-direction: column;
 }
 
-/* Custom Scrollbars */
+/* ===== CUSTOM SCROLLBARS (Light Theme) ===== */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: var(--surface-secondary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 4px;
+  background: #CBD5E1;
+  border-radius: 5px;
+  border: 2px solid var(--surface-secondary);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #94A3B8;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+/* ===== FOCUS STYLES ===== */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }

@@ -87,3 +87,66 @@ export async function resetDemoData() {
   });
   return res.json();
 }
+
+// SIH26027 Block Planning APIs
+export async function fetchSections() {
+  const res = await fetch(`${BASE_URL}/sections`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function fetchMaintenanceTasks(params = {}) {
+  const query = new URLSearchParams(params).toString();
+  const res = await fetch(`${BASE_URL}/maintenance-tasks?${query}`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function fetchCorridorAvailability(sectionId, date) {
+  const q = date ? `?section_id=${sectionId}&date=${date}` : `?section_id=${sectionId}`;
+  const res = await fetch(`${BASE_URL}/corridor-availability${q}`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function generateWeeklyBlockPlan(startDate, endDate) {
+  const res = await fetch(`${BASE_URL}/block-plan/generate-weekly`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ start_date: startDate, end_date: endDate })
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function generateMonthlyBlockPlan(startDate, endDate) {
+  const res = await fetch(`${BASE_URL}/block-plan/generate-monthly`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ start_date: startDate, end_date: endDate })
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function fetchBlockPlanComparison(startDate, endDate) {
+  const params = new URLSearchParams();
+  if (startDate) params.append('start_date', startDate);
+  if (endDate) params.append('end_date', endDate);
+  const res = await fetch(`${BASE_URL}/block-plan/compare?${params.toString()}`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function fetchLatestWeeklyPlan() {
+  const res = await fetch(`${BASE_URL}/block-plan/latest-weekly`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function fetchLatestMonthlyPlan() {
+  const res = await fetch(`${BASE_URL}/block-plan/latest-monthly`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+

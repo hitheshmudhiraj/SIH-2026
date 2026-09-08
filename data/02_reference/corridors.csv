@@ -1,0 +1,5 @@
+corridor_id,code,name,division,zone,length_km,track_type,gmt_annual,speed_limit_kmph,stations_count
+C01,BZA-GDR,Vijayawada - Gudur Main Line,Vijayawada,SCoR,293.5,DOUBLE_ELECTRIFIED,48.5,130,9
+C02,VSKP-BZA,Visakhapatnam - Vijayawada Main Line,Visakhapatnam & Vijayawada,SCoR,350.2,DOUBLE_ELECTRIFIED,52.0,130,10
+C03,GNT-NDL,Guntur - Nandyal Corridor,Guntur,SCoR,258.0,SINGLE_ELECTRIFIED,22.4,110,7
+C04,GTL-RU,Guntakal - Renigunta Grand Trunk Route,Guntakal,SCoR,319.4,DOUBLE_ELECTRIFIED,44.0,130,10
