@@ -1,0 +1,1105 @@
+[
+  {
+    "conflict_id": "CONF-CND-38694952",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-010.50-0001",
+    "corridor_id": "C01",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C01-SIG-0540",
+        "reported_value": 75.0,
+        "report_timestamp": "2020-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-OHE-0216",
+        "reported_value": 84.0,
+        "report_timestamp": "2014-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 75.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (75.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-LOC-F6414509",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-124.35-0019",
+    "corridor_id": "C01",
+    "field_in_conflict": "km",
+    "field_type": "location mismatch",
+    "tolerance_threshold": "50m (0.05 km)",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C01-TRK-1042",
+        "reported_value": 124.4,
+        "report_timestamp": "2018-03-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-OHE-0201",
+        "reported_value": 124.3,
+        "report_timestamp": "2016-05-18"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 124.4,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (124.4 km) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-OTH-2F341EE0",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-124.35-0019",
+    "corridor_id": "C01",
+    "field_in_conflict": "status",
+    "field_type": "other",
+    "tolerance_threshold": "exact match",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C01-TRK-1042",
+        "reported_value": "DEFECT_LOGGED",
+        "report_timestamp": "2018-03-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-OHE-0201",
+        "reported_value": "MAINTENANCE_DUE",
+        "report_timestamp": "2016-05-18"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": "DEFECT_LOGGED",
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional status pending human review. Selected TMS (DEFECT_LOGGED)."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-6B8F1F69",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-124.60-0020",
+    "corridor_id": "C01",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C01-PNT-1043",
+        "reported_value": 64.0,
+        "report_timestamp": "2019-07-22"
+      },
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C01-SIG-0501",
+        "reported_value": 60.0,
+        "report_timestamp": "2019-02-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-ISO-0202",
+        "reported_value": 56.0,
+        "report_timestamp": "2017-09-12"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 64.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (64.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-OTH-9CC3BFD1",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-124.60-0020",
+    "corridor_id": "C01",
+    "field_in_conflict": "status",
+    "field_type": "other",
+    "tolerance_threshold": "exact match",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C01-PNT-1043",
+        "reported_value": "MAINTENANCE_DUE",
+        "report_timestamp": "2019-07-22"
+      },
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C01-SIG-0501",
+        "reported_value": "MAINTENANCE_DUE",
+        "report_timestamp": "2019-02-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-ISO-0202",
+        "reported_value": "DEFECT_LOGGED",
+        "report_timestamp": "2017-09-12"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": "MAINTENANCE_DUE",
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional status pending human review. Selected TMS (MAINTENANCE_DUE)."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-C118915C",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-124.80-0021",
+    "corridor_id": "C01",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C01-SEJ-1044",
+        "reported_value": 62.0,
+        "report_timestamp": "2020-01-10"
+      },
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C01-AXC-0502",
+        "reported_value": 54.0,
+        "report_timestamp": "2018-11-25"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 62.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (62.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-OTH-B6C388FF",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-124.80-0021",
+    "corridor_id": "C01",
+    "field_in_conflict": "status",
+    "field_type": "other",
+    "tolerance_threshold": "exact match",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C01-SEJ-1044",
+        "reported_value": "MAINTENANCE_DUE",
+        "report_timestamp": "2020-01-10"
+      },
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C01-AXC-0502",
+        "reported_value": "DEFECT_LOGGED",
+        "report_timestamp": "2018-11-25"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": "MAINTENANCE_DUE",
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional status pending human review. Selected TMS (MAINTENANCE_DUE)."
+    }
+  },
+  {
+    "conflict_id": "CONF-LOC-65243322",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-136.55-0023",
+    "corridor_id": "C01",
+    "field_in_conflict": "km",
+    "field_type": "location mismatch",
+    "tolerance_threshold": "50m (0.05 km)",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C01-SIG-0508",
+        "reported_value": 136.5,
+        "report_timestamp": "2020-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-OHE-0220",
+        "reported_value": 136.6,
+        "report_timestamp": "2018-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 136.5,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (136.5 km) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-A9BAB0EC",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-136.55-0023",
+    "corridor_id": "C01",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C01-SIG-0508",
+        "reported_value": 78.0,
+        "report_timestamp": "2020-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-OHE-0220",
+        "reported_value": 88.0,
+        "report_timestamp": "2018-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 78.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (78.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-OTH-21B56208",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-136.55-0023",
+    "corridor_id": "C01",
+    "field_in_conflict": "status",
+    "field_type": "other",
+    "tolerance_threshold": "exact match",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C01-SIG-0508",
+        "reported_value": "MAINTENANCE_DUE",
+        "report_timestamp": "2020-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-OHE-0220",
+        "reported_value": "OPERATIONAL",
+        "report_timestamp": "2018-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": "MAINTENANCE_DUE",
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional status pending human review. Selected SMMS (MAINTENANCE_DUE)."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-D17B9418",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-168.80-0028",
+    "corridor_id": "C01",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C01-JOINT-0111",
+        "reported_value": 71.0,
+        "report_timestamp": "2017-08-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-OHE-0212",
+        "reported_value": 80.0,
+        "report_timestamp": "2018-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 71.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (71.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-8376110F",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C01-290.80-0041",
+    "corridor_id": "C01",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C01-JOINT-0117",
+        "reported_value": 77.0,
+        "report_timestamp": "2014-06-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C01-OHE-0224",
+        "reported_value": 92.0,
+        "report_timestamp": "2014-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 77.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (77.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-LOC-E80623A4",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C02-020.95-0047",
+    "corridor_id": "C02",
+    "field_in_conflict": "km",
+    "field_type": "location mismatch",
+    "tolerance_threshold": "50m (0.05 km)",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C02-SIG-0521",
+        "reported_value": 21.0,
+        "report_timestamp": "2021-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C02-OHE-0241",
+        "reported_value": 20.9,
+        "report_timestamp": "2015-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 21.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (21.0 km) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-AFDF97F5",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C02-020.95-0047",
+    "corridor_id": "C02",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C02-SIG-0521",
+        "reported_value": 91.0,
+        "report_timestamp": "2021-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C02-OHE-0241",
+        "reported_value": 71.0,
+        "report_timestamp": "2015-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 91.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (91.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-LOC-013388E4",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C02-150.45-0064",
+    "corridor_id": "C02",
+    "field_in_conflict": "km",
+    "field_type": "location mismatch",
+    "tolerance_threshold": "50m (0.05 km)",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C02-TRK-2051",
+        "reported_value": 150.4,
+        "report_timestamp": "2017-11-05"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C02-CAT-0301",
+        "reported_value": 150.5,
+        "report_timestamp": "2018-04-10"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 150.4,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (150.4 km) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-163CED6D",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C02-150.45-0064",
+    "corridor_id": "C02",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C02-TRK-2051",
+        "reported_value": 55.0,
+        "report_timestamp": "2017-11-05"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C02-CAT-0301",
+        "reported_value": 64.0,
+        "report_timestamp": "2018-04-10"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 55.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (55.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-OTH-BC8C731E",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C02-150.45-0064",
+    "corridor_id": "C02",
+    "field_in_conflict": "status",
+    "field_type": "other",
+    "tolerance_threshold": "exact match",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C02-TRK-2051",
+        "reported_value": "DEFECT_LOGGED",
+        "report_timestamp": "2017-11-05"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C02-CAT-0301",
+        "reported_value": "MAINTENANCE_DUE",
+        "report_timestamp": "2018-04-10"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": "DEFECT_LOGGED",
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional status pending human review. Selected TMS (DEFECT_LOGGED)."
+    }
+  },
+  {
+    "conflict_id": "CONF-LOC-E6F8617A",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-013.55-0096",
+    "corridor_id": "C03",
+    "field_in_conflict": "km",
+    "field_type": "location mismatch",
+    "tolerance_threshold": "50m (0.05 km)",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C03-SIG-0518",
+        "reported_value": 13.5,
+        "report_timestamp": "2022-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0238",
+        "reported_value": 13.6,
+        "report_timestamp": "20110-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 13.5,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (13.5 km) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-865CE3D8",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-013.55-0096",
+    "corridor_id": "C03",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C03-SIG-0518",
+        "reported_value": 88.0,
+        "report_timestamp": "2022-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0238",
+        "reported_value": 68.0,
+        "report_timestamp": "20110-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 88.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (88.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-EE2D1C27",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-048.80-0100",
+    "corridor_id": "C03",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C03-JOINT-0141",
+        "reported_value": 56.0,
+        "report_timestamp": "20110-06-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0218",
+        "reported_value": 86.0,
+        "report_timestamp": "2016-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 56.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (56.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-8949B946",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-085.80-0104",
+    "corridor_id": "C03",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C03-JOINT-0143",
+        "reported_value": 58.0,
+        "report_timestamp": "20112-08-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0254",
+        "reported_value": 84.0,
+        "report_timestamp": "20110-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 58.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (58.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-852549F3",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-122.80-0109",
+    "corridor_id": "C03",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C03-TURNOUT-0145",
+        "reported_value": 60.0,
+        "report_timestamp": "2015-02-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0206",
+        "reported_value": 74.0,
+        "report_timestamp": "20110-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 60.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (60.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-653B05DF",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-147.80-0114",
+    "corridor_id": "C03",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C03-JOINT-0147",
+        "reported_value": 62.0,
+        "report_timestamp": "2017-04-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0242",
+        "reported_value": 72.0,
+        "report_timestamp": "2016-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 62.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (62.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-FF5366CB",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-206.00-0118",
+    "corridor_id": "C03",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C03-SIG-0530",
+        "reported_value": 65.0,
+        "report_timestamp": "2022-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0222",
+        "reported_value": 90.0,
+        "report_timestamp": "20110-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 65.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (65.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-OTH-3B3BC2BE",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-206.00-0118",
+    "corridor_id": "C03",
+    "field_in_conflict": "status",
+    "field_type": "other",
+    "tolerance_threshold": "exact match",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C03-SIG-0530",
+        "reported_value": "OPERATIONAL",
+        "report_timestamp": "2022-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0222",
+        "reported_value": "MAINTENANCE_DUE",
+        "report_timestamp": "20110-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": "OPERATIONAL",
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional status pending human review. Selected SMMS (OPERATIONAL)."
+    }
+  },
+  {
+    "conflict_id": "CONF-LOC-3A11E5FA",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-207.55-0120",
+    "corridor_id": "C03",
+    "field_in_conflict": "km",
+    "field_type": "location mismatch",
+    "tolerance_threshold": "50m (0.05 km)",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C03-SIG-0558",
+        "reported_value": 207.5,
+        "report_timestamp": "2022-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0250",
+        "reported_value": 207.6,
+        "report_timestamp": "2016-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 207.5,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (207.5 km) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-C9028C1B",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-207.55-0120",
+    "corridor_id": "C03",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C03-SIG-0558",
+        "reported_value": 93.0,
+        "report_timestamp": "2022-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0250",
+        "reported_value": 80.0,
+        "report_timestamp": "2016-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 93.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (93.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-098D8C7C",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-255.00-0122",
+    "corridor_id": "C03",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C03-SIG-0510",
+        "reported_value": 80.0,
+        "report_timestamp": "2022-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0258",
+        "reported_value": 88.0,
+        "report_timestamp": "2016-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 80.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (80.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-OTH-97AB3A24",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-255.00-0122",
+    "corridor_id": "C03",
+    "field_in_conflict": "status",
+    "field_type": "other",
+    "tolerance_threshold": "exact match",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C03-SIG-0510",
+        "reported_value": "OPERATIONAL",
+        "report_timestamp": "2022-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0258",
+        "reported_value": "MAINTENANCE_DUE",
+        "report_timestamp": "2016-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": "OPERATIONAL",
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional status pending human review. Selected SMMS (OPERATIONAL)."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-C7342156",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C03-255.80-0123",
+    "corridor_id": "C03",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "Engineering",
+        "source_system": "TMS",
+        "raw_asset_id": "TMS-C03-TURNOUT-0151",
+        "reported_value": 66.0,
+        "report_timestamp": "20111-08-15"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C03-OHE-0230",
+        "reported_value": 60.0,
+        "report_timestamp": "20110-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "Engineering",
+      "winning_source": "TMS",
+      "resolved_value": 66.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected TMS value (66.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-LOC-8C5F3B98",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C04-270.45-0164",
+    "corridor_id": "C04",
+    "field_in_conflict": "km",
+    "field_type": "location mismatch",
+    "tolerance_threshold": "50m (0.05 km)",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C04-SIG-0511",
+        "reported_value": 270.5,
+        "report_timestamp": "2023-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C04-OHE-0223",
+        "reported_value": 270.4,
+        "report_timestamp": "20111-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 270.5,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (270.5 km) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-17EA2045",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C04-270.45-0164",
+    "corridor_id": "C04",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C04-SIG-0511",
+        "reported_value": 81.0,
+        "report_timestamp": "2023-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C04-OHE-0223",
+        "reported_value": 91.0,
+        "report_timestamp": "20111-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 81.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (81.0) downstream."
+    }
+  },
+  {
+    "conflict_id": "CONF-CND-54963311",
+    "detected_at": "2026-09-09T09:12:44.940865",
+    "asset_id": "CAN-AST-C04-313.00-0171",
+    "corridor_id": "C04",
+    "field_in_conflict": "condition_score",
+    "field_type": "condition mismatch",
+    "tolerance_threshold": "5.0 points",
+    "department_reports": [
+      {
+        "department": "S&T",
+        "source_system": "SMMS",
+        "raw_asset_id": "SMMS-C04-SIG-0539",
+        "reported_value": 74.0,
+        "report_timestamp": "2023-03-10"
+      },
+      {
+        "department": "Traction",
+        "source_system": "TDMS",
+        "raw_asset_id": "TDMS-C04-OHE-0215",
+        "reported_value": 83.0,
+        "report_timestamp": "20111-10-20"
+      }
+    ],
+    "provisional_resolution": {
+      "status": "PROVISIONAL_PENDING_HUMAN_REVIEW",
+      "winning_department": "S&T",
+      "winning_source": "SMMS",
+      "resolved_value": 74.0,
+      "resolution_rule": "most_recently_synced_source_wins",
+      "note": "Provisional resolution pending human review. Selected SMMS value (74.0) downstream."
+    }
+  }
+]

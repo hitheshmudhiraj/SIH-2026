@@ -89,6 +89,14 @@ class FileRepository:
     def get_raw_bdms_requests(self) -> List[Dict[str, Any]]:
         return self._read_csv(os.path.join(self.raw_dir, "BDMS", "bdms_block_requests.csv"))
 
+    def add_raw_bdms_request(self, request_data: Dict[str, Any]) -> str:
+        with file_lock:
+            file_path = os.path.join(self.raw_dir, "BDMS", "bdms_block_requests.csv")
+            existing = self._read_csv(file_path)
+            existing.append(request_data)
+            self._write_csv(file_path, existing)
+            return request_data.get("block_request_id", "")
+
     # ---------------- REFERENCE DATA READERS ----------------
     def get_stations(self) -> List[Dict[str, Any]]:
         return self._read_json(os.path.join(self.ref_dir, "stations.json"), default=[])
@@ -178,6 +186,15 @@ class FileRepository:
         p = os.path.join(self.unified_dir, "integration_sync_result.json")
         return self._read_json(p, default={})
 
+    def save_asset_master_registry(self, registry: List[Dict[str, Any]]):
+        with file_lock:
+            p = os.path.join(self.unified_dir, "asset_master_registry.json")
+            self._write_json(p, registry)
+
+    def get_asset_master_registry(self) -> List[Dict[str, Any]]:
+        p = os.path.join(self.unified_dir, "asset_master_registry.json")
+        return self._read_json(p, default=[])
+
     def save_optimization_sample(self, result: Dict[str, Any]):
         with file_lock:
             p = os.path.join(self.unified_dir, "optimization_result_sample.json")
@@ -186,6 +203,33 @@ class FileRepository:
     def get_optimization_sample(self) -> Dict[str, Any]:
         p = os.path.join(self.unified_dir, "optimization_result_sample.json")
         return self._read_json(p, default={})
+
+    def save_dedup_review_queue(self, queue: List[Dict[str, Any]]):
+        with file_lock:
+            p = os.path.join(self.unified_dir, "dedup_review_queue.json")
+            self._write_json(p, queue)
+
+    def get_dedup_review_queue(self) -> List[Dict[str, Any]]:
+        p = os.path.join(self.unified_dir, "dedup_review_queue.json")
+        return self._read_json(p, default=[])
+
+    def save_conflict_log(self, conflicts: List[Dict[str, Any]]):
+        with file_lock:
+            p = os.path.join(self.unified_dir, "conflict_log.json")
+            self._write_json(p, conflicts)
+
+    def get_conflict_log(self) -> List[Dict[str, Any]]:
+        p = os.path.join(self.unified_dir, "conflict_log.json")
+        return self._read_json(p, default=[])
+
+    def save_invalid_records(self, records: List[Dict[str, Any]]):
+        with file_lock:
+            p = os.path.join(self.unified_dir, "invalid_records.json")
+            self._write_json(p, records)
+
+    def get_invalid_records(self) -> List[Dict[str, Any]]:
+        p = os.path.join(self.unified_dir, "invalid_records.json")
+        return self._read_json(p, default=[])
 
     # ---------------- OUTPUTS: AUDIT LOGS ----------------
     def log_audit_event(self, event_type: str, action: str, details: Dict[str, Any], user: str = "System"):

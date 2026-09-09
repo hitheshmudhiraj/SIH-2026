@@ -50,6 +50,25 @@ export async function fetchDataQualityReport() {
   return request('/api/integration/quality');
 }
 
+export async function fetchInvalidRecordsQueue(params = {}) {
+  const q = new URLSearchParams();
+  if (params.status && params.status !== 'ALL') q.append('status', params.status);
+  if (params.department && params.department !== 'ALL') q.append('department', params.department);
+  if (params.error_type && params.error_type !== 'ALL') q.append('error_type', params.error_type);
+  if (params.is_defaulted !== undefined && params.is_defaulted !== '' && params.is_defaulted !== 'ALL') {
+    q.append('is_defaulted', params.is_defaulted);
+  }
+  const qs = q.toString();
+  return request(`/api/integration/review-queue${qs ? `?${qs}` : ''}`);
+}
+
+export async function submitReviewDecision(recordId, payload) {
+  return request(`/api/integration/review-queue/${recordId}/decision`, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+}
+
 // 3. Raw & Unified Data Feeds
 export async function fetchAllAssets(source = '', corridor = '') {
   const params = new URLSearchParams();
@@ -59,10 +78,19 @@ export async function fetchAllAssets(source = '', corridor = '') {
   return request(`/api/assets${q ? `?${q}` : ''}`);
 }
 
-export async function fetchMaintenanceJobs(corridor = '', department = '') {
+export async function fetchMaintenanceJobs(options = {}) {
   const params = new URLSearchParams();
-  if (corridor) params.append('corridor', corridor);
-  if (department) params.append('department', department);
+  if (typeof options === 'string') {
+    if (options) params.append('corridor', options);
+  } else {
+    if (options.corridor) params.append('corridor', options.corridor);
+    if (options.department) params.append('department', options.department);
+    if (options.departments) {
+      params.append('departments', Array.isArray(options.departments) ? options.departments.join(',') : options.departments);
+    }
+    if (options.startDate) params.append('start_date', options.startDate);
+    if (options.endDate) params.append('end_date', options.endDate);
+  }
   const q = params.toString();
   return request(`/api/maintenance${q ? `?${q}` : ''}`);
 }
@@ -76,8 +104,17 @@ export async function fetchBlockRequests(corridor = '') {
 }
 
 // 4. Corridor Topology & AP Map
-export async function fetchCorridorMapData() {
-  return request('/api/corridors/ap-map');
+export async function fetchCorridorMapData(options = {}) {
+  const params = new URLSearchParams();
+  if (options.corridor) params.append('corridor', options.corridor);
+  if (options.department) params.append('department', options.department);
+  if (options.departments) {
+    params.append('departments', Array.isArray(options.departments) ? options.departments.join(',') : options.departments);
+  }
+  if (options.startDate) params.append('start_date', options.startDate);
+  if (options.endDate) params.append('end_date', options.endDate);
+  const q = params.toString();
+  return request(`/api/corridors/ap-map${q ? `?${q}` : ''}`);
 }
 
 // 5. Maintenance Opportunities
@@ -180,3 +217,20 @@ export const fetchBlockPlanComparison = async (startDate, endDate) => {
 export const fetchLatestWeeklyPlan = async () => request('/api/block-plan/latest-weekly');
 export const fetchLatestMonthlyPlan = async () => request('/api/block-plan/latest-monthly');
 
+// BDMS Pre-Submission Conflict & Overlap Check
+export const checkBlockOverlap = async ({ corridor_id, km, date_start, date_end, department }) => {
+  const params = new URLSearchParams();
+  if (corridor_id) params.append('corridor_id', corridor_id);
+  if (km !== undefined && km !== null) params.append('km', km);
+  if (date_start) params.append('date_start', date_start);
+  if (date_end) params.append('date_end', date_end);
+  if (department) params.append('department', department);
+  return request(`/api/blocks/check-overlap?${params.toString()}`);
+};
+
+export const submitBlockRequest = async (payload) => {
+  return request('/api/blocks/submit-request', {
+    method: 'POST',
+    body: JSON.stringify(payload)
+  });
+};

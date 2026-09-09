@@ -1,44 +1,194 @@
 {
-  "last_sync_timestamp": "2026-09-08T18:48:13.182744",
-  "records_received": 140,
-  "records_normalized": 140,
-  "duplicates_detected": 0,
-  "invalid_records_count": 1,
-  "cross_department_matches": 204,
-  "data_quality_score": 99.7,
+  "last_sync_timestamp": "2026-09-09T09:12:44.940865",
+  "total_records_in": 144,
+  "exact_duplicates_resolved": 1,
+  "probable_duplicates_flagged": 6,
+  "net_unique_records_out": 143,
+  "exact_duplicates_dropped": [
+    {
+      "dropped_job_id": "TDMS-JOB-247",
+      "retained_job_id": "TDMS-JOB-246",
+      "canonical_asset_id": "CAN-AST-C01-124.35-0019",
+      "job_type": "ISOLATOR_SWITCH_OVERHAUL",
+      "source_system_dropped": "TDMS",
+      "source_system_retained": "TDMS",
+      "dropped_due_date": "2026-09-18",
+      "retained_due_date": "2026-09-17",
+      "date_difference_days": 1,
+      "reason": "Exact match on canonical asset 'CAN-AST-C01-124.35-0019' and job_type 'ISOLATOR_SWITCH_OVERHAUL' within 1-day window (1d diff). Retained TDMS over TDMS based on source recency priority ranking."
+    }
+  ],
+  "probable_duplicates_review_count": 6,
+  "records_received": 145,
+  "records_normalized": 143,
+  "duplicates_detected": 1,
+  "invalid_records_count": 2,
+  "cross_department_matches": 227,
+  "data_quality_score": 96.5,
+  "asset_registry_summary": {
+    "total_canonical_assets": 173,
+    "multi_department_merged": 23,
+    "single_department_only": 150,
+    "department_overlap_breakdown": {
+      "S&T + Traction": 10,
+      "Engineering + Traction": 10,
+      "Engineering + S&T + Traction": 1,
+      "Engineering + S&T": 2
+    },
+    "corridor_distribution": {
+      "C01": 44,
+      "C02": 48,
+      "C03": 33,
+      "C04": 48
+    },
+    "total_raw_assets_reconciled": 197
+  },
+  "conflict_summary": {
+    "total_conflicts_detected": 33,
+    "breakdown_by_field_type": {
+      "location_mismatch": 7,
+      "condition_mismatch": 19,
+      "other": 7
+    },
+    "breakdown_by_department_pair": {
+      "S&T vs Traction": 14,
+      "Engineering vs Traction": 11,
+      "Engineering vs S&T": 1
+    },
+    "provisional_resolutions_count": 33,
+    "status": "PROVISIONAL_RESOLUTIONS_APPLIED"
+  },
+  "total_conflicts_detected": 33,
+  "conflicts_logged_count": 33,
   "breakdown": {
     "tms_records": 55,
-    "tdms_records": 45,
-    "smms_records": 40,
+    "tdms_records": 49,
+    "smms_records": 41,
     "coa_train_movements": 75,
-    "bdms_block_requests": 50
+    "bdms_block_requests": 56
   },
   "invalid_records": [
     {
-      "job_id": "TMS-JOB-155",
-      "source_system": "TMS",
-      "issues": [
-        "Unknown or missing asset_id"
-      ],
-      "raw_data": {
-        "job_id": "TMS-JOB-155",
-        "asset_id": "TMS-C01-TRK-UNKNOWN",
-        "department": "Civil_Engg",
+      "id": "INV-REC-TDMS-JOB-249",
+      "job_id": "TDMS-JOB-249",
+      "source_system": "TDMS",
+      "department": "Traction",
+      "corridor_id": "C01",
+      "station": "OGL",
+      "km": 124.9,
+      "job_type": "OVERHEAD_FEEDER_MAINTENANCE",
+      "status": "PENDING_REVIEW",
+      "detected_at": "2026-09-08T22:08:41.639104",
+      "raw_source": {
+        "job_id": "TDMS-JOB-249",
+        "asset_id": "TDMS-UNKNOWN-005",
+        "department": "Traction",
         "corridor_id": "C01",
         "station": "OGL",
         "km": "124.9",
-        "job_type": "EMERGENCY_BOLT_REPLACEMENT",
-        "severity": "high",
-        "priority_score": "75",
-        "due_date": "2026-09-09",
-        "estimated_duration_min": "45",
-        "crew_required": "CREW-ENG-BZA-02",
-        "equipment_required": "TORQUE_WRENCH",
+        "job_type": "OVERHEAD_FEEDER_MAINTENANCE",
+        "severity": "MEDIUM",
+        "priority_score": "70",
+        "due_date": "2026-09-20",
+        "estimated_duration_min": "",
+        "crew_required": "CREW-TRD-BZA-01",
+        "equipment_required": "TOWER_WAGON_RU",
         "block_required": "YES",
         "status": "PENDING_BLOCK",
-        "source_system": "TMS",
-        "_source": "TMS"
-      }
+        "source_system": "TDMS",
+        "_source": "TDMS"
+      },
+      "validation_errors": [
+        {
+          "field": "asset_id",
+          "raw_value": "TDMS-UNKNOWN-005",
+          "message": "Unknown or missing asset_id (requires canonical asset mapping)"
+        }
+      ],
+      "has_validation_errors": true,
+      "is_defaulted": true,
+      "defaults_applied": [
+        {
+          "field": "estimated_duration_min",
+          "defaulted_value": 60,
+          "original_value": "",
+          "reason": "Missing duration defaulted to 60 min standard maintenance window"
+        }
+      ],
+      "error_type": "MISSING_ASSET_ID",
+      "review_decision": null,
+      "rejection_reason": null,
+      "rejection_timestamp": null
+    },
+    {
+      "id": "INV-REC-SMMS-JOB-341",
+      "job_id": "SMMS-JOB-341",
+      "source_system": "SMMS",
+      "department": "S&T",
+      "corridor_id": "C01",
+      "station": "OGL",
+      "km": 124.6,
+      "job_type": "AXLE_COUNTER_PERIODIC_CHECK",
+      "status": "APPROVED",
+      "detected_at": "2026-09-08T21:52:22.088870",
+      "raw_source": {
+        "job_id": "SMMS-JOB-341",
+        "asset_id": "SMMS-C01-SIG-0501",
+        "department": "S&T",
+        "corridor_id": "C01",
+        "station": "OGL",
+        "km": "124.6",
+        "job_type": "AXLE_COUNTER_PERIODIC_CHECK",
+        "severity": "MEDIUM",
+        "priority_score": "68",
+        "due_date": "2026-09-15",
+        "estimated_duration_min": "",
+        "crew_required": "CREW-SNT-BZA-01",
+        "equipment_required": "SAFETY_MULTIMETER",
+        "block_required": "YES",
+        "status": "PENDING_BLOCK",
+        "source_system": "SMMS",
+        "_source": "SMMS"
+      },
+      "validation_errors": [],
+      "has_validation_errors": false,
+      "is_defaulted": true,
+      "defaults_applied": [
+        {
+          "field": "estimated_duration_min",
+          "defaulted_value": 60,
+          "original_value": "",
+          "reason": "Missing duration defaulted to 60 min standard maintenance window"
+        }
+      ],
+      "error_type": "DEFAULTED_DURATION",
+      "review_decision": {
+        "action": "APPROVE",
+        "decided_by": "TestOfficer",
+        "decided_at": "2026-09-08T21:52:22.159515",
+        "comments": "Verified 60 min duration is adequate for axle counter check",
+        "corrected_raw_source": {
+          "job_id": "SMMS-JOB-341",
+          "asset_id": "SMMS-C01-SIG-0501",
+          "department": "S&T",
+          "corridor_id": "C01",
+          "station": "OGL",
+          "km": "124.6",
+          "job_type": "AXLE_COUNTER_PERIODIC_CHECK",
+          "severity": "MEDIUM",
+          "priority_score": "68",
+          "due_date": "2026-09-15",
+          "estimated_duration_min": "",
+          "crew_required": "CREW-SNT-BZA-01",
+          "equipment_required": "SAFETY_MULTIMETER",
+          "block_required": "YES",
+          "status": "PENDING_BLOCK",
+          "source_system": "SMMS",
+          "_source": "SMMS"
+        }
+      },
+      "rejection_reason": null,
+      "rejection_timestamp": null
     }
   ]
 }

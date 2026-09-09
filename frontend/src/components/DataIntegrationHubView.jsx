@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import {
   Layers, RefreshCw, CheckCircle2, AlertTriangle, FileSpreadsheet,
-  Database, ArrowRight, X, Clock, TrendingUp
+  Database, ArrowRight, X, Clock, TrendingUp, UserCheck
 } from 'lucide-react';
-import { fetchIntegrationStatus, syncAllSystems, fetchDataQualityReport, fetchAllAssets, fetchMaintenanceJobs } from '../lib/api';
+import { fetchIntegrationStatus, syncAllSystems, fetchDataQualityReport, fetchAllAssets, fetchMaintenanceJobs, fetchInvalidRecordsQueue } from '../lib/api';
+import ReviewQueuePanel from './ReviewQueuePanel';
 
 export default function DataIntegrationHubView({ onGoToCorridorView }) {
   const [statusData, setStatusData] = useState(null);
   const [qualityReport, setQualityReport] = useState(null);
+  const [pendingCount, setPendingCount] = useState(0);
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncResult, setSyncResult] = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
@@ -17,12 +19,16 @@ export default function DataIntegrationHubView({ onGoToCorridorView }) {
 
   const loadStatus = async () => {
     try {
-      const [st, qr] = await Promise.all([
+      const [st, qr, rq] = await Promise.all([
         fetchIntegrationStatus(),
-        fetchDataQualityReport()
+        fetchDataQualityReport(),
+        fetchInvalidRecordsQueue().catch(() => null)
       ]);
       setStatusData(st);
       setQualityReport(qr);
+      if (rq) {
+        setPendingCount(rq.pending_count || 0);
+      }
     } catch (err) {
       console.error('Error loading integration status:', err);
     }
@@ -148,6 +154,24 @@ export default function DataIntegrationHubView({ onGoToCorridorView }) {
           <span className="bg-[#F0FDF4] text-[#15803D] text-[10px] px-2 py-0.5 rounded font-bold">
             {qualityReport?.data_quality_score || 99.7}%
           </span>
+        </button>
+        <button
+          onClick={() => setActiveTab('review-queue')}
+          className={`px-4 py-2 rounded-lg flex items-center space-x-2 transition-all ${
+            activeTab === 'review-queue' ? 'bg-white text-[#1565C0] shadow-sm border border-[#E2E8F0]' : 'text-[#7A8494] hover:text-[#172033]'
+          }`}
+        >
+          <UserCheck className="w-3.5 h-3.5" />
+          <span>Human Review Queue</span>
+          {pendingCount > 0 ? (
+            <span className="bg-[#FEF3C7] text-[#92400E] border border-[#FDE68A] text-[10px] px-2 py-0.5 rounded-full font-bold">
+              {pendingCount} Actionable
+            </span>
+          ) : (
+            <span className="bg-[#F1F5F9] text-[#5B6575] text-[10px] px-1.5 py-0.5 rounded font-medium">
+              0
+            </span>
+          )}
         </button>
       </div>
 
@@ -296,6 +320,11 @@ export default function DataIntegrationHubView({ onGoToCorridorView }) {
             )}
           </div>
         </div>
+      )}
+
+      {/* TAB 3: HUMAN REVIEW QUEUE */}
+      {activeTab === 'review-queue' && (
+        <ReviewQueuePanel onRecordUpdated={loadStatus} />
       )}
 
       {/* DATA PREVIEW MODAL */}

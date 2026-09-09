@@ -1,7 +1,9 @@
 import sys
 import os
+import json
+import uuid
 from typing import Optional, Dict, Any, List
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Ensure backend root is on sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -21,6 +23,7 @@ from app.services.opportunity_engine import opportunity_engine
 from app.services.optimizer import optimizer
 from app.services.replanner import replanner
 from app.services.lineage_engine import lineage_engine
+from app.services.asset_registry import asset_registry_service
 
 # SIH26027 Block Planning Services
 from app.services.corridor_availability import corridor_engine
@@ -100,6 +103,13 @@ class BlockRecommendationRequest(BaseModel):
     work_description: Optional[str] = ""
 
 
+class ReviewDecisionPayload(BaseModel):
+    action: str  # "APPROVE", "EDIT_AND_APPROVE", "REJECT"
+    reason: Optional[str] = ""
+    user: Optional[str] = "HumanReviewer"
+    corrected_fields: Optional[Dict[str, Any]] = None
+
+
 
 # =====================================================================
 # 1. DATA INTEGRATION HUB ENDPOINTS
@@ -136,6 +146,47 @@ def get_data_quality_report():
     }
 
 
+@app.get("/api/integration/review-queue")
+def get_invalid_records_review_queue(
+    status: Optional[str] = None,
+    department: Optional[str] = None,
+    error_type: Optional[str] = None,
+    is_defaulted: Optional[bool] = None
+):
+    """
+    Returns the persistent human review queue of invalid and auto-defaulted records,
+    supporting multi-attribute filtering and status counts.
+    """
+    return integration_service.get_review_queue(
+        status=status,
+        department=department,
+        error_type=error_type,
+        is_defaulted=is_defaulted
+    )
+
+
+@app.post("/api/integration/review-queue/{record_id}/decision")
+def submit_review_decision(record_id: str, payload: ReviewDecisionPayload):
+    """
+    Processes human review decision for an invalid or defaulted record:
+    - APPROVE: Re-enters standard pipeline with auto-defaulted values.
+    - EDIT_AND_APPROVE: Merges corrected fields and re-enters pipeline through full validation & dedup.
+    - REJECT: Excludes record from unified dataset with reason and timestamp audit trail.
+    """
+    try:
+        return integration_service.submit_review_decision(
+            record_id=record_id,
+            action=payload.action,
+            reason=payload.reason or "",
+            user=payload.user or "HumanReviewer",
+            corrected_fields=payload.corrected_fields
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal error processing review decision: {str(e)}")
+
+
 # =====================================================================
 # 2. RAW & UNIFIED DATA VIEW ENDPOINTS
 # =====================================================================
@@ -158,17 +209,75 @@ def get_all_assets(source: Optional[str] = None, corridor: Optional[str] = None)
     return all_assets
 
 
+@app.get("/api/assets/canonical")
+def get_canonical_assets(
+    corridor: Optional[str] = None,
+    department: Optional[str] = None,
+    merged_only: bool = False
+):
+    """Returns canonical assets from the canonical Asset Master Registry."""
+    assets = asset_registry_service.get_all_assets()
+    if not assets:
+        asset_registry_service.build_and_save_registry()
+        assets = asset_registry_service.get_all_assets()
+    if corridor:
+        assets = [a for a in assets if a.get("corridor_id") == corridor]
+    if department:
+        assets = [
+            a for a in assets
+            if department.lower() in [d.lower() for d in a.get("owning_departments", [])]
+        ]
+    if merged_only:
+        assets = [a for a in assets if a.get("reconciliation_metadata", {}).get("is_merged")]
+    return assets
+
+
+@app.get("/api/assets/canonical/summary")
+def get_canonical_assets_summary():
+    """Returns reconciliation and summary metrics for the canonical Asset Master Registry."""
+    return asset_registry_service.get_summary()
+
+
+@app.get("/api/assets/canonical/{asset_id}")
+def get_canonical_asset_by_id(asset_id: str):
+    """Returns a specific canonical asset by its canonical ID or departmental raw ID."""
+    asset = asset_registry_service.get_canonical_asset(asset_id)
+    if not asset:
+        asset = asset_registry_service.resolve_asset(raw_id=asset_id)
+    return asset
+
+
 @app.get("/api/maintenance")
-def get_maintenance_jobs(corridor: Optional[str] = None, department: Optional[str] = None):
-    """Returns unified normalized maintenance jobs."""
+def get_maintenance_jobs(
+    corridor: Optional[str] = None,
+    department: Optional[str] = None,
+    departments: Optional[str] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None
+):
+    """Returns unified normalized maintenance jobs with multi-department and date filtering."""
     jobs = file_repo.get_unified_jobs()
     if not jobs:
         integration_service.sync_all_systems()
         jobs = file_repo.get_unified_jobs()
-    if corridor:
+
+    if corridor and corridor.upper() != "ALL":
         jobs = [j for j in jobs if j.get("corridor_id") == corridor]
-    if department:
-        jobs = [j for j in jobs if j.get("department", "").lower() == department.lower()]
+
+    dept_filter_list = []
+    if departments:
+        dept_filter_list.extend([d.strip().lower() for d in departments.split(",") if d.strip()])
+    elif department and department.upper() != "ALL":
+        dept_filter_list.append(department.strip().lower())
+
+    if dept_filter_list and "all" not in dept_filter_list:
+        jobs = [j for j in jobs if j.get("department", "").lower() in dept_filter_list]
+
+    if start_date:
+        jobs = [j for j in jobs if str(j.get("due_date", "")) >= start_date[:10]]
+    if end_date:
+        jobs = [j for j in jobs if str(j.get("due_date", "")) <= end_date[:10]]
+
     return jobs
 
 
@@ -176,7 +285,7 @@ def get_maintenance_jobs(corridor: Optional[str] = None, department: Optional[st
 def get_train_movements(corridor: Optional[str] = None):
     """Returns COA train movement schedules."""
     trains = file_repo.get_raw_coa_trains()
-    if corridor:
+    if corridor and corridor.upper() != "ALL":
         trains = [t for t in trains if t.get("corridor_id") == corridor]
     return trains
 
@@ -185,19 +294,319 @@ def get_train_movements(corridor: Optional[str] = None):
 def get_block_requests(corridor: Optional[str] = None):
     """Returns BDMS maintenance block requests."""
     reqs = file_repo.get_raw_bdms_requests()
-    if corridor:
+    if corridor and corridor.upper() != "ALL":
         reqs = [r for r in reqs if r.get("corridor_id") == corridor]
     return reqs
+
+
+@app.get("/api/blocks/check-overlap")
+def check_block_overlap(
+    corridor_id: str = Query(..., description="Corridor code e.g. C01"),
+    km: float = Query(..., description="Proposed location in KM"),
+    date_start: str = Query(..., description="Start date YYYY-MM-DD"),
+    date_end: Optional[str] = Query(None, description="End date YYYY-MM-DD"),
+    department: Optional[str] = Query(None, description="Requesting department")
+):
+    """
+    Checks proposed BDMS block request against existing unified jobs and requests.
+    Detects Direct Physical Collisions (<= 50m) and Joint-Block Opportunities (50m - 2000m).
+    Surfaced BEFORE final submission for cross-department coordination.
+    """
+    if not date_end:
+        date_end = date_start
+
+    try:
+        dt_start = datetime.strptime(date_start[:10], "%Y-%m-%d").date()
+    except Exception:
+        dt_start = datetime.now().date()
+
+    try:
+        dt_end = datetime.strptime(date_end[:10], "%Y-%m-%d").date()
+    except Exception:
+        dt_end = dt_start
+
+    # Window +/- 1 day to catch shift overlaps
+    window_start = dt_start - timedelta(days=1)
+    window_end = dt_end + timedelta(days=1)
+
+    corridor_norm = corridor_id.strip().upper()
+    overlaps = []
+
+    # 1. Check Unified Maintenance Jobs
+    unified_jobs = file_repo.get_unified_jobs()
+    for job in unified_jobs:
+        job_corr = str(job.get("corridor_id", "")).strip().upper()
+        if job_corr != corridor_norm:
+            continue
+
+        job_date_str = str(job.get("due_date", ""))[:10]
+        try:
+            job_date = datetime.strptime(job_date_str, "%Y-%m-%d").date()
+            if not (window_start <= job_date <= window_end):
+                continue
+        except Exception:
+            pass
+
+        try:
+            job_km = float(job.get("km", job.get("provisional_km", 0.0)))
+        except (ValueError, TypeError):
+            continue
+
+        diff_km = abs(job_km - km)
+        dist_m = round(diff_km * 1000.0, 1)
+
+        if dist_m > 2000.0:
+            continue
+
+        job_dept = job.get("department", "Unknown")
+        is_cross_dept = bool(department and job_dept.lower() != department.strip().lower())
+
+        if dist_m <= 50.0:
+            category = "DIRECT_COLLISION"
+            severity = "CRITICAL"
+            title = "Direct Physical Collision"
+            description = (
+                f"Asset conflict with {job_dept} at KM {job_km:.2f} ({dist_m:.0f}m away). "
+                f"Simultaneous possessions on the same asset segment cause physical track blockage."
+            )
+        else:
+            category = "JOINT_BLOCK_OPPORTUNITY"
+            severity = "OPPORTUNITY"
+            title = "Joint-Block Opportunity"
+            description = (
+                f"Adjacent {job_dept} work at KM {job_km:.2f} ({dist_m:.0f}m away). "
+                f"Synergy: combine into a single coordinated corridor possession window."
+            )
+
+        overlaps.append({
+            "id": job.get("job_id"),
+            "source_type": "UNIFIED_JOB",
+            "department": job_dept,
+            "is_cross_department": is_cross_dept,
+            "corridor_id": job_corr,
+            "km": job_km,
+            "station": job.get("station", ""),
+            "date": job_date_str,
+            "time_window": f"{job.get('estimated_duration_min', 120)} mins",
+            "component": job.get("asset_type", "Track Infrastructure"),
+            "activity": job.get("job_type", "Maintenance"),
+            "priority_tier": job.get("priority_tier", "NORMAL"),
+            "distance_m": dist_m,
+            "category": category,
+            "severity": severity,
+            "title": title,
+            "description": description
+        })
+
+    # 2. Check Pending BDMS requests
+    bdms_reqs = file_repo.get_raw_bdms_requests()
+    for req in bdms_reqs:
+        req_corr = str(req.get("corridor_id", "")).strip().upper()
+        if req_corr != corridor_norm:
+            continue
+
+        req_date_str = str(req.get("requested_date", ""))[:10]
+        try:
+            req_date = datetime.strptime(req_date_str, "%Y-%m-%d").date()
+            if not (window_start <= req_date <= window_end):
+                continue
+        except Exception:
+            pass
+
+        req_km = None
+        if "km" in req and req["km"]:
+            try:
+                req_km = float(req["km"])
+            except Exception:
+                pass
+        elif "km_range" in req and req["km_range"]:
+            try:
+                parts = str(req["km_range"]).split("-")
+                if len(parts) == 2:
+                    req_km = (float(parts[0]) + float(parts[1])) / 2.0
+            except Exception:
+                pass
+
+        if req_km is None:
+            continue
+
+        diff_km = abs(req_km - km)
+        dist_m = round(diff_km * 1000.0, 1)
+
+        if dist_m > 2000.0:
+            continue
+
+        req_dept = req.get("department", "Unknown")
+        is_cross_dept = bool(department and req_dept.lower() != department.strip().lower())
+
+        if dist_m <= 50.0:
+            category = "DIRECT_COLLISION"
+            severity = "CRITICAL"
+            title = "Direct Request Collision"
+            description = (
+                f"Existing BDMS block request ({req.get('block_request_id')}) by {req_dept} at KM {req_km:.2f} ({dist_m:.0f}m away). "
+                f"Window: {req.get('requested_start', '')}-{req.get('requested_end', '')}."
+            )
+        else:
+            category = "JOINT_BLOCK_OPPORTUNITY"
+            severity = "OPPORTUNITY"
+            title = "Joint-Block Opportunity (BDMS)"
+            description = (
+                f"Existing BDMS request by {req_dept} at KM {req_km:.2f} ({dist_m:.0f}m away). "
+                f"Opportunity to bundle during window {req.get('requested_start', '')}-{req.get('requested_end', '')}."
+            )
+
+        overlaps.append({
+            "id": req.get("block_request_id"),
+            "source_type": "BDMS_REQUEST",
+            "department": req_dept,
+            "is_cross_department": is_cross_dept,
+            "corridor_id": req_corr,
+            "km": req_km,
+            "station": req.get("station", ""),
+            "date": req_date_str,
+            "time_window": f"{req.get('requested_start', '')}-{req.get('requested_end', '')} ({req.get('requested_duration_min', 120)}m)",
+            "component": "Block Possession Request",
+            "activity": req.get("reason", "Block Request"),
+            "priority_tier": "BDMS_PENDING",
+            "distance_m": dist_m,
+            "category": category,
+            "severity": severity,
+            "title": title,
+            "description": description
+        })
+
+    # Sort overlaps: direct collisions first, then by distance
+    overlaps.sort(key=lambda x: (0 if x["category"] == "DIRECT_COLLISION" else 1, x["distance_m"]))
+
+    direct_count = sum(1 for o in overlaps if o["category"] == "DIRECT_COLLISION")
+    joint_count = sum(1 for o in overlaps if o["category"] == "JOINT_BLOCK_OPPORTUNITY")
+
+    return {
+        "has_overlap": len(overlaps) > 0,
+        "overlap_count": len(overlaps),
+        "direct_collisions_count": direct_count,
+        "joint_opportunities_count": joint_count,
+        "overlaps": overlaps,
+        "query": {
+            "corridor_id": corridor_norm,
+            "km": km,
+            "date_start": date_start,
+            "date_end": date_end,
+            "department": department
+        },
+        "check_timestamp": datetime.now().isoformat()
+    }
+
+
+class BlockSubmissionPayload(BaseModel):
+    corridor_id: str
+    department: str
+    station: Optional[str] = "BZA"
+    km: float
+    requested_date: str
+    requested_start: str = "01:00"
+    requested_end: str = "04:00"
+    requested_duration_min: int = 180
+    reason: str
+    submission_choice: str = "PROCEED_ANYWAY"  # PROCEED_ANYWAY or COORDINATE_JOINT_BLOCK
+    coordinated_with_id: Optional[str] = None
+    notified_department: Optional[str] = None
+    overlap_count: Optional[int] = 0
+
+
+@app.post("/api/blocks/submit-request")
+def submit_block_request(payload: BlockSubmissionPayload):
+    """
+    Submits a BDMS block request with user's resolution decision:
+    - PROCEED_ANYWAY: submits as separate request, logged as potential conflict in audit trail
+    - COORDINATE_JOINT_BLOCK: submits with joint-block coordination intent and logs notification
+    """
+    req_id = f"BDMS-REQ-{datetime.now().strftime('%Y%m%d')}-{uuid.uuid4().hex[:4].upper()}"
+
+    km_val = payload.km
+    km_range_str = f"{km_val - 1.5:.1f}-{km_val + 1.5:.1f}"
+
+    status_str = (
+        "JOINT_COORDINATION_REQUESTED"
+        if payload.submission_choice == "COORDINATE_JOINT_BLOCK"
+        else ("SUBMITTED_POTENTIAL_CONFLICT" if (payload.overlap_count or 0) > 0 else "SUBMITTED_CLEAN")
+    )
+
+    coord_note = f" (Coord with {payload.coordinated_with_id})" if payload.coordinated_with_id else ""
+    req_data = {
+        "block_request_id": req_id,
+        "corridor_id": payload.corridor_id.upper(),
+        "department": payload.department,
+        "requested_date": payload.requested_date,
+        "requested_start": payload.requested_start,
+        "requested_end": payload.requested_end,
+        "requested_duration_min": payload.requested_duration_min,
+        "reason": f"[{payload.submission_choice}] {payload.reason}{coord_note}",
+        "status": status_str,
+        "station": payload.station or "BZA",
+        "km_range": km_range_str
+    }
+
+    # Save to BDMS raw requests
+    file_repo.add_raw_bdms_request(req_data)
+
+    # Cross-department Audit Trail Logging
+    if payload.submission_choice == "COORDINATE_JOINT_BLOCK":
+        target = payload.coordinated_with_id or payload.notified_department or "cross-department team"
+        action_desc = f"Joint coordination requested with {target}"
+    elif (payload.overlap_count or 0) > 0:
+        action_desc = f"Submitted despite {payload.overlap_count} detected overlap(s) - flagged in audit trail"
+    else:
+        action_desc = "Clean request submitted (no spatial/date overlaps detected)"
+
+    audit_entry = file_repo.log_audit_event(
+        event_type="BDMS_REQUEST_CONFLICT_CHECK",
+        action=action_desc,
+        details={
+            "block_request_id": req_id,
+            "corridor_id": payload.corridor_id,
+            "km": payload.km,
+            "department": payload.department,
+            "requested_date": payload.requested_date,
+            "submission_choice": payload.submission_choice,
+            "overlap_count": payload.overlap_count,
+            "coordinated_with_id": payload.coordinated_with_id,
+            "notified_department": payload.notified_department,
+            "status": status_str
+        },
+        user=f"{payload.department} Section Engineer"
+    )
+
+    return {
+        "status": "success",
+        "block_request_id": req_id,
+        "submission_choice": payload.submission_choice,
+        "audit_id": audit_entry.get("id"),
+        "message": (
+            f"Block request {req_id} registered. Joint-coordination intent recorded and notification queued for {payload.notified_department or 'cross-department team'}."
+            if payload.submission_choice == "COORDINATE_JOINT_BLOCK"
+            else f"Block request {req_id} registered. Cross-department conflict flagged in audit log for Sr. DOM review."
+        ),
+        "request_data": req_data
+    }
 
 
 # =====================================================================
 # 3. CORRIDOR TOPOLOGY & ANDHRA PRADESH MAP ENDPOINT
 # =====================================================================
 @app.get("/api/corridors/ap-map")
-def get_ap_corridor_map():
+def get_ap_corridor_map(
+    corridor: Optional[str] = None,
+    department: Optional[str] = None,
+    departments: Optional[str] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None
+):
     """
     Returns full geographic and operational topology for South Coast Railway (SCoR) pilot:
     stations with coordinates, corridors, active maintenance pins, defect alerts, and train paths.
+    Supports corridor, multi-department, and date range filtering.
     """
     stations = file_repo.get_stations()
     corridors = file_repo.get_corridors()
@@ -208,13 +617,33 @@ def get_ap_corridor_map():
     trains = file_repo.get_raw_coa_trains()
     latest_plan = file_repo.get_latest_plan() or {}
 
+    # Apply filters
+    filtered_jobs = jobs
+    if corridor and corridor.upper() != "ALL":
+        filtered_jobs = [j for j in filtered_jobs if j.get("corridor_id") == corridor]
+        trains = [t for t in trains if t.get("corridor_id") == corridor]
+
+    dept_filter_list = []
+    if departments:
+        dept_filter_list.extend([d.strip().lower() for d in departments.split(",") if d.strip()])
+    elif department and department.upper() != "ALL":
+        dept_filter_list.append(department.strip().lower())
+
+    if dept_filter_list and "all" not in dept_filter_list:
+        filtered_jobs = [j for j in filtered_jobs if j.get("department", "").lower() in dept_filter_list]
+
+    if start_date:
+        filtered_jobs = [j for j in filtered_jobs if str(j.get("due_date", "")) >= start_date[:10]]
+    if end_date:
+        filtered_jobs = [j for j in filtered_jobs if str(j.get("due_date", "")) <= end_date[:10]]
+
     return {
         "zone": "South Coast Railway (SCoR)",
         "headquarters": "Visakhapatnam",
         "pilot_region": "Andhra Pradesh",
         "stations": stations,
         "corridors": corridors,
-        "maintenance_jobs": jobs[:60], # Top sample for map display
+        "maintenance_jobs": filtered_jobs,
         "train_movements": trains[:30],
         "active_blocks": latest_plan.get("recommended_blocks", [])[:10],
         "disclaimer": "Synthetic railway operational data for demonstration."
@@ -449,23 +878,37 @@ def get_sections_endpoint():
 @app.get("/api/maintenance-tasks")
 def get_maintenance_tasks_endpoint(
     department: Optional[str] = None,
+    departments: Optional[str] = None,
     section_id: Optional[str] = None,
-    status: Optional[str] = None
+    status: Optional[str] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None
 ):
     """
     Returns maintenance tasks prioritized with explainable 4-factor scoring model.
-    Supports filtering by department, section_id, and status.
+    Supports filtering by department(s), section_id, status, and date range.
     """
     sections = {s["section_id"]: s for s in corridor_engine.get_sections()}
     tasks = block_planner.load_tasks(status_filter="")
     prioritized = prioritizer.batch_prioritize(tasks, sections)
 
-    if department:
-        prioritized = [t for t in prioritized if t["department"].lower() == department.lower()]
+    dept_filter_list = []
+    if departments:
+        dept_filter_list.extend([d.strip().lower() for d in departments.split(",") if d.strip()])
+    elif department and department.upper() != "ALL":
+        dept_filter_list.append(department.strip().lower())
+
+    if dept_filter_list and "all" not in dept_filter_list:
+        prioritized = [t for t in prioritized if t.get("department", "").lower() in dept_filter_list]
+
     if section_id:
         prioritized = [t for t in prioritized if t["section_id"].lower() == section_id.lower()]
     if status:
         prioritized = [t for t in prioritized if t["status"].lower() == status.lower()]
+    if start_date:
+        prioritized = [t for t in prioritized if str(t.get("due_date", "")) >= start_date[:10]]
+    if end_date:
+        prioritized = [t for t in prioritized if str(t.get("due_date", "")) <= end_date[:10]]
 
     return prioritized
 
@@ -523,8 +966,11 @@ def compare_block_plans_endpoint(
 def get_latest_weekly_plan():
     latest_file = os.path.join(PLANS_DIR, "latest_weekly_plan.json")
     if os.path.exists(latest_file):
-        with open(latest_file, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(latest_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"[WARN] Error reading {latest_file}: {e}. Regenerating weekly plan...")
     return block_planner.generate_weekly_block_plan(start_date="2026-09-08")
 
 
@@ -532,8 +978,11 @@ def get_latest_weekly_plan():
 def get_latest_monthly_plan():
     latest_file = os.path.join(PLANS_DIR, "latest_monthly_plan.json")
     if os.path.exists(latest_file):
-        with open(latest_file, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(latest_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"[WARN] Error reading {latest_file}: {e}. Regenerating monthly plan...")
     return block_planner.generate_monthly_block_plan(start_date="2026-09-08")
 
 

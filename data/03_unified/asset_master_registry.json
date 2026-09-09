@@ -1,0 +1,5956 @@
+[
+  {
+    "asset_id": "CAN-AST-C01-010.50-0001",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset BZA Relay Room Sector 1 + 25kV OHE Structure BZA Bay 1",
+    "station": "BZA",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 10.5,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "2014-10-20",
+    "condition_score": 75.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0540",
+      "TDMS_id": "TDMS-C01-OHE-0216"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0540",
+        "TDMS-C01-OHE-0216"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-010.50-0002",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure BZA Bay 5",
+    "station": "BZA",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 10.5,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2018-10-20",
+    "condition_score": 82.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0252"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C01-OHE-0252"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-011.30-0003",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section BZA",
+    "station": "BZA",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 11.3,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2016-06-15",
+    "condition_score": 61.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-JOINT-0101",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-JOINT-0101"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-012.50-0004",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset BZA Relay Room Sector 1",
+    "station": "BZA",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 12.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 74.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0504",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0504"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-012.90-0005",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section BZA",
+    "station": "BZA",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 12.9,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2017-07-15",
+    "condition_score": 62.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-TRACK-0102",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-TRACK-0102"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-035.80-0006",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section TEL",
+    "station": "TEL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 35.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2018-08-15",
+    "condition_score": 63.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-TURNOUT-0103",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-TURNOUT-0103"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-036.00-0007",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset TEL Relay Room Sector 5",
+    "station": "TEL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 36.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 67.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0532",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0532"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-036.60-0008",
+    "asset_type": "AUTO_TENSION_AT",
+    "subtype": "25kV OHE Structure TEL Bay 1",
+    "station": "TEL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 36.6,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2014-10-20",
+    "condition_score": 76.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0208"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C01-OHE-0208"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-036.60-0009",
+    "asset_type": "AUTO_TENSION_AT",
+    "subtype": "25kV OHE Structure TEL Bay 5",
+    "station": "TEL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 36.6,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2018-10-20",
+    "condition_score": 74.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0244"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C01-OHE-0244"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-037.40-0010",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section TEL",
+    "station": "TEL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 37.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2019-01-15",
+    "condition_score": 64.0,
+    "criticality": "MEDIUM",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-SLEEPER-0104",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-SLEEPER-0104"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-077.30-0011",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section BPP + 25kV OHE Structure BPP Bay 5",
+    "station": "BPP",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 77.3,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "20110-02-15",
+    "condition_score": 65.0,
+    "criticality": "CRITICAL",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-JOINT-0105",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0236"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C01-JOINT-0105",
+        "TDMS-C01-OHE-0236"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-078.50-0012",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset BPP Relay Room Sector 3",
+    "station": "BPP",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 78.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 94.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0524",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0524"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-078.90-0013",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section BPP",
+    "station": "BPP",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 78.9,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20111-03-15",
+    "condition_score": 66.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-CURVE-0106",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-CURVE-0106"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-092.00-0014",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure CLX Bay 5",
+    "station": "CLX",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 92.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2018-10-20",
+    "condition_score": 58.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0228"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C01-OHE-0228"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-092.50-0015",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset CLX Relay Room Sector 1",
+    "station": "CLX",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 92.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 86.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0516",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0516"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-092.80-0016",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section CLX",
+    "station": "CLX",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 92.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20112-04-15",
+    "condition_score": 67.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-JOINT-0107",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-JOINT-0107"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-093.00-0017",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset CLX Relay Room Sector 1",
+    "station": "CLX",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 93.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 87.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0552",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0552"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-094.40-0018",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section CLX",
+    "station": "CLX",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 94.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2014-05-15",
+    "condition_score": 68.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-TRACK-0108",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-TRACK-0108"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-124.35-0019",
+    "asset_type": "RAIL_60KG",
+    "subtype": "CWR Main Line Up Track + 25kV AC Contact Wire Up Line",
+    "station": "OGL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 124.35,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "2016-05-18",
+    "condition_score": 58.0,
+    "criticality": "CRITICAL",
+    "status": "DEFECT_LOGGED",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-TRK-1042",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0201"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C01-TRK-1042",
+        "TDMS-C01-OHE-0201"
+      ],
+      "km_span": 0.1
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-124.60-0020",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points 102A Loop Entry + IRS Electric Point Machine Point 102A + Motorized Vacuum Isolator SM-102",
+    "station": "OGL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 124.6,
+    "owning_departments": [
+      "Engineering",
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "Engineering, S&T, Traction",
+    "install_date": "2017-09-12",
+    "condition_score": 56.0,
+    "criticality": "CRITICAL",
+    "status": "DEFECT_LOGGED",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-PNT-1043",
+      "SMMS_id": "SMMS-C01-SIG-0501",
+      "TDMS_id": "TDMS-C01-ISO-0202"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 3,
+      "merged_departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C01-PNT-1043",
+        "SMMS-C01-SIG-0501",
+        "TDMS-C01-ISO-0202"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-124.80-0021",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "SEJ 60kg Rail Joint + Dual High-Availability DAC Track Circuit",
+    "station": "CLX",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 124.8,
+    "owning_departments": [
+      "Engineering",
+      "S&T"
+    ],
+    "owning_department": "Engineering, S&T",
+    "install_date": "2018-11-25",
+    "condition_score": 54.0,
+    "criticality": "CRITICAL",
+    "status": "DEFECT_LOGGED",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-SEJ-1044",
+      "SMMS_id": "SMMS-C01-AXC-0502",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "raw_ids": [
+        "TMS-C01-SEJ-1044",
+        "SMMS-C01-AXC-0502"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-135.80-0022",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section OGL",
+    "station": "OGL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 135.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2015-06-15",
+    "condition_score": 69.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-TURNOUT-0109",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-TURNOUT-0109"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-136.55-0023",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset OGL Relay Room Sector 5 + 25kV OHE Structure OGL Bay 5",
+    "station": "OGL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 136.55,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "2018-10-20",
+    "condition_score": 78.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0508",
+      "TDMS_id": "TDMS-C01-OHE-0220"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0508",
+        "TDMS-C01-OHE-0220"
+      ],
+      "km_span": 0.1
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-136.60-0024",
+    "asset_type": "AUTO_TENSION_AT",
+    "subtype": "25kV OHE Structure OGL Bay 1",
+    "station": "OGL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 136.6,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2014-10-20",
+    "condition_score": 86.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0256"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C01-OHE-0256"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-137.00-0025",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset OGL Relay Room Sector 5",
+    "station": "OGL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 137.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 79.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0544",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0544"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-137.40-0026",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section OGL",
+    "station": "OGL",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 137.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2016-07-15",
+    "condition_score": 70.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-SLEEPER-0110",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-SLEEPER-0110"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-168.50-0027",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset SKM Relay Room Sector 3",
+    "station": "SKM",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 168.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 71.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0536",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0536"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-168.80-0028",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section SKM + 25kV OHE Structure SKM Bay 5",
+    "station": "SKM",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 168.8,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "2017-08-15",
+    "condition_score": 71.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-JOINT-0111",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0212"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C01-JOINT-0111",
+        "TDMS-C01-OHE-0212"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-168.80-0029",
+    "asset_type": "AUTO_TENSION_AT",
+    "subtype": "25kV OHE Structure SKM Bay 1",
+    "station": "SKM",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 168.8,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2014-10-20",
+    "condition_score": 78.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0248"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C01-OHE-0248"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-170.40-0030",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section SKM",
+    "station": "SKM",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 170.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2018-01-15",
+    "condition_score": 72.0,
+    "criticality": "CRITICAL",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-CURVE-0112",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-CURVE-0112"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-206.00-0031",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure KVZ Bay 5",
+    "station": "KVZ",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 206.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2018-10-20",
+    "condition_score": 72.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0204"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C01-OHE-0204"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-206.00-0032",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure KVZ Bay 1",
+    "station": "KVZ",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 206.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2014-10-20",
+    "condition_score": 70.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0240"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C01-OHE-0240"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-206.80-0033",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section KVZ",
+    "station": "KVZ",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 206.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2019-02-15",
+    "condition_score": 73.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-JOINT-0113",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-JOINT-0113"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-207.50-0034",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset KVZ Relay Room Sector 1",
+    "station": "KVZ",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 207.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 63.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0528",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0528"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-208.40-0035",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section KVZ",
+    "station": "KVZ",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 208.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20110-03-15",
+    "condition_score": 74.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-TRACK-0114",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-TRACK-0114"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-257.00-0036",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset NLR Relay Room Sector 5",
+    "station": "NLR",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 257.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 90.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0520",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0520"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-257.50-0037",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset NLR Relay Room Sector 5",
+    "station": "NLR",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 257.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 91.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0556",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0556"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-257.80-0038",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section NLR",
+    "station": "NLR",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 257.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20111-04-15",
+    "condition_score": 75.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-TURNOUT-0115",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-TURNOUT-0115"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-258.60-0039",
+    "asset_type": "AUTO_TENSION_AT",
+    "subtype": "25kV OHE Structure NLR Bay 1",
+    "station": "NLR",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 258.6,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2014-10-20",
+    "condition_score": 62.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0232"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C01-OHE-0232"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-259.40-0040",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section NLR",
+    "station": "NLR",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 259.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20112-05-15",
+    "condition_score": 76.0,
+    "criticality": "MEDIUM",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-SLEEPER-0116",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-SLEEPER-0116"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-290.80-0041",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section GDR + 25kV OHE Structure GDR Bay 1",
+    "station": "GDR",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 290.8,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "2014-06-15",
+    "condition_score": 77.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-JOINT-0117",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C01-OHE-0224"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C01-JOINT-0117",
+        "TDMS-C01-OHE-0224"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-291.00-0042",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset GDR Relay Room Sector 3",
+    "station": "GDR",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 291.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 82.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0512",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0512"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-291.50-0043",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset GDR Relay Room Sector 3",
+    "station": "GDR",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 291.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2020-03-10",
+    "condition_score": 83.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C01-SIG-0548",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C01-SIG-0548"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C01-292.40-0044",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section GDR",
+    "station": "GDR",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C01",
+    "km": 292.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2015-07-15",
+    "condition_score": 78.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C01-CURVE-0118",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C01-CURVE-0118"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-008.80-0045",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section VSKP",
+    "station": "VSKP",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 8.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2016-08-15",
+    "condition_score": 79.0,
+    "criticality": "CRITICAL",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-JOINT-0119",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-JOINT-0119"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-010.40-0046",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section VSKP",
+    "station": "VSKP",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 10.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2017-01-15",
+    "condition_score": 80.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-TRACK-0120",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-TRACK-0120"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-020.95-0047",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset DVD Relay Room Sector 6 + 25kV OHE Structure DVD Bay 2",
+    "station": "DVD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 20.95,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "2015-10-20",
+    "condition_score": 71.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0521",
+      "TDMS_id": "TDMS-C02-OHE-0241"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0521",
+        "TDMS-C02-OHE-0241"
+      ],
+      "km_span": 0.1
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-021.00-0048",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset DVD Relay Room Sector 2",
+    "station": "DVD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 21.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 76.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0541",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0541"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-021.30-0049",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section DVD",
+    "station": "DVD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 21.3,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2018-02-15",
+    "condition_score": 81.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-TURNOUT-0121",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-TURNOUT-0121"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-022.50-0050",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure DVD Bay 6",
+    "station": "DVD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 22.5,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2019-10-20",
+    "condition_score": 89.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0221"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0221"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-022.90-0051",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section DVD",
+    "station": "DVD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 22.9,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2019-03-15",
+    "condition_score": 82.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-SLEEPER-0122",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-SLEEPER-0122"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-038.80-0052",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section AKP",
+    "station": "AKP",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 38.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20110-04-15",
+    "condition_score": 83.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-JOINT-0123",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-JOINT-0123"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-040.40-0053",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section AKP",
+    "station": "AKP",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 40.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20111-05-15",
+    "condition_score": 84.0,
+    "criticality": "MEDIUM",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-CURVE-0124",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-CURVE-0124"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-099.90-0054",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure TUNI Bay 6",
+    "station": "TUNI",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 99.9,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2019-10-20",
+    "condition_score": 83.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0253"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0253"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-100.30-0055",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section TUNI",
+    "station": "TUNI",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 100.3,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20112-06-15",
+    "condition_score": 85.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-JOINT-0125",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-JOINT-0125"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-100.70-0056",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure TUNI Bay 6",
+    "station": "TUNI",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 100.7,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2019-10-20",
+    "condition_score": 81.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0213"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0213"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-101.00-0057",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset TUNI Relay Room Sector 4",
+    "station": "TUNI",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 101.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 83.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0513",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0513"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-101.00-0058",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset TUNI Relay Room Sector 6",
+    "station": "TUNI",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 101.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 68.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0533",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0533"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-101.00-0059",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset TUNI Relay Room Sector 2",
+    "station": "TUNI",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 101.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 88.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0553",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0553"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-101.50-0060",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure TUNI Bay 2",
+    "station": "TUNI",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 101.5,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2015-10-20",
+    "condition_score": 63.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0233"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0233"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-101.90-0061",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section TUNI",
+    "station": "TUNI",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 101.9,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2014-07-15",
+    "condition_score": 86.0,
+    "criticality": "CRITICAL",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-TRACK-0126",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-TRACK-0126"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-115.80-0062",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section ANV",
+    "station": "ANV",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 115.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2015-08-15",
+    "condition_score": 87.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-TURNOUT-0127",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-TURNOUT-0127"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-117.40-0063",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section ANV",
+    "station": "ANV",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 117.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2016-01-15",
+    "condition_score": 88.0,
+    "criticality": "MEDIUM",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-SLEEPER-0128",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-SLEEPER-0128"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-150.45-0064",
+    "asset_type": "RAIL_60KG",
+    "subtype": "CWR Down Track SLO Section + Main Line Catenary Mast 150/12",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 150.45,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "2017-11-05",
+    "condition_score": 55.0,
+    "criticality": "CRITICAL",
+    "status": "DEFECT_LOGGED",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-TRK-2051",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-CAT-0301"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C02-TRK-2051",
+        "TDMS-C02-CAT-0301"
+      ],
+      "km_span": 0.1
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-150.60-0065",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Facing Point 11B + Kavach Collision Prevention Beacon & Rack",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 150.6,
+    "owning_departments": [
+      "Engineering",
+      "S&T"
+    ],
+    "owning_department": "Engineering, S&T",
+    "install_date": "2019-04-12",
+    "condition_score": 59.0,
+    "criticality": "CRITICAL",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-TUR-2052",
+      "SMMS_id": "SMMS-C02-INT-0601",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "raw_ids": [
+        "TMS-C02-TUR-2052",
+        "SMMS-C02-INT-0601"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-152.00-0066",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset SLO Relay Room Sector 2",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 152.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 75.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0505",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0505"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-152.00-0067",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset SLO Relay Room Sector 4",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 152.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 60.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0525",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0525"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-152.00-0068",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset SLO Relay Room Sector 6",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 152.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 80.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0545",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0545"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-152.40-0069",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure SLO Bay 6",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 152.4,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2019-10-20",
+    "condition_score": 73.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0205"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0205"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-152.80-0070",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section SLO",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 152.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2017-02-15",
+    "condition_score": 89.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-JOINT-0129",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-JOINT-0129"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-153.20-0071",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure SLO Bay 2",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 153.2,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2015-10-20",
+    "condition_score": 93.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0225"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0225"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-154.00-0072",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure SLO Bay 6",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 154.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2019-10-20",
+    "condition_score": 75.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0245"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0245"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-154.40-0073",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section SLO",
+    "station": "SLO",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 154.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2018-03-15",
+    "condition_score": 90.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-CURVE-0130",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-CURVE-0130"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-203.80-0074",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section RJY",
+    "station": "RJY",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 203.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2019-04-15",
+    "condition_score": 91.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-JOINT-0131",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-JOINT-0131"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-205.40-0075",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section RJY",
+    "station": "RJY",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 205.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20110-05-15",
+    "condition_score": 92.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-TRACK-0132",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-TRACK-0132"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-225.40-0076",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure NDD Bay 2",
+    "station": "NDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 225.4,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2015-10-20",
+    "condition_score": 85.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0217"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0217"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-225.80-0077",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section NDD",
+    "station": "NDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 225.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20111-06-15",
+    "condition_score": 93.0,
+    "criticality": "CRITICAL",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-TURNOUT-0133",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-TURNOUT-0133"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-226.00-0078",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset NDD Relay Room Sector 2",
+    "station": "NDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 226.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 87.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0517",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0517"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-226.00-0079",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset NDD Relay Room Sector 4",
+    "station": "NDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 226.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 72.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0537",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0537"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-226.00-0080",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset NDD Relay Room Sector 6",
+    "station": "NDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 226.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 92.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0557",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0557"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-226.20-0081",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure NDD Bay 6",
+    "station": "NDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 226.2,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2019-10-20",
+    "condition_score": 67.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0237"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0237"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-227.00-0082",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure NDD Bay 2",
+    "station": "NDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 227.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2015-10-20",
+    "condition_score": 87.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0257"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0257"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-227.40-0083",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section NDD",
+    "station": "NDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 227.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20112-07-15",
+    "condition_score": 94.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-SLEEPER-0134",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-SLEEPER-0134"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-245.80-0084",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section TDD",
+    "station": "TDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 245.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2014-08-15",
+    "condition_score": 50.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-JOINT-0135",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-JOINT-0135"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-247.40-0085",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section TDD",
+    "station": "TDD",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 247.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2015-01-15",
+    "condition_score": 51.0,
+    "criticality": "MEDIUM",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-CURVE-0136",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-CURVE-0136"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-292.40-0086",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure EE Bay 6",
+    "station": "EE",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 292.4,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2019-10-20",
+    "condition_score": 59.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0229"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0229"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-292.80-0087",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section EE",
+    "station": "EE",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 292.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2016-02-15",
+    "condition_score": 52.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-JOINT-0137",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-JOINT-0137"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-293.20-0088",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure EE Bay 2",
+    "station": "EE",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 293.2,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2015-10-20",
+    "condition_score": 79.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C02-OHE-0249"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C02-OHE-0249"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-294.00-0089",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset EE Relay Room Sector 6 + 25kV OHE Structure EE Bay 2",
+    "station": "EE",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 294.0,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "2015-10-20",
+    "condition_score": 77.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0509",
+      "TDMS_id": "TDMS-C02-OHE-0209"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0509",
+        "TDMS-C02-OHE-0209"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-294.00-0090",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset EE Relay Room Sector 2",
+    "station": "EE",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 294.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 64.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0529",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0529"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-294.00-0091",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset EE Relay Room Sector 4",
+    "station": "EE",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 294.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2021-03-10",
+    "condition_score": 84.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C02-SIG-0549",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C02-SIG-0549"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C02-294.40-0092",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section EE",
+    "station": "EE",
+    "division": "Vijayawada",
+    "zone": "SCoR",
+    "corridor_id": "C02",
+    "km": 294.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2017-03-15",
+    "condition_score": 53.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C02-TRACK-0138",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C02-TRACK-0138"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-012.00-0093",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure GNT Bay 3",
+    "station": "GNT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 12.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2016-10-20",
+    "condition_score": 78.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0210"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C03-OHE-0210"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-012.50-0094",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset GNT Relay Room Sector 1",
+    "station": "GNT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 12.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 81.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0546",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0546"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-012.80-0095",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section GNT",
+    "station": "GNT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 12.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2018-04-15",
+    "condition_score": 54.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-TURNOUT-0139",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C03-TURNOUT-0139"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-013.55-0096",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset GNT Relay Room Sector 3 + 25kV OHE Structure GNT Bay 7",
+    "station": "GNT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 13.55,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "20110-10-20",
+    "condition_score": 68.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0518",
+      "TDMS_id": "TDMS-C03-OHE-0238"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0518",
+        "TDMS-C03-OHE-0238"
+      ],
+      "km_span": 0.1
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-014.40-0097",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section GNT",
+    "station": "GNT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 14.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2019-05-15",
+    "condition_score": 55.0,
+    "criticality": "CRITICAL",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-SLEEPER-0140",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C03-SLEEPER-0140"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-048.00-0098",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure NRT Bay 7",
+    "station": "NRT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 48.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "20110-10-20",
+    "condition_score": 76.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0246"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C03-OHE-0246"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-048.50-0099",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset NRT Relay Room Sector 5",
+    "station": "NRT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 48.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 61.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0526",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0526"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-048.80-0100",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section NRT + 25kV OHE Structure NRT Bay 3",
+    "station": "NRT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 48.8,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "20110-06-15",
+    "condition_score": 56.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-JOINT-0141",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0218"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C03-JOINT-0141",
+        "TDMS-C03-OHE-0218"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-050.00-0101",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset NRT Relay Room Sector 3",
+    "station": "NRT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 50.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 89.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0554",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0554"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-050.40-0102",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section NRT",
+    "station": "NRT",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 50.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20111-07-15",
+    "condition_score": 57.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-CURVE-0142",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C03-CURVE-0142"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-085.50-0103",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset VKN Relay Room Sector 3",
+    "station": "VKN",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 85.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 76.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0506",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0506"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-085.80-0104",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section VKN + 25kV OHE Structure VKN Bay 7",
+    "station": "VKN",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 85.8,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "20110-10-20",
+    "condition_score": 58.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-JOINT-0143",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0254"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C03-JOINT-0143",
+        "TDMS-C03-OHE-0254"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-086.60-0105",
+    "asset_type": "AUTO_TENSION_AT",
+    "subtype": "25kV OHE Structure VKN Bay 3",
+    "station": "VKN",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 86.6,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2016-10-20",
+    "condition_score": 94.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0226"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C03-OHE-0226"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-087.00-0106",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset VKN Relay Room Sector 1",
+    "station": "VKN",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 87.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 69.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0534",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0534"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-087.40-0107",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section VKN",
+    "station": "VKN",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 87.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2014-01-15",
+    "condition_score": 59.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-TRACK-0144",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C03-TRACK-0144"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-122.00-0108",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure DKD Bay 3",
+    "station": "DKD",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 122.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2016-10-20",
+    "condition_score": 64.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0234"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C03-OHE-0234"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-122.80-0109",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section DKD + 25kV OHE Structure DKD Bay 7",
+    "station": "DKD",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 122.8,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "20110-10-20",
+    "condition_score": 60.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-TURNOUT-0145",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0206"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C03-TURNOUT-0145",
+        "TDMS-C03-OHE-0206"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-123.00-0110",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset DKD Relay Room Sector 3",
+    "station": "DKD",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 123.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 77.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0542",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0542"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-124.00-0111",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset DKD Relay Room Sector 5",
+    "station": "DKD",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 124.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 84.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0514",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0514"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-124.40-0112",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section DKD",
+    "station": "DKD",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 124.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2016-03-15",
+    "condition_score": 61.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-SLEEPER-0146",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C03-SLEEPER-0146"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-147.00-0113",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset MRK Relay Room Sector 5",
+    "station": "MRK",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 147.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 85.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0550",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0550"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-147.80-0114",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section MRK + 25kV OHE Structure MRK Bay 3",
+    "station": "MRK",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 147.8,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "2016-10-20",
+    "condition_score": 62.0,
+    "criticality": "CRITICAL",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-JOINT-0147",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0242"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C03-JOINT-0147",
+        "TDMS-C03-OHE-0242"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-148.00-0115",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset MRK Relay Room Sector 1",
+    "station": "MRK",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 148.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 92.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0522",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0522"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-148.60-0116",
+    "asset_type": "AUTO_TENSION_AT",
+    "subtype": "25kV OHE Structure MRK Bay 7",
+    "station": "MRK",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 148.6,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "20110-10-20",
+    "condition_score": 82.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0214"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C03-OHE-0214"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-149.40-0117",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section MRK",
+    "station": "MRK",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 149.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2018-05-15",
+    "condition_score": 63.0,
+    "criticality": "MEDIUM",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-CURVE-0148",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C03-CURVE-0148"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-206.00-0118",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset GID Relay Room Sector 3 + 25kV OHE Structure GID Bay 7",
+    "station": "GID",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 206.0,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "20110-10-20",
+    "condition_score": 65.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0530",
+      "TDMS_id": "TDMS-C03-OHE-0222"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0530",
+        "TDMS-C03-OHE-0222"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-206.80-0119",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section GID",
+    "station": "GID",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 206.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2019-06-15",
+    "condition_score": 64.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-JOINT-0149",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C03-JOINT-0149"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-207.55-0120",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset GID Relay Room Sector 1 + 25kV OHE Structure GID Bay 3",
+    "station": "GID",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 207.55,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "2016-10-20",
+    "condition_score": 80.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0558",
+      "TDMS_id": "TDMS-C03-OHE-0250"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0558",
+        "TDMS-C03-OHE-0250"
+      ],
+      "km_span": 0.1
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-208.40-0121",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section GID",
+    "station": "GID",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 208.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20110-07-15",
+    "condition_score": 65.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-TRACK-0150",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C03-TRACK-0150"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-255.00-0122",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset NDL Relay Room Sector 1 + 25kV OHE Structure NDL Bay 3",
+    "station": "NDL",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 255.0,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "2016-10-20",
+    "condition_score": 80.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0510",
+      "TDMS_id": "TDMS-C03-OHE-0258"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0510",
+        "TDMS-C03-OHE-0258"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-255.80-0123",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section NDL + 25kV OHE Structure NDL Bay 7",
+    "station": "NDL",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 255.8,
+    "owning_departments": [
+      "Engineering",
+      "Traction"
+    ],
+    "owning_department": "Engineering, Traction",
+    "install_date": "20110-10-20",
+    "condition_score": 60.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-TURNOUT-0151",
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C03-OHE-0230"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "raw_ids": [
+        "TMS-C03-TURNOUT-0151",
+        "TDMS-C03-OHE-0230"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-256.50-0124",
+    "asset_type": "DIGITAL_AXLE_COUNTER",
+    "subtype": "S&T Asset NDL Relay Room Sector 5",
+    "station": "NDL",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 256.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2022-03-10",
+    "condition_score": 73.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C03-SIG-0538",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C03-SIG-0538"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C03-257.40-0125",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section NDL",
+    "station": "NDL",
+    "division": "Guntur",
+    "zone": "SCoR",
+    "corridor_id": "C03",
+    "km": 257.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20112-01-15",
+    "condition_score": 67.0,
+    "criticality": "MEDIUM",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C03-SLEEPER-0152",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C03-SLEEPER-0152"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-010.50-0126",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset GTL Relay Room Sector 4",
+    "station": "GTL",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 10.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 66.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0531",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0531"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-010.80-0127",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section GTL",
+    "station": "GTL",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 10.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2014-02-15",
+    "condition_score": 68.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-JOINT-0153",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-JOINT-0153"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-011.20-0128",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure GTL Bay 8",
+    "station": "GTL",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 11.2,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "20111-10-20",
+    "condition_score": 75.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0207"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0207"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-011.20-0129",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure GTL Bay 4",
+    "station": "GTL",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 11.2,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2017-10-20",
+    "condition_score": 73.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0243"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0243"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-012.40-0130",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section GTL",
+    "station": "GTL",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 12.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2015-03-15",
+    "condition_score": 69.0,
+    "criticality": "CRITICAL",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-CURVE-0154",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-CURVE-0154"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-032.40-0131",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure GY Bay 4",
+    "station": "GY",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 32.4,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2017-10-20",
+    "condition_score": 65.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0235"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0235"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-032.80-0132",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section GY",
+    "station": "GY",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 32.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2016-04-15",
+    "condition_score": 70.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-JOINT-0155",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-JOINT-0155"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-033.50-0133",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset GY Relay Room Sector 2",
+    "station": "GY",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 33.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 93.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0523",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0523"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-034.00-0134",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset GY Relay Room Sector 2",
+    "station": "GY",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 34.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 94.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0559",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0559"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-034.40-0135",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section GY",
+    "station": "GY",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 34.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2017-05-15",
+    "condition_score": 71.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-TRACK-0156",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-TRACK-0156"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-079.00-0136",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset TU Relay Room Sector 6",
+    "station": "TU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 79.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 85.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0515",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0515"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-079.50-0137",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset TU Relay Room Sector 6",
+    "station": "TU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 79.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 86.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0551",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0551"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-079.80-0138",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section TU",
+    "station": "TU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 79.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2018-06-15",
+    "condition_score": 72.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-TURNOUT-0157",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-TURNOUT-0157"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-081.00-0139",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure TU Bay 4",
+    "station": "TU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 81.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2017-10-20",
+    "condition_score": 95.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0227"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0227"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-081.40-0140",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section TU",
+    "station": "TU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 81.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2019-07-15",
+    "condition_score": 73.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-SLEEPER-0158",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-SLEEPER-0158"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-106.80-0141",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section KDP",
+    "station": "KDP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 106.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20110-08-15",
+    "condition_score": 74.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-JOINT-0159",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-JOINT-0159"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-107.00-0142",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset KDP Relay Room Sector 4",
+    "station": "KDP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 107.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 77.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0507",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0507"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-107.20-0143",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure KDP Bay 4",
+    "station": "KDP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 107.2,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2017-10-20",
+    "condition_score": 87.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0219"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0219"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-107.20-0144",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure KDP Bay 8",
+    "station": "KDP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 107.2,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "20111-10-20",
+    "condition_score": 85.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0255"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0255"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-107.50-0145",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset KDP Relay Room Sector 4",
+    "station": "KDP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 107.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 78.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0543",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0543"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-108.40-0146",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section KDP",
+    "station": "KDP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 108.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20111-01-15",
+    "condition_score": 75.0,
+    "criticality": "MEDIUM",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-CURVE-0160",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-CURVE-0160"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-144.60-0147",
+    "asset_type": "RAIL_60KG",
+    "subtype": "CWR Heavy Freight Line",
+    "station": "YA",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 144.6,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2018-08-19",
+    "condition_score": 60.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-TRK-4081",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-TRK-4081"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-144.90-0148",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Yard Crossover 201A",
+    "station": "YA",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 144.9,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2017-02-14",
+    "condition_score": 52.0,
+    "criticality": "CRITICAL",
+    "status": "DEFECT_LOGGED",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-PNT-4082",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-PNT-4082"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-146.00-0149",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset YA Relay Room Sector 2",
+    "station": "YA",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 146.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 70.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0535",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0535"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-146.40-0150",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure YA Bay 4",
+    "station": "YA",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 146.4,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2017-10-20",
+    "condition_score": 79.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0211"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0211"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-146.40-0151",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure YA Bay 8",
+    "station": "YA",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 146.4,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "20111-10-20",
+    "condition_score": 77.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0247"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0247"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-146.80-0152",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section YA",
+    "station": "YA",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 146.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20112-02-15",
+    "condition_score": 76.0,
+    "criticality": "CRITICAL",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-JOINT-0161",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-JOINT-0161"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-148.40-0153",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section YA",
+    "station": "YA",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 148.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2014-03-15",
+    "condition_score": 77.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-TRACK-0162",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-TRACK-0162"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-186.80-0154",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section HX",
+    "station": "HX",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 186.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2015-04-15",
+    "condition_score": 78.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-TURNOUT-0163",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-TURNOUT-0163"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-187.00-0155",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset HX Relay Room Sector 6",
+    "station": "HX",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 187.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 62.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0527",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0527"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-188.00-0156",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure HX Bay 4",
+    "station": "HX",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 188.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2017-10-20",
+    "condition_score": 71.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0203"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0203"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-188.00-0157",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure HX Bay 8",
+    "station": "HX",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 188.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "20111-10-20",
+    "condition_score": 69.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0239"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0239"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-188.40-0158",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section HX",
+    "station": "HX",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 188.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2016-05-15",
+    "condition_score": 79.0,
+    "criticality": "MEDIUM",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-SLEEPER-0164",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-SLEEPER-0164"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-237.00-0159",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset RJP Relay Room Sector 4",
+    "station": "RJP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 237.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 90.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0555",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0555"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-237.80-0160",
+    "asset_type": "GLUED_INSULATED_JOINT",
+    "subtype": "Glued Insulated Rail Joint Section RJP",
+    "station": "RJP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 237.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2017-06-15",
+    "condition_score": 80.0,
+    "criticality": "HIGH",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-JOINT-0165",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-JOINT-0165"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-238.20-0161",
+    "asset_type": "CANTILEVER_MAST",
+    "subtype": "25kV OHE Structure RJP Bay 8",
+    "station": "RJP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 238.2,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "20111-10-20",
+    "condition_score": 61.0,
+    "criticality": "HIGH",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0231"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0231"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-239.00-0162",
+    "asset_type": "POINT_MACHINE_143",
+    "subtype": "S&T Asset RJP Relay Room Sector 4",
+    "station": "RJP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 239.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 89.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0519",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0519"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-239.40-0163",
+    "asset_type": "TRANSITION_CURVE",
+    "subtype": "High-speed Transition Curve 2.2 deg Section RJP",
+    "station": "RJP",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 239.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2018-07-15",
+    "condition_score": 81.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-CURVE-0166",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-CURVE-0166"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-270.45-0164",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset KOU Relay Room Sector 2 + 25kV OHE Structure KOU Bay 8",
+    "station": "KOU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 270.45,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "20111-10-20",
+    "condition_score": 81.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0511",
+      "TDMS_id": "TDMS-C04-OHE-0223"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0511",
+        "TDMS-C04-OHE-0223"
+      ],
+      "km_span": 0.1
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-270.40-0165",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure KOU Bay 4",
+    "station": "KOU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 270.4,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2017-10-20",
+    "condition_score": 89.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0259"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0259"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-270.80-0166",
+    "asset_type": "EXPANSION_JOINT_SEJ",
+    "subtype": "Switch Expansion Joint (SEJ) Section KOU",
+    "station": "KOU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 270.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "2019-08-15",
+    "condition_score": 82.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-JOINT-0167",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-JOINT-0167"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-271.00-0167",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset KOU Relay Room Sector 2",
+    "station": "KOU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 271.0,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 82.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0547",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0547"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-272.40-0168",
+    "asset_type": "RAIL_60KG",
+    "subtype": "Continuous Welded Rail (60kg UIC) Section KOU",
+    "station": "KOU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 272.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20110-01-15",
+    "condition_score": 83.0,
+    "criticality": "CRITICAL",
+    "status": "MAINTENANCE_DUE",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-TRACK-0168",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-TRACK-0168"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-311.80-0169",
+    "asset_type": "TURNOUT_1_IN_12",
+    "subtype": "Points & Crossing Turnout 1-in-12 Section RU",
+    "station": "RU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 311.8,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20111-02-15",
+    "condition_score": 84.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-TURNOUT-0169",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-TURNOUT-0169"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-312.50-0170",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset RU Relay Room Sector 6",
+    "station": "RU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 312.5,
+    "owning_departments": [
+      "S&T"
+    ],
+    "owning_department": "S&T",
+    "install_date": "2023-03-10",
+    "condition_score": 73.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0503",
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "S&T"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0503"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-313.00-0171",
+    "asset_type": "SIGNAL_LED_MULTI_ASPECT",
+    "subtype": "S&T Asset RU Relay Room Sector 6 + 25kV OHE Structure RU Bay 8",
+    "station": "RU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 313.0,
+    "owning_departments": [
+      "S&T",
+      "Traction"
+    ],
+    "owning_department": "S&T, Traction",
+    "install_date": "20111-10-20",
+    "condition_score": 74.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": "SMMS-C04-SIG-0539",
+      "TDMS_id": "TDMS-C04-OHE-0215"
+    },
+    "reconciliation_metadata": {
+      "is_merged": true,
+      "component_count": 2,
+      "merged_departments": [
+        "S&T",
+        "Traction"
+      ],
+      "raw_ids": [
+        "SMMS-C04-SIG-0539",
+        "TDMS-C04-OHE-0215"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-313.00-0172",
+    "asset_type": "OHE_SECTION_ISOLATOR",
+    "subtype": "25kV OHE Structure RU Bay 4",
+    "station": "RU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 313.0,
+    "owning_departments": [
+      "Traction"
+    ],
+    "owning_department": "Traction",
+    "install_date": "2017-10-20",
+    "condition_score": 81.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": null,
+      "SMMS_id": null,
+      "TDMS_id": "TDMS-C04-OHE-0251"
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Traction"
+      ],
+      "raw_ids": [
+        "TDMS-C04-OHE-0251"
+      ],
+      "km_span": 0.0
+    }
+  },
+  {
+    "asset_id": "CAN-AST-C04-313.40-0173",
+    "asset_type": "PSC_SLEEPER",
+    "subtype": "Pre-stressed Concrete Sleepers Section RU",
+    "station": "RU",
+    "division": "Guntakal",
+    "zone": "SCoR",
+    "corridor_id": "C04",
+    "km": 313.4,
+    "owning_departments": [
+      "Engineering"
+    ],
+    "owning_department": "Engineering",
+    "install_date": "20112-03-15",
+    "condition_score": 85.0,
+    "criticality": "MEDIUM",
+    "status": "OPERATIONAL",
+    "cross_reference": {
+      "TMS_id": "TMS-C04-SLEEPER-0170",
+      "SMMS_id": null,
+      "TDMS_id": null
+    },
+    "reconciliation_metadata": {
+      "is_merged": false,
+      "component_count": 1,
+      "merged_departments": [
+        "Engineering"
+      ],
+      "raw_ids": [
+        "TMS-C04-SLEEPER-0170"
+      ],
+      "km_span": 0.0
+    }
+  }
+]
