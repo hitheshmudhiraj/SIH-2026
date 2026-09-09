@@ -118,5 +118,76 @@ class TestBlockPlanningSystem(unittest.TestCase):
         self.assertIn("improvements", r.json()["metrics"])
         print("  [TEST PASSED] test_06_rest_endpoints: All 6 REST APIs responded with 200 OK")
 
+    def test_07_ai_block_recommender(self):
+        """Verify AI block recommendation with ML model scoring and slot ranking."""
+        # Scenario 1: Engineering -> Track Maintenance -> 2h -> High Priority
+        payload1 = {
+            "section_id": "SEC_C01_01",
+            "department": "Engineering",
+            "work_type": "Track Maintenance",
+            "duration_hours": 2.0,
+            "priority": "HIGH",
+            "preferred_time_window": "ANY"
+        }
+        r1 = self.client.post("/api/block-planning/recommend", json=payload1)
+        self.assertEqual(r1.status_code, 200)
+        data1 = r1.json()
+        self.assertEqual(data1["status"], "SUCCESS")
+        self.assertIn("recommended_block", data1)
+        rec1 = data1["recommended_block"]
+        self.assertIn("start_time", rec1)
+        self.assertIn("end_time", rec1)
+        self.assertIn("optimization_score", rec1)
+        self.assertIn("affected_trains", rec1)
+        self.assertIn("expected_delay", rec1)
+        self.assertIn("reason", rec1)
+        self.assertGreater(data1["total_slots_evaluated"], 0)
+
+        # Scenario 2: S&T -> Signal Maintenance -> 1h -> Medium Priority
+        payload2 = {
+            "section_id": "SEC_C01_02",
+            "department": "S&T",
+            "work_type": "Signal Maintenance",
+            "duration_hours": 1.0,
+            "priority": "MEDIUM",
+            "preferred_time_window": "MIDDAY"
+        }
+        r2 = self.client.post("/api/block-planning/recommend", json=payload2)
+        self.assertEqual(r2.status_code, 200)
+        data2 = r2.json()
+        self.assertEqual(data2["status"], "SUCCESS")
+        self.assertIn("recommended_block", data2)
+
+        # Scenario 3: Traction -> Maintenance -> 3h -> High Priority
+        payload3 = {
+            "section_id": "SEC_C01_03",
+            "department": "Traction",
+            "work_type": "Power Isolation Maintenance",
+            "duration_hours": 3.0,
+            "priority": "HIGH",
+            "preferred_time_window": "NIGHT"
+        }
+        r3 = self.client.post("/api/block-planning/recommend", json=payload3)
+        self.assertEqual(r3.status_code, 200)
+        data3 = r3.json()
+        self.assertEqual(data3["status"], "SUCCESS")
+        self.assertIn("recommended_block", data3)
+
+        # Edge case: Invalid duration
+        r_err = self.client.post("/api/block-planning/recommend", json={"section_id": "SEC_C01_01", "department": "Engineering", "work_type": "Track Maintenance", "duration_hours": -1.0})
+        self.assertEqual(r_err.status_code, 400)
+
+        print("  [TEST PASSED] test_07_ai_block_recommender: Evaluated all 3 scenarios and edge cases successfully")
+
+    def test_08_ai_model_metadata(self):
+        """Verify model metadata API returns metrics and synthetic dataset notice."""
+        r = self.client.get("/api/block-planning/model-metadata")
+        self.assertEqual(r.status_code, 200)
+        data = r.json()
+        self.assertIn("model_name", data)
+        self.assertIn("notice", data)
+        print("  [TEST PASSED] test_08_ai_model_metadata: Metadata and notice returned successfully")
+
 if __name__ == "__main__":
     unittest.main()
+

@@ -150,3 +150,29 @@ export async function fetchLatestMonthlyPlan() {
   return res.json();
 }
 
+// AI Maintenance Block Recommender APIs
+export async function getAiBlockRecommendation(payload) {
+  const res = await fetch(`${BASE_URL}/block-planning/recommend`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) {
+    const errText = await res.text();
+    let msg = 'Failed to generate AI block recommendation';
+    try {
+      const parsed = JSON.parse(errText);
+      msg = parsed.detail || msg;
+    } catch {
+      msg = errText || msg;
+    }
+    throw new Error(msg);
+  }
+  return res.json();
+}
+
+export async function fetchModelMetadata() {
+  const res = await fetch(`${BASE_URL}/block-planning/model-metadata`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}

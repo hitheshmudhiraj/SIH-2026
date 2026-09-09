@@ -9,6 +9,7 @@ import BlockPlanningView from './components/BlockPlanningView';
 import KpiComparisonView from './components/KpiComparisonView';
 import AuditTrailView from './components/AuditTrailView';
 import ReplanningView from './components/ReplanningView';
+import DepartmentBlockScheduleView from './components/DepartmentBlockScheduleView';
 
 function AppContent({ user, onLogout }) {
   return (
@@ -17,11 +18,13 @@ function AppContent({ user, onLogout }) {
         <Route element={<AppShell user={user} onLogout={onLogout} />}>
           <Route path="/" element={<HomeView />} />
           <Route path="/dashboard" element={<Navigate to="/" replace />} />
+          <Route path="/block-planning" element={<BlockPlanningView />} />
+          <Route path="/optimizer" element={<BlockPlanningView />} />
           <Route path="/intake" element={<DataIntegrationHubView />} />
           <Route path="/planning-board" element={<UnifiedCorridorMapView />} />
-          <Route path="/optimizer" element={<BlockPlanningView />} />
-          <Route path="/block-planning" element={<BlockPlanningView />} />
-          <Route path="/plans" element={<BlockPlanningView />} />
+          <Route path="/department-schedule" element={<DepartmentBlockScheduleView />} />
+          <Route path="/weekly-monthly-plans" element={<DepartmentBlockScheduleView />} />
+          <Route path="/plans" element={<DepartmentBlockScheduleView />} />
           <Route path="/kpis" element={<KpiComparisonView />} />
           <Route path="/audit-trail" element={<AuditTrailView />} />
           <Route path="/replan" element={<ReplanningView />} />

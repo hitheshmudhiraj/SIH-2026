@@ -27,6 +27,7 @@ from app.services.corridor_availability import corridor_engine
 from app.services.prioritization_engine import prioritizer
 from app.services.block_planner import block_planner, PLANS_DIR
 from app.services.block_comparator import plan_comparator
+from ml.predict import block_recommender
 
 app = FastAPI(
     title="RailBlock AI — South Coast Railway Maintenance Planning Platform",
@@ -85,6 +86,18 @@ class PlanModifyPayload(BaseModel):
 class BlockPlanRequest(BaseModel):
     start_date: Optional[str] = "2026-09-08"
     end_date: Optional[str] = None
+
+class BlockRecommendationRequest(BaseModel):
+    section_id: str = "SEC_C01_01"
+    department: str = "Engineering"
+    work_type: str = "Track Maintenance"
+    duration_hours: float = 2.0
+    preferred_date: Optional[str] = "2026-09-08"
+    preferred_time_window: Optional[str] = "ANY"
+    priority: Optional[str] = "HIGH"
+    crew_type: Optional[str] = None
+    equipment_required: Optional[str] = None
+    work_description: Optional[str] = ""
 
 
 
@@ -522,6 +535,53 @@ def get_latest_monthly_plan():
         with open(latest_file, "r", encoding="utf-8") as f:
             return json.load(f)
     return block_planner.generate_monthly_block_plan(start_date="2026-09-08")
+
+
+# =====================================================================
+# 8c. AI MAINTENANCE BLOCK RECOMMENDER & OPTIMIZATION (ML-POWERED)
+# =====================================================================
+@app.post("/api/block-planning/recommend")
+@app.post("/api/block-plan/recommend")
+def recommend_block_endpoint(req: BlockRecommendationRequest = Body(...)):
+    """
+    AI-Powered Maintenance Block Time Recommendation Engine.
+    Uses trained Gradient Boosting & Random Forest models with corridor timetable train
+    occupancies, section availability, and operational constraints to predict delays,
+    affected trains, and block efficiency scores across sliding time windows.
+    """
+    if req.duration_hours <= 0:
+        raise HTTPException(status_code=400, detail="Duration must be greater than 0 hours.")
+    if req.duration_hours > 24:
+        raise HTTPException(status_code=400, detail="Duration cannot exceed 24 hours.")
+
+    try:
+        recommendation = block_recommender.recommend_block(
+            section_id=req.section_id,
+            department=req.department,
+            work_type=req.work_type,
+            duration_hours=req.duration_hours,
+            preferred_date=req.preferred_date,
+            preferred_time_window=req.preferred_time_window or "ANY",
+            priority=req.priority or "HIGH",
+            crew_type=req.crew_type,
+            equipment_required=req.equipment_required,
+            work_description=req.work_description
+        )
+        return recommendation
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"ML Recommendation Error: {str(e)}")
+
+
+@app.get("/api/block-planning/model-metadata")
+def get_ml_model_metadata_endpoint():
+    """
+    Returns model provenance, algorithms, test set R2 and MAE evaluation metrics,
+    and synthetic dataset notice.
+    """
+    try:
+        return block_recommender.get_model_metadata()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Could not load ML metadata: {str(e)}")
 
 
 # =====================================================================

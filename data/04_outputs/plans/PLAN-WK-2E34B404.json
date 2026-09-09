@@ -1,10 +1,10 @@
 {
-  "plan_id": "PLAN-WK-DE0408D3",
+  "plan_id": "PLAN-WK-2E34B404",
   "plan_type": "WEEKLY",
   "start_date": "2026-09-08",
   "end_date": "2026-09-14",
   "solver_status": "FEASIBLE",
-  "solve_duration_ms": 5100.5,
+  "solve_duration_ms": 5130.3,
   "summary": {
     "total_blocks": 93,
     "total_block_hours": 251.0,

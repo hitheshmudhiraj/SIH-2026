@@ -2,7 +2,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, Layers, Calendar,
   BarChart3, RotateCcw, Train,
-  LogOut, Activity, Cpu
+  LogOut, Cpu, Users
 } from 'lucide-react';
 
 export default function AppShell({
@@ -19,10 +19,10 @@ export default function AppShell({
 
   const navLinks = [
     { to: '/dashboard', label: 'Home', icon: LayoutDashboard },
+    { to: '/block-planning', label: 'Block Planning', icon: Cpu },
     { to: '/intake', label: 'Data Integration', icon: Layers },
     { to: '/planning-board', label: 'Corridor View', icon: Calendar },
-    { to: '/optimizer', label: 'Block Planning', icon: Cpu },
-    { to: '/plans', label: 'Optimization', icon: Activity },
+    { to: '/department-schedule', label: 'Department Schedule', icon: Users },
     { to: '/kpis', label: 'Reports', icon: BarChart3 },
     { to: '/audit-trail', label: 'Audit Trail', icon: RotateCcw }
   ];
@@ -50,7 +50,10 @@ export default function AppShell({
           <nav className="p-3 space-y-1">
             {navLinks.map((item) => {
               const Icon = item.icon;
-              const isActive = location.pathname === item.to || (item.to === '/dashboard' && location.pathname === '/');
+              const isActive = location.pathname === item.to ||
+                (item.to === '/dashboard' && location.pathname === '/') ||
+                (item.to === '/block-planning' && location.pathname === '/optimizer') ||
+                (item.to === '/department-schedule' && (location.pathname === '/plans' || location.pathname === '/weekly-monthly-plans'));
               return (
                 <NavLink
                   key={item.to}

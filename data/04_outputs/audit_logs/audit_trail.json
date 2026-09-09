@@ -1,5 +1,18 @@
 [
   {
+    "id": "AUD-DB9D2968",
+    "timestamp": "2026-09-08T18:48:13.216415",
+    "event_type": "INTEGRATION_SYNC",
+    "action": "Executed Unified Synchronization & Normalization across 5 Railway Systems",
+    "user": "DataIntegrationHub",
+    "details": {
+      "received": 140,
+      "normalized": 140,
+      "quality_score": 99.7,
+      "cross_dept_matches": 204
+    }
+  },
+  {
     "id": "AUD-3E5AF0ED",
     "timestamp": "2026-09-07T21:52:08.541030",
     "event_type": "INTEGRATION_SYNC",
