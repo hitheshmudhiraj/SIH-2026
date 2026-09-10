@@ -1,7 +1,7 @@
 [
   {
-    "review_id": "DEDUP-REV-A74EF663",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "review_id": "DEDUP-REV-8F047E50",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "flag_type": "probable_duplicate",
     "corridor_id": "C04",
     "km_distance_m": 0.0,
@@ -35,8 +35,8 @@
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-A63BB76B",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "review_id": "DEDUP-REV-ECCC0E04",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "flag_type": "probable_duplicate",
     "corridor_id": "C01",
     "km_distance_m": 0.0,
@@ -70,8 +70,8 @@
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-012B124D",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "review_id": "DEDUP-REV-B7B8B394",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "flag_type": "probable_duplicate",
     "corridor_id": "C02",
     "km_distance_m": 0.0,
@@ -105,8 +105,8 @@
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-D333A2E7",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "review_id": "DEDUP-REV-EF0D20B1",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "flag_type": "probable_duplicate",
     "corridor_id": "C02",
     "km_distance_m": 0.0,
@@ -140,8 +140,8 @@
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-095BE862",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "review_id": "DEDUP-REV-54827754",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "flag_type": "probable_duplicate",
     "corridor_id": "C02",
     "km_distance_m": 0.0,
@@ -175,8 +175,8 @@
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-18C17A61",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "review_id": "DEDUP-REV-BF1CF734",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "flag_type": "probable_duplicate",
     "corridor_id": "C02",
     "km_distance_m": 0.0,

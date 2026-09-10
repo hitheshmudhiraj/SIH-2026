@@ -1,7 +1,7 @@
 [
   {
-    "conflict_id": "CONF-CND-38694952",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-62AF81F9",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-010.50-0001",
     "corridor_id": "C01",
     "field_in_conflict": "condition_score",
@@ -33,8 +33,8 @@
     }
   },
   {
-    "conflict_id": "CONF-LOC-F6414509",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-LOC-DBE8E4F6",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-124.35-0019",
     "corridor_id": "C01",
     "field_in_conflict": "km",
@@ -66,8 +66,8 @@
     }
   },
   {
-    "conflict_id": "CONF-OTH-2F341EE0",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-OTH-AF723EF5",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-124.35-0019",
     "corridor_id": "C01",
     "field_in_conflict": "status",
@@ -99,8 +99,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-6B8F1F69",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-DC858E67",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-124.60-0020",
     "corridor_id": "C01",
     "field_in_conflict": "condition_score",
@@ -139,8 +139,8 @@
     }
   },
   {
-    "conflict_id": "CONF-OTH-9CC3BFD1",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-OTH-FAC78265",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-124.60-0020",
     "corridor_id": "C01",
     "field_in_conflict": "status",
@@ -179,8 +179,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-C118915C",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-9A4CF305",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-124.80-0021",
     "corridor_id": "C01",
     "field_in_conflict": "condition_score",
@@ -212,8 +212,8 @@
     }
   },
   {
-    "conflict_id": "CONF-OTH-B6C388FF",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-OTH-B1C068CF",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-124.80-0021",
     "corridor_id": "C01",
     "field_in_conflict": "status",
@@ -245,8 +245,8 @@
     }
   },
   {
-    "conflict_id": "CONF-LOC-65243322",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-LOC-29489D08",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-136.55-0023",
     "corridor_id": "C01",
     "field_in_conflict": "km",
@@ -278,8 +278,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-A9BAB0EC",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-E806A2FF",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-136.55-0023",
     "corridor_id": "C01",
     "field_in_conflict": "condition_score",
@@ -311,8 +311,8 @@
     }
   },
   {
-    "conflict_id": "CONF-OTH-21B56208",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-OTH-B25C2A60",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-136.55-0023",
     "corridor_id": "C01",
     "field_in_conflict": "status",
@@ -344,8 +344,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-D17B9418",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-C8C7C545",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-168.80-0028",
     "corridor_id": "C01",
     "field_in_conflict": "condition_score",
@@ -377,8 +377,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-8376110F",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-A11AE196",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C01-290.80-0041",
     "corridor_id": "C01",
     "field_in_conflict": "condition_score",
@@ -410,8 +410,8 @@
     }
   },
   {
-    "conflict_id": "CONF-LOC-E80623A4",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-LOC-2AD7F7F7",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C02-020.95-0047",
     "corridor_id": "C02",
     "field_in_conflict": "km",
@@ -443,8 +443,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-AFDF97F5",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-F4983854",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C02-020.95-0047",
     "corridor_id": "C02",
     "field_in_conflict": "condition_score",
@@ -476,8 +476,8 @@
     }
   },
   {
-    "conflict_id": "CONF-LOC-013388E4",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-LOC-CDB527BC",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C02-150.45-0064",
     "corridor_id": "C02",
     "field_in_conflict": "km",
@@ -509,8 +509,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-163CED6D",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-32431DE4",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C02-150.45-0064",
     "corridor_id": "C02",
     "field_in_conflict": "condition_score",
@@ -542,8 +542,8 @@
     }
   },
   {
-    "conflict_id": "CONF-OTH-BC8C731E",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-OTH-54C88E53",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C02-150.45-0064",
     "corridor_id": "C02",
     "field_in_conflict": "status",
@@ -575,8 +575,8 @@
     }
   },
   {
-    "conflict_id": "CONF-LOC-E6F8617A",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-LOC-B9062614",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-013.55-0096",
     "corridor_id": "C03",
     "field_in_conflict": "km",
@@ -608,8 +608,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-865CE3D8",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-F7C9B699",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-013.55-0096",
     "corridor_id": "C03",
     "field_in_conflict": "condition_score",
@@ -641,8 +641,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-EE2D1C27",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-E30D8C74",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-048.80-0100",
     "corridor_id": "C03",
     "field_in_conflict": "condition_score",
@@ -674,8 +674,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-8949B946",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-DEA17D38",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-085.80-0104",
     "corridor_id": "C03",
     "field_in_conflict": "condition_score",
@@ -707,8 +707,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-852549F3",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-11F42BCC",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-122.80-0109",
     "corridor_id": "C03",
     "field_in_conflict": "condition_score",
@@ -740,8 +740,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-653B05DF",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-875EAFB9",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-147.80-0114",
     "corridor_id": "C03",
     "field_in_conflict": "condition_score",
@@ -773,8 +773,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-FF5366CB",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-D16E089A",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-206.00-0118",
     "corridor_id": "C03",
     "field_in_conflict": "condition_score",
@@ -806,8 +806,8 @@
     }
   },
   {
-    "conflict_id": "CONF-OTH-3B3BC2BE",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-OTH-B36FB063",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-206.00-0118",
     "corridor_id": "C03",
     "field_in_conflict": "status",
@@ -839,8 +839,8 @@
     }
   },
   {
-    "conflict_id": "CONF-LOC-3A11E5FA",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-LOC-783C2EE6",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-207.55-0120",
     "corridor_id": "C03",
     "field_in_conflict": "km",
@@ -872,8 +872,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-C9028C1B",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-58AFCD6D",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-207.55-0120",
     "corridor_id": "C03",
     "field_in_conflict": "condition_score",
@@ -905,8 +905,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-098D8C7C",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-FD51D5DD",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-255.00-0122",
     "corridor_id": "C03",
     "field_in_conflict": "condition_score",
@@ -938,8 +938,8 @@
     }
   },
   {
-    "conflict_id": "CONF-OTH-97AB3A24",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-OTH-2D1DCA6A",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-255.00-0122",
     "corridor_id": "C03",
     "field_in_conflict": "status",
@@ -971,8 +971,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-C7342156",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-6DDBA47B",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C03-255.80-0123",
     "corridor_id": "C03",
     "field_in_conflict": "condition_score",
@@ -1004,8 +1004,8 @@
     }
   },
   {
-    "conflict_id": "CONF-LOC-8C5F3B98",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-LOC-2C396F10",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C04-270.45-0164",
     "corridor_id": "C04",
     "field_in_conflict": "km",
@@ -1037,8 +1037,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-17EA2045",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-723F0505",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C04-270.45-0164",
     "corridor_id": "C04",
     "field_in_conflict": "condition_score",
@@ -1070,8 +1070,8 @@
     }
   },
   {
-    "conflict_id": "CONF-CND-54963311",
-    "detected_at": "2026-09-09T09:12:44.940865",
+    "conflict_id": "CONF-CND-43454804",
+    "detected_at": "2026-09-09T11:27:20.230004",
     "asset_id": "CAN-AST-C04-313.00-0171",
     "corridor_id": "C04",
     "field_in_conflict": "condition_score",

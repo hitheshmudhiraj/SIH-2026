@@ -10,11 +10,11 @@ const DEMO_USERS = [
 export default function LoginPage({ onLogin }) {
   return (
     <div className="relative w-screen h-screen overflow-hidden font-sans bg-slate-900 select-none">
-      {/* Full Background Indian Railways Locomotive Image */}
+      {/* Full Background Indian Railways Locomotive & Track Maintenance Image */}
       <img
-        src="/train_hero.jpg"
-        alt="Indian Railways Locomotive"
-        className="absolute inset-0 w-full h-full object-cover object-left lg:object-center pointer-events-none"
+        src="/login_bg.jpg"
+        alt="Indian Railways Locomotive and Track Maintenance"
+        className="absolute inset-0 w-full h-full object-cover object-left md:object-center pointer-events-none"
       />
 
       {/* Floating Glassmorphic Authentication Card on the Right */}

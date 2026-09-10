@@ -1016,6 +1016,70 @@ def recommend_block_endpoint(req: BlockRecommendationRequest = Body(...)):
             equipment_required=req.equipment_required,
             work_description=req.work_description
         )
+
+        # Persist newly generated block into latest_weekly_plan.json
+        try:
+            latest_file = os.path.join(PLANS_DIR, "latest_weekly_plan.json")
+            if os.path.exists(latest_file):
+                with open(latest_file, "r", encoding="utf-8") as f:
+                    plan_data = json.load(f)
+            else:
+                plan_data = {"blocks": [], "summary": {}}
+
+            rec_block = recommendation.get("recommended_block", {})
+            new_block_id = f"BLK-NEW-{req.section_id}-{datetime.now().strftime('%Y%m%d%H%M%S')}"
+
+            new_block_item = {
+                "block_id": new_block_id,
+                "section_id": req.section_id,
+                "section_name": recommendation.get("section_name", req.section_id),
+                "division": recommendation.get("division", "Vijayawada"),
+                "date": rec_block.get("date", req.preferred_date or datetime.now().strftime("%Y-%m-%d")),
+                "start_time": rec_block.get("start_time", "01:00"),
+                "end_time": rec_block.get("end_time", "04:00"),
+                "duration_hours": req.duration_hours,
+                "window_name": rec_block.get("slot_category", "AI Optimized Window"),
+                "is_joint_megablock": bool(rec_block.get("joint_synergy_opportunity", False)),
+                "departments": [req.department] + (["Traction", "S&T"] if rec_block.get("joint_synergy_opportunity") else []),
+                "tasks": [
+                    {
+                        "task_id": f"TSK-NEW-{datetime.now().strftime('%M%S')}",
+                        "department": req.department,
+                        "defect_type": req.work_type,
+                        "asset_type": req.work_description or f"{req.department} Asset",
+                        "severity": (req.priority or "HIGH").lower(),
+                        "priority_score": recommendation.get("priority_score", 85),
+                        "equipment_required": req.equipment_required or "Standard Equipment",
+                        "crew_required": req.crew_type or f"{req.department} Gang"
+                    }
+                ],
+                "train_regulation": {
+                    "affected_trains_count": rec_block.get("affected_trains", 0),
+                    "regulation_strategy": rec_block.get("reason", "Corridor headroom verified. Timetable clearance confirmed."),
+                    "regulated_trains": [t.get("train_number") for t in rec_block.get("conflicting_trains", [])]
+                },
+                "status": "APPROVED",
+                "approved_by": "Sr. DOM (Vijayawada Division)",
+                "is_newly_generated": True,
+                "generated_at": datetime.now().strftime("%d %b %Y, %I:%M %p")
+            }
+
+            existing_blocks = plan_data.get("blocks", [])
+            # Filter out prior generated blocks with exact same ID
+            existing_blocks = [b for b in existing_blocks if b.get("block_id") != new_block_id]
+            plan_data["blocks"] = [new_block_item] + existing_blocks
+            plan_data["latest_new_block"] = new_block_item
+            if "summary" not in plan_data:
+                plan_data["summary"] = {}
+            plan_data["summary"]["total_blocks"] = len(plan_data["blocks"])
+
+            with open(latest_file, "w", encoding="utf-8") as f:
+                json.dump(plan_data, f, indent=2)
+
+            recommendation["persisted_block"] = new_block_item
+        except Exception as persist_err:
+            print(f"[WARN] Could not persist newly generated block: {persist_err}")
+
         return recommendation
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"ML Recommendation Error: {str(e)}")

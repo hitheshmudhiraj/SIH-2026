@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Calendar, Clock, Train, Layers, Cpu, CheckCircle2,
   AlertTriangle, Filter, ChevronRight, ArrowRight, ShieldCheck,
@@ -14,6 +15,7 @@ import {
 } from '../api';
 
 export default function BlockPlanningView() {
+  const navigate = useNavigate();
   const [sections, setSections] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
@@ -213,7 +215,50 @@ export default function BlockPlanningView() {
           ]
         });
 
-        setStatusMessage(`Optimization completed: Best slot recommended at ${b.formatted_time} with score ${scoreInt}%.`);
+        // Synchronize this newly generated plan to localStorage for Results / Reports page
+        const newPlanItem = res.persisted_block || {
+          block_id: `BLK-NEW-${payload.section_id}-${Date.now().toString(36).toUpperCase()}`,
+          section_id: payload.section_id,
+          section_name: res.section_name || `Corridor Section ${payload.section_id}`,
+          division: res.division || 'Vijayawada',
+          date: b.date || targetDate || '2026-09-09',
+          start_time: b.start_time || '01:00',
+          end_time: b.end_time || '04:00',
+          duration_hours: b.duration_hours || hoursNum,
+          window_name: b.slot_category || 'AI Recommended Window',
+          is_joint_megablock: Boolean(b.joint_synergy_opportunity),
+          departments: [payload.department, ...(b.joint_synergy_opportunity ? ['Traction', 'S&T'] : [])],
+          tasks: [
+            {
+              task_id: `TSK-AI-${Date.now().toString(36).toUpperCase()}`,
+              department: payload.department,
+              defect_type: payload.work_type,
+              asset_type: payload.work_description || `${payload.department} Asset`,
+              severity: payload.priority.toLowerCase(),
+              priority_score: res.priority_score || 85,
+              equipment_required: payload.equipment_required || 'Standard Gear',
+              crew_required: payload.crew_type || `${payload.department} Gang`
+            }
+          ],
+          train_regulation: {
+            affected_trains_count: b.affected_trains || 0,
+            regulation_strategy: b.reason || 'Headway verified with safe clearance margins.',
+            regulated_trains: (b.conflicting_trains || []).map(t => t.train_number)
+          },
+          status: 'APPROVED',
+          approved_by: 'Sr. DOM (Vijayawada Division)',
+          is_newly_generated: true,
+          generated_at: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+        };
+
+        try {
+          localStorage.setItem('railblock_latest_generated_plan', JSON.stringify(newPlanItem));
+          window.dispatchEvent(new CustomEvent('railblock_new_plan_generated', { detail: newPlanItem }));
+        } catch (e) {
+          console.warn('Could not save new plan to localStorage:', e);
+        }
+
+        setStatusMessage(`Optimization completed: Best slot recommended at ${b.formatted_time} with score ${scoreInt}%. Plan synced with Results.`);
       }
     } catch (err) {
       console.error('Error generating block plan:', err);
@@ -807,8 +852,33 @@ export default function BlockPlanningView() {
                   </div>
                 </div>
 
+                {/* Direct Link to Results Page */}
+                <div className="pt-3 border-t border-[#f1f5f9] space-y-2">
+                  <div className="p-3 bg-[#EFF6FF] border border-[#BFDBFE] rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <div className="flex items-center space-x-2 min-w-0">
+                      <Sparkles className="w-4 h-4 text-[#2563EB] shrink-0" />
+                      <div className="text-left min-w-0">
+                        <div className="text-xs font-bold text-[#1E40AF]">
+                          Plan Generated & Synchronized!
+                        </div>
+                        <div className="text-[11px] text-[#3B82F6] truncate">
+                          Ready to view on Results & Reports dashboard
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => navigate('/kpis', { state: { highlightNewPlan: true } })}
+                      className="px-3 py-1.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-lg text-xs font-bold transition-all shadow-xs cursor-pointer flex items-center space-x-1 shrink-0"
+                    >
+                      <span>View in Results</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+
                 {/* Clear Plan & Check Another Plan Button */}
-                <div className="pt-3 border-t border-[#f1f5f9]">
+                <div className="pt-2">
                   <button
                     type="button"
                     onClick={handleClearPlan}

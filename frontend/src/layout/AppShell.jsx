@@ -1,8 +1,8 @@
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, Link } from 'react-router-dom';
 import {
   LayoutDashboard, Layers, Calendar,
-  BarChart3, RotateCcw, Train,
-  LogOut, Cpu, Users
+  BarChart3, Train,
+  LogOut, Cpu, Users, ChevronRight
 } from 'lucide-react';
 
 export default function AppShell({
@@ -23,8 +23,7 @@ export default function AppShell({
     { to: '/intake', label: 'Data Integration', icon: Layers },
     { to: '/planning-board', label: 'Corridor View', icon: Calendar },
     { to: '/department-schedule', label: 'Department Schedule', icon: Users },
-    { to: '/kpis', label: 'Reports', icon: BarChart3 },
-    { to: '/audit-trail', label: 'Audit Trail', icon: RotateCcw }
+    { to: '/kpis', label: 'Reports', icon: BarChart3 }
   ];
 
   return (
@@ -58,7 +57,7 @@ export default function AppShell({
                 <NavLink
                   key={item.to}
                   to={item.to}
-                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
+                  className={`flex items-center space-x-3 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
                     isActive
                       ? 'bg-[#EFF6FF] text-[#1565C0] border-l-3 border-[#1565C0] shadow-sm'
                       : 'text-[#5B6575] hover:text-[#172033] hover:bg-[#F8FAFC]'
@@ -74,35 +73,57 @@ export default function AppShell({
         </div>
 
         {/* Sidebar Footer: System Status & User */}
-        <div className="p-3 border-t border-[#E2E8F0] bg-[#F8FAFC] space-y-3">
+        <div className="p-3 border-t border-[#E2E8F0] bg-[#F8FAFC] space-y-2.5">
           {/* System Status */}
-          <div className="px-3 py-2 bg-white rounded-lg border border-[#E2E8F0] text-xs">
+          <div className="px-3 py-1.5 bg-white rounded-lg border border-[#E2E8F0] text-xs">
             <div className="flex items-center space-x-2">
               <span className="w-2 h-2 rounded-full bg-[#15803D] animate-pulse" />
               <span className="text-[#5B6575] font-medium">All systems operational</span>
             </div>
           </div>
 
-          {/* User Info */}
+          {/* User Info - Clickable Profile Anchor */}
           {user && (
-            <div className="px-3 py-2 bg-white rounded-lg border border-[#E2E8F0] flex items-center justify-between">
-              <div className="min-w-0 pr-2">
-                <p className="text-xs font-semibold text-[#172033] truncate">
-                  {user.username ? (user.username.charAt(0).toUpperCase() + user.username.slice(1)) : 'Officer'}
-                </p>
-                <p className="text-[10px] text-[#7A8494] truncate">
-                  {user.role || user.zone || 'Indian Railways'}
-                </p>
+            <Link
+              to="/profile"
+              title="View Officer Profile & Authorization"
+              className={`px-3 py-2 rounded-xl border transition-all flex items-center justify-between group cursor-pointer ${
+                location.pathname === '/profile'
+                  ? 'bg-[#EFF6FF] border-[#1565C0] ring-1 ring-[#1565C0]/20 shadow-2xs'
+                  : 'bg-white border-[#E2E8F0] hover:border-[#CBD5E1] hover:bg-slate-50'
+              }`}
+            >
+              <div className="flex items-center space-x-2.5 min-w-0 pr-1">
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-black shrink-0 ${
+                  location.pathname === '/profile'
+                    ? 'bg-[#1565C0] text-white'
+                    : 'bg-blue-100 text-[#1565C0] group-hover:bg-[#1565C0] group-hover:text-white transition-colors'
+                }`}>
+                  {(user.displayName || user.username || 'AD').slice(0, 2).toUpperCase()}
+                </div>
+                <div className="min-w-0">
+                  <p className={`text-xs font-bold truncate ${
+                    location.pathname === '/profile' ? 'text-[#1565C0]' : 'text-[#172033]'
+                  }`}>
+                    {user.displayName || (user.username ? (user.username.charAt(0).toUpperCase() + user.username.slice(1)) : 'Officer')}
+                  </p>
+                  <p className="text-[10px] text-[#7A8494] truncate">
+                    {user.role || user.zone || 'Indian Railways'}
+                  </p>
+                </div>
               </div>
-              <div className="w-2 h-2 rounded-full bg-[#15803D] shrink-0" title="Active Session" />
-            </div>
+              <div className="flex items-center space-x-1 shrink-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" title="Active Session" />
+                <ChevronRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#1565C0] transition-colors" />
+              </div>
+            </Link>
           )}
 
           <button
             onClick={onLogout}
-            className="w-full flex items-center justify-center space-x-2 px-3 py-2.5 rounded-lg text-xs font-semibold text-[#B91C1C] hover:text-white bg-[#FEF2F2] hover:bg-[#B91C1C] border border-[#FECACA] hover:border-[#B91C1C] transition-all cursor-pointer"
+            className="w-full flex items-center justify-center space-x-2 px-3 py-2 rounded-lg text-xs font-semibold text-[#B91C1C] hover:text-white bg-[#FEF2F2] hover:bg-[#B91C1C] border border-[#FECACA] hover:border-[#B91C1C] transition-all cursor-pointer"
           >
-            <LogOut className="w-4 h-4" />
+            <LogOut className="w-3.5 h-3.5" />
             <span>Sign Out</span>
           </button>
         </div>

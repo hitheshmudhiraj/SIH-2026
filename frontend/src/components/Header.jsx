@@ -21,8 +21,7 @@ export default function Header({
     { id: 'conflicts', label: 'Conflicts & Grouping', icon: AlertTriangle },
     { id: 'gantt', label: 'Gantt Planning Board', icon: Calendar },
     { id: 'review', label: 'Planner Review & Approval', icon: FileText },
-    { id: 'replan', label: 'Dynamic Re-planning', icon: GitCompare },
-    { id: 'audit', label: 'Audit Trail', icon: RotateCcw }
+    { id: 'replan', label: 'Dynamic Re-planning', icon: GitCompare }
   ];
 
   return (

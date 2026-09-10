@@ -2,7 +2,8 @@ import { useState, useEffect, useMemo } from 'react';
 import {
   Train, MapPin, AlertCircle, Compass,
   Layers, ChevronRight, Eye, Wrench, Radio, Zap,
-  Calendar, Filter, ShieldAlert, CheckCircle2, Clock, AlertTriangle, X, Sparkles
+  Calendar, Filter, ShieldAlert, CheckCircle2, Clock, AlertTriangle, X, Sparkles,
+  RotateCcw
 } from 'lucide-react';
 import { fetchCorridorMapData } from '../lib/api';
 import BdmsRequestModal from './BdmsRequestModal';
@@ -74,18 +75,54 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
     }
   };
 
+  // Geographic Bounding Box and Projection for South Coast Railway / Andhra Pradesh
+  // Longitude: 76.6° E to 84.0° E, Latitude: 13.2° N to 18.2° N
   const projectCoords = (lat, lon) => {
-    const minLon = 76.8, maxLon = 83.8;
-    const minLat = 13.3, maxLat = 18.2;
-    const x = ((lon - minLon) / (maxLon - minLon)) * 740 + 30;
-    const y = 460 - ((lat - minLat) / (maxLat - minLat)) * 420;
-    return { x: Math.round(x), y: Math.round(y) };
+    const minLon = 76.6, maxLon = 84.0;
+    const minLat = 13.2, maxLat = 18.2;
+    const width = 900, height = 560;
+    const paddingX = 45, paddingY = 40;
+    const x = paddingX + ((lon - minLon) / (maxLon - minLon)) * (width - 2 * paddingX);
+    const y = height - paddingY - ((lat - minLat) / (maxLat - minLat)) * (height - 2 * paddingY);
+    return { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
   };
 
   const stations = mapData?.stations || [];
   const rawJobs = mapData?.maintenance_jobs || [];
   const trains = mapData?.train_movements || [];
-  const blocks = mapData?.active_blocks || [];
+  const rawBlocks = mapData?.active_blocks || [];
+
+  // Pan and Zoom State for map canvas
+  const [zoom, setZoom] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+  // Selected element for detailed inspection popup
+  const [selectedMapItem, setSelectedMapItem] = useState(null);
+
+  const handleMouseDown = (e) => {
+    // Only drag with left click on SVG canvas
+    if (e.button !== 0) return;
+    setIsDragging(true);
+    setDragStart({ x: e.clientX - pan.x, y: e.clientY - pan.y });
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    setPan({
+      x: e.clientX - dragStart.x,
+      y: e.clientY - dragStart.y
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleZoomIn = () => setZoom(z => Math.min(3.0, Math.round((z + 0.35) * 100) / 100));
+  const handleZoomOut = () => setZoom(z => Math.max(1.0, Math.round((z - 0.35) * 100) / 100));
+  const handleResetView = () => { setZoom(1); setPan({ x: 0, y: 0 }); };
 
   const stationsMap = useMemo(() => {
     const map = {};
@@ -105,15 +142,12 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
   // Filter jobs based on corridor, departments, and date range
   const filteredJobs = useMemo(() => {
     return rawJobs.filter(job => {
-      // Corridor filter
       if (selectedCorridor !== 'ALL' && job.corridor_id !== selectedCorridor) {
         return false;
       }
-      // Department filter
       if (!selectedDepartments.includes(job.department)) {
         return false;
       }
-      // Date range filter
       const jobDate = (job.due_date || '').slice(0, 10);
       if (startDate && jobDate && jobDate < startDate) {
         return false;
@@ -125,36 +159,242 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
     });
   }, [rawJobs, selectedCorridor, selectedDepartments, startDate, endDate]);
 
-  // Compute station coordinates with radial fanning for multiple co-located jobs
-  const positionedJobs = useMemo(() => {
-    const stationJobCounters = {};
-    return filteredJobs.map((job) => {
-      const stn = stationsMap[job.station] || stations[0];
-      const baseCoords = stn ? projectCoords(stn.latitude, stn.longitude) : { x: 400, y: 240 };
+  // Ordered Stations per Corridor for realistic continuous railway track curves
+  const corridorStationSequences = useMemo(() => ({
+    C01: ['BZA', 'TEL', 'BPP', 'CLX', 'OGL', 'SKM', 'KVZ', 'NLR', 'GDR'],
+    C02: ['VSKP', 'DVD', 'AKP', 'TUNI', 'ANV', 'SLO', 'RJY', 'NDD', 'TDD', 'EE', 'BZA'],
+    C03: ['BZA', 'TEL', 'GNT', 'NRT', 'VKN', 'DKD', 'MRK', 'GID', 'NDL'],
+    C04: ['GTL', 'GY', 'TU', 'KDP', 'YA', 'HX', 'RJP', 'KOU', 'RU', 'TPTY']
+  }), []);
 
-      const count = stationJobCounters[job.station] || 0;
-      stationJobCounters[job.station] = count + 1;
+  // Catmull-Rom to Cubic Bezier smooth spline generator for continuous track alignment
+  const generateSplinePath = (coordsList) => {
+    if (!coordsList || coordsList.length === 0) return '';
+    if (coordsList.length === 1) return `M ${coordsList[0].x} ${coordsList[0].y}`;
+    if (coordsList.length === 2) return `M ${coordsList[0].x} ${coordsList[0].y} L ${coordsList[1].x} ${coordsList[1].y}`;
 
-      // Deterministic radial fanning offset around station node
-      const angle = (count % 6) * ((2 * Math.PI) / 6) + 0.3;
-      const radius = 14 + Math.floor(count / 6) * 10;
-      const x = Math.round(baseCoords.x + Math.cos(angle) * radius);
-      const y = Math.round(baseCoords.y + Math.sin(angle) * radius);
+    let d = `M ${coordsList[0].x} ${coordsList[0].y}`;
+    for (let i = 0; i < coordsList.length - 1; i++) {
+      const p0 = i === 0 ? coordsList[0] : coordsList[i - 1];
+      const p1 = coordsList[i];
+      const p2 = coordsList[i + 1];
+      const p3 = i + 2 >= coordsList.length ? coordsList[coordsList.length - 1] : coordsList[i + 2];
 
+      const cp1x = p1.x + (p2.x - p0.x) / 6;
+      const cp1y = p1.y + (p2.y - p0.y) / 6;
+      const cp2x = p2.x - (p3.x - p1.x) / 6;
+      const cp2y = p2.y - (p3.y - p1.y) / 6;
+
+      d += ` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)}, ${cp2x.toFixed(1)} ${cp2y.toFixed(1)}, ${p2.x.toFixed(1)} ${p2.y.toFixed(1)}`;
+    }
+    return d;
+  };
+
+  // Precompute smooth track paths for each corridor
+  const corridorPaths = useMemo(() => {
+    const paths = {};
+    Object.entries(corridorStationSequences).forEach(([cId, codes]) => {
+      const coords = codes
+        .map(code => stationsMap[code])
+        .filter(Boolean)
+        .map(stn => projectCoords(stn.latitude, stn.longitude));
+      paths[cId] = generateSplinePath(coords);
+    });
+    return paths;
+  }, [corridorStationSequences, stationsMap]);
+
+  // Group Jobs by Station for intelligent decluttering and zoom-based clustering
+  const stationJobsCluster = useMemo(() => {
+    const clusters = {};
+    filteredJobs.forEach(job => {
+      const stnCode = job.station;
+      if (!clusters[stnCode]) {
+        clusters[stnCode] = [];
+      }
       const hasConflict = Boolean(
         job.data_quality_issues &&
         job.data_quality_issues.length > 0 &&
-        job.data_quality_issues.some(issue => issue.includes('mismatch') || issue.includes('duplicate'))
+        job.data_quality_issues.some(i => i.includes('mismatch') || i.includes('duplicate'))
       );
-
-      return {
-        ...job,
-        mapX: x,
-        mapY: y,
-        hasConflict
-      };
+      clusters[stnCode].push({ ...job, hasConflict });
     });
-  }, [filteredJobs, stationsMap, stations]);
+    return clusters;
+  }, [filteredJobs]);
+
+  // Active maintenance blocks on the tracks
+  const activeBlocksList = useMemo(() => {
+    const defaultBlocks = [
+      {
+        block_id: 'BLK-017',
+        corridor_id: 'C01',
+        section_name: 'Vijayawada – Tenali',
+        from_stn: 'BZA',
+        to_stn: 'TEL',
+        department: 'Engineering',
+        window_name: 'Night Rolling Megablock',
+        time_window: '01:00 – 04:00',
+        duration_min: 180,
+        status: 'Active Track Possession',
+        work_summary: 'Heavy rail tamping with Plasser CSM 09-32'
+      },
+      {
+        block_id: 'BLK-042',
+        corridor_id: 'C02',
+        section_name: 'Samalkot – Rajahmundry',
+        from_stn: 'SLO',
+        to_stn: 'RJY',
+        department: 'Traction',
+        window_name: 'Night Power Isolation',
+        time_window: '01:30 – 04:30',
+        duration_min: 180,
+        status: 'Active Track Possession',
+        work_summary: '25kV OHE catenary replacement and bracket overhaul'
+      },
+      {
+        block_id: 'BLK-089',
+        corridor_id: 'C03',
+        section_name: 'Guntur – Narasaraopet',
+        from_stn: 'GNT',
+        to_stn: 'NRT',
+        department: 'S&T',
+        window_name: 'Mid-Day Shadow Window',
+        time_window: '11:30 – 14:00',
+        duration_min: 150,
+        status: 'Scheduled Possession',
+        work_summary: 'Electronic interlocking and point machine renewal'
+      },
+      {
+        block_id: 'BLK-104',
+        corridor_id: 'C04',
+        section_name: 'Kadapa – Razampeta',
+        from_stn: 'HX',
+        to_stn: 'RJP',
+        department: 'Joint',
+        window_name: 'Joint Megablock Window',
+        time_window: '02:00 – 05:00',
+        duration_min: 180,
+        status: 'Bundled Multi-Dept Possession',
+        work_summary: 'Joint P-Way deep screening + TRD mast bonding'
+      },
+      {
+        block_id: 'BLK-112',
+        corridor_id: 'C01',
+        section_name: 'Ongole – Singarayakonda',
+        from_stn: 'OGL',
+        to_stn: 'SKM',
+        department: 'Engineering',
+        window_name: 'Early Morning Off-Peak',
+        time_window: '04:30 – 07:00',
+        duration_min: 150,
+        status: 'Scheduled Possession',
+        work_summary: 'Continuous welded rail destressing and neutral temperature test'
+      }
+    ];
+
+    if (rawBlocks.length > 0) {
+      return rawBlocks.map((b, idx) => ({
+        block_id: b.block_id || `BLK-${idx + 100}`,
+        corridor_id: b.corridor_id || 'C01',
+        section_name: b.section_name || 'Corridor Section',
+        from_stn: b.from_station || 'BZA',
+        to_stn: b.to_station || 'TEL',
+        department: b.department || 'Engineering',
+        window_name: b.window_name || 'Maintenance Window',
+        time_window: `${b.start_time || '01:00'} – ${b.end_time || '04:00'}`,
+        duration_min: b.duration_minutes || 180,
+        status: 'Active Track Possession',
+        work_summary: b.notes || 'Scheduled possession window'
+      }));
+    }
+    return defaultBlocks;
+  }, [rawBlocks]);
+
+  // Live Train Movements with realistic directional coordinates along the tracks
+  const liveTrainsList = useMemo(() => [
+    {
+      train_number: '20833',
+      train_name: 'Vande Bharat Express',
+      type: 'VIP',
+      corridor_id: 'C02',
+      from_stn: 'TUNI',
+      to_stn: 'ANV',
+      speed_kmph: 130,
+      direction: 'DN',
+      status: 'On Time',
+      occupancy: 'Clear Headway'
+    },
+    {
+      train_number: '12727',
+      train_name: 'Godavari Superfast',
+      type: 'SUPERFAST',
+      corridor_id: 'C01',
+      from_stn: 'TEL',
+      to_stn: 'BPP',
+      speed_kmph: 110,
+      direction: 'UP',
+      status: '+4 min',
+      occupancy: 'Approaching Block Zone'
+    },
+    {
+      train_number: 'FRT-8014',
+      train_name: 'Coal BoxN Freight',
+      type: 'FREIGHT',
+      corridor_id: 'C04',
+      from_stn: 'YA',
+      to_stn: 'HX',
+      speed_kmph: 65,
+      direction: 'DN',
+      status: 'Regulated',
+      occupancy: 'Freight Loop Wait'
+    },
+    {
+      train_number: '17226',
+      train_name: 'Amaravati Express',
+      type: 'EXPRESS',
+      corridor_id: 'C03',
+      from_stn: 'VKN',
+      to_stn: 'DKD',
+      speed_kmph: 85,
+      direction: 'UP',
+      status: 'On Time',
+      occupancy: 'Single Line Token Clear'
+    },
+    {
+      train_number: '12861',
+      train_name: 'Link SF Express',
+      type: 'SUPERFAST',
+      corridor_id: 'C02',
+      from_stn: 'RJY',
+      to_stn: 'NDD',
+      speed_kmph: 105,
+      direction: 'DN',
+      status: 'On Time',
+      occupancy: 'Godavari Arch Bridge Transit'
+    }
+  ], []);
+
+  // Known Data Conflicts with exact geographic locations
+  const conflictLocations = useMemo(() => [
+    {
+      id: 'CONF-01',
+      corridor_id: 'C01',
+      station_code: 'BPP',
+      km: 74.2,
+      departments: ['Engineering (TMS)', 'Traction (TDMS)'],
+      description: 'Location Mismatch: TMS records KM 74.2 whereas TDMS reports OHE mast at KM 74.8 (delta > 50m).',
+      resolution: 'Provisional: TMS recency precedence applied pending PWI site verification.'
+    },
+    {
+      id: 'CONF-02',
+      corridor_id: 'C02',
+      station_code: 'RJY',
+      km: 201.5,
+      departments: ['S&T (SMMS)', 'Engineering (TMS)'],
+      description: 'Condition Score Mismatch: SMMS rates turnout at 52/100 whereas TMS rates track segment at 78/100.',
+      resolution: 'Flagged for Divisional Safety Officer joint inspection.'
+    }
+  ], []);
+
 
   // Department multi-select toggle handlers
   const handleToggleDepartment = (deptKey) => {
@@ -377,323 +617,831 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
         </div>
       </div>
 
-      {/* Railway Map Canvas */}
-      <div className="relative bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl overflow-hidden min-h-[440px] flex items-center justify-center">
-        <svg viewBox="0 0 800 480" className="w-full h-auto max-h-[500px] select-none">
+      {/* Realistic Geographic Railway Map Canvas with Pan & Zoom */}
+      <div
+        className="relative bg-[#F4F7FA] border border-[#CBD5E1] rounded-2xl overflow-hidden min-h-[540px] select-none shadow-inner"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+      >
+        {/* Floating Pan/Zoom Controls */}
+        <div className="absolute top-4 left-4 z-30 flex items-center space-x-1.5 bg-white/95 backdrop-blur-md border border-[#CBD5E1] rounded-xl p-1.5 shadow-md">
+          <button
+            onClick={handleZoomIn}
+            className="p-1.5 rounded-lg hover:bg-[#EFF6FF] text-[#1E293B] hover:text-[#1565C0] font-bold transition-all cursor-pointer"
+            title="Zoom In (+)"
+          >
+            <span className="text-base leading-none font-black">+</span>
+          </button>
+          <div className="px-2 py-0.5 text-[11px] font-mono font-bold text-[#475569] border-x border-[#E2E8F0]">
+            {Math.round(zoom * 100)}%
+          </div>
+          <button
+            onClick={handleZoomOut}
+            className="p-1.5 rounded-lg hover:bg-[#EFF6FF] text-[#1E293B] hover:text-[#1565C0] font-bold transition-all cursor-pointer"
+            title="Zoom Out (-)"
+          >
+            <span className="text-base leading-none font-black">−</span>
+          </button>
+          <button
+            onClick={handleResetView}
+            className="p-1.5 rounded-lg hover:bg-[#EFF6FF] text-[#64748B] hover:text-[#1565C0] text-[11px] font-bold transition-all cursor-pointer flex items-center space-x-1"
+            title="Reset Pan & Zoom"
+          >
+            <RotateCcw className="w-3.5 h-3.5" />
+            <span>Reset</span>
+          </button>
+        </div>
+
+        {/* Map Header Overlay Pill */}
+        <div className="absolute top-4 right-4 z-20 hidden md:flex items-center space-x-2 bg-white/90 backdrop-blur-md border border-[#E2E8F0] px-3 py-1.5 rounded-xl shadow-xs text-xs">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="font-bold text-[#172033]">SCoR Live Geographic Topology</span>
+          <span className="text-[#64748B] text-[11px]">| EPSG:4326 Lat/Lon Projected</span>
+        </div>
+
+        {/* SVG Railway Geographic Canvas */}
+        <svg
+          viewBox="0 0 900 560"
+          className="w-full h-full min-h-[540px]"
+        >
           <defs>
-            {/* Light Grid Pattern */}
-            <pattern id="grid-light" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E2E8F0" strokeWidth="0.5" />
+            {/* Soft Ocean Grid */}
+            <pattern id="ocean-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#BAE6FD" strokeWidth="0.4" strokeDasharray="2,2" />
             </pattern>
-            {/* Drop shadow for markers */}
-            <filter id="drop-shadow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
-              <feOffset dx="0" dy="1" result="offsetblur"/>
-              <feComponentTransfer>
-                <feFuncA type="linear" slope="0.25"/>
-              </feComponentTransfer>
-              <feMerge>
-                <feMergeNode/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
+
+            {/* Shaded Relief Gradient for Landmass */}
+            <linearGradient id="land-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#F8FAFC" />
+              <stop offset="60%" stopColor="#F1F5F9" />
+              <stop offset="100%" stopColor="#E2E8F0" />
+            </linearGradient>
+
+            {/* Bay of Bengal Ocean Gradient */}
+            <linearGradient id="ocean-gradient" x1="0%" y1="0%" x2="100%" y2="50%">
+              <stop offset="0%" stopColor="#E0F2FE" stopOpacity="0.85" />
+              <stop offset="100%" stopColor="#BAE6FD" stopOpacity="0.95" />
+            </linearGradient>
+
+            {/* Drop Shadows */}
+            <filter id="geo-shadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="1.5" stdDeviation="2" floodColor="#0F172A" floodOpacity="0.15" />
             </filter>
-            {/* Pulsing ring for critical defects */}
-            <filter id="glow-amber" x="-50%" y="-50%" width="200%" height="200%">
-              <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#D97706" floodOpacity="0.6"/>
+            <filter id="badge-shadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#0F172A" floodOpacity="0.2" />
+            </filter>
+
+            {/* Glowing Block Line Filters */}
+            <filter id="glow-orange" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#D97706" floodOpacity="0.8" />
             </filter>
             <filter id="glow-purple" x="-50%" y="-50%" width="200%" height="200%">
-              <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#7C3AED" floodOpacity="0.6"/>
+              <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#7C3AED" floodOpacity="0.8" />
             </filter>
             <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
-              <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#0284C7" floodOpacity="0.6"/>
+              <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#0284C7" floodOpacity="0.8" />
+            </filter>
+            <filter id="glow-teal" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="0" stdDeviation="3.5" floodColor="#0F766E" floodOpacity="0.85" />
             </filter>
           </defs>
 
-          {/* Map canvas background */}
-          <rect width="800" height="480" fill="#FAFBFC" />
-          <rect width="800" height="480" fill="url(#grid-light)" opacity="0.5" />
+          {/* Transformable Canvas Group for Pan & Zoom */}
+          <g
+            transform={`translate(${pan.x}, ${pan.y}) scale(${zoom})`}
+            style={{ transformOrigin: '450px 280px', transition: isDragging ? 'none' : 'transform 0.2s ease-out' }}
+          >
+            {/* 1. Base Landmass (Andhra Pradesh & Rayalaseema Region) */}
+            <rect width="900" height="560" fill="url(#land-gradient)" />
 
-          {/* SCoR Corridor Route Lines */}
-          {/* C02: Visakhapatnam to Vijayawada */}
-          <path
-            d="M 680,80 L 610,130 L 530,175 L 470,200 L 400,240"
-            fill="none"
-            stroke={selectedCorridor === 'ALL' || selectedCorridor === 'C02' ? '#0369A1' : '#CBD5E1'}
-            strokeWidth={selectedCorridor === 'C02' ? '4.5' : '2.5'}
-            strokeDasharray={selectedCorridor === 'C02' ? 'none' : '4,2'}
-          />
+            {/* Eastern Ghats & Nallamala Hills Topographic Shading */}
+            <path
+              d="M 170,280 Q 240,320 280,360 Q 320,400 350,460 Q 330,480 300,430 Q 250,370 200,320 Z"
+              fill="#E2E8F0"
+              opacity="0.6"
+            />
+            <path
+              d="M 450,120 Q 520,160 560,190 Q 530,220 480,180 Z"
+              fill="#E2E8F0"
+              opacity="0.5"
+            />
 
-          {/* C01: Vijayawada to Gudur */}
-          <path
-            d="M 400,240 L 390,280 L 370,330 L 360,380 L 350,430"
-            fill="none"
-            stroke={selectedCorridor === 'ALL' || selectedCorridor === 'C01' ? '#DC2626' : '#CBD5E1'}
-            strokeWidth={selectedCorridor === 'C01' ? '4.5' : '2.5'}
-          />
+            {/* Major AP Rivers (Krishna & Godavari River Systems) */}
+            {/* Godavari River passing Rajahmundry */}
+            <path
+              d="M 520,60 Q 560,95 615,142 Q 640,175 665,195"
+              fill="none"
+              stroke="#93C5FD"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+              opacity="0.75"
+            />
+            <text x="560" y="115" fill="#60A5FA" fontSize="8" fontStyle="italic" fontWeight="600" opacity="0.8">
+              Godavari River
+            </text>
 
-          {/* C03: Guntur to Nandyal */}
-          <path
-            d="M 380,260 L 310,290 L 250,310 L 170,330 L 120,335"
-            fill="none"
-            stroke={selectedCorridor === 'ALL' || selectedCorridor === 'C03' ? '#7C3AED' : '#CBD5E1'}
-            strokeWidth={selectedCorridor === 'C03' ? '4.5' : '2.5'}
-          />
+            {/* Krishna River passing Vijayawada */}
+            <path
+              d="M 330,170 Q 410,185 486,201 Q 530,230 550,265"
+              fill="none"
+              stroke="#93C5FD"
+              strokeWidth="4"
+              strokeLinecap="round"
+              opacity="0.75"
+            />
+            <text x="390" y="175" fill="#60A5FA" fontSize="8" fontStyle="italic" fontWeight="600" opacity="0.8">
+              Krishna River
+            </text>
 
-          {/* C04: Guntakal to Renigunta */}
-          <path
-            d="M 70,300 L 110,320 L 180,360 L 250,395 L 330,440"
-            fill="none"
-            stroke={selectedCorridor === 'ALL' || selectedCorridor === 'C04' ? '#15803D' : '#CBD5E1'}
-            strokeWidth={selectedCorridor === 'C04' ? '4.5' : '2.5'}
-          />
+            {/* Penna River near Nellore */}
+            <path
+              d="M 310,380 Q 360,395 425,414"
+              fill="none"
+              stroke="#93C5FD"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              opacity="0.7"
+            />
 
-          {/* Station Nodes */}
-          {filteredStations.map((stn) => {
-            const pos = projectCoords(stn.latitude, stn.longitude);
-            const isHovered = hoveredStation?.code === stn.code;
-            const isJunction = stn.junction;
+            {/* 2. Bay of Bengal (Realistic Coastline Polygon from Visakhapatnam to Pulicat/Gudur) */}
+            <path
+              d="M 870,20 Q 820,55 782,86 Q 740,110 705,126 Q 675,145 665,160 Q 645,185 628,213 Q 580,245 520,268 Q 470,285 448,295 Q 430,312 425,330 Q 420,360 422,380 Q 425,405 433,425 Q 438,455 440,480 Q 445,510 450,560 L 900,560 L 900,20 Z"
+              fill="url(#ocean-gradient)"
+              stroke="#93C5FD"
+              strokeWidth="1.5"
+            />
+            {/* Ocean Texture Grid */}
+            <path
+              d="M 870,20 Q 820,55 782,86 Q 740,110 705,126 Q 675,145 665,160 Q 645,185 628,213 Q 580,245 520,268 Q 470,285 448,295 Q 430,312 425,330 Q 420,360 422,380 Q 425,405 433,425 Q 438,455 440,480 Q 445,510 450,560 L 900,560 L 900,20 Z"
+              fill="url(#ocean-grid)"
+            />
 
-            return (
-              <g
-                key={stn.code}
-                transform={`translate(${pos.x}, ${pos.y})`}
-                className="cursor-pointer group"
-                onMouseEnter={() => setHoveredStation(stn)}
-                onMouseLeave={() => setHoveredStation(null)}
-                onClick={() => setSelectedPin({ type: 'STATION', data: stn })}
-              >
-                <circle
-                  r={isJunction ? 6 : 4}
-                  fill={isJunction ? '#1565C0' : '#FFFFFF'}
-                  stroke={isJunction ? '#1565C0' : '#64748B'}
-                  strokeWidth="2"
-                  filter="url(#drop-shadow)"
-                  className="transition-all duration-200 group-hover:scale-125"
-                />
-                {isJunction && (
-                  <circle r="9" fill="none" stroke="#1565C0" strokeWidth="1" opacity="0.3" />
-                )}
-                <text
-                  x={8}
-                  y={4}
-                  fill={isHovered ? '#172033' : '#64748B'}
-                  fontSize={isJunction ? '11' : '9'}
-                  fontWeight={isJunction ? 'bold' : 'normal'}
-                  fontFamily="sans-serif"
-                >
-                  {stn.name.split(' ')[0]} ({stn.code})
-                </text>
-              </g>
-            );
-          })}
+            {/* Bay of Bengal Geographic Label */}
+            <text
+              x="720"
+              y="320"
+              fill="#0284C7"
+              opacity="0.35"
+              fontSize="22"
+              fontWeight="900"
+              letterSpacing="6"
+              fontFamily="sans-serif"
+              transform="rotate(25, 720, 320)"
+            >
+              BAY OF BENGAL
+            </text>
 
-          {/* Planned Block Indicators */}
-          {(activeOverlay === 'ALL' || activeOverlay === 'BLOCKS') && (
-            <g transform="translate(365, 330)" className="cursor-pointer">
-              <rect x="-16" y="-9" width="32" height="18" rx="4" fill="#1565C0" stroke="#0D47A1" strokeWidth="1" filter="url(#drop-shadow)" />
-              <text x="0" y="3" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">
-                B-017
-              </text>
-            </g>
-          )}
+            {/* Regional Land Labels */}
+            <text x="140" y="240" fill="#94A3B8" opacity="0.45" fontSize="13" fontWeight="800" letterSpacing="3">
+              RAYALASEEMA REGION
+            </text>
+            <text x="440" y="80" fill="#94A3B8" opacity="0.45" fontSize="13" fontWeight="800" letterSpacing="3">
+              COASTAL ANDHRA
+            </text>
 
-          {/* Train Movement Indicators */}
-          {(activeOverlay === 'ALL' || activeOverlay === 'TRAINS') && (
-            <>
-              <g transform="translate(500, 185)" className="cursor-pointer">
-                <circle r="6" fill="#B45309" filter="url(#drop-shadow)" />
-                <text x="8" y="3" fill="#B45309" fontSize="8" fontWeight="bold" fontFamily="sans-serif">
-                  20833 Vande Bharat
-                </text>
-              </g>
-              <g transform="translate(365, 360)" className="cursor-pointer">
-                <circle r="5" fill="#B45309" opacity="0.8" filter="url(#drop-shadow)" />
-                <text x="8" y="3" fill="#92400E" fontSize="8" fontFamily="sans-serif">
-                  FRT-8014 Coal BoxN
-                </text>
-              </g>
-            </>
-          )}
-
-          {/* Requirement 2: Visually Distinguish Jobs by Department with Conflict Badges */}
-          {(activeOverlay === 'ALL' || activeOverlay === 'JOBS') && (
-            positionedJobs.map((job) => {
-              const dept = job.department || 'Engineering';
-              const isEng = dept === 'Engineering';
-              const isST = dept === 'S&T';
-              const isTrac = dept === 'Traction';
-
-              const pinColor = isEng ? '#D97706' : (isST ? '#7C3AED' : '#0284C7');
-              const pinFilter = isEng ? 'url(#glow-amber)' : (isST ? 'url(#glow-purple)' : 'url(#glow-blue)');
-              const isCritical = job.severity === 'CRITICAL' || job.priority_tier === 'CRITICAL';
-              const isHovered = hoveredJob?.job_id === job.job_id;
-
+            {/* 3. Continuous Curved Railway Track Alignments (Catmull-Rom Smooth Splines) */}
+            {/* Casing / Track Foundation for All Tracks */}
+            {Object.entries(corridorPaths).map(([cId, pathD]) => {
+              const isSelected = selectedCorridor === 'ALL' || selectedCorridor === cId;
               return (
-                <g
-                  key={job.job_id}
-                  transform={`translate(${job.mapX}, ${job.mapY})`}
-                  className="cursor-pointer transition-transform duration-150 hover:scale-125"
-                  onMouseEnter={() => setHoveredJob(job)}
-                  onMouseLeave={() => setHoveredJob(null)}
-                  onClick={() => setSelectedJob(job)}
-                >
-                  {/* Critical urgency pulse halo */}
-                  {isCritical && (
-                    <circle
-                      r="11"
-                      fill={pinColor}
-                      fillOpacity="0.25"
-                      stroke={pinColor}
-                      strokeWidth="1"
-                      strokeDasharray="2,2"
+                <g key={`track-casing-${cId}`}>
+                  {/* Railway Bed Outer Casing */}
+                  <path
+                    d={pathD}
+                    fill="none"
+                    stroke="#1E293B"
+                    strokeWidth={isSelected ? (selectedCorridor === cId ? 5.5 : 4) : 2.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity={isSelected ? 0.85 : 0.25}
+                  />
+                  {/* Railway Dual-Track Center Line */}
+                  <path
+                    d={pathD}
+                    fill="none"
+                    stroke={corridorsMeta.find(c => c.id === cId)?.color || '#1565C0'}
+                    strokeWidth={isSelected ? (selectedCorridor === cId ? 3 : 2) : 1.2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity={isSelected ? 1 : 0.4}
+                  />
+                  {/* Railway Sleeper Tick Marks (visible when zoomed in) */}
+                  {zoom >= 1.4 && isSelected && (
+                    <path
+                      d={pathD}
+                      fill="none"
+                      stroke="#FFFFFF"
+                      strokeWidth="1.2"
+                      strokeDasharray="2,6"
+                      opacity="0.8"
                     />
-                  )}
-
-                  {/* Distinct Shape & Glyphs per Department */}
-                  {isEng && (
-                    // Engineering: Rounded Square / Diamond with Wrench
-                    <g filter={pinFilter}>
-                      <rect
-                        x="-7"
-                        y="-7"
-                        width="14"
-                        height="14"
-                        rx="3"
-                        fill="#D97706"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.5"
-                      />
-                      {/* Tool glyph */}
-                      <path
-                        d="M -3 -3 L 3 3 M 3 -3 L -3 3"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.2"
-                        strokeLinecap="round"
-                      />
-                    </g>
-                  )}
-
-                  {isST && (
-                    // S&T: Diamond with Radio signal dot
-                    <g filter={pinFilter} transform="rotate(45)">
-                      <rect
-                        x="-6"
-                        y="-6"
-                        width="12"
-                        height="12"
-                        rx="2"
-                        fill="#7C3AED"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.5"
-                      />
-                      <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
-                    </g>
-                  )}
-
-                  {isTrac && (
-                    // Traction: Circle with lightning notch
-                    <g filter={pinFilter}>
-                      <circle
-                        r="7"
-                        fill="#0284C7"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.5"
-                      />
-                      {/* Zap glyph */}
-                      <path
-                        d="M 0 -4 L -2 0 L 1 0 L 0 4 L 3 -1 L 0 -1 Z"
-                        fill="#FFFFFF"
-                      />
-                    </g>
-                  )}
-
-                  {/* Requirement 3: Surface Data Conflict Flag (⚠️) on the Pin */}
-                  {job.hasConflict && (
-                    <g transform="translate(6, -7)">
-                      <circle r="4.5" fill="#DC2626" stroke="#FFFFFF" strokeWidth="1" />
-                      <text x="0" y="3" fill="#FFFFFF" fontSize="6" fontWeight="bold" textAnchor="middle">
-                        !
-                      </text>
-                    </g>
                   )}
                 </g>
               );
-            })
-          )}
+            })}
+
+            {/* 4. BLOCKS LAYER: Active Maintenance Blocks Highlighted Directly on Track Segments */}
+            {(activeOverlay === 'ALL' || activeOverlay === 'BLOCKS') && (
+              activeBlocksList.map((blk) => {
+                const p1 = stationsMap[blk.from_stn] ? projectCoords(stationsMap[blk.from_stn].latitude, stationsMap[blk.from_stn].longitude) : null;
+                const p2 = stationsMap[blk.to_stn] ? projectCoords(stationsMap[blk.to_stn].latitude, stationsMap[blk.to_stn].longitude) : null;
+                if (!p1 || !p2) return null;
+
+                const isSelectedCorridor = selectedCorridor === 'ALL' || selectedCorridor === blk.corridor_id;
+                if (!isSelectedCorridor) return null;
+
+                // Segment color based on department matching filter chips
+                const deptColor = blk.department === 'Engineering'
+                  ? '#D97706'
+                  : blk.department === 'S&T'
+                  ? '#7C3AED'
+                  : blk.department === 'Traction'
+                  ? '#0284C7'
+                  : '#0F766E'; // Joint / Multi-Department
+                
+                const filterGlow = blk.department === 'Engineering'
+                  ? 'url(#glow-orange)'
+                  : blk.department === 'S&T'
+                  ? 'url(#glow-purple)'
+                  : blk.department === 'Traction'
+                  ? 'url(#glow-blue)'
+                  : 'url(#glow-teal)';
+
+                const midX = (p1.x + p2.x) / 2;
+                const midY = (p1.y + p2.y) / 2;
+
+                return (
+                  <g
+                    key={blk.block_id}
+                    className="cursor-pointer group"
+                    onClick={() => setSelectedMapItem({ type: 'BLOCK', data: blk })}
+                  >
+                    {/* Glowing Track Segment for the Block Window */}
+                    <line
+                      x1={p1.x}
+                      y1={p1.y}
+                      x2={p2.x}
+                      y2={p2.y}
+                      stroke={deptColor}
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                      filter={filterGlow}
+                      className="transition-all duration-200 group-hover:stroke-width-8"
+                    />
+                    {/* Inner high-contrast dashed center line */}
+                    <line
+                      x1={p1.x}
+                      y1={p1.y}
+                      x2={p2.x}
+                      y2={p2.y}
+                      stroke="#FFFFFF"
+                      strokeWidth="2"
+                      strokeDasharray="4,3"
+                    />
+                    {/* Clean Floating Badge directly on the track block */}
+                    <g transform={`translate(${midX}, ${midY - 8})`}>
+                      <rect
+                        x="-24"
+                        y="-8"
+                        width="48"
+                        height="16"
+                        rx="4"
+                        fill={deptColor}
+                        stroke="#FFFFFF"
+                        strokeWidth="1.2"
+                        filter="url(#badge-shadow)"
+                      />
+                      <text
+                        x="0"
+                        y="3"
+                        fill="#FFFFFF"
+                        fontSize="8.5"
+                        fontWeight="bold"
+                        fontFamily="sans-serif"
+                        textAnchor="middle"
+                      >
+                        {blk.block_id}
+                      </text>
+                    </g>
+                  </g>
+                );
+              })
+            )}
+
+            {/* 5. TRAINS LAYER: Live Directional Train Markers Moving Along Tracks */}
+            {(activeOverlay === 'ALL' || activeOverlay === 'TRAINS') && (
+              liveTrainsList.map((trn) => {
+                const p1 = stationsMap[trn.from_stn] ? projectCoords(stationsMap[trn.from_stn].latitude, stationsMap[trn.from_stn].longitude) : null;
+                const p2 = stationsMap[trn.to_stn] ? projectCoords(stationsMap[trn.to_stn].latitude, stationsMap[trn.to_stn].longitude) : null;
+                if (!p1 || !p2) return null;
+
+                const isSelectedCorridor = selectedCorridor === 'ALL' || selectedCorridor === trn.corridor_id;
+                if (!isSelectedCorridor) return null;
+
+                // Interpolate train position along section (~60% along segment)
+                const t = 0.58;
+                const trnX = p1.x + (p2.x - p1.x) * t;
+                const trnY = p1.y + (p2.y - p1.y) * t;
+
+                // Compute heading angle for directional chevron
+                const angleRad = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+                const angleDeg = (angleRad * 180) / Math.PI;
+
+                const trainColor = trn.type === 'VIP' ? '#0284C7' : (trn.type === 'SUPERFAST' ? '#15803D' : '#B45309');
+
+                return (
+                  <g
+                    key={trn.train_number}
+                    transform={`translate(${trnX}, ${trnY})`}
+                    className="cursor-pointer group"
+                    onClick={() => setSelectedMapItem({ type: 'TRAIN', data: trn })}
+                  >
+                    {/* Directional Train Icon */}
+                    <g transform={`rotate(${angleDeg})`}>
+                      <path
+                        d="M -9 -5 L 9 0 L -9 5 L -6 0 Z"
+                        fill={trainColor}
+                        stroke="#FFFFFF"
+                        strokeWidth="1.5"
+                        filter="url(#badge-shadow)"
+                      />
+                    </g>
+                    {/* Train Tag Label */}
+                    <g transform="translate(12, -4)">
+                      <rect
+                        x="-2"
+                        y="-8"
+                        width={trn.train_number.length * 6 + 28}
+                        height="14"
+                        rx="3"
+                        fill="#FFFFFF"
+                        stroke={trainColor}
+                        strokeWidth="1"
+                        filter="url(#geo-shadow)"
+                      />
+                      <text
+                        x="3"
+                        y="2.5"
+                        fill="#0F172A"
+                        fontSize="8"
+                        fontWeight="bold"
+                        fontFamily="monospace"
+                      >
+                        {trn.train_number} ({trn.speed_kmph}k)
+                      </text>
+                    </g>
+                  </g>
+                );
+              })
+            )}
+
+            {/* 6. STATIONS LAYER: Fixed Point Markers (Junctions vs Halts) */}
+            {filteredStations.map((stn) => {
+              const pos = projectCoords(stn.latitude, stn.longitude);
+              const isJunction = Boolean(stn.junction);
+              const isHovered = hoveredStation?.code === stn.code;
+              const hasJobs = Boolean(stationJobsCluster[stn.code] && stationJobsCluster[stn.code].length > 0);
+
+              // Declutter rule: Show station name only for major hubs by default, or when hovered/zoomed in
+              const isMajorHub = ['BZA', 'VSKP', 'TEL', 'GDR', 'SLO', 'GNT', 'GTL', 'RU', 'TPTY', 'NDL'].includes(stn.code);
+              const showLabel = isHovered || isMajorHub || zoom >= 1.6;
+
+              return (
+                <g
+                  key={stn.code}
+                  transform={`translate(${pos.x}, ${pos.y})`}
+                  className="cursor-pointer group"
+                  onMouseEnter={() => setHoveredStation(stn)}
+                  onMouseLeave={() => setHoveredStation(null)}
+                  onClick={() => setSelectedMapItem({ type: 'STATION', data: stn, jobs: stationJobsCluster[stn.code] || [] })}
+                >
+                  {/* Concentric rings for Major Junctions */}
+                  {isJunction ? (
+                    <>
+                      <circle
+                        r={zoom >= 1.5 ? 8 : 6.5}
+                        fill="#FFFFFF"
+                        stroke="#0F172A"
+                        strokeWidth="2.5"
+                        filter="url(#geo-shadow)"
+                      />
+                      <circle
+                        r={zoom >= 1.5 ? 4.5 : 3.5}
+                        fill="#1565C0"
+                      />
+                      <circle
+                        r={zoom >= 1.5 ? 12 : 10}
+                        fill="none"
+                        stroke="#1565C0"
+                        strokeWidth="1"
+                        strokeDasharray="2,2"
+                        opacity="0.5"
+                      />
+                    </>
+                  ) : (
+                    /* Regular Halt */
+                    <circle
+                      r={zoom >= 1.5 ? 4.5 : 3.5}
+                      fill="#FFFFFF"
+                      stroke="#475569"
+                      strokeWidth="1.8"
+                      filter="url(#geo-shadow)"
+                    />
+                  )}
+
+                  {/* Selective Station Labels with Anti-Collision Offsets */}
+                  {showLabel && (
+                    <text
+                      x={stn.code === 'GNT' ? -78 : (isJunction ? 10 : 7)}
+                      y={stn.code === 'TEL' ? 15 : (stn.code === 'BZA' ? -9 : (stn.code === 'GTL' ? -7 : 3))}
+                      fill={isHovered ? '#1E293B' : (isJunction ? '#0F172A' : '#475569')}
+                      fontSize={isJunction ? (zoom >= 1.4 ? 11 : 9.5) : (zoom >= 1.4 ? 9.5 : 8)}
+                      fontWeight={isJunction ? '800' : '600'}
+                      fontFamily="sans-serif"
+                      stroke="#FFFFFF"
+                      strokeWidth="3"
+                      paintOrder="stroke"
+                    >
+                      {stn.name.split(' ')[0]} ({stn.code})
+                    </text>
+                  )}
+                </g>
+              );
+            })}
+
+            {/* 7. JOBS LAYER: Smart Clustering (Clustered Badges vs Fanned Individual Icons) */}
+            {(activeOverlay === 'ALL' || activeOverlay === 'JOBS') && (
+              Object.entries(stationJobsCluster).map(([stnCode, jobsList]) => {
+                const stn = stationsMap[stnCode];
+                if (!stn || jobsList.length === 0) return null;
+                const pos = projectCoords(stn.latitude, stn.longitude);
+
+                // Check if any job at this station has a conflict
+                const hasAnyConflict = jobsList.some(j => j.hasConflict);
+
+                // Department counts
+                const engCount = jobsList.filter(j => j.department === 'Engineering').length;
+                const stCount = jobsList.filter(j => j.department === 'S&T').length;
+                const tracCount = jobsList.filter(j => j.department === 'Traction').length;
+
+                // Decluttering Rule:
+                // When zoomed out (zoom <= 1.4) or in 'ALL' overlay: Show aggregated numbered cluster
+                // When zoomed in (zoom > 1.4) and 'JOBS' overlay: Expand up to 3-4 individual icons, then cluster
+                const shouldExpand = zoom > 1.4 && activeOverlay === 'JOBS' && jobsList.length <= 4;
+
+                if (!shouldExpand) {
+                  // Clustered Numbered Pill / Circle
+                  return (
+                    <g
+                      key={`cluster-${stnCode}`}
+                      transform={`translate(${pos.x - 14}, ${pos.y - 14})`}
+                      className="cursor-pointer group"
+                      onClick={() => setSelectedMapItem({ type: 'JOB_CLUSTER', station: stn, jobs: jobsList })}
+                    >
+                      {/* Outer Ring showing Department Color Composition */}
+                      <circle
+                        cx="0"
+                        cy="0"
+                        r={jobsList.length > 9 ? 11 : 9.5}
+                        fill="#FFFFFF"
+                        stroke="#1565C0"
+                        strokeWidth="2"
+                        filter="url(#badge-shadow)"
+                        className="transition-transform group-hover:scale-125"
+                      />
+                      {/* Department Dot Indicators if mixed */}
+                      {engCount > 0 && <circle cx="-4" cy="-5" r="1.8" fill="#D97706" />}
+                      {stCount > 0 && <circle cx="4" cy="-5" r="1.8" fill="#7C3AED" />}
+                      {tracCount > 0 && <circle cx="0" cy="5" r="1.8" fill="#0284C7" />}
+
+                      {/* Job Count Number */}
+                      <text
+                        x="0"
+                        y="3.5"
+                        fill="#0F172A"
+                        fontSize={jobsList.length > 9 ? "9.5" : "9"}
+                        fontWeight="900"
+                        fontFamily="sans-serif"
+                        textAnchor="middle"
+                      >
+                        {jobsList.length}
+                      </text>
+                    </g>
+                  );
+                } else {
+                  // Expanded Individual Job Icons (Fanned Radially, max 4)
+                  return (
+                    <g key={`expanded-${stnCode}`}>
+                      {jobsList.slice(0, 4).map((job, idx) => {
+                        const angle = (idx * (2 * Math.PI)) / Math.min(jobsList.length, 4) - Math.PI / 2;
+                        const radius = 18;
+                        const jx = pos.x + Math.cos(angle) * radius;
+                        const jy = pos.y + Math.sin(angle) * radius;
+
+                        const dept = job.department || 'Engineering';
+                        const pinColor = dept === 'Engineering' ? '#D97706' : (dept === 'S&T' ? '#7C3AED' : '#0284C7');
+
+                        return (
+                          <g
+                            key={job.job_id}
+                            transform={`translate(${jx}, ${jy})`}
+                            className="cursor-pointer group transition-transform hover:scale-125"
+                            onClick={() => setSelectedJob(job)}
+                          >
+                            <circle
+                              r="7"
+                              fill="#FFFFFF"
+                              stroke={pinColor}
+                              strokeWidth="2"
+                              filter="url(#geo-shadow)"
+                            />
+                            {/* Inner glyph depending on department */}
+                            {dept === 'Engineering' && (
+                              <circle r="3" fill="#D97706" />
+                            )}
+                            {dept === 'S&T' && (
+                              <rect x="-2.5" y="-2.5" width="5" height="5" fill="#7C3AED" transform="rotate(45)" />
+                            )}
+                            {dept === 'Traction' && (
+                              <path d="M 0 -3 L -2 0 L 1 0 L 0 3 L 2 -1 Z" fill="#0284C7" />
+                            )}
+                          </g>
+                        );
+                      })}
+                    </g>
+                  );
+                }
+              })
+            )}
+
+            {/* 8. DATA CONFLICT FLAG: Distinct Red Badge Always Visible at Exact Location */}
+            {conflictLocations.map((conf) => {
+              const stn = stationsMap[conf.station_code];
+              if (!stn) return null;
+              const pos = projectCoords(stn.latitude, stn.longitude);
+
+              const isSelectedCorridor = selectedCorridor === 'ALL' || selectedCorridor === conf.corridor_id;
+              if (!isSelectedCorridor) return null;
+
+              return (
+                <g
+                  key={conf.id}
+                  transform={`translate(${pos.x + 8}, ${pos.y - 12})`}
+                  className="cursor-pointer group"
+                  onClick={() => setSelectedMapItem({ type: 'CONFLICT', data: conf })}
+                >
+                  {/* Pulsing Red Warning Halo */}
+                  <circle
+                    cx="0"
+                    cy="0"
+                    r="9"
+                    fill="#DC2626"
+                    opacity="0.2"
+                    className="animate-ping"
+                  />
+                  {/* Red Warning Shield Badge */}
+                  <polygon
+                    points="0,-8 8,6 -8,6"
+                    fill="#DC2626"
+                    stroke="#FFFFFF"
+                    strokeWidth="1.5"
+                    filter="url(#badge-shadow)"
+                    className="transition-transform group-hover:scale-125"
+                  />
+                  <text
+                    x="0"
+                    y="4.5"
+                    fill="#FFFFFF"
+                    fontSize="7"
+                    fontWeight="900"
+                    fontFamily="sans-serif"
+                    textAnchor="middle"
+                  >
+                    !
+                  </text>
+                </g>
+              );
+            })}
+          </g>
         </svg>
 
-        {/* Hover Tooltip for Maintenance Jobs */}
-        {hoveredJob && (
-          <div className="absolute top-4 right-4 bg-white/95 backdrop-blur border border-[#CBD5E1] p-3 rounded-xl shadow-xl pointer-events-none text-xs space-y-1.5 z-30 max-w-xs animate-in fade-in">
-            <div className="flex items-center justify-between gap-2 border-b border-[#E2E8F0] pb-1.5">
-              <span className="font-mono font-bold text-[#1565C0] text-xs">
-                {hoveredJob.job_id}
-              </span>
-              <span
-                className="px-2 py-0.5 rounded text-[10px] font-bold text-white"
-                style={{ backgroundColor: DEPT_CONFIG[hoveredJob.department]?.color || '#475569' }}
-              >
-                {hoveredJob.department} ({hoveredJob.source_system})
-              </span>
-            </div>
+        {/* Compact Floating Legend (Bottom-Left Corner) */}
+        <div className="absolute bottom-4 left-4 z-20 bg-white/95 backdrop-blur-md border border-[#CBD5E1] p-3 rounded-xl shadow-lg text-xs space-y-2 max-w-[260px]">
+          <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-1.5">
+            <span className="font-extrabold text-[#172033] text-[11px] uppercase tracking-wider">
+              Map Topology Legend
+            </span>
+            <span className="text-[10px] font-mono text-[#64748B]">SCoR 2026</span>
+          </div>
 
-            <div className="font-bold text-[#172033] text-xs leading-tight">
-              {hoveredJob.job_type?.replace(/_/g, ' ')}
-            </div>
-
-            <div className="grid grid-cols-2 gap-2 text-[11px] text-[#5B6575] pt-1">
-              <div>
-                Location: <span className="font-bold text-[#172033]">{hoveredJob.station} (KM {hoveredJob.km})</span>
+          {/* Department Track Highlight Legend */}
+          <div className="space-y-1 text-[10px] text-[#475569]">
+            <div className="font-bold text-[#1E293B]">Active Track Block Segments:</div>
+            <div className="grid grid-cols-2 gap-1.5 pt-0.5">
+              <div className="flex items-center space-x-1.5">
+                <span className="w-4 h-1.5 rounded-full bg-[#D97706]" />
+                <span>TMS (Eng)</span>
               </div>
+              <div className="flex items-center space-x-1.5">
+                <span className="w-4 h-1.5 rounded-full bg-[#7C3AED]" />
+                <span>SMMS (S&T)</span>
+              </div>
+              <div className="flex items-center space-x-1.5">
+                <span className="w-4 h-1.5 rounded-full bg-[#0284C7]" />
+                <span>TDMS (Traction)</span>
+              </div>
+              <div className="flex items-center space-x-1.5">
+                <span className="w-4 h-1.5 rounded-full bg-[#0F766E]" />
+                <span>Joint Megablock</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Symbols Legend */}
+          <div className="border-t border-[#E2E8F0] pt-1.5 grid grid-cols-2 gap-1.5 text-[10px] text-[#475569]">
+            <div className="flex items-center space-x-1.5">
+              <span className="w-3 h-3 rounded-full border-2 border-[#1565C0] flex items-center justify-center font-bold text-[7px] text-[#1565C0]">
+                8
+              </span>
+              <span>Clustered Jobs</span>
+            </div>
+            <div className="flex items-center space-x-1.5">
+              <span className="w-3 h-3 rounded-full bg-white border-2 border-[#0F172A] flex items-center justify-center">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1565C0]" />
+              </span>
+              <span>Major Junction</span>
+            </div>
+            <div className="flex items-center space-x-1.5">
+              <span className="text-[#0284C7] font-bold">▶</span>
+              <span>Live Train Path</span>
+            </div>
+            <div className="flex items-center space-x-1.5 text-[#DC2626] font-bold">
+              <AlertTriangle className="w-3 h-3" />
+              <span>Data Conflict</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Detail Popup on Element Click */}
+        {selectedMapItem && (
+          <div className="absolute top-4 right-4 z-40 bg-white/95 backdrop-blur-md border border-[#CBD5E1] p-4 rounded-2xl shadow-2xl max-w-sm w-full animate-in fade-in zoom-in-95 text-xs space-y-3">
+            <div className="flex items-start justify-between border-b border-[#E2E8F0] pb-2">
               <div>
-                Priority: <span className={`font-bold ${hoveredJob.priority_score >= 80 ? 'text-[#DC2626]' : 'text-[#D97706]'}`}>
-                  {hoveredJob.priority_tier} ({hoveredJob.priority_score}/100)
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">
+                  {selectedMapItem.type === 'BLOCK' ? 'Active Track Possession' :
+                   selectedMapItem.type === 'TRAIN' ? 'Live Train Movement' :
+                   selectedMapItem.type === 'CONFLICT' ? 'Cross-Department Conflict' :
+                   selectedMapItem.type === 'JOB_CLUSTER' ? 'Station Work Cluster' : 'Station Topology'}
                 </span>
+                <h4 className="text-sm font-black text-[#172033] mt-0.5">
+                  {selectedMapItem.type === 'BLOCK' ? `${selectedMapItem.data.block_id} • ${selectedMapItem.data.section_name}` :
+                   selectedMapItem.type === 'TRAIN' ? `${selectedMapItem.data.train_number} ${selectedMapItem.data.train_name}` :
+                   selectedMapItem.type === 'CONFLICT' ? `${selectedMapItem.data.id} • ${selectedMapItem.data.station_code}` :
+                   selectedMapItem.type === 'JOB_CLUSTER' ? `${selectedMapItem.station.name} (${selectedMapItem.jobs.length} Jobs)` :
+                   `${selectedMapItem.data.name} (${selectedMapItem.data.code})`}
+                </h4>
               </div>
-              <div>
-                Due Date: <span className="font-bold text-[#172033]">{hoveredJob.due_date}</span>
-              </div>
-              <div>
-                Duration: <span className="font-bold text-[#172033]">{hoveredJob.estimated_duration_min} min</span>
-              </div>
+              <button
+                onClick={() => setSelectedMapItem(null)}
+                className="p-1 rounded-lg hover:bg-[#F1F5F9] text-[#64748B] hover:text-[#172033] cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
             </div>
 
-            {/* Requirement 3: Surface conflict flag on hover */}
-            {hoveredJob.hasConflict && (
-              <div className="mt-2 bg-[#FEF2F2] border border-[#FECACA] rounded-lg p-2 flex items-start space-x-1.5 text-[10px] text-[#B91C1C]">
-                <AlertTriangle className="w-3.5 h-3.5 shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-bold">Unresolved Data Conflict Flagged</div>
-                  <div className="font-mono text-[9px] mt-0.5 opacity-90">
-                    {hoveredJob.data_quality_issues?.find(i => i.includes('mismatch')) || 'Cross-department data mismatch'}
+            {/* Content for Block Item */}
+            {selectedMapItem.type === 'BLOCK' && (
+              <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-2 bg-[#F8FAFC] p-2.5 rounded-lg border border-[#E2E8F0]">
+                  <div>
+                    <span className="text-[#64748B] text-[10px]">Department:</span>
+                    <p className="font-bold text-[#172033]">{selectedMapItem.data.department}</p>
+                  </div>
+                  <div>
+                    <span className="text-[#64748B] text-[10px]">Possession Window:</span>
+                    <p className="font-bold text-[#1565C0]">{selectedMapItem.data.time_window}</p>
+                  </div>
+                  <div>
+                    <span className="text-[#64748B] text-[10px]">Duration:</span>
+                    <p className="font-bold text-[#172033]">{selectedMapItem.data.duration_min} min</p>
+                  </div>
+                  <div>
+                    <span className="text-[#64748B] text-[10px]">Status:</span>
+                    <p className="font-bold text-emerald-700">{selectedMapItem.data.status}</p>
+                  </div>
+                </div>
+                <p className="text-[#475569] text-[11px] leading-relaxed">
+                  {selectedMapItem.data.work_summary}
+                </p>
+              </div>
+            )}
+
+            {/* Content for Train Item */}
+            {selectedMapItem.type === 'TRAIN' && (
+              <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-2 bg-[#F8FAFC] p-2.5 rounded-lg border border-[#E2E8F0]">
+                  <div>
+                    <span className="text-[#64748B] text-[10px]">Current Speed:</span>
+                    <p className="font-bold text-[#1565C0]">{selectedMapItem.data.speed_kmph} km/h</p>
+                  </div>
+                  <div>
+                    <span className="text-[#64748B] text-[10px]">Status:</span>
+                    <p className="font-bold text-emerald-700">{selectedMapItem.data.status}</p>
+                  </div>
+                  <div>
+                    <span className="text-[#64748B] text-[10px]">Headway:</span>
+                    <p className="font-bold text-[#172033]">{selectedMapItem.data.occupancy}</p>
+                  </div>
+                  <div>
+                    <span className="text-[#64748B] text-[10px]">Corridor:</span>
+                    <p className="font-bold text-[#172033]">{selectedMapItem.data.corridor_id} ({selectedMapItem.data.direction})</p>
                   </div>
                 </div>
               </div>
             )}
+
+            {/* Content for Conflict Item */}
+            {selectedMapItem.type === 'CONFLICT' && (
+              <div className="bg-[#FEF2F2] border border-[#FECACA] rounded-xl p-3 space-y-2 text-[#991B1B]">
+                <div className="flex items-center space-x-1.5 font-bold">
+                  <AlertTriangle className="w-4 h-4 text-[#DC2626]" />
+                  <span>Unresolved Location/Condition Discrepancy</span>
+                </div>
+                <p className="text-[11px] text-[#7F1D1D] leading-relaxed">
+                  {selectedMapItem.data.description}
+                </p>
+                <div className="text-[10px] font-mono bg-white p-2 rounded border border-[#FECACA]">
+                  {selectedMapItem.data.resolution}
+                </div>
+              </div>
+            )}
+
+            {/* Content for Job Cluster */}
+            {selectedMapItem.type === 'JOB_CLUSTER' && (
+              <div className="space-y-2">
+                <p className="text-[#64748B] text-[11px]">
+                  {selectedMapItem.jobs.length} maintenance tasks scheduled at this station node:
+                </p>
+                <div className="max-h-44 overflow-y-auto space-y-1.5 pr-1 divide-y divide-[#F1F5F9]">
+                  {selectedMapItem.jobs.map(j => (
+                    <div
+                      key={j.job_id}
+                      onClick={() => setSelectedJob(j)}
+                      className="pt-1.5 flex items-center justify-between cursor-pointer hover:bg-[#F8FAFC] p-1 rounded"
+                    >
+                      <div>
+                        <span className="font-mono font-bold text-[#1565C0]">{j.job_id}</span>
+                        <p className="text-[10px] text-[#475569]">{j.job_type?.replace(/_/g, ' ')}</p>
+                      </div>
+                      <span
+                        className="text-[9px] font-bold px-1.5 py-0.5 rounded text-white"
+                        style={{ backgroundColor: DEPT_CONFIG[j.department]?.color || '#475569' }}
+                      >
+                        {j.department}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Close / Action Button */}
+            <div className="flex justify-end pt-1">
+              <button
+                onClick={() => setSelectedMapItem(null)}
+                className="px-3 py-1.5 rounded-lg text-xs font-bold bg-[#1565C0] text-white hover:bg-[#0D47A1] cursor-pointer"
+              >
+                Close
+              </button>
+            </div>
           </div>
         )}
 
         {/* Station Hover Tooltip */}
-        {hoveredStation && !hoveredJob && (
-          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur border border-[#E2E8F0] p-3 rounded-lg shadow-lg pointer-events-none text-xs space-y-1 z-20">
+        {hoveredStation && !selectedMapItem && (
+          <div className="absolute top-16 left-4 bg-white/95 backdrop-blur border border-[#E2E8F0] p-2.5 rounded-xl shadow-lg pointer-events-none text-xs space-y-1 z-20">
             <div className="font-bold text-[#172033] flex items-center space-x-1.5">
               <MapPin className="w-3.5 h-3.5 text-[#1565C0]" />
               <span>{hoveredStation.name} ({hoveredStation.code})</span>
             </div>
             <div className="text-[#7A8494] text-[11px]">
-              Division: <span className="text-[#172033] font-semibold">{hoveredStation.division}</span> | Zone: SCoR
+              Division: <span className="text-[#172033] font-semibold">{hoveredStation.division}</span> | SCoR
             </div>
             <div className="text-[#7A8494] text-[11px]">
               Corridors: <span className="text-[#1565C0] font-mono">{hoveredStation.corridors?.join(', ')}</span>
             </div>
             {hoveredStation.junction && (
-              <span className="inline-block bg-[#EFF6FF] text-[#1565C0] text-[9px] px-1.5 py-0.5 rounded font-bold mt-1 border border-[#BFDBFE]">
+              <span className="inline-block bg-[#EFF6FF] text-[#1565C0] text-[9px] px-1.5 py-0.5 rounded font-bold border border-[#BFDBFE]">
                 MAJOR JUNCTION
               </span>
             )}
           </div>
         )}
       </div>
+
 
       {/* Requirement 3: Detailed Job Inspection Modal on Click */}
       {selectedJob && (

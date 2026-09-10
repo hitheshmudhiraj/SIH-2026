@@ -3,7 +3,7 @@ import {
   Calendar, Clock, Shield, Search,
   Users, Layers, Download, CheckCircle2, Train,
   FileSpreadsheet, Sparkles, Building2, ChevronDown, ChevronUp,
-  Tag, Info, RefreshCw
+  Tag, Info, RefreshCw, RotateCcw, X, Filter
 } from 'lucide-react';
 import { fetchLatestWeeklyPlan, fetchLatestMonthlyPlan } from '../api';
 
@@ -16,7 +16,14 @@ export default function DepartmentBlockScheduleView() {
   const [weeklyPlan, setWeeklyPlan] = useState(null);
   const [monthlyPlan, setMonthlyPlan] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedWeek, setSelectedWeek] = useState(1);
+  const [selectedWeek, setSelectedWeek] = useState(1); // 1, 2, 3, 4, or 'ALL'
+
+  // Date and Time range filter states
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
+  const [timePreset, setTimePreset] = useState('ALL');
 
   // Load plans from API or fallback
   useEffect(() => {
@@ -57,6 +64,9 @@ export default function DepartmentBlockScheduleView() {
       return weeklyPlan?.blocks || [];
     } else {
       if (!monthlyPlan?.weeks) return [];
+      if (selectedWeek === 'ALL') {
+        return monthlyPlan.weeks.flatMap(w => w.blocks || []);
+      }
       const currentWeekData = monthlyPlan.weeks.find(w => w.week_number === selectedWeek) || monthlyPlan.weeks[0];
       return currentWeekData?.blocks || [];
     }
@@ -73,12 +83,30 @@ export default function DepartmentBlockScheduleView() {
         );
         if (!hasDept) return false;
       }
+
       // Division filter
       if (selectedDivision !== 'ALL') {
         if (b.division && !b.division.toLowerCase().includes(selectedDivision.toLowerCase())) {
           return false;
         }
       }
+
+      // Date range filter
+      if (startDate && b.date && b.date < startDate) {
+        return false;
+      }
+      if (endDate && b.date && b.date > endDate) {
+        return false;
+      }
+
+      // Time range filter (checks interval overlap with block start_time and end_time)
+      if (startTime && b.end_time && b.end_time <= startTime) {
+        return false;
+      }
+      if (endTime && b.start_time && b.start_time >= endTime) {
+        return false;
+      }
+
       // Search query
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
@@ -95,7 +123,7 @@ export default function DepartmentBlockScheduleView() {
       }
       return true;
     });
-  }, [currentBlocks, selectedDept, selectedDivision, searchQuery]);
+  }, [currentBlocks, selectedDept, selectedDivision, startDate, endDate, startTime, endTime, searchQuery]);
 
   // Summary statistics
   const summaryStats = useMemo(() => {
@@ -117,6 +145,26 @@ export default function DepartmentBlockScheduleView() {
       criticalTasks
     };
   }, [filteredBlocks]);
+
+  const isFiltered =
+    selectedDept !== 'ALL' ||
+    selectedDivision !== 'ALL' ||
+    searchQuery.trim() !== '' ||
+    startDate !== '' ||
+    endDate !== '' ||
+    startTime !== '' ||
+    endTime !== '';
+
+  const handleClearFilters = () => {
+    setSelectedDept('ALL');
+    setSelectedDivision('ALL');
+    setSearchQuery('');
+    setStartDate('');
+    setEndDate('');
+    setStartTime('');
+    setEndTime('');
+    setTimePreset('ALL');
+  };
 
   const handlePrint = () => {
     window.print();
@@ -216,14 +264,24 @@ export default function DepartmentBlockScheduleView() {
           {/* Month Week Selector if monthly */}
           {activeTab === 'monthly' && (
             <div className="flex items-center space-x-2">
-              <span className="text-xs text-[#64748B] font-semibold">Select Week:</span>
+              <span className="text-xs text-[#64748B] font-semibold">Select Horizon:</span>
+              <button
+                onClick={() => setSelectedWeek('ALL')}
+                className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                  selectedWeek === 'ALL'
+                    ? 'bg-[#1565C0] text-white shadow-sm'
+                    : 'bg-white border border-[#CBD5E1] text-[#475569] hover:bg-[#F8FAFC]'
+                }`}
+              >
+                All 4 Weeks
+              </button>
               {[1, 2, 3, 4].map(w => (
                 <button
                   key={w}
                   onClick={() => setSelectedWeek(w)}
                   className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all cursor-pointer ${
                     selectedWeek === w
-                      ? 'bg-[#1565C0] text-white'
+                      ? 'bg-[#1565C0] text-white shadow-sm'
                       : 'bg-white border border-[#CBD5E1] text-[#475569] hover:bg-[#F8FAFC]'
                   }`}
                 >
@@ -277,11 +335,15 @@ export default function DepartmentBlockScheduleView() {
       </div>
 
       {/* Filter & Department Selector Bar */}
-      <div className="bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm space-y-3">
+      <div className="bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-sm space-y-3.5">
+        {/* Row 1: Department Chips & Division */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
           {/* Department Chips */}
           <div className="flex items-center flex-wrap gap-2">
-            <span className="text-xs font-bold text-[#475569] mr-1">Filter by Department:</span>
+            <span className="text-xs font-bold text-[#475569] mr-1 flex items-center space-x-1.5">
+              <Users className="w-3.5 h-3.5 text-[#1565C0]" />
+              <span>Department:</span>
+            </span>
             {departments.map(dept => {
               const Icon = dept.icon;
               const isSelected = selectedDept === dept.id;
@@ -319,7 +381,134 @@ export default function DepartmentBlockScheduleView() {
           </div>
         </div>
 
-        {/* Search Bar */}
+        {/* Row 2: Date Range & Time Window Range Filters */}
+        <div className="pt-3 border-t border-[#E2E8F0] flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-4">
+            {/* Date Range Picker */}
+            <div className="flex items-center flex-wrap gap-2">
+              <div className="flex items-center space-x-1.5 text-xs font-bold text-[#475569]">
+                <Calendar className="w-3.5 h-3.5 text-[#1565C0]" />
+                <span>Date Range:</span>
+              </div>
+              <div className="flex items-center space-x-1.5 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-2.5 py-1 text-xs">
+                <span className="text-[11px] text-[#64748B] font-medium">From</span>
+                <input
+                  type="date"
+                  value={startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                  className="bg-transparent text-xs text-[#1E293B] font-medium focus:outline-none cursor-pointer"
+                />
+              </div>
+              <span className="text-xs text-[#94A3B8] font-medium">to</span>
+              <div className="flex items-center space-x-1.5 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-2.5 py-1 text-xs">
+                <span className="text-[11px] text-[#64748B] font-medium">To</span>
+                <input
+                  type="date"
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                  className="bg-transparent text-xs text-[#1E293B] font-medium focus:outline-none cursor-pointer"
+                />
+              </div>
+              {(startDate || endDate) && (
+                <button
+                  onClick={() => { setStartDate(''); setEndDate(''); }}
+                  className="text-[11px] text-[#64748B] hover:text-[#DC2626] font-semibold px-1.5 py-0.5 rounded hover:bg-slate-100 flex items-center space-x-0.5 cursor-pointer"
+                  title="Clear date filter"
+                >
+                  <X className="w-3 h-3" />
+                  <span>Clear Date</span>
+                </button>
+              )}
+            </div>
+
+            {/* Time Window Range Picker */}
+            <div className="flex items-center flex-wrap gap-2">
+              <div className="flex items-center space-x-1.5 text-xs font-bold text-[#475569]">
+                <Clock className="w-3.5 h-3.5 text-[#0F766E]" />
+                <span>Time Slot:</span>
+              </div>
+
+              <select
+                value={timePreset}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setTimePreset(val);
+                  if (val === 'ALL') {
+                    setStartTime('');
+                    setEndTime('');
+                  } else if (val === 'NIGHT') {
+                    setStartTime('00:00');
+                    setEndTime('06:00');
+                  } else if (val === 'MORNING') {
+                    setStartTime('06:00');
+                    setEndTime('12:00');
+                  } else if (val === 'MIDDAY') {
+                    setStartTime('12:00');
+                    setEndTime('18:00');
+                  } else if (val === 'EVENING') {
+                    setStartTime('18:00');
+                    setEndTime('23:59');
+                  }
+                }}
+                className="text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-2.5 py-1 font-medium text-[#334155] focus:outline-none focus:ring-1 focus:ring-[#1565C0] cursor-pointer"
+              >
+                <option value="ALL">All Hours (24h)</option>
+                <option value="NIGHT">Night Rolling (00:00 - 06:00)</option>
+                <option value="MORNING">Morning Window (06:00 - 12:00)</option>
+                <option value="MIDDAY">Mid-Day Shadow (12:00 - 18:00)</option>
+                <option value="EVENING">Evening Trough (18:00 - 24:00)</option>
+                <option value="CUSTOM">Custom Window</option>
+              </select>
+
+              <div className="flex items-center space-x-1.5 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg px-2.5 py-1 text-xs">
+                <input
+                  type="time"
+                  value={startTime}
+                  onChange={(e) => {
+                    setStartTime(e.target.value);
+                    setTimePreset('CUSTOM');
+                  }}
+                  className="bg-transparent text-xs text-[#1E293B] font-medium focus:outline-none cursor-pointer"
+                />
+                <span className="text-[11px] text-[#94A3B8]">to</span>
+                <input
+                  type="time"
+                  value={endTime}
+                  onChange={(e) => {
+                    setEndTime(e.target.value);
+                    setTimePreset('CUSTOM');
+                  }}
+                  className="bg-transparent text-xs text-[#1E293B] font-medium focus:outline-none cursor-pointer"
+                />
+              </div>
+
+              {(startTime || endTime) && (
+                <button
+                  onClick={() => { setStartTime(''); setEndTime(''); setTimePreset('ALL'); }}
+                  className="text-[11px] text-[#64748B] hover:text-[#DC2626] font-semibold px-1.5 py-0.5 rounded hover:bg-slate-100 flex items-center space-x-0.5 cursor-pointer"
+                  title="Clear time filter"
+                >
+                  <X className="w-3 h-3" />
+                  <span>Clear Time</span>
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Reset All Filters Button */}
+          {isFiltered && (
+            <button
+              onClick={handleClearFilters}
+              className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-[#DC2626] bg-red-50 hover:bg-red-100 border border-red-200 rounded-lg transition-colors cursor-pointer shrink-0"
+              title="Reset all filters to default"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>Reset Filters</span>
+            </button>
+          )}
+        </div>
+
+        {/* Row 3: Search Bar */}
         <div className="relative">
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#94A3B8]" />
           <input
@@ -330,6 +519,51 @@ export default function DepartmentBlockScheduleView() {
             className="w-full pl-9 pr-4 py-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg text-xs text-[#1E293B] placeholder-[#94A3B8] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
           />
         </div>
+
+        {/* Row 4: Active Filter Pills */}
+        {isFiltered && (
+          <div className="flex items-center flex-wrap gap-1.5 pt-1 text-[11px]">
+            <span className="text-[#64748B] font-semibold flex items-center space-x-1 mr-1">
+              <Filter className="w-3 h-3 text-[#1565C0]" />
+              <span>Active Filters:</span>
+            </span>
+
+            {selectedDept !== 'ALL' && (
+              <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1565C0] border border-[#BFDBFE] font-medium">
+                <span>Dept: {selectedDept}</span>
+                <button onClick={() => setSelectedDept('ALL')} className="hover:text-red-600 cursor-pointer"><X className="w-3 h-3" /></button>
+              </span>
+            )}
+
+            {selectedDivision !== 'ALL' && (
+              <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1565C0] border border-[#BFDBFE] font-medium">
+                <span>Division: {selectedDivision}</span>
+                <button onClick={() => setSelectedDivision('ALL')} className="hover:text-red-600 cursor-pointer"><X className="w-3 h-3" /></button>
+              </span>
+            )}
+
+            {(startDate || endDate) && (
+              <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1565C0] border border-[#BFDBFE] font-medium">
+                <span>Date: {startDate || 'Start'} → {endDate || 'End'}</span>
+                <button onClick={() => { setStartDate(''); setEndDate(''); }} className="hover:text-red-600 cursor-pointer"><X className="w-3 h-3" /></button>
+              </span>
+            )}
+
+            {(startTime || endTime) && (
+              <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1565C0] border border-[#BFDBFE] font-medium">
+                <span>Time: {startTime || '00:00'} → {endTime || '23:59'}</span>
+                <button onClick={() => { setStartTime(''); setEndTime(''); setTimePreset('ALL'); }} className="hover:text-red-600 cursor-pointer"><X className="w-3 h-3" /></button>
+              </span>
+            )}
+
+            {searchQuery.trim() && (
+              <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1565C0] border border-[#BFDBFE] font-medium">
+                <span>Query: "{searchQuery}"</span>
+                <button onClick={() => setSearchQuery('')} className="hover:text-red-600 cursor-pointer"><X className="w-3 h-3" /></button>
+              </span>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Block Cards List */}
