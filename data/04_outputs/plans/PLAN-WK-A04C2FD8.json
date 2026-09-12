@@ -1,0 +1,23 @@
+{
+  "plan_id": "PLAN-WK-A04C2FD8",
+  "current_plan_id": "PLAN-WK-A04C2FD8",
+  "is_current": true,
+  "is_active": true,
+  "plan_type": "WEEKLY",
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-14",
+  "generated_at": "2026-09-10T19:00:48.766148",
+  "solver_status": "FEASIBLE",
+  "solve_duration_ms": 2639.6,
+  "summary": {
+    "total_blocks": 0,
+    "total_block_hours": 0,
+    "joint_megablocks": 0,
+    "joint_bundling_rate_pct": 0.0,
+    "total_tasks_scheduled": 0,
+    "critical_tasks_scheduled": 0,
+    "high_priority_tasks_scheduled": 0,
+    "sections_covered": 0
+  },
+  "blocks": []
+}

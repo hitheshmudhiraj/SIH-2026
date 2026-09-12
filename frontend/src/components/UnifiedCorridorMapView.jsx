@@ -27,6 +27,17 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
   const [selectedJob, setSelectedJob] = useState(null);
   const [selectedPin, setSelectedPin] = useState(null);
 
+  // Prompt 3 Feature A: Planned Block Details Drawer/Modal
+  const [selectedPlannedBlock, setSelectedPlannedBlock] = useState(null);
+
+  // Prompt 3 Feature B: Simple Map Filters (Show Checklist & Department Filter)
+  const [showChecklist, setShowChecklist] = useState({
+    blocks: true,
+    requests: true,
+    stations: true
+  });
+  const [deptFilter, setDeptFilter] = useState('ALL'); // 'ALL' | 'Engineering' | 'S&T' | 'TRD'
+
   useEffect(() => {
     fetchCorridorMapData({
       corridor: selectedCorridor !== 'ALL' ? selectedCorridor : undefined,
@@ -132,20 +143,26 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
     return map;
   }, [stations]);
 
-  // Filter stations based on selected corridor
+  // Filter stations based on selected corridor and showChecklist
   const filteredStations = useMemo(() => {
+    if (!showChecklist.stations) return [];
     return stations.filter(s =>
       selectedCorridor === 'ALL' || (s.corridors && s.corridors.includes(selectedCorridor))
     );
-  }, [stations, selectedCorridor]);
+  }, [stations, showChecklist.stations, selectedCorridor]);
 
-  // Filter jobs based on corridor, departments, and date range
+  // Filter jobs based on corridor, departments, deptFilter, showChecklist, and date range
   const filteredJobs = useMemo(() => {
+    if (!showChecklist.requests) return [];
     return rawJobs.filter(job => {
       if (selectedCorridor !== 'ALL' && job.corridor_id !== selectedCorridor) {
         return false;
       }
-      if (!selectedDepartments.includes(job.department)) {
+      if (deptFilter !== 'ALL') {
+        if (deptFilter === 'Engineering' && job.department !== 'Engineering') return false;
+        if (deptFilter === 'S&T' && job.department !== 'S&T') return false;
+        if (deptFilter === 'TRD' && job.department !== 'Traction' && job.department !== 'TRD') return false;
+      } else if (!selectedDepartments.includes(job.department)) {
         return false;
       }
       const jobDate = (job.due_date || '').slice(0, 10);
@@ -157,7 +174,7 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
       }
       return true;
     });
-  }, [rawJobs, selectedCorridor, selectedDepartments, startDate, endDate]);
+  }, [rawJobs, showChecklist.requests, selectedCorridor, deptFilter, selectedDepartments, startDate, endDate]);
 
   // Ordered Stations per Corridor for realistic continuous railway track curves
   const corridorStationSequences = useMemo(() => ({
@@ -227,87 +244,186 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
       {
         block_id: 'BLK-017',
         corridor_id: 'C01',
+        section_id: 'SEC_C01_01',
         section_name: 'Vijayawada – Tenali',
         from_stn: 'BZA',
         to_stn: 'TEL',
-        department: 'Engineering',
-        window_name: 'Night Rolling Megablock',
+        location: 'SEC_C01_01 • KM 0.0 – 31.5 (BZA – TEL)',
+        date: '2026-09-17',
+        start_time: '01:00',
+        end_time: '04:00',
         time_window: '01:00 – 04:00',
         duration_min: 180,
+        duration_hours: 3.0,
+        departments: ['Engineering'],
+        department: 'Engineering',
+        window_name: 'Night Rolling Megablock',
         status: 'Active Track Possession',
+        train_conflicts: '0 Scheduled Train Clashes (Clear Headway)',
+        resources: 'Plasser CSM 09-32 Tamping Machine, CREW-ENG-BZA-02',
+        is_joint_block: false,
+        is_joint_megablock: false,
         work_summary: 'Heavy rail tamping with Plasser CSM 09-32'
       },
       {
         block_id: 'BLK-042',
         corridor_id: 'C02',
+        section_id: 'SEC_C02_06',
         section_name: 'Samalkot – Rajahmundry',
         from_stn: 'SLO',
         to_stn: 'RJY',
-        department: 'Traction',
-        window_name: 'Night Power Isolation',
+        location: 'SEC_C02_06 • KM 150.0 – 200.2 (SLO – RJY)',
+        date: '2026-09-17',
+        start_time: '01:30',
+        end_time: '04:30',
         time_window: '01:30 – 04:30',
         duration_min: 180,
+        duration_hours: 3.0,
+        departments: ['Traction'],
+        department: 'Traction',
+        window_name: 'Night Power Isolation',
         status: 'Active Track Possession',
+        train_conflicts: '0 Scheduled Train Clashes (Clear Headway)',
+        resources: 'Tower Wagon Crew (CREW-TRD-BZA-01)',
+        is_joint_block: false,
+        is_joint_megablock: false,
         work_summary: '25kV OHE catenary replacement and bracket overhaul'
       },
       {
         block_id: 'BLK-089',
         corridor_id: 'C03',
+        section_id: 'SEC_C03_01',
         section_name: 'Guntur – Narasaraopet',
         from_stn: 'GNT',
         to_stn: 'NRT',
-        department: 'S&T',
-        window_name: 'Mid-Day Shadow Window',
+        location: 'SEC_C03_01 • KM 0.0 – 45.4 (GNT – NRT)',
+        date: '2026-09-18',
+        start_time: '11:30',
+        end_time: '14:00',
         time_window: '11:30 – 14:00',
         duration_min: 150,
+        duration_hours: 2.5,
+        departments: ['S&T'],
+        department: 'S&T',
+        window_name: 'Mid-Day Shadow Window',
         status: 'Scheduled Possession',
+        train_conflicts: '0 Scheduled Train Clashes (Clear Headway)',
+        resources: 'Point Machine Maintenance Team (RES-SNT-GANG-03)',
+        is_joint_block: false,
+        is_joint_megablock: false,
         work_summary: 'Electronic interlocking and point machine renewal'
       },
       {
         block_id: 'BLK-104',
         corridor_id: 'C04',
+        section_id: 'SEC_C04_06',
         section_name: 'Kadapa – Razampeta',
         from_stn: 'HX',
         to_stn: 'RJP',
-        department: 'Joint',
-        window_name: 'Joint Megablock Window',
+        location: 'SEC_C04_06 • KM 187.0 – 237.8 (HX – RJP)',
+        date: '2026-09-18',
+        start_time: '02:00',
+        end_time: '05:00',
         time_window: '02:00 – 05:00',
         duration_min: 180,
+        duration_hours: 3.0,
+        departments: ['Engineering', 'Traction'],
+        department: 'Joint',
+        window_name: 'Joint Megablock Window',
         status: 'Bundled Multi-Dept Possession',
+        train_conflicts: '0 Scheduled Train Clashes (Clear Headway)',
+        resources: 'Joint P-Way BCM Team + TRD Mast Bonding Gang',
+        is_joint_block: true,
+        is_joint_megablock: true,
         work_summary: 'Joint P-Way deep screening + TRD mast bonding'
       },
       {
         block_id: 'BLK-112',
         corridor_id: 'C01',
+        section_id: 'SEC_C01_05',
         section_name: 'Ongole – Singarayakonda',
         from_stn: 'OGL',
         to_stn: 'SKM',
-        department: 'Engineering',
-        window_name: 'Early Morning Off-Peak',
+        location: 'SEC_C01_05 • KM 124.6 – 152.4 (OGL – SKM)',
+        date: '2026-09-19',
+        start_time: '04:30',
+        end_time: '07:00',
         time_window: '04:30 – 07:00',
         duration_min: 150,
+        duration_hours: 2.5,
+        departments: ['Engineering'],
+        department: 'Engineering',
+        window_name: 'Early Morning Off-Peak',
         status: 'Scheduled Possession',
+        train_conflicts: '0 Scheduled Train Clashes (Clear Headway)',
+        resources: 'Hydraulic Rail Tensor & Flash Butt Welding Team',
+        is_joint_block: false,
+        is_joint_megablock: false,
         work_summary: 'Continuous welded rail destressing and neutral temperature test'
       }
     ];
 
     if (rawBlocks.length > 0) {
-      return rawBlocks.map((b, idx) => ({
-        block_id: b.block_id || `BLK-${idx + 100}`,
-        corridor_id: b.corridor_id || 'C01',
-        section_name: b.section_name || 'Corridor Section',
-        from_stn: b.from_station || 'BZA',
-        to_stn: b.to_station || 'TEL',
-        department: b.department || 'Engineering',
-        window_name: b.window_name || 'Maintenance Window',
-        time_window: `${b.start_time || '01:00'} – ${b.end_time || '04:00'}`,
-        duration_min: b.duration_minutes || 180,
-        status: 'Active Track Possession',
-        work_summary: b.notes || 'Scheduled possession window'
-      }));
+      return rawBlocks.map((b, idx) => {
+        const depts = b.departments || (b.department ? [b.department] : ['Engineering']);
+        const isJoint = Boolean(b.is_joint_block || b.is_joint_megablock || depts.length > 1);
+        const durMin = b.duration_min || b.duration_minutes || (b.duration_hours ? Math.round(b.duration_hours * 60) : 180);
+        const durHrs = b.duration_hours || (durMin / 60).toFixed(1);
+        const startT = b.start_time || '01:00';
+        const endT = b.end_time || '04:00';
+        const fromStn = b.from_stn || b.from_station || 'BZA';
+        const toStn = b.to_stn || b.to_station || 'TEL';
+
+        return {
+          block_id: b.block_id || `BLK-${idx + 100}`,
+          corridor_id: b.corridor_id || 'C01',
+          section_id: b.section_id || 'SEC_C01_01',
+          section_name: b.section_name || 'Corridor Section',
+          from_stn: fromStn,
+          to_stn: toStn,
+          location: b.location || b.section_name || `${fromStn} – ${toStn}`,
+          date: b.date || '2026-09-17',
+          start_time: startT,
+          end_time: endT,
+          time_window: b.time_window || `${startT} – ${endT}`,
+          duration_min: durMin,
+          duration_hours: durHrs,
+          departments: depts,
+          department: b.department || (depts.length > 1 ? 'Joint' : depts[0]),
+          window_name: b.window_name || 'Maintenance Window',
+          status: b.status || 'Active Track Possession',
+          train_conflicts: b.train_conflicts || '0 Scheduled Train Clashes (Clear Headway)',
+          resources: b.resources || 'Allocated Maintenance Gang & Machinery',
+          is_joint_block: isJoint,
+          is_joint_megablock: isJoint,
+          work_summary: b.work_summary || b.notes || 'Scheduled possession window'
+        };
+      });
     }
     return defaultBlocks;
   }, [rawBlocks]);
+
+  // Feature B: Filtered Active Blocks based on Show Checklist, Corridor, and Department
+  const filteredActiveBlocks = useMemo(() => {
+    if (!showChecklist.blocks) return [];
+    return activeBlocksList.filter(blk => {
+      // Corridor filter
+      if (selectedCorridor !== 'ALL' && blk.corridor_id !== selectedCorridor) {
+        return false;
+      }
+      // Department filter (All / Engineering / S&T / TRD)
+      if (deptFilter !== 'ALL') {
+        const blkDepts = blk.departments || [blk.department];
+        const matchEng = deptFilter === 'Engineering' && (blkDepts.includes('Engineering') || blk.department === 'Engineering');
+        const matchST = deptFilter === 'S&T' && (blkDepts.includes('S&T') || blk.department === 'S&T');
+        const matchTRD = (deptFilter === 'TRD' || deptFilter === 'Traction') && (
+          blkDepts.includes('Traction') || blkDepts.includes('TRD') || blk.department === 'Traction' || blk.department === 'TRD'
+        );
+        if (!matchEng && !matchST && !matchTRD) return false;
+      }
+      return true;
+    });
+  }, [activeBlocksList, showChecklist.blocks, selectedCorridor, deptFilter]);
 
   // Live Train Movements with realistic directional coordinates along the tracks
   const liveTrainsList = useMemo(() => [
@@ -617,6 +733,94 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
         </div>
       </div>
 
+      {/* Feature B — Map Filter Panel: Show Checklist + Department Quick Filter */}
+      <div className="flex flex-wrap items-center gap-4 bg-gradient-to-r from-[#F0F4FF] to-[#F8FAFC] border border-[#DBEAFE] rounded-xl px-4 py-2.5 text-xs">
+        {/* Show checklist */}
+        <div className="flex items-center gap-3">
+          <span className="font-bold text-[#172033] flex items-center gap-1.5">
+            <Eye className="w-3.5 h-3.5 text-[#1565C0]" />
+            Show:
+          </span>
+          {[
+            { key: 'blocks',   label: 'Planned Blocks',       color: '#0F766E' },
+            { key: 'requests', label: 'Maintenance Requests',  color: '#D97706' },
+            { key: 'stations', label: 'Stations',              color: '#1565C0' }
+          ].map(({ key, label, color }) => (
+            <label
+              key={key}
+              className="flex items-center gap-1.5 cursor-pointer select-none group"
+            >
+              <span
+                onClick={() => setShowChecklist(prev => ({ ...prev, [key]: !prev[key] }))}
+                className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-all cursor-pointer ${
+                  showChecklist[key]
+                    ? 'border-transparent'
+                    : 'border-[#CBD5E1] bg-white'
+                }`}
+                style={showChecklist[key] ? { backgroundColor: color, borderColor: color } : {}}
+              >
+                {showChecklist[key] && (
+                  <svg viewBox="0 0 10 10" className="w-2.5 h-2.5" fill="none">
+                    <path d="M1.5 5L4 7.5L8.5 2" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </span>
+              <span
+                className={`font-semibold transition-colors ${
+                  showChecklist[key] ? 'text-[#172033]' : 'text-[#94A3B8] line-through'
+                }`}
+              >
+                {label}
+              </span>
+            </label>
+          ))}
+        </div>
+
+        {/* Vertical divider */}
+        <div className="hidden sm:block w-px h-5 bg-[#CBD5E1]" />
+
+        {/* Department quick filter */}
+        <div className="flex items-center gap-2">
+          <span className="font-bold text-[#172033] flex items-center gap-1.5">
+            <Filter className="w-3.5 h-3.5 text-[#1565C0]" />
+            Department:
+          </span>
+          {[
+            { value: 'ALL',         label: 'All',         bg: '#1565C0' },
+            { value: 'Engineering', label: 'Engineering',  bg: '#D97706' },
+            { value: 'S&T',         label: 'S&T',          bg: '#7C3AED' },
+            { value: 'TRD',         label: 'Traction/TRD', bg: '#0284C7' }
+          ].map(opt => (
+            <button
+              key={opt.value}
+              onClick={() => setDeptFilter(opt.value)}
+              className={`px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer border text-[11px] ${
+                deptFilter === opt.value
+                  ? 'text-white border-transparent shadow-sm'
+                  : 'text-[#64748B] border-[#CBD5E1] bg-white hover:bg-[#F1F5F9]'
+              }`}
+              style={deptFilter === opt.value ? { backgroundColor: opt.bg, borderColor: opt.bg } : {}}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Active filter summary chip */}
+        {(deptFilter !== 'ALL' || !showChecklist.blocks || !showChecklist.requests || !showChecklist.stations) && (
+          <button
+            onClick={() => {
+              setDeptFilter('ALL');
+              setShowChecklist({ blocks: true, requests: true, stations: true });
+            }}
+            className="ml-auto flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#FEF2F2] border border-[#FECACA] text-[#DC2626] text-[11px] font-bold hover:bg-[#FFEDD5] cursor-pointer transition-all"
+          >
+            <X className="w-3 h-3" />
+            Clear Filters
+          </button>
+        )}
+      </div>
+
       {/* Realistic Geographic Railway Map Canvas with Pan & Zoom */}
       <div
         className="relative bg-[#F4F7FA] border border-[#CBD5E1] rounded-2xl overflow-hidden min-h-[540px] select-none shadow-inner"
@@ -845,7 +1049,7 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
 
             {/* 4. BLOCKS LAYER: Active Maintenance Blocks Highlighted Directly on Track Segments */}
             {(activeOverlay === 'ALL' || activeOverlay === 'BLOCKS') && (
-              activeBlocksList.map((blk) => {
+              filteredActiveBlocks.map((blk) => {
                 const p1 = stationsMap[blk.from_stn] ? projectCoords(stationsMap[blk.from_stn].latitude, stationsMap[blk.from_stn].longitude) : null;
                 const p2 = stationsMap[blk.to_stn] ? projectCoords(stationsMap[blk.to_stn].latitude, stationsMap[blk.to_stn].longitude) : null;
                 if (!p1 || !p2) return null;
@@ -1312,32 +1516,111 @@ export default function UnifiedCorridorMapView({ onSelectOpportunity, onSelectBl
               </button>
             </div>
 
-            {/* Content for Block Item */}
-            {selectedMapItem.type === 'BLOCK' && (
-              <div className="space-y-2">
-                <div className="grid grid-cols-2 gap-2 bg-[#F8FAFC] p-2.5 rounded-lg border border-[#E2E8F0]">
-                  <div>
-                    <span className="text-[#64748B] text-[10px]">Department:</span>
-                    <p className="font-bold text-[#172033]">{selectedMapItem.data.department}</p>
+            {/* Content for Block Item — Full Detail (Feature A) */}
+            {selectedMapItem.type === 'BLOCK' && (() => {
+              const blk = selectedMapItem.data;
+              const deptColor = blk.department === 'Engineering' ? '#D97706'
+                : blk.department === 'S&T' ? '#7C3AED'
+                : blk.department === 'Traction' ? '#0284C7'
+                : '#0F766E';
+              return (
+                <div className="space-y-3">
+                  {/* Joint Block Banner */}
+                  {blk.is_joint_block && (
+                    <div className="flex items-center gap-2 bg-gradient-to-r from-[#ECFDF5] to-[#D1FAE5] border border-[#6EE7B7] rounded-lg px-3 py-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                      <span className="text-emerald-700 font-bold text-[11px]">Joint Multi-Department Megablock</span>
+                    </div>
+                  )}
+
+                  {/* Status + Dept row */}
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span
+                      className="px-2.5 py-0.5 rounded-full text-[10px] font-bold text-white"
+                      style={{ backgroundColor: deptColor }}
+                    >
+                      {blk.department}
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      {blk.status}
+                    </span>
                   </div>
-                  <div>
-                    <span className="text-[#64748B] text-[10px]">Possession Window:</span>
-                    <p className="font-bold text-[#1565C0]">{selectedMapItem.data.time_window}</p>
+
+                  {/* Core metadata grid */}
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-2 bg-[#F8FAFC] p-3 rounded-xl border border-[#E2E8F0] text-[11px]">
+                    <div>
+                      <span className="text-[#64748B]">Block ID</span>
+                      <p className="font-mono font-black text-[#1565C0]">{blk.block_id}</p>
+                    </div>
+                    <div>
+                      <span className="text-[#64748B]">Section</span>
+                      <p className="font-bold text-[#172033]">{blk.section_name}</p>
+                    </div>
+                    <div className="col-span-2">
+                      <span className="text-[#64748B]">Location</span>
+                      <p className="font-semibold text-[#172033] text-[10px]">{blk.location}</p>
+                    </div>
+                    <div>
+                      <span className="text-[#64748B]">Date</span>
+                      <p className="font-bold text-[#172033]">{blk.date}</p>
+                    </div>
+                    <div>
+                      <span className="text-[#64748B]">Time Window</span>
+                      <p className="font-bold text-[#1565C0]">{blk.time_window}</p>
+                    </div>
+                    <div>
+                      <span className="text-[#64748B]">Duration</span>
+                      <p className="font-bold text-[#172033]">{blk.duration_min} min ({blk.duration_hours}h)</p>
+                    </div>
+                    <div>
+                      <span className="text-[#64748B]">Joint Block</span>
+                      <p className={`font-bold ${blk.is_joint_block ? 'text-emerald-700' : 'text-[#64748B]'}`}>
+                        {blk.is_joint_block ? '✓ Yes — Megablock' : 'No'}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-[#64748B] text-[10px]">Duration:</span>
-                    <p className="font-bold text-[#172033]">{selectedMapItem.data.duration_min} min</p>
+
+                  {/* Departments chips */}
+                  {blk.departments && blk.departments.length > 1 && (
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-[#64748B] text-[10px] font-semibold">Departments:</span>
+                      {blk.departments.map(d => (
+                        <span
+                          key={d}
+                          className="px-2 py-0.5 rounded text-[9px] font-bold text-white"
+                          style={{ backgroundColor: DEPT_CONFIG[d]?.color || '#475569' }}
+                        >
+                          {d}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Train conflicts */}
+                  <div className="flex items-start gap-2 bg-[#F0FDF4] border border-[#BBF7D0] rounded-lg px-3 py-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
+                    <div>
+                      <span className="text-[10px] font-bold text-emerald-700">Train Conflicts</span>
+                      <p className="text-[11px] text-emerald-800">{blk.train_conflicts}</p>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-[#64748B] text-[10px]">Status:</span>
-                    <p className="font-bold text-emerald-700">{selectedMapItem.data.status}</p>
+
+                  {/* Resources */}
+                  <div className="flex items-start gap-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-3 py-2">
+                    <Wrench className="w-3.5 h-3.5 text-[#64748B] mt-0.5 shrink-0" />
+                    <div>
+                      <span className="text-[10px] font-bold text-[#64748B]">Resources</span>
+                      <p className="text-[11px] text-[#172033]">{blk.resources}</p>
+                    </div>
                   </div>
+
+                  {/* Work summary */}
+                  <p className="text-[#475569] text-[11px] leading-relaxed italic border-t border-[#F1F5F9] pt-2">
+                    {blk.work_summary}
+                  </p>
                 </div>
-                <p className="text-[#475569] text-[11px] leading-relaxed">
-                  {selectedMapItem.data.work_summary}
-                </p>
-              </div>
-            )}
+              );
+            })()}
 
             {/* Content for Train Item */}
             {selectedMapItem.type === 'TRAIN' && (

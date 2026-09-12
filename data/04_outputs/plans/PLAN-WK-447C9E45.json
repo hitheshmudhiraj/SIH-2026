@@ -1,0 +1,2216 @@
+{
+  "plan_id": "PLAN-WK-447C9E45",
+  "current_plan_id": "PLAN-WK-447C9E45",
+  "is_current": true,
+  "is_active": true,
+  "plan_type": "WEEKLY",
+  "plan_status": "Draft",
+  "status": "Draft",
+  "start_date": "2026-09-15",
+  "end_date": "2026-09-21",
+  "generated_at": "2026-09-10T21:16:45.104939",
+  "solver_status": "FEASIBLE",
+  "solve_duration_ms": 3195.4,
+  "summary": {
+    "total_blocks": 40,
+    "total_block_hours": 110.0,
+    "joint_megablocks": 38,
+    "joint_bundling_rate_pct": 95.0,
+    "total_tasks_scheduled": 95,
+    "critical_tasks_scheduled": 12,
+    "high_priority_tasks_scheduled": 19,
+    "sections_covered": 10
+  },
+  "blocks": [
+    {
+      "block_id": "BLK-OPT-SEC_C02_01-20260916-W2",
+      "section_id": "SEC_C02_01",
+      "section_name": "Visakhapatnam - Duvvada",
+      "division": "Visakhapatnam",
+      "date": "2026-09-16",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0116",
+        "TSK-2026-0327"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0116",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0327",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "sleeper_renewal_needed",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 165
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.97,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_01-20260917-W3",
+      "section_id": "SEC_C02_01",
+      "section_name": "Visakhapatnam - Duvvada",
+      "division": "Visakhapatnam",
+      "date": "2026-09-17",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0053",
+        "TSK-2026-0380"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0053",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0380",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.92,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_01-20260918-W1",
+      "section_id": "SEC_C02_01",
+      "section_name": "Visakhapatnam - Duvvada",
+      "division": "Visakhapatnam",
+      "date": "2026-09-18",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0075",
+        "TSK-2026-0226"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0075",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0226",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 30
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Early Morning Off-Peak (04:30 \u2013 07:00, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_01-20260919-W1",
+      "section_id": "SEC_C02_01",
+      "section_name": "Visakhapatnam - Duvvada",
+      "division": "Visakhapatnam",
+      "date": "2026-09-19",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0048",
+        "TSK-2026-0245",
+        "TSK-2026-0413"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0048",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0245",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "medium",
+          "priority_score": 62,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0413",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "critical",
+          "priority_score": 92,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 3,
+      "availability_score": 0.86,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "3 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (OHE catenary wear)",
+        "Scheduled within Early Morning Off-Peak (04:30 \u2013 07:00, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_02-20260916-W3",
+      "section_id": "SEC_C02_02",
+      "section_name": "Duvvada - Anakapalle",
+      "division": "Visakhapatnam",
+      "date": "2026-09-16",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0059",
+        "TSK-2026-0250"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0059",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0250",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "critical",
+          "priority_score": 69,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (cantilever misalignment, telecom OFC attenuation high)",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_02-20260917-W3",
+      "section_id": "SEC_C02_02",
+      "section_name": "Duvvada - Anakapalle",
+      "division": "Visakhapatnam",
+      "date": "2026-09-17",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0124",
+        "TSK-2026-0270"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0124",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0270",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "interlocking_relay_chattering",
+          "severity": "high",
+          "priority_score": 80,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (interlocking relay chattering)",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_02-20260918-W2",
+      "section_id": "SEC_C02_02",
+      "section_name": "Duvvada - Anakapalle",
+      "division": "Visakhapatnam",
+      "date": "2026-09-18",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0041",
+        "TSK-2026-0042"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0041",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0042",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (track geometry defect)",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_02-20260919-W3",
+      "section_id": "SEC_C02_02",
+      "section_name": "Duvvada - Anakapalle",
+      "division": "Visakhapatnam",
+      "date": "2026-09-19",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0056",
+        "TSK-2026-0285",
+        "TSK-2026-0382"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0056",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "low",
+          "priority_score": 39,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0285",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0382",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "3 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_02-20260920-W2",
+      "section_id": "SEC_C02_02",
+      "section_name": "Duvvada - Anakapalle",
+      "division": "Visakhapatnam",
+      "date": "2026-09-20",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0206",
+        "TSK-2026-0220"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0206",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0220",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260915-W2",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-15",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0088",
+        "TSK-2026-0169"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0088",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0169",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "interlocking_relay_chattering",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (interlocking relay chattering)",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260916-W2",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-16",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0207",
+        "TSK-2026-0310"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0207",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0310",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 49,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260917-W2",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-17",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0262",
+        "TSK-2026-0417"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0262",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "medium",
+          "priority_score": 66,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0417",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "sleeper_renewal_needed",
+          "severity": "medium",
+          "priority_score": 80,
+          "duration_min": 165
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (sleeper renewal needed)",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260918-W2",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-18",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0216",
+        "TSK-2026-0289"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0216",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0289",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "high",
+          "priority_score": 61,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260919-W2",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-19",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0303",
+        "TSK-2026-0392"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0303",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "medium",
+          "priority_score": 77,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0392",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (contact wire height irregularity)",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260920-W3",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-20",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 5,
+      "task_ids": [
+        "TSK-2026-0034",
+        "TSK-2026-0108",
+        "TSK-2026-0159",
+        "TSK-2026-0202",
+        "TSK-2026-0254"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0034",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "critical",
+          "priority_score": 73,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0108",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0159",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0202",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0254",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.9,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "5 maintenance jobs combined across Engineering & S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (axle counter reset fault, dropper wire broken)",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260921-W1",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-21",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0126",
+        "TSK-2026-0331"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0126",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0331",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Early Morning Off-Peak (04:30 \u2013 07:00, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_04-20260917-W3",
+      "section_id": "SEC_C02_04",
+      "section_name": "Tuni - Annavaram",
+      "division": "Vijayawada",
+      "date": "2026-09-17",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0341",
+        "TSK-2026-0416"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0341",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0416",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "medium",
+          "priority_score": 55,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_04-20260919-W1",
+      "section_id": "SEC_C02_04",
+      "section_name": "Tuni - Annavaram",
+      "division": "Vijayawada",
+      "date": "2026-09-19",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0265",
+        "TSK-2026-0406"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0265",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0406",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Early Morning Off-Peak (04:30 \u2013 07:00, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_04-20260920-W3",
+      "section_id": "SEC_C02_04",
+      "section_name": "Tuni - Annavaram",
+      "division": "Vijayawada",
+      "date": "2026-09-20",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Traction"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0358"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0358",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "Dedicated possession window scheduled exclusively for Traction with zero adjacent interference",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_04-20260921-W2",
+      "section_id": "SEC_C02_04",
+      "section_name": "Tuni - Annavaram",
+      "division": "Vijayawada",
+      "date": "2026-09-21",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0203",
+        "TSK-2026-0237"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0203",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0237",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_05-20260915-W2",
+      "section_id": "SEC_C02_05",
+      "section_name": "Annavaram - Samalkot",
+      "division": "Vijayawada",
+      "date": "2026-09-15",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0071",
+        "TSK-2026-0204",
+        "TSK-2026-0242"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0071",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 47,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0204",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0242",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "low",
+          "priority_score": 70,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "3 maintenance jobs combined across Engineering & S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_05-20260917-W3",
+      "section_id": "SEC_C02_05",
+      "section_name": "Annavaram - Samalkot",
+      "division": "Vijayawada",
+      "date": "2026-09-17",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0020",
+        "TSK-2026-0221"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0020",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0221",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_05-20260918-W2",
+      "section_id": "SEC_C02_05",
+      "section_name": "Annavaram - Samalkot",
+      "division": "Vijayawada",
+      "date": "2026-09-18",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0288",
+        "TSK-2026-0370"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0288",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0370",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "critical",
+          "priority_score": 98,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (mast bonding missing)",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_05-20260921-W3",
+      "section_id": "SEC_C02_05",
+      "section_name": "Annavaram - Samalkot",
+      "division": "Vijayawada",
+      "date": "2026-09-21",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0273",
+        "TSK-2026-0279"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0273",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0279",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "critical",
+          "priority_score": 81,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (contact wire height irregularity)",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_06-20260915-W0",
+      "section_id": "SEC_C02_06",
+      "section_name": "Samalkot - Rajahmundry",
+      "division": "Vijayawada",
+      "date": "2026-09-15",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0019",
+        "TSK-2026-0300"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0019",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0300",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Night Rolling Megablock (01:00 \u2013 04:00, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_06-20260917-W0",
+      "section_id": "SEC_C02_06",
+      "section_name": "Samalkot - Rajahmundry",
+      "division": "Vijayawada",
+      "date": "2026-09-17",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0162",
+        "TSK-2026-0247"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0162",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0247",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "high",
+          "priority_score": 81,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (dropper wire broken)",
+        "Scheduled within Night Rolling Megablock (01:00 \u2013 04:00, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_06-20260921-W3",
+      "section_id": "SEC_C02_06",
+      "section_name": "Samalkot - Rajahmundry",
+      "division": "Vijayawada",
+      "date": "2026-09-21",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0194",
+        "TSK-2026-0231",
+        "TSK-2026-0401"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0194",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0231",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "critical",
+          "priority_score": 96,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0401",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "3 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (point machine failure, signal aspect bulb blown)",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_07-20260915-W0",
+      "section_id": "SEC_C02_07",
+      "section_name": "Rajahmundry - Nidadavolu",
+      "division": "Vijayawada",
+      "date": "2026-09-15",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0031",
+        "TSK-2026-0037",
+        "TSK-2026-0135"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0031",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0037",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "medium",
+          "priority_score": 65,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0135",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "Dedicated possession window scheduled exclusively for Engineering with zero adjacent interference",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Night Rolling Megablock (01:00 \u2013 04:00, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_07-20260921-W3",
+      "section_id": "SEC_C02_07",
+      "section_name": "Rajahmundry - Nidadavolu",
+      "division": "Vijayawada",
+      "date": "2026-09-21",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 8,
+      "task_ids": [
+        "TSK-2026-0170",
+        "TSK-2026-0185",
+        "TSK-2026-0192",
+        "TSK-2026-0196",
+        "TSK-2026-0209",
+        "TSK-2026-0313",
+        "TSK-2026-0315",
+        "TSK-2026-0318"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0170",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "critical",
+          "priority_score": 81,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0185",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0192",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 80,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0196",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0209",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0313",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 90,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0315",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "low",
+          "priority_score": 70,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0318",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "high",
+          "priority_score": 75,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "8 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (USFD flaw detected, cess repair)",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260915-W1",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-15",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0023",
+        "TSK-2026-0058",
+        "TSK-2026-0199"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0023",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0058",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0199",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "low",
+          "priority_score": 70,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "3 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Early Morning Off-Peak (04:30 \u2013 07:00, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260916-W2",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-16",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0122",
+        "TSK-2026-0369"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0122",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "high",
+          "priority_score": 63,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0369",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260917-W2",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-17",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0073",
+        "TSK-2026-0387"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0073",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0387",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "medium",
+          "priority_score": 65,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.93,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260918-W1",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-18",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0164",
+        "TSK-2026-0317"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0164",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0317",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 49,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Early Morning Off-Peak (04:30 \u2013 07:00, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260919-W3",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-19",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0097",
+        "TSK-2026-0271"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0097",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 86,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0271",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "medium",
+          "priority_score": 67,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across S&T & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (cantilever misalignment)",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260921-W2",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-21",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0114",
+        "TSK-2026-0200"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0114",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 86,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0200",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (cantilever misalignment)",
+        "Scheduled within Mid-Day Freight Shadow (11:30 \u2013 14:30, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_09-20260916-W3",
+      "section_id": "SEC_C02_09",
+      "section_name": "Tadepalligudem - Eluru",
+      "division": "Vijayawada",
+      "date": "2026-09-16",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0274",
+        "TSK-2026-0340"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0274",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0340",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (turnout wear)",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_09-20260919-W0",
+      "section_id": "SEC_C02_09",
+      "section_name": "Tadepalligudem - Eluru",
+      "division": "Vijayawada",
+      "date": "2026-09-19",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0096",
+        "TSK-2026-0291"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0096",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "sleeper_renewal_needed",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0291",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Night Rolling Megablock (01:00 \u2013 04:00, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_10-20260915-W0",
+      "section_id": "SEC_C02_10",
+      "section_name": "Eluru - Vijayawada",
+      "division": "Vijayawada",
+      "date": "2026-09-15",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0010",
+        "TSK-2026-0336"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0010",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0336",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "low",
+          "priority_score": 48,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & S&T (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Routine preventive corridor maintenance aligned with divisional safety standards",
+        "Scheduled within Night Rolling Megablock (01:00 \u2013 04:00, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_10-20260916-W0",
+      "section_id": "SEC_C02_10",
+      "section_name": "Eluru - Vijayawada",
+      "division": "Vijayawada",
+      "date": "2026-09-16",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0065",
+        "TSK-2026-0266"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0065",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0266",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 76,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "2 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (cantilever misalignment, cess repair)",
+        "Scheduled within Night Rolling Megablock (01:00 \u2013 04:00, 3.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_10-20260920-W3",
+      "section_id": "SEC_C02_10",
+      "section_name": "Eluru - Vijayawada",
+      "division": "Vijayawada",
+      "date": "2026-09-20",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0067",
+        "TSK-2026-0232",
+        "TSK-2026-0411"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0067",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0232",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0411",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 80,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL",
+      "why_selected_bullets": [
+        "3 maintenance jobs combined across Engineering & Traction (Joint Mega-Block minimizing corridor closures)",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (bird nest hazard OHE, turnout wear)",
+        "Scheduled within Afternoon Maintenance Slot (15:00 \u2013 17:30, 2.5h) optimizing track possession efficiency"
+      ]
+    }
+  ]
+}

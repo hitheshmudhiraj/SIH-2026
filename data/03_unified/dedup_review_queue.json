@@ -1,7 +1,7 @@
 [
   {
-    "review_id": "DEDUP-REV-8F047E50",
-    "detected_at": "2026-09-09T11:27:20.230004",
+    "review_id": "DEDUP-REV-1E8103CE",
+    "detected_at": "2026-09-11T10:46:45.408458",
     "flag_type": "probable_duplicate",
     "corridor_id": "C04",
     "km_distance_m": 0.0,
@@ -17,7 +17,7 @@
       "station": "HX",
       "due_date": "2026-09-12",
       "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
-      "priority_score": 57
+      "priority_score": 60
     },
     "job_b": {
       "job_id": "TDMS-JOB-243",
@@ -29,14 +29,14 @@
       "station": "HX",
       "due_date": "2026-09-12",
       "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
-      "priority_score": 57
+      "priority_score": 60
     },
     "review_status": "PENDING_REVIEW",
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-ECCC0E04",
-    "detected_at": "2026-09-09T11:27:20.230004",
+    "review_id": "DEDUP-REV-6320F881",
+    "detected_at": "2026-09-11T10:46:45.408458",
     "flag_type": "probable_duplicate",
     "corridor_id": "C01",
     "km_distance_m": 0.0,
@@ -52,7 +52,7 @@
       "station": "KVZ",
       "due_date": "2026-09-13",
       "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
-      "priority_score": 66
+      "priority_score": 70
     },
     "job_b": {
       "job_id": "TDMS-JOB-244",
@@ -64,14 +64,14 @@
       "station": "KVZ",
       "due_date": "2026-09-13",
       "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
-      "priority_score": 65
+      "priority_score": 69
     },
     "review_status": "PENDING_REVIEW",
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-B7B8B394",
-    "detected_at": "2026-09-09T11:27:20.230004",
+    "review_id": "DEDUP-REV-313FA32A",
+    "detected_at": "2026-09-11T10:46:45.408458",
     "flag_type": "probable_duplicate",
     "corridor_id": "C02",
     "km_distance_m": 0.0,
@@ -87,7 +87,7 @@
       "station": "SLO",
       "due_date": "2026-09-13",
       "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
-      "priority_score": 53
+      "priority_score": 57
     },
     "job_b": {
       "job_id": "SMMS-JOB-325",
@@ -99,14 +99,14 @@
       "station": "SLO",
       "due_date": "2026-09-12",
       "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
-      "priority_score": 60
+      "priority_score": 62
     },
     "review_status": "PENDING_REVIEW",
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-EF0D20B1",
-    "detected_at": "2026-09-09T11:27:20.230004",
+    "review_id": "DEDUP-REV-51CAB617",
+    "detected_at": "2026-09-11T10:46:45.408458",
     "flag_type": "probable_duplicate",
     "corridor_id": "C02",
     "km_distance_m": 0.0,
@@ -140,8 +140,8 @@
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-54827754",
-    "detected_at": "2026-09-09T11:27:20.230004",
+    "review_id": "DEDUP-REV-C21C52FB",
+    "detected_at": "2026-09-11T10:46:45.408458",
     "flag_type": "probable_duplicate",
     "corridor_id": "C02",
     "km_distance_m": 0.0,
@@ -157,7 +157,7 @@
       "station": "TUNI",
       "due_date": "2026-09-14",
       "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
-      "priority_score": 52
+      "priority_score": 56
     },
     "job_b": {
       "job_id": "SMMS-JOB-333",
@@ -169,14 +169,14 @@
       "station": "TUNI",
       "due_date": "2026-09-13",
       "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
-      "priority_score": 54
+      "priority_score": 58
     },
     "review_status": "PENDING_REVIEW",
     "resolution": null
   },
   {
-    "review_id": "DEDUP-REV-BF1CF734",
-    "detected_at": "2026-09-09T11:27:20.230004",
+    "review_id": "DEDUP-REV-48C9C1E7",
+    "detected_at": "2026-09-11T10:46:45.408458",
     "flag_type": "probable_duplicate",
     "corridor_id": "C02",
     "km_distance_m": 0.0,
@@ -192,7 +192,7 @@
       "station": "NDD",
       "due_date": "2026-09-11",
       "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
-      "priority_score": 55
+      "priority_score": 58
     },
     "job_b": {
       "job_id": "SMMS-JOB-337",

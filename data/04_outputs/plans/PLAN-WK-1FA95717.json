@@ -1,0 +1,6288 @@
+{
+  "plan_id": "PLAN-WK-1FA95717",
+  "current_plan_id": "PLAN-WK-1FA95717",
+  "is_current": true,
+  "is_active": true,
+  "plan_type": "WEEKLY",
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-14",
+  "generated_at": "2026-09-10T18:26:01.328543",
+  "solver_status": "FEASIBLE",
+  "solve_duration_ms": 4650.0,
+  "summary": {
+    "total_blocks": 120,
+    "total_block_hours": 317.0,
+    "joint_megablocks": 96,
+    "joint_bundling_rate_pct": 82.1,
+    "total_tasks_scheduled": 303,
+    "critical_tasks_scheduled": 32,
+    "high_priority_tasks_scheduled": 80,
+    "sections_covered": 32
+  },
+  "blocks": [
+    {
+      "block_id": "BLK-NEW-SEC_C01_03-20260910182602",
+      "request_id": "REQ-6E5AE4E3",
+      "section_id": "SEC_C01_03",
+      "location": "SEC_C01_03",
+      "section_name": "Bapatla - Chirala",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_hours": 3.0,
+      "window_name": "Standard Timetable Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_03",
+        "start_time": "11:30",
+        "end_time": "14:30",
+        "date": "2026-09-08",
+        "day_of_week": "Tue",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Tower Wagon Crew",
+            "matched_resource_id": "RES-TRD-MACH-02",
+            "department": "Traction",
+            "task_id": "REQ-6E5AE4E3",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Hydraulic Elevated Platform Tower Wagon #04 (Base: Visakhapatnam)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-08",
+        "time_window": "11:30\u201314:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Traction"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-6E5AE4E3",
+          "request_id": "REQ-6E5AE4E3",
+          "department": "Traction",
+          "defect_type": "Power Isolation Maintenance",
+          "work_type": "Power Isolation Maintenance",
+          "asset_type": "Traction Asset",
+          "severity": "high",
+          "priority": "HIGH",
+          "priority_score": 80,
+          "required_resource": "Tower Wagon Crew",
+          "equipment_required": "Tower Wagon Crew",
+          "crew_required": "Tower Wagon Crew"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 06:26 PM"
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_02-20260910182602",
+      "request_id": "REQ-BC5EB53B",
+      "section_id": "SEC_C01_02",
+      "location": "SEC_C01_02",
+      "section_name": "Tenali - Bapatla",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 1.0,
+      "window_name": "Mid-Day Freight Shadow Gap",
+      "conflict_check": {
+        "section_id": "SEC_C01_02",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-08",
+        "day_of_week": "Tue",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "S&T Signal Gang",
+            "matched_resource_id": "RES-SNT-GANG-01",
+            "department": "S&T",
+            "task_id": "REQ-BC5EB53B",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Electronic Interlocking Specialized Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-08",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "S&T"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-BC5EB53B",
+          "request_id": "REQ-BC5EB53B",
+          "department": "S&T",
+          "defect_type": "Signal Maintenance",
+          "work_type": "Signal Maintenance",
+          "asset_type": "S&T Asset",
+          "severity": "medium",
+          "priority": "MEDIUM",
+          "priority_score": 60,
+          "required_resource": "S&T Signal Gang",
+          "equipment_required": "S&T Signal Gang",
+          "crew_required": "S&T Signal Gang"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 06:26 PM"
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_01-20260910182601",
+      "request_id": "REQ-333A1B21",
+      "section_id": "SEC_C01_01",
+      "location": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 2.0,
+      "window_name": "Early Morning Off-Peak Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_01",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-08",
+        "day_of_week": "Tue",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Track Gang",
+            "matched_resource_id": "RES-ENG-GANG-01",
+            "department": "Engineering",
+            "task_id": "REQ-333A1B21",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Heavy P-Way Track Maintenance Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-08",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Engineering"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-333A1B21",
+          "request_id": "REQ-333A1B21",
+          "department": "Engineering",
+          "defect_type": "Track Maintenance",
+          "work_type": "Track Maintenance",
+          "asset_type": "Engineering Asset",
+          "severity": "high",
+          "priority": "HIGH",
+          "priority_score": 80,
+          "required_resource": "Track Gang",
+          "equipment_required": "Track Gang",
+          "crew_required": "Track Gang"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 06:26 PM"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_01-20260909-W0",
+      "section_id": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-09",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0272",
+        "TSK-2026-0324"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0272",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0324",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_01-20260910-W0",
+      "section_id": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-10",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0036",
+        "TSK-2026-0153"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0036",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0153",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_01-20260911-W1",
+      "section_id": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-11",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0127",
+        "TSK-2026-0184"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0127",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "high",
+          "priority_score": 81,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0184",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_01-20260913-W3",
+      "section_id": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0022",
+        "TSK-2026-0339"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0022",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0339",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_02-20260908-W2",
+      "section_id": "SEC_C01_02",
+      "section_name": "Tenali - Bapatla",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0168",
+        "TSK-2026-0377",
+        "TSK-2026-0383"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0168",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 47,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0377",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0383",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 4,
+      "availability_score": 0.87,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_02-20260909-W2",
+      "section_id": "SEC_C01_02",
+      "section_name": "Tenali - Bapatla",
+      "division": "Vijayawada",
+      "date": "2026-09-09",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0228"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0228",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.93,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_02-20260911-W1",
+      "section_id": "SEC_C01_02",
+      "section_name": "Tenali - Bapatla",
+      "division": "Vijayawada",
+      "date": "2026-09-11",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0060",
+        "TSK-2026-0182",
+        "TSK-2026-0205"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0060",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "medium",
+          "priority_score": 65,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0182",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "track_circuit_glitch",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0205",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_02-20260912-W1",
+      "section_id": "SEC_C01_02",
+      "section_name": "Tenali - Bapatla",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0197",
+        "TSK-2026-0378"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0197",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "track_circuit_glitch",
+          "severity": "medium",
+          "priority_score": 76,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0378",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_02-20260913-W0",
+      "section_id": "SEC_C01_02",
+      "section_name": "Tenali - Bapatla",
+      "division": "Vijayawada",
+      "date": "2026-09-13",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0006",
+        "TSK-2026-0342"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0006",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0342",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_02-20260914-W1",
+      "section_id": "SEC_C01_02",
+      "section_name": "Tenali - Bapatla",
+      "division": "Vijayawada",
+      "date": "2026-09-14",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0195",
+        "TSK-2026-0235",
+        "TSK-2026-0333"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0195",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0235",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "high",
+          "priority_score": 75,
+          "duration_min": 60
+        },
+        {
+          "task_id": "TSK-2026-0333",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_03-20260908-W1",
+      "section_id": "SEC_C01_03",
+      "section_name": "Bapatla - Chirala",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0078",
+        "TSK-2026-0160"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0078",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0160",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "high",
+          "priority_score": 82,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_03-20260909-W2",
+      "section_id": "SEC_C01_03",
+      "section_name": "Bapatla - Chirala",
+      "division": "Vijayawada",
+      "date": "2026-09-09",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0012",
+        "TSK-2026-0224",
+        "TSK-2026-0346"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0012",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "sleeper_renewal_needed",
+          "severity": "critical",
+          "priority_score": 81,
+          "duration_min": 180
+        },
+        {
+          "task_id": "TSK-2026-0224",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 47,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0346",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "high",
+          "priority_score": 63,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_03-20260910-W3",
+      "section_id": "SEC_C01_03",
+      "section_name": "Bapatla - Chirala",
+      "division": "Vijayawada",
+      "date": "2026-09-10",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0045",
+        "TSK-2026-0212"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0045",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0212",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_03-20260911-W0",
+      "section_id": "SEC_C01_03",
+      "section_name": "Bapatla - Chirala",
+      "division": "Vijayawada",
+      "date": "2026-09-11",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0087",
+        "TSK-2026-0186",
+        "TSK-2026-0292"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0087",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0186",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0292",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "low",
+          "priority_score": 43,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_03-20260912-W2",
+      "section_id": "SEC_C01_03",
+      "section_name": "Bapatla - Chirala",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0091",
+        "TSK-2026-0100"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0091",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0100",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_03-20260914-W3",
+      "section_id": "SEC_C01_03",
+      "section_name": "Bapatla - Chirala",
+      "division": "Vijayawada",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0050",
+        "TSK-2026-0371"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0050",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "track_circuit_glitch",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 60
+        },
+        {
+          "task_id": "TSK-2026-0371",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 47,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_04-20260908-W0",
+      "section_id": "SEC_C01_04",
+      "section_name": "Chirala - Ongole",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0246",
+        "TSK-2026-0328"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0246",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "critical",
+          "priority_score": 81,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0328",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 165
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_04-20260909-W1",
+      "section_id": "SEC_C01_04",
+      "section_name": "Chirala - Ongole",
+      "division": "Vijayawada",
+      "date": "2026-09-09",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0180"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0180",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "critical",
+          "priority_score": 73,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.8,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_04-20260912-W3",
+      "section_id": "SEC_C01_04",
+      "section_name": "Chirala - Ongole",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0334",
+        "TSK-2026-0395"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0334",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0395",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_04-20260913-W3",
+      "section_id": "SEC_C01_04",
+      "section_name": "Chirala - Ongole",
+      "division": "Vijayawada",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Traction"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0043",
+        "TSK-2026-0092",
+        "TSK-2026-0183"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0043",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0092",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 51,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0183",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 30
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_04-20260914-W3",
+      "section_id": "SEC_C01_04",
+      "section_name": "Chirala - Ongole",
+      "division": "Vijayawada",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0046",
+        "TSK-2026-0055"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0046",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "critical",
+          "priority_score": 81,
+          "duration_min": 60
+        },
+        {
+          "task_id": "TSK-2026-0055",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "high",
+          "priority_score": 65,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_05-20260912-W3",
+      "section_id": "SEC_C01_05",
+      "section_name": "Ongole - Singarayakonda",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0040",
+        "TSK-2026-0354",
+        "TSK-2026-0402"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0040",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0354",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0402",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "high",
+          "priority_score": 90,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_05-20260913-W3",
+      "section_id": "SEC_C01_05",
+      "section_name": "Ongole - Singarayakonda",
+      "division": "Vijayawada",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0344",
+        "TSK-2026-0364"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0344",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0364",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_06-20260909-W2",
+      "section_id": "SEC_C01_06",
+      "section_name": "Singarayakonda - Kavali",
+      "division": "Vijayawada",
+      "date": "2026-09-09",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0137",
+        "TSK-2026-0155"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0137",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "track_circuit_glitch",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0155",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "high",
+          "priority_score": 90,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_06-20260913-W3",
+      "section_id": "SEC_C01_06",
+      "section_name": "Singarayakonda - Kavali",
+      "division": "Vijayawada",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0103",
+        "TSK-2026-0179",
+        "TSK-2026-0311"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0103",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "low",
+          "priority_score": 43,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0179",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0311",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "medium",
+          "priority_score": 80,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_06-20260914-W2",
+      "section_id": "SEC_C01_06",
+      "section_name": "Singarayakonda - Kavali",
+      "division": "Vijayawada",
+      "date": "2026-09-14",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0004",
+        "TSK-2026-0376"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0004",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0376",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 63,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_07-20260908-W1",
+      "section_id": "SEC_C01_07",
+      "section_name": "Kavali - Nellore",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0326",
+        "TSK-2026-0415"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0326",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 80,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0415",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_07-20260909-W3",
+      "section_id": "SEC_C01_07",
+      "section_name": "Kavali - Nellore",
+      "division": "Vijayawada",
+      "date": "2026-09-09",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0024",
+        "TSK-2026-0251",
+        "TSK-2026-0256"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0024",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0251",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0256",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "medium",
+          "priority_score": 49,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 3,
+      "availability_score": 0.82,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_07-20260910-W3",
+      "section_id": "SEC_C01_07",
+      "section_name": "Kavali - Nellore",
+      "division": "Vijayawada",
+      "date": "2026-09-10",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0003",
+        "TSK-2026-0223"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0003",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 49,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0223",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.9,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_07-20260912-W3",
+      "section_id": "SEC_C01_07",
+      "section_name": "Kavali - Nellore",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0151",
+        "TSK-2026-0259",
+        "TSK-2026-0261"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0151",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0259",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0261",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "track_circuit_glitch",
+          "severity": "high",
+          "priority_score": 63,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.9,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_07-20260913-W3",
+      "section_id": "SEC_C01_07",
+      "section_name": "Kavali - Nellore",
+      "division": "Vijayawada",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0163"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0163",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.9,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_07-20260914-W3",
+      "section_id": "SEC_C01_07",
+      "section_name": "Kavali - Nellore",
+      "division": "Vijayawada",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0115"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0115",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "medium",
+          "priority_score": 65,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 3,
+      "availability_score": 0.82,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_08-20260910-W3",
+      "section_id": "SEC_C01_08",
+      "section_name": "Nellore - Gudur",
+      "division": "Vijayawada",
+      "date": "2026-09-10",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0035",
+        "TSK-2026-0307"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0035",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0307",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C01_08-20260911-W3",
+      "section_id": "SEC_C01_08",
+      "section_name": "Nellore - Gudur",
+      "division": "Vijayawada",
+      "date": "2026-09-11",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0174",
+        "TSK-2026-0389"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0174",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "low",
+          "priority_score": 43,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0389",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "low",
+          "priority_score": 66,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_01-20260912-W3",
+      "section_id": "SEC_C02_01",
+      "section_name": "Visakhapatnam - Duvvada",
+      "division": "Visakhapatnam",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0226",
+        "TSK-2026-0245"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0226",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0245",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "medium",
+          "priority_score": 62,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.92,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_01-20260913-W1",
+      "section_id": "SEC_C02_01",
+      "section_name": "Visakhapatnam - Duvvada",
+      "division": "Visakhapatnam",
+      "date": "2026-09-13",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 6,
+      "task_ids": [
+        "TSK-2026-0048",
+        "TSK-2026-0053",
+        "TSK-2026-0075",
+        "TSK-2026-0116",
+        "TSK-2026-0380",
+        "TSK-2026-0413"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0048",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0053",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0075",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0116",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0380",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0413",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "critical",
+          "priority_score": 92,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_02-20260908-W3",
+      "section_id": "SEC_C02_02",
+      "section_name": "Duvvada - Anakapalle",
+      "division": "Visakhapatnam",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 4,
+      "task_ids": [
+        "TSK-2026-0056",
+        "TSK-2026-0220",
+        "TSK-2026-0270",
+        "TSK-2026-0382"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0056",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "low",
+          "priority_score": 39,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0220",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0270",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "interlocking_relay_chattering",
+          "severity": "high",
+          "priority_score": 80,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0382",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_02-20260909-W3",
+      "section_id": "SEC_C02_02",
+      "section_name": "Duvvada - Anakapalle",
+      "division": "Visakhapatnam",
+      "date": "2026-09-09",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0124",
+        "TSK-2026-0250",
+        "TSK-2026-0285"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0124",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0250",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "critical",
+          "priority_score": 69,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0285",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_02-20260912-W2",
+      "section_id": "SEC_C02_02",
+      "section_name": "Duvvada - Anakapalle",
+      "division": "Visakhapatnam",
+      "date": "2026-09-12",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0041",
+        "TSK-2026-0206"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0041",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0206",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 165
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_02-20260914-W3",
+      "section_id": "SEC_C02_02",
+      "section_name": "Duvvada - Anakapalle",
+      "division": "Visakhapatnam",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0042",
+        "TSK-2026-0059"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0042",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0059",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260908-W1",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-08",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 4,
+      "task_ids": [
+        "TSK-2026-0034",
+        "TSK-2026-0159",
+        "TSK-2026-0216",
+        "TSK-2026-0254"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0034",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "critical",
+          "priority_score": 73,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0159",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0216",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0254",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.92,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260909-W0",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-09",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 6,
+      "task_ids": [
+        "TSK-2026-0088",
+        "TSK-2026-0169",
+        "TSK-2026-0207",
+        "TSK-2026-0303",
+        "TSK-2026-0392",
+        "TSK-2026-0417"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0088",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0169",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "interlocking_relay_chattering",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0207",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0303",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "medium",
+          "priority_score": 77,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0392",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 60
+        },
+        {
+          "task_id": "TSK-2026-0417",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "sleeper_renewal_needed",
+          "severity": "medium",
+          "priority_score": 80,
+          "duration_min": 165
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260910-W2",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-10",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0108",
+        "TSK-2026-0262",
+        "TSK-2026-0331"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0108",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0262",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "medium",
+          "priority_score": 66,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0331",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_03-20260913-W0",
+      "section_id": "SEC_C02_03",
+      "section_name": "Anakapalle - Tuni",
+      "division": "Visakhapatnam",
+      "date": "2026-09-13",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 4,
+      "task_ids": [
+        "TSK-2026-0126",
+        "TSK-2026-0202",
+        "TSK-2026-0289",
+        "TSK-2026-0310"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0126",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0202",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0289",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "high",
+          "priority_score": 61,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0310",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 49,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_04-20260909-W0",
+      "section_id": "SEC_C02_04",
+      "section_name": "Tuni - Annavaram",
+      "division": "Vijayawada",
+      "date": "2026-09-09",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0203",
+        "TSK-2026-0265"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0203",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0265",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_04-20260914-W1",
+      "section_id": "SEC_C02_04",
+      "section_name": "Tuni - Annavaram",
+      "division": "Vijayawada",
+      "date": "2026-09-14",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 5,
+      "task_ids": [
+        "TSK-2026-0237",
+        "TSK-2026-0341",
+        "TSK-2026-0358",
+        "TSK-2026-0406",
+        "TSK-2026-0416"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0237",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0341",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0358",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0406",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0416",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "medium",
+          "priority_score": 55,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_05-20260911-W2",
+      "section_id": "SEC_C02_05",
+      "section_name": "Annavaram - Samalkot",
+      "division": "Vijayawada",
+      "date": "2026-09-11",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0204",
+        "TSK-2026-0370"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0204",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0370",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "critical",
+          "priority_score": 98,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_05-20260912-W0",
+      "section_id": "SEC_C02_05",
+      "section_name": "Annavaram - Samalkot",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0071",
+        "TSK-2026-0288"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0071",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 47,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0288",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.93,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_05-20260913-W0",
+      "section_id": "SEC_C02_05",
+      "section_name": "Annavaram - Samalkot",
+      "division": "Vijayawada",
+      "date": "2026-09-13",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 5,
+      "task_ids": [
+        "TSK-2026-0020",
+        "TSK-2026-0221",
+        "TSK-2026-0242",
+        "TSK-2026-0273",
+        "TSK-2026-0279"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0020",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0221",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0242",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "low",
+          "priority_score": 70,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0273",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0279",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "critical",
+          "priority_score": 81,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.93,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_06-20260910-W2",
+      "section_id": "SEC_C02_06",
+      "section_name": "Samalkot - Rajahmundry",
+      "division": "Vijayawada",
+      "date": "2026-09-10",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0231",
+        "TSK-2026-0300"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0231",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "critical",
+          "priority_score": 96,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0300",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_06-20260911-W0",
+      "section_id": "SEC_C02_06",
+      "section_name": "Samalkot - Rajahmundry",
+      "division": "Vijayawada",
+      "date": "2026-09-11",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0162",
+        "TSK-2026-0401"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0162",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0401",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_06-20260912-W3",
+      "section_id": "SEC_C02_06",
+      "section_name": "Samalkot - Rajahmundry",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0019",
+        "TSK-2026-0194",
+        "TSK-2026-0247"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0019",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0194",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0247",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "high",
+          "priority_score": 81,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_07-20260910-W3",
+      "section_id": "SEC_C02_07",
+      "section_name": "Rajahmundry - Nidadavolu",
+      "division": "Vijayawada",
+      "date": "2026-09-10",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0196",
+        "TSK-2026-0315",
+        "TSK-2026-0318"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0196",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0315",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "low",
+          "priority_score": 70,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0318",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "high",
+          "priority_score": 75,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_07-20260914-W2",
+      "section_id": "SEC_C02_07",
+      "section_name": "Rajahmundry - Nidadavolu",
+      "division": "Vijayawada",
+      "date": "2026-09-14",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 8,
+      "task_ids": [
+        "TSK-2026-0031",
+        "TSK-2026-0037",
+        "TSK-2026-0135",
+        "TSK-2026-0170",
+        "TSK-2026-0185",
+        "TSK-2026-0192",
+        "TSK-2026-0209",
+        "TSK-2026-0313"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0031",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0037",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "medium",
+          "priority_score": 65,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0135",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0170",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "critical",
+          "priority_score": 81,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0185",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0192",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 80,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0209",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0313",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 90,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260908-W0",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0200"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0200",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.93,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260909-W1",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-09",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0369"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0369",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260910-W0",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-10",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0023",
+        "TSK-2026-0122"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0023",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0122",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "high",
+          "priority_score": 63,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.93,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260911-W2",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-11",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0317",
+        "TSK-2026-0387"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0317",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 49,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0387",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "medium",
+          "priority_score": 65,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260912-W1",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0164",
+        "TSK-2026-0271"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0164",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0271",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "medium",
+          "priority_score": 67,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260913-W1",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-13",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0073",
+        "TSK-2026-0097",
+        "TSK-2026-0199"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0073",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0097",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 86,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0199",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "low",
+          "priority_score": 70,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_08-20260914-W3",
+      "section_id": "SEC_C02_08",
+      "section_name": "Nidadavolu - Tadepalligudem",
+      "division": "Vijayawada",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0058",
+        "TSK-2026-0114"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0058",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0114",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 86,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_09-20260909-W0",
+      "section_id": "SEC_C02_09",
+      "section_name": "Tadepalligudem - Eluru",
+      "division": "Vijayawada",
+      "date": "2026-09-09",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0096",
+        "TSK-2026-0291"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0096",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "sleeper_renewal_needed",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0291",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_09-20260911-W3",
+      "section_id": "SEC_C02_09",
+      "section_name": "Tadepalligudem - Eluru",
+      "division": "Vijayawada",
+      "date": "2026-09-11",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0340"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0340",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_09-20260913-W3",
+      "section_id": "SEC_C02_09",
+      "section_name": "Tadepalligudem - Eluru",
+      "division": "Vijayawada",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0274"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0274",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_10-20260911-W3",
+      "section_id": "SEC_C02_10",
+      "section_name": "Eluru - Vijayawada",
+      "division": "Vijayawada",
+      "date": "2026-09-11",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0067",
+        "TSK-2026-0411"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0067",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0411",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 80,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C02_10-20260912-W3",
+      "section_id": "SEC_C02_10",
+      "section_name": "Eluru - Vijayawada",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 4,
+      "task_ids": [
+        "TSK-2026-0065",
+        "TSK-2026-0232",
+        "TSK-2026-0266",
+        "TSK-2026-0336"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0065",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0232",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0266",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "high",
+          "priority_score": 76,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0336",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "low",
+          "priority_score": 48,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.96,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_01-20260908-W1",
+      "section_id": "SEC_C03_01",
+      "section_name": "Guntur - Narasaraopet",
+      "division": "Guntur",
+      "date": "2026-09-08",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0101",
+        "TSK-2026-0287"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0101",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "medium",
+          "priority_score": 43,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0287",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "high",
+          "priority_score": 65,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_01-20260909-W0",
+      "section_id": "SEC_C03_01",
+      "section_name": "Guntur - Narasaraopet",
+      "division": "Guntur",
+      "date": "2026-09-09",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0312",
+        "TSK-2026-0374"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0312",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "low",
+          "priority_score": 31,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0374",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "high",
+          "priority_score": 61,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_01-20260913-W2",
+      "section_id": "SEC_C03_01",
+      "section_name": "Guntur - Narasaraopet",
+      "division": "Guntur",
+      "date": "2026-09-13",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0072",
+        "TSK-2026-0249"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0072",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 72,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0249",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "low",
+          "priority_score": 49,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.83,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_01-20260914-W2",
+      "section_id": "SEC_C03_01",
+      "section_name": "Guntur - Narasaraopet",
+      "division": "Guntur",
+      "date": "2026-09-14",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0008",
+        "TSK-2026-0372",
+        "TSK-2026-0388"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0008",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "medium",
+          "priority_score": 43,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0372",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "critical",
+          "priority_score": 75,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0388",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 51,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_02-20260908-W3",
+      "section_id": "SEC_C03_02",
+      "section_name": "Narasaraopet - Vinukonda",
+      "division": "Guntur",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0239",
+        "TSK-2026-0243"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0239",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "high",
+          "priority_score": 65,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0243",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "medium",
+          "priority_score": 74,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_02-20260909-W1",
+      "section_id": "SEC_C03_02",
+      "section_name": "Narasaraopet - Vinukonda",
+      "division": "Guntur",
+      "date": "2026-09-09",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0094",
+        "TSK-2026-0397"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0094",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 55,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0397",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "track_circuit_glitch",
+          "severity": "low",
+          "priority_score": 37,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_02-20260910-W1",
+      "section_id": "SEC_C03_02",
+      "section_name": "Narasaraopet - Vinukonda",
+      "division": "Guntur",
+      "date": "2026-09-10",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0009",
+        "TSK-2026-0172",
+        "TSK-2026-0189"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0009",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 45,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0172",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "medium",
+          "priority_score": 51,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0189",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "high",
+          "priority_score": 61,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_02-20260911-W1",
+      "section_id": "SEC_C03_02",
+      "section_name": "Narasaraopet - Vinukonda",
+      "division": "Guntur",
+      "date": "2026-09-11",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Traction"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0357"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0357",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 51,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_02-20260914-W3",
+      "section_id": "SEC_C03_02",
+      "section_name": "Narasaraopet - Vinukonda",
+      "division": "Guntur",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0032"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0032",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "high",
+          "priority_score": 65,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_03-20260908-W0",
+      "section_id": "SEC_C03_03",
+      "section_name": "Vinukonda - Donakonda",
+      "division": "Guntur",
+      "date": "2026-09-08",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0118",
+        "TSK-2026-0201",
+        "TSK-2026-0412"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0118",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "high",
+          "priority_score": 47,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0201",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 80,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0412",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "medium",
+          "priority_score": 51,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_03-20260913-W3",
+      "section_id": "SEC_C03_03",
+      "section_name": "Vinukonda - Donakonda",
+      "division": "Guntur",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "S&T"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0296"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0296",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "medium",
+          "priority_score": 47,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_04-20260908-W2",
+      "section_id": "SEC_C03_04",
+      "section_name": "Donakonda - Markapur Road",
+      "division": "Guntur",
+      "date": "2026-09-08",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0325"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0325",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "sleeper_renewal_needed",
+          "severity": "high",
+          "priority_score": 61,
+          "duration_min": 180
+        }
+      ],
+      "train_count": 4,
+      "availability_score": 0.87,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_04-20260909-W0",
+      "section_id": "SEC_C03_04",
+      "section_name": "Donakonda - Markapur Road",
+      "division": "Guntur",
+      "date": "2026-09-09",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0029",
+        "TSK-2026-0260"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0029",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "low",
+          "priority_score": 37,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0260",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "high",
+          "priority_score": 51,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_04-20260912-W3",
+      "section_id": "SEC_C03_04",
+      "section_name": "Donakonda - Markapur Road",
+      "division": "Guntur",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0214",
+        "TSK-2026-0403"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0214",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "medium",
+          "priority_score": 51,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0403",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 43,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.92,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_04-20260913-W3",
+      "section_id": "SEC_C03_04",
+      "section_name": "Donakonda - Markapur Road",
+      "division": "Guntur",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 6,
+      "task_ids": [
+        "TSK-2026-0104",
+        "TSK-2026-0142",
+        "TSK-2026-0167",
+        "TSK-2026-0213",
+        "TSK-2026-0316",
+        "TSK-2026-0414"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0104",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "critical",
+          "priority_score": 71,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0142",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "low",
+          "priority_score": 41,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0167",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "low",
+          "priority_score": 37,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0213",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 51,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0316",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "low",
+          "priority_score": 37,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0414",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "medium",
+          "priority_score": 64,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.92,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_05-20260908-W2",
+      "section_id": "SEC_C03_05",
+      "section_name": "Markapur Road - Giddalur",
+      "division": "Guntur",
+      "date": "2026-09-08",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0047",
+        "TSK-2026-0330"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0047",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 51,
+          "duration_min": 180
+        },
+        {
+          "task_id": "TSK-2026-0330",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "interlocking_relay_chattering",
+          "severity": "medium",
+          "priority_score": 43,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 3,
+      "availability_score": 0.9,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_05-20260909-W0",
+      "section_id": "SEC_C03_05",
+      "section_name": "Markapur Road - Giddalur",
+      "division": "Guntur",
+      "date": "2026-09-09",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0338"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0338",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "medium",
+          "priority_score": 47,
+          "duration_min": 180
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_05-20260910-W0",
+      "section_id": "SEC_C03_05",
+      "section_name": "Markapur Road - Giddalur",
+      "division": "Guntur",
+      "date": "2026-09-10",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0230",
+        "TSK-2026-0329",
+        "TSK-2026-0337"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0230",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "sleeper_renewal_needed",
+          "severity": "high",
+          "priority_score": 61,
+          "duration_min": 180
+        },
+        {
+          "task_id": "TSK-2026-0329",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "low",
+          "priority_score": 48,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0337",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "critical",
+          "priority_score": 71,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_05-20260912-W3",
+      "section_id": "SEC_C03_05",
+      "section_name": "Markapur Road - Giddalur",
+      "division": "Guntur",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0149",
+        "TSK-2026-0193"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0149",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "high",
+          "priority_score": 80,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0193",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "high",
+          "priority_score": 57,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_05-20260913-W3",
+      "section_id": "SEC_C03_05",
+      "section_name": "Markapur Road - Giddalur",
+      "division": "Guntur",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0350"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0350",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "critical",
+          "priority_score": 71,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_05-20260914-W3",
+      "section_id": "SEC_C03_05",
+      "section_name": "Markapur Road - Giddalur",
+      "division": "Guntur",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0011",
+        "TSK-2026-0405"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0011",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "high",
+          "priority_score": 53,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0405",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "low",
+          "priority_score": 37,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_06-20260909-W2",
+      "section_id": "SEC_C03_06",
+      "section_name": "Giddalur - Nandyal",
+      "division": "Guntur",
+      "date": "2026-09-09",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0049",
+        "TSK-2026-0229"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0049",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "high",
+          "priority_score": 80,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0229",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "interlocking_relay_chattering",
+          "severity": "medium",
+          "priority_score": 43,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.93,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_06-20260910-W0",
+      "section_id": "SEC_C03_06",
+      "section_name": "Giddalur - Nandyal",
+      "division": "Guntur",
+      "date": "2026-09-10",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0085",
+        "TSK-2026-0233"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0085",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "medium",
+          "priority_score": 41,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0233",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "high",
+          "priority_score": 80,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_06-20260912-W0",
+      "section_id": "SEC_C03_06",
+      "section_name": "Giddalur - Nandyal",
+      "division": "Guntur",
+      "date": "2026-09-12",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 4,
+      "task_ids": [
+        "TSK-2026-0144",
+        "TSK-2026-0177",
+        "TSK-2026-0360",
+        "TSK-2026-0361"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0144",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "medium",
+          "priority_score": 60,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0177",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "medium",
+          "priority_score": 70,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0360",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "low",
+          "priority_score": 37,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0361",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "interlocking_relay_chattering",
+          "severity": "high",
+          "priority_score": 53,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_06-20260913-W0",
+      "section_id": "SEC_C03_06",
+      "section_name": "Giddalur - Nandyal",
+      "division": "Guntur",
+      "date": "2026-09-13",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0130",
+        "TSK-2026-0141"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0130",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "track_circuit_glitch",
+          "severity": "high",
+          "priority_score": 57,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0141",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 47,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C03_06-20260914-W3",
+      "section_id": "SEC_C03_06",
+      "section_name": "Giddalur - Nandyal",
+      "division": "Guntur",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0081",
+        "TSK-2026-0297"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0081",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "high",
+          "priority_score": 57,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0297",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "critical",
+          "priority_score": 71,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_01-20260908-W1",
+      "section_id": "SEC_C04_01",
+      "section_name": "Guntakal - Gooty",
+      "division": "Guntakal",
+      "date": "2026-09-08",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0353",
+        "TSK-2026-0391"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0353",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0391",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.92,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_01-20260910-W1",
+      "section_id": "SEC_C04_01",
+      "section_name": "Guntakal - Gooty",
+      "division": "Guntakal",
+      "date": "2026-09-10",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0208",
+        "TSK-2026-0386"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0208",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0386",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "low",
+          "priority_score": 55,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.92,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_01-20260911-W0",
+      "section_id": "SEC_C04_01",
+      "section_name": "Guntakal - Gooty",
+      "division": "Guntakal",
+      "date": "2026-09-11",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0131",
+        "TSK-2026-0366"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0131",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "critical",
+          "priority_score": 96,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0366",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "high",
+          "priority_score": 81,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_01-20260912-W0",
+      "section_id": "SEC_C04_01",
+      "section_name": "Guntakal - Gooty",
+      "division": "Guntakal",
+      "date": "2026-09-12",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 4,
+      "task_ids": [
+        "TSK-2026-0007",
+        "TSK-2026-0140",
+        "TSK-2026-0217",
+        "TSK-2026-0278"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0007",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0140",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "high",
+          "priority_score": 86,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0217",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 84,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0278",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_02-20260913-W3",
+      "section_id": "SEC_C04_02",
+      "section_name": "Gooty - Tadipatri",
+      "division": "Guntakal",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 4,
+      "task_ids": [
+        "TSK-2026-0113",
+        "TSK-2026-0178",
+        "TSK-2026-0258",
+        "TSK-2026-0319"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0113",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0178",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0258",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0319",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "critical",
+          "priority_score": 81,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_02-20260914-W3",
+      "section_id": "SEC_C04_02",
+      "section_name": "Gooty - Tadipatri",
+      "division": "Guntakal",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 6,
+      "task_ids": [
+        "TSK-2026-0143",
+        "TSK-2026-0165",
+        "TSK-2026-0198",
+        "TSK-2026-0314",
+        "TSK-2026-0368",
+        "TSK-2026-0418"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0143",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0165",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0198",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0314",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "critical",
+          "priority_score": 69,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0368",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0418",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "high",
+          "priority_score": 59,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 1,
+      "availability_score": 0.9,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_03-20260912-W3",
+      "section_id": "SEC_C04_03",
+      "section_name": "Tadipatri - Kondapuram",
+      "division": "Guntakal",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0117",
+        "TSK-2026-0190"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0117",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "low",
+          "priority_score": 43,
+          "duration_min": 30
+        },
+        {
+          "task_id": "TSK-2026-0190",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 3,
+      "availability_score": 0.88,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_03-20260913-W3",
+      "section_id": "SEC_C04_03",
+      "section_name": "Tadipatri - Kondapuram",
+      "division": "Guntakal",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 7,
+      "task_ids": [
+        "TSK-2026-0018",
+        "TSK-2026-0051",
+        "TSK-2026-0158",
+        "TSK-2026-0219",
+        "TSK-2026-0227",
+        "TSK-2026-0304",
+        "TSK-2026-0379"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0018",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "low",
+          "priority_score": 62,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0051",
+          "department": "S&T",
+          "asset_type": "point_machine",
+          "defect_type": "point_machine_failure",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0158",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "high",
+          "priority_score": 80,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0219",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0227",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0304",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0379",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 90
+        }
+      ],
+      "train_count": 3,
+      "availability_score": 0.88,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_03-20260914-W3",
+      "section_id": "SEC_C04_03",
+      "section_name": "Tadipatri - Kondapuram",
+      "division": "Guntakal",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0082",
+        "TSK-2026-0343"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0082",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0343",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_04-20260909-W3",
+      "section_id": "SEC_C04_04",
+      "section_name": "Kondapuram - Yerraguntla",
+      "division": "Guntakal",
+      "date": "2026-09-09",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 4,
+      "task_ids": [
+        "TSK-2026-0038",
+        "TSK-2026-0191",
+        "TSK-2026-0244",
+        "TSK-2026-0399"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0038",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0191",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0244",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0399",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_04-20260910-W0",
+      "section_id": "SEC_C04_04",
+      "section_name": "Kondapuram - Yerraguntla",
+      "division": "Guntakal",
+      "date": "2026-09-10",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 3,
+      "task_ids": [
+        "TSK-2026-0027",
+        "TSK-2026-0146",
+        "TSK-2026-0148"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0027",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "high",
+          "priority_score": 67,
+          "duration_min": 60
+        },
+        {
+          "task_id": "TSK-2026-0146",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 165
+        },
+        {
+          "task_id": "TSK-2026-0148",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "high",
+          "priority_score": 63,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_04-20260911-W0",
+      "section_id": "SEC_C04_04",
+      "section_name": "Kondapuram - Yerraguntla",
+      "division": "Guntakal",
+      "date": "2026-09-11",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 5,
+      "task_ids": [
+        "TSK-2026-0064",
+        "TSK-2026-0156",
+        "TSK-2026-0282",
+        "TSK-2026-0306",
+        "TSK-2026-0308"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0064",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0156",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0282",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "critical",
+          "priority_score": 77,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0306",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0308",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "low",
+          "priority_score": 47,
+          "duration_min": 120
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_05-20260908-W0",
+      "section_id": "SEC_C04_05",
+      "section_name": "Yerraguntla - Kadapa",
+      "division": "Guntakal",
+      "date": "2026-09-08",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0120",
+        "TSK-2026-0145"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0120",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "weld_defect",
+          "severity": "medium",
+          "priority_score": 77,
+          "duration_min": 75
+        },
+        {
+          "task_id": "TSK-2026-0145",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "critical",
+          "priority_score": 73,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_05-20260910-W2",
+      "section_id": "SEC_C04_05",
+      "section_name": "Yerraguntla - Kadapa",
+      "division": "Guntakal",
+      "date": "2026-09-10",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0367"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0367",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "critical",
+          "priority_score": 81,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_05-20260914-W2",
+      "section_id": "SEC_C04_05",
+      "section_name": "Yerraguntla - Kadapa",
+      "division": "Guntakal",
+      "date": "2026-09-14",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 5,
+      "task_ids": [
+        "TSK-2026-0068",
+        "TSK-2026-0069",
+        "TSK-2026-0112",
+        "TSK-2026-0138",
+        "TSK-2026-0302"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0068",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "axle_counter_reset_fault",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0069",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0112",
+          "department": "S&T",
+          "asset_type": "other",
+          "defect_type": "level_crossing_boom_sensor_error",
+          "severity": "high",
+          "priority_score": 57,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0138",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "high",
+          "priority_score": 71,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0302",
+          "department": "S&T",
+          "asset_type": "signal",
+          "defect_type": "signal_aspect_bulb_blown",
+          "severity": "medium",
+          "priority_score": 53,
+          "duration_min": 45
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_06-20260912-W1",
+      "section_id": "SEC_C04_06",
+      "section_name": "Kadapa - Razampeta",
+      "division": "Guntakal",
+      "date": "2026-09-12",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 6,
+      "task_ids": [
+        "TSK-2026-0119",
+        "TSK-2026-0222",
+        "TSK-2026-0238",
+        "TSK-2026-0351",
+        "TSK-2026-0356",
+        "TSK-2026-0390"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0119",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "track_geometry_defect",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0222",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0238",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "low",
+          "priority_score": 51,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0351",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "low",
+          "priority_score": 61,
+          "duration_min": 60
+        },
+        {
+          "task_id": "TSK-2026-0356",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "isolator_contact_burnt",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0390",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 3,
+      "availability_score": 0.8,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_06-20260913-W0",
+      "section_id": "SEC_C04_06",
+      "section_name": "Kadapa - Razampeta",
+      "division": "Guntakal",
+      "date": "2026-09-13",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "S&T"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0264",
+        "TSK-2026-0394"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0264",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "high",
+          "priority_score": 82,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0394",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "sleeper_renewal_needed",
+          "severity": "medium",
+          "priority_score": 57,
+          "duration_min": 180
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_06-20260914-W3",
+      "section_id": "SEC_C04_06",
+      "section_name": "Kadapa - Razampeta",
+      "division": "Guntakal",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Traction"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0404"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0404",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "mast_bonding_missing",
+          "severity": "medium",
+          "priority_score": 61,
+          "duration_min": 30
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_07-20260908-W3",
+      "section_id": "SEC_C04_07",
+      "section_name": "Razampeta - Koduru",
+      "division": "Guntakal",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0236"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0236",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 105
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_07-20260910-W3",
+      "section_id": "SEC_C04_07",
+      "section_name": "Razampeta - Koduru",
+      "division": "Guntakal",
+      "date": "2026-09-10",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0016",
+        "TSK-2026-0150"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0016",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "ballast_deficiency",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0150",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "cantilever_misalignment",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 75
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_07-20260913-W3",
+      "section_id": "SEC_C04_07",
+      "section_name": "Razampeta - Koduru",
+      "division": "Guntakal",
+      "date": "2026-09-13",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0074",
+        "TSK-2026-0255"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0074",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "USFD_flaw_detected",
+          "severity": "low",
+          "priority_score": 67,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0255",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "medium",
+          "priority_score": 77,
+          "duration_min": 60
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.92,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_07-20260914-W3",
+      "section_id": "SEC_C04_07",
+      "section_name": "Razampeta - Koduru",
+      "division": "Guntakal",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Afternoon Maintenance Slot",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 2,
+      "task_ids": [
+        "TSK-2026-0284",
+        "TSK-2026-0408"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0284",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "rail_fracture",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0408",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "high",
+          "priority_score": 64,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_08-20260910-W1",
+      "section_id": "SEC_C04_08",
+      "section_name": "Koduru - Renigunta",
+      "division": "Guntakal",
+      "date": "2026-09-10",
+      "start_time": "04:30",
+      "end_time": "07:00",
+      "duration_minutes": 150,
+      "duration_hours": 2.5,
+      "window_name": "Early Morning Off-Peak",
+      "departments": [
+        "S&T"
+      ],
+      "is_joint_megablock": false,
+      "task_count": 1,
+      "task_ids": [
+        "TSK-2026-0298"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0298",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "signalling_cable_damaged",
+          "severity": "critical",
+          "priority_score": 70,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 2,
+      "availability_score": 0.92,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_08-20260912-W0",
+      "section_id": "SEC_C04_08",
+      "section_name": "Koduru - Renigunta",
+      "division": "Guntakal",
+      "date": "2026-09-12",
+      "start_time": "01:00",
+      "end_time": "04:00",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Engineering",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 4,
+      "task_ids": [
+        "TSK-2026-0079",
+        "TSK-2026-0084",
+        "TSK-2026-0123",
+        "TSK-2026-0128"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0079",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "OHE_catenary_wear",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0084",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "turnout_wear",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 135
+        },
+        {
+          "task_id": "TSK-2026-0123",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0128",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "medium",
+          "priority_score": 48,
+          "duration_min": 135
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    },
+    {
+      "block_id": "BLK-OPT-SEC_C04_08-20260913-W2",
+      "section_id": "SEC_C04_08",
+      "section_name": "Koduru - Renigunta",
+      "division": "Guntakal",
+      "date": "2026-09-13",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_minutes": 180,
+      "duration_hours": 3.0,
+      "window_name": "Mid-Day Freight Shadow",
+      "departments": [
+        "Engineering",
+        "S&T",
+        "Traction"
+      ],
+      "is_joint_megablock": true,
+      "task_count": 8,
+      "task_ids": [
+        "TSK-2026-0136",
+        "TSK-2026-0154",
+        "TSK-2026-0215",
+        "TSK-2026-0241",
+        "TSK-2026-0275",
+        "TSK-2026-0322",
+        "TSK-2026-0355",
+        "TSK-2026-0400"
+      ],
+      "tasks": [
+        {
+          "task_id": "TSK-2026-0136",
+          "department": "S&T",
+          "asset_type": "cable",
+          "defect_type": "telecom_OFC_attenuation_high",
+          "severity": "high",
+          "priority_score": 56,
+          "duration_min": 105
+        },
+        {
+          "task_id": "TSK-2026-0154",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 150
+        },
+        {
+          "task_id": "TSK-2026-0215",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "cess_repair",
+          "severity": "medium",
+          "priority_score": 54,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0241",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "dropper_wire_broken",
+          "severity": "high",
+          "priority_score": 64,
+          "duration_min": 90
+        },
+        {
+          "task_id": "TSK-2026-0275",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "contact_wire_height_irregularity",
+          "severity": "critical",
+          "priority_score": 78,
+          "duration_min": 120
+        },
+        {
+          "task_id": "TSK-2026-0322",
+          "department": "Engineering",
+          "asset_type": "track_segment",
+          "defect_type": "joint_defect",
+          "severity": "medium",
+          "priority_score": 58,
+          "duration_min": 60
+        },
+        {
+          "task_id": "TSK-2026-0355",
+          "department": "Traction",
+          "asset_type": "OHE_span",
+          "defect_type": "bird_nest_hazard_OHE",
+          "severity": "high",
+          "priority_score": 68,
+          "duration_min": 45
+        },
+        {
+          "task_id": "TSK-2026-0400",
+          "department": "Traction",
+          "asset_type": "other",
+          "defect_type": "transformer_bushing_hotspot",
+          "severity": "high",
+          "priority_score": 54,
+          "duration_min": 150
+        }
+      ],
+      "train_count": 0,
+      "availability_score": 1.0,
+      "train_impact": "MINIMAL"
+    }
+  ],
+  "latest_new_block": {
+    "block_id": "BLK-NEW-SEC_C01_03-20260910182602",
+    "request_id": "REQ-6E5AE4E3",
+    "section_id": "SEC_C01_03",
+    "location": "SEC_C01_03",
+    "section_name": "Bapatla - Chirala",
+    "division": "Vijayawada",
+    "date": "2026-09-08",
+    "start_time": "11:30",
+    "end_time": "14:30",
+    "duration_hours": 3.0,
+    "window_name": "Standard Timetable Window",
+    "conflict_check": {
+      "section_id": "SEC_C01_03",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "date": "2026-09-08",
+      "day_of_week": "Tue",
+      "has_conflict": false,
+      "conflict_count": 0,
+      "affected_trains": [],
+      "conflicting_trains": [],
+      "vip_trains": [],
+      "status": "Suitable",
+      "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+    },
+    "resource_check": {
+      "all_available": true,
+      "status": "Available",
+      "has_conflict": false,
+      "conflicts_count": 0,
+      "total_resources_checked": 1,
+      "resources": [
+        {
+          "resource_name": "Tower Wagon Crew",
+          "matched_resource_id": "RES-TRD-MACH-02",
+          "department": "Traction",
+          "task_id": "REQ-6E5AE4E3",
+          "status": "Available",
+          "is_available": true,
+          "conflict_type": null,
+          "detail": "Verified available: Hydraulic Elevated Platform Tower Wagon #04 (Base: Visakhapatnam)"
+        }
+      ],
+      "conflicts": [],
+      "summary": "\u2713 All 1 required resource verified available and conflict-free",
+      "date": "2026-09-08",
+      "time_window": "11:30\u201314:30"
+    },
+    "is_joint_megablock": false,
+    "departments": [
+      "Traction"
+    ],
+    "tasks": [
+      {
+        "task_id": "REQ-6E5AE4E3",
+        "request_id": "REQ-6E5AE4E3",
+        "department": "Traction",
+        "defect_type": "Power Isolation Maintenance",
+        "work_type": "Power Isolation Maintenance",
+        "asset_type": "Traction Asset",
+        "severity": "high",
+        "priority": "HIGH",
+        "priority_score": 80,
+        "required_resource": "Tower Wagon Crew",
+        "equipment_required": "Tower Wagon Crew",
+        "crew_required": "Tower Wagon Crew"
+      }
+    ],
+    "train_regulation": {
+      "affected_trains_count": 0,
+      "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+      "regulated_trains": []
+    },
+    "status": "APPROVED",
+    "approved_by": "Sr. DOM (Vijayawada Division)",
+    "is_newly_generated": true,
+    "generated_at": "10 Sep 2026, 06:26 PM"
+  },
+  "updated_at": "2026-09-10T18:26:02.287896"
+}

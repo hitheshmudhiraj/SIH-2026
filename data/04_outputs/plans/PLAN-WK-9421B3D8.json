@@ -1,0 +1,499 @@
+{
+  "plan_id": "PLAN-WK-9421B3D8",
+  "current_plan_id": "PLAN-WK-9421B3D8",
+  "is_current": true,
+  "is_active": true,
+  "plan_type": "WEEKLY",
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-14",
+  "generated_at": "2026-09-10T19:00:48.766148",
+  "solver_status": "FEASIBLE",
+  "solve_duration_ms": 2639.6,
+  "summary": {
+    "total_blocks": 5,
+    "total_block_hours": 0,
+    "joint_megablocks": 0,
+    "joint_bundling_rate_pct": 0.0,
+    "total_tasks_scheduled": 0,
+    "critical_tasks_scheduled": 0,
+    "high_priority_tasks_scheduled": 0,
+    "sections_covered": 0
+  },
+  "blocks": [
+    {
+      "block_id": "BLK-NEW-SEC_C01_04-20260910191356",
+      "request_id": "REQ-2026-5495",
+      "section_id": "SEC_C01_04",
+      "location": "SEC_C01_04",
+      "section_name": "Chirala - Ongole",
+      "division": "Vijayawada",
+      "date": "2026-09-22",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "duration_hours": 1.5,
+      "window_name": "Standard Timetable Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_04",
+        "start_time": "11:30",
+        "end_time": "14:30",
+        "date": "2026-09-22",
+        "day_of_week": "Tue",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "8-Wheeler Self-Propelled OHE Inspection Car (DETC)",
+            "matched_resource_id": "RES-TRD-MACH-01",
+            "department": "Traction",
+            "task_id": "REQ-2026-5495",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: 8-Wheeler Self-Propelled OHE Inspection Car (DETC) (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-22",
+        "time_window": "11:30\u201314:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Traction"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-2026-5495",
+          "request_id": "REQ-2026-5495",
+          "department": "Traction",
+          "defect_type": "Turnout Overhaul",
+          "work_type": "Turnout Overhaul",
+          "asset_type": "Traction Asset",
+          "severity": "critical",
+          "priority": "CRITICAL",
+          "priority_score": 95,
+          "required_resource": "8-Wheeler Self-Propelled OHE Inspection Car (DETC)",
+          "equipment_required": "8-Wheeler Self-Propelled OHE Inspection Car (DETC)",
+          "crew_required": "8-Wheeler Self-Propelled OHE Inspection Car (DETC)"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 07:13 PM"
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_01-20260910191314",
+      "request_id": "REQ-2026-8493",
+      "section_id": "SEC_C01_01",
+      "location": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-14",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 1.0,
+      "window_name": "Standard Timetable Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_01",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-14",
+        "day_of_week": "Mon",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Track Gang (P-Way)",
+            "matched_resource_id": "RES-ENG-GANG-01",
+            "department": "Engineering",
+            "task_id": "REQ-2026-8493",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Heavy P-Way Track Maintenance Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-14",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Engineering"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-2026-8493",
+          "request_id": "REQ-2026-8493",
+          "department": "Engineering",
+          "defect_type": "Rail Renewal",
+          "work_type": "Rail Renewal",
+          "asset_type": "Engineering Asset",
+          "severity": "critical",
+          "priority": "CRITICAL",
+          "priority_score": 95,
+          "required_resource": "Track Gang (P-Way)",
+          "equipment_required": "Track Gang (P-Way)",
+          "crew_required": "Track Gang (P-Way)"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 07:13 PM"
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_06-20260910191021",
+      "request_id": "REQ-2026-7439",
+      "section_id": "SEC_C01_06",
+      "location": "SEC_C01_06",
+      "section_name": "Singarayakonda - Kavali",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 2.0,
+      "window_name": "Early Morning Off-Peak Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_06",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-08",
+        "day_of_week": "Tue",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Track Gang (P-Way)",
+            "matched_resource_id": "RES-ENG-GANG-01",
+            "department": "Engineering",
+            "task_id": "REQ-2026-7439",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Heavy P-Way Track Maintenance Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-08",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Engineering"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-2026-7439",
+          "request_id": "REQ-2026-7439",
+          "department": "Engineering",
+          "defect_type": "Track Maintenance",
+          "work_type": "Track Maintenance",
+          "asset_type": "Engineering Asset",
+          "severity": "high",
+          "priority": "HIGH",
+          "priority_score": 80,
+          "required_resource": "Track Gang (P-Way)",
+          "equipment_required": "Track Gang (P-Way)",
+          "crew_required": "Track Gang (P-Way)"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 07:10 PM"
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_01-20260910190050",
+      "request_id": "REQ-VAL-ENG-5B844F",
+      "section_id": "SEC_C01_01",
+      "location": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 2.0,
+      "window_name": "Early Morning Off-Peak Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_01",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-08",
+        "day_of_week": "Tue",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Track Gang (P-Way)",
+            "matched_resource_id": "RES-ENG-GANG-01",
+            "department": "Engineering",
+            "task_id": "REQ-VAL-ENG-5B844F",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Heavy P-Way Track Maintenance Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-08",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Engineering"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-VAL-ENG-5B844F",
+          "request_id": "REQ-VAL-ENG-5B844F",
+          "department": "Engineering",
+          "defect_type": "Track Maintenance",
+          "work_type": "Track Maintenance",
+          "asset_type": "Engineering Asset",
+          "severity": "high",
+          "priority": "HIGH",
+          "priority_score": 80,
+          "required_resource": "Track Gang (P-Way)",
+          "equipment_required": "Track Gang (P-Way)",
+          "crew_required": "Track Gang (P-Way)"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 07:00 PM"
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_01-20260910190049",
+      "request_id": "REQ-P7-TEST-1A1AB5",
+      "section_id": "SEC_C01_01",
+      "location": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 2.0,
+      "window_name": "Early Morning Off-Peak Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_01",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-08",
+        "day_of_week": "Tue",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Track Gang (P-Way)",
+            "matched_resource_id": "RES-ENG-GANG-01",
+            "department": "Engineering",
+            "task_id": "REQ-P7-TEST-1A1AB5",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Heavy P-Way Track Maintenance Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-08",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Engineering"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-P7-TEST-1A1AB5",
+          "request_id": "REQ-P7-TEST-1A1AB5",
+          "department": "Engineering",
+          "defect_type": "Track Maintenance",
+          "work_type": "Track Maintenance",
+          "asset_type": "Engineering Asset",
+          "severity": "high",
+          "priority": "HIGH",
+          "priority_score": 80,
+          "required_resource": "Track Gang (P-Way)",
+          "equipment_required": "Track Gang (P-Way)",
+          "crew_required": "Track Gang (P-Way)"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 07:00 PM"
+    }
+  ],
+  "latest_new_block": {
+    "block_id": "BLK-NEW-SEC_C01_04-20260910191356",
+    "request_id": "REQ-2026-5495",
+    "section_id": "SEC_C01_04",
+    "location": "SEC_C01_04",
+    "section_name": "Chirala - Ongole",
+    "division": "Vijayawada",
+    "date": "2026-09-22",
+    "start_time": "11:30",
+    "end_time": "14:30",
+    "duration_hours": 1.5,
+    "window_name": "Standard Timetable Window",
+    "conflict_check": {
+      "section_id": "SEC_C01_04",
+      "start_time": "11:30",
+      "end_time": "14:30",
+      "date": "2026-09-22",
+      "day_of_week": "Tue",
+      "has_conflict": false,
+      "conflict_count": 0,
+      "affected_trains": [],
+      "conflicting_trains": [],
+      "vip_trains": [],
+      "status": "Suitable",
+      "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+    },
+    "resource_check": {
+      "all_available": true,
+      "status": "Available",
+      "has_conflict": false,
+      "conflicts_count": 0,
+      "total_resources_checked": 1,
+      "resources": [
+        {
+          "resource_name": "8-Wheeler Self-Propelled OHE Inspection Car (DETC)",
+          "matched_resource_id": "RES-TRD-MACH-01",
+          "department": "Traction",
+          "task_id": "REQ-2026-5495",
+          "status": "Available",
+          "is_available": true,
+          "conflict_type": null,
+          "detail": "Verified available: 8-Wheeler Self-Propelled OHE Inspection Car (DETC) (Base: Vijayawada)"
+        }
+      ],
+      "conflicts": [],
+      "summary": "\u2713 All 1 required resource verified available and conflict-free",
+      "date": "2026-09-22",
+      "time_window": "11:30\u201314:30"
+    },
+    "is_joint_megablock": false,
+    "departments": [
+      "Traction"
+    ],
+    "tasks": [
+      {
+        "task_id": "REQ-2026-5495",
+        "request_id": "REQ-2026-5495",
+        "department": "Traction",
+        "defect_type": "Turnout Overhaul",
+        "work_type": "Turnout Overhaul",
+        "asset_type": "Traction Asset",
+        "severity": "critical",
+        "priority": "CRITICAL",
+        "priority_score": 95,
+        "required_resource": "8-Wheeler Self-Propelled OHE Inspection Car (DETC)",
+        "equipment_required": "8-Wheeler Self-Propelled OHE Inspection Car (DETC)",
+        "crew_required": "8-Wheeler Self-Propelled OHE Inspection Car (DETC)"
+      }
+    ],
+    "train_regulation": {
+      "affected_trains_count": 0,
+      "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+      "regulated_trains": []
+    },
+    "status": "APPROVED",
+    "approved_by": "Sr. DOM (Vijayawada Division)",
+    "is_newly_generated": true,
+    "generated_at": "10 Sep 2026, 07:13 PM"
+  },
+  "updated_at": "2026-09-10T19:13:56.221611"
+}

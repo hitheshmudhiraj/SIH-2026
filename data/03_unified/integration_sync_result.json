@@ -1,9 +1,9 @@
 {
-  "last_sync_timestamp": "2026-09-09T11:27:20.230004",
-  "total_records_in": 144,
+  "last_sync_timestamp": "2026-09-11T10:46:45.408458",
+  "total_records_in": 143,
   "exact_duplicates_resolved": 1,
   "probable_duplicates_flagged": 6,
-  "net_unique_records_out": 143,
+  "net_unique_records_out": 142,
   "exact_duplicates_dropped": [
     {
       "dropped_job_id": "TDMS-JOB-247",
@@ -20,11 +20,11 @@
   ],
   "probable_duplicates_review_count": 6,
   "records_received": 145,
-  "records_normalized": 143,
+  "records_normalized": 142,
   "duplicates_detected": 1,
-  "invalid_records_count": 2,
-  "cross_department_matches": 227,
-  "data_quality_score": 96.5,
+  "invalid_records_count": 1,
+  "cross_department_matches": 220,
+  "data_quality_score": 96.7,
   "asset_registry_summary": {
     "total_canonical_assets": 173,
     "multi_department_merged": 23,
@@ -68,58 +68,6 @@
     "bdms_block_requests": 56
   },
   "invalid_records": [
-    {
-      "id": "INV-REC-TDMS-JOB-249",
-      "job_id": "TDMS-JOB-249",
-      "source_system": "TDMS",
-      "department": "Traction",
-      "corridor_id": "C01",
-      "station": "OGL",
-      "km": 124.9,
-      "job_type": "OVERHEAD_FEEDER_MAINTENANCE",
-      "status": "PENDING_REVIEW",
-      "detected_at": "2026-09-08T22:08:41.639104",
-      "raw_source": {
-        "job_id": "TDMS-JOB-249",
-        "asset_id": "TDMS-UNKNOWN-005",
-        "department": "Traction",
-        "corridor_id": "C01",
-        "station": "OGL",
-        "km": "124.9",
-        "job_type": "OVERHEAD_FEEDER_MAINTENANCE",
-        "severity": "MEDIUM",
-        "priority_score": "70",
-        "due_date": "2026-09-20",
-        "estimated_duration_min": "",
-        "crew_required": "CREW-TRD-BZA-01",
-        "equipment_required": "TOWER_WAGON_RU",
-        "block_required": "YES",
-        "status": "PENDING_BLOCK",
-        "source_system": "TDMS",
-        "_source": "TDMS"
-      },
-      "validation_errors": [
-        {
-          "field": "asset_id",
-          "raw_value": "TDMS-UNKNOWN-005",
-          "message": "Unknown or missing asset_id (requires canonical asset mapping)"
-        }
-      ],
-      "has_validation_errors": true,
-      "is_defaulted": true,
-      "defaults_applied": [
-        {
-          "field": "estimated_duration_min",
-          "defaulted_value": 60,
-          "original_value": "",
-          "reason": "Missing duration defaulted to 60 min standard maintenance window"
-        }
-      ],
-      "error_type": "MISSING_ASSET_ID",
-      "review_decision": null,
-      "rejection_reason": null,
-      "rejection_timestamp": null
-    },
     {
       "id": "INV-REC-SMMS-JOB-341",
       "job_id": "SMMS-JOB-341",

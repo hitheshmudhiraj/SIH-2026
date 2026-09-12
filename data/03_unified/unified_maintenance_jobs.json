@@ -142,12 +142,12 @@
     "km": 124.8,
     "job_type": "SWITCH_EXPANSION_JOINT_REALIGNMENT",
     "severity": "HIGH",
-    "priority_score": 78,
+    "priority_score": 81,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 100.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 46.0,
       "traffic_impact": 95.0,
       "dependency_risk": 50.0
@@ -155,7 +155,7 @@
     "priority_reasons": [
       "Critical railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Depreciated asset condition score (54/100) warrants intervention",
       "High traffic density corridor (C01) with tight headway constraints"
     ],
@@ -252,19 +252,19 @@
     "km": 22.9,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "HIGH",
-    "priority_score": 61,
+    "priority_score": 65,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 18.0,
       "traffic_impact": 90.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C02) with tight headway constraints",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -298,19 +298,19 @@
     "km": 38.8,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 62,
+    "priority_score": 66,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 17.0,
       "traffic_impact": 90.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C02) with tight headway constraints",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -434,18 +434,19 @@
     "km": 101.9,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 62,
+    "priority_score": 68,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 100.0,
       "severity_score": 50.0,
-      "urgency_score": 35.0,
+      "urgency_score": 65.0,
       "condition_risk": 14.0,
       "traffic_impact": 90.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "Critical railway asset criticality designation",
+      "Maintenance due within upcoming weekly cycle",
       "High traffic density corridor (C02) with tight headway constraints",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -615,18 +616,18 @@
     "km": 154.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 59,
+    "priority_score": 62,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 10.0,
       "traffic_impact": 90.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "High traffic density corridor (C02) with tight headway constraints",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -660,19 +661,19 @@
     "km": 203.8,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "CRITICAL",
-    "priority_score": 69,
-    "priority_tier": "MEDIUM",
+    "priority_score": 72,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 100.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 9.0,
       "traffic_impact": 90.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "Critical defect severity level requiring prompt possession",
-      "Maintenance due within 3 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "High traffic density corridor (C02) with tight headway constraints",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -706,19 +707,19 @@
     "km": 205.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 61,
+    "priority_score": 65,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 8.0,
       "traffic_impact": 90.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C02) with tight headway constraints",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -752,19 +753,19 @@
     "km": 225.8,
     "job_type": "BALLAST_CLEANING_BCM",
     "severity": "MEDIUM",
-    "priority_score": 63,
+    "priority_score": 67,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 100.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 7.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "Critical railway asset criticality designation",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-14",
@@ -890,17 +891,18 @@
     "km": 247.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 55,
+    "priority_score": 61,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 35.0,
+      "urgency_score": 65.0,
       "condition_risk": 49.0,
       "traffic_impact": 90.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
+      "Maintenance due within upcoming weekly cycle",
       "Depreciated asset condition score (51/100) warrants intervention",
       "High traffic density corridor (C02) with tight headway constraints",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
@@ -1073,12 +1075,12 @@
     "km": 14.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "HIGH",
-    "priority_score": 79,
+    "priority_score": 82,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 100.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 45.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
@@ -1086,7 +1088,7 @@
     "priority_reasons": [
       "Critical railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Depreciated asset condition score (55/100) warrants intervention",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -1121,19 +1123,19 @@
     "km": 48.8,
     "job_type": "BALLAST_CLEANING_BCM",
     "severity": "MEDIUM",
-    "priority_score": 63,
+    "priority_score": 66,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 44.0,
       "traffic_impact": 60.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within 3 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Depreciated asset condition score (56/100) warrants intervention"
     ],
     "due_date": "2026-09-12",
@@ -1171,18 +1173,18 @@
     "km": 50.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 57,
+    "priority_score": 61,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 43.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "Depreciated asset condition score (57/100) warrants intervention",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -1217,19 +1219,19 @@
     "km": 85.8,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "CRITICAL",
-    "priority_score": 67,
-    "priority_tier": "MEDIUM",
+    "priority_score": 71,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 100.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 42.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "Critical defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "Depreciated asset condition score (58/100) warrants intervention",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -1364,18 +1366,19 @@
     "km": 124.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "HIGH",
-    "priority_score": 55,
+    "priority_score": 61,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 75.0,
-      "urgency_score": 35.0,
+      "urgency_score": 65.0,
       "condition_risk": 39.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "High defect severity level requiring prompt possession",
+      "Maintenance due within upcoming weekly cycle",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
     "due_date": "2026-09-17",
@@ -1547,19 +1550,19 @@
     "km": 208.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 66,
+    "priority_score": 69,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 35.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
     "due_date": "2026-09-11",
@@ -1593,18 +1596,18 @@
     "km": 255.8,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 60,
+    "priority_score": 64,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 40.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
-      "Maintenance due within 3 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Depreciated asset condition score (60/100) warrants intervention",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
@@ -1643,19 +1646,19 @@
     "km": 257.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "HIGH",
-    "priority_score": 60,
+    "priority_score": 64,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 33.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
     "due_date": "2026-09-13",
@@ -1688,19 +1691,19 @@
     "km": 10.8,
     "job_type": "BALLAST_CLEANING_BCM",
     "severity": "MEDIUM",
-    "priority_score": 60,
+    "priority_score": 64,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 32.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within upcoming weekly cycle"
+      "Maintenance due within 3 days"
     ],
     "due_date": "2026-09-14",
     "estimated_duration_min": 60,
@@ -1822,18 +1825,19 @@
     "km": 34.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 57,
+    "priority_score": 63,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 35.0,
+      "urgency_score": 65.0,
       "condition_risk": 29.0,
       "traffic_impact": 80.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
+      "Maintenance due within upcoming weekly cycle",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
     "due_date": "2026-09-17",
@@ -1999,18 +2003,18 @@
     "km": 108.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 60,
+    "priority_score": 63,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 25.0,
       "traffic_impact": 80.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
     "due_date": "2026-09-11",
@@ -2043,12 +2047,12 @@
     "km": 146.8,
     "job_type": "BALLAST_CLEANING_BCM",
     "severity": "CRITICAL",
-    "priority_score": 79,
+    "priority_score": 82,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 100.0,
       "severity_score": 100.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 24.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
@@ -2056,7 +2060,7 @@
     "priority_reasons": [
       "Critical railway asset criticality designation",
       "Critical defect severity level requiring prompt possession",
-      "Maintenance due within 3 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-12",
     "estimated_duration_min": 150,
@@ -2088,19 +2092,19 @@
     "km": 148.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 62,
+    "priority_score": 66,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 23.0,
       "traffic_impact": 80.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
     "due_date": "2026-09-13",
@@ -2133,18 +2137,18 @@
     "km": 186.8,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 56,
+    "priority_score": 60,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 22.0,
       "traffic_impact": 80.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
     "due_date": "2026-09-14",
@@ -2266,17 +2270,18 @@
     "km": 239.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 49,
-    "priority_tier": "LOW",
+    "priority_score": 55,
+    "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 35.0,
+      "urgency_score": 65.0,
       "condition_risk": 19.0,
       "traffic_impact": 80.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
+      "Maintenance due within upcoming weekly cycle",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
     "due_date": "2026-09-17",
@@ -2442,19 +2447,19 @@
     "km": 313.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "HIGH",
-    "priority_score": 64,
+    "priority_score": 67,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 15.0,
       "traffic_impact": 80.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
     ],
     "due_date": "2026-09-11",
@@ -2488,19 +2493,19 @@
     "km": 124.4,
     "job_type": "PWAY_USFD_TESTING_REPAIR",
     "severity": "MEDIUM",
-    "priority_score": 77,
+    "priority_score": 80,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 100.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 42.0,
       "traffic_impact": 95.0,
       "dependency_risk": 90.0
     },
     "priority_reasons": [
       "Critical railway asset criticality designation",
-      "Maintenance due within 3 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Depreciated asset condition score (58/100) warrants intervention",
       "High traffic density corridor (C01) with tight headway constraints",
       "Safety-critical task (PWAY_USFD_TESTING_REPAIR) impacting corridor throughput"
@@ -2664,18 +2669,18 @@
     "km": 270.4,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 55,
+    "priority_score": 58,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 19.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 3 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-12",
     "estimated_duration_min": 90,
@@ -2715,12 +2720,12 @@
     "km": 290.8,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 65,
+    "priority_score": 69,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 23.0,
       "traffic_impact": 95.0,
       "dependency_risk": 50.0
@@ -2728,7 +2733,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C01) with tight headway constraints"
     ],
     "due_date": "2026-09-13",
@@ -2766,19 +2771,19 @@
     "km": 153.2,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 57,
+    "priority_score": 61,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 7.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-14",
@@ -2991,19 +2996,19 @@
     "km": 255.8,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 62,
+    "priority_score": 64,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 40.0,
       "traffic_impact": 60.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Depreciated asset condition score (60/100) warrants intervention"
     ],
     "due_date": "2026-09-11",
@@ -3041,19 +3046,19 @@
     "km": 238.2,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 65,
+    "priority_score": 68,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 39.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within 3 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-12",
     "estimated_duration_min": 90,
@@ -3085,19 +3090,19 @@
     "km": 258.6,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 61,
+    "priority_score": 65,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 38.0,
       "traffic_impact": 95.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C01) with tight headway constraints"
     ],
     "due_date": "2026-09-13",
@@ -3130,18 +3135,18 @@
     "km": 101.5,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 55,
+    "priority_score": 59,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 37.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-14",
@@ -3355,12 +3360,12 @@
     "km": 13.6,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 67,
-    "priority_tier": "MEDIUM",
+    "priority_score": 70,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 32.0,
       "traffic_impact": 60.0,
       "dependency_risk": 50.0
@@ -3368,7 +3373,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-11",
     "estimated_duration_min": 75,
@@ -3407,18 +3412,18 @@
     "km": 188.0,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 57,
+    "priority_score": 60,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 31.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 3 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-12",
     "estimated_duration_min": 90,
@@ -3452,12 +3457,12 @@
     "km": 206.0,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 66,
-    "priority_tier": "MEDIUM",
+    "priority_score": 70,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 30.0,
       "traffic_impact": 95.0,
       "dependency_risk": 50.0
@@ -3465,7 +3470,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C01) with tight headway constraints"
     ],
     "due_date": "2026-09-13",
@@ -3501,18 +3506,18 @@
     "km": 20.9,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 54,
+    "priority_score": 58,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 29.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-14",
@@ -3736,12 +3741,12 @@
     "km": 48.0,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 65,
+    "priority_score": 68,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 24.0,
       "traffic_impact": 60.0,
       "dependency_risk": 50.0
@@ -3749,7 +3754,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-11",
     "estimated_duration_min": 75,
@@ -3781,18 +3786,18 @@
     "km": 146.4,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 56,
+    "priority_score": 59,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 23.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 3 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-12",
     "estimated_duration_min": 90,
@@ -3824,19 +3829,19 @@
     "km": 168.8,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 58,
+    "priority_score": 62,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 22.0,
       "traffic_impact": 95.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C01) with tight headway constraints"
     ],
     "due_date": "2026-09-13",
@@ -3869,19 +3874,19 @@
     "km": 293.2,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 59,
+    "priority_score": 63,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 21.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-14",
@@ -4101,19 +4106,19 @@
     "km": 85.8,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 62,
+    "priority_score": 65,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 42.0,
       "traffic_impact": 60.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Depreciated asset condition score (58/100) warrants intervention"
     ],
     "due_date": "2026-09-11",
@@ -4151,19 +4156,19 @@
     "km": 107.2,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 61,
+    "priority_score": 64,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 15.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High railway asset criticality designation",
-      "Maintenance due within 3 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-12",
     "estimated_duration_min": 90,
@@ -4195,19 +4200,19 @@
     "km": 136.6,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 57,
+    "priority_score": 61,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 14.0,
       "traffic_impact": 95.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C01) with tight headway constraints"
     ],
     "due_date": "2026-09-13",
@@ -4240,18 +4245,18 @@
     "km": 227.0,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 51,
+    "priority_score": 55,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 13.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-14",
@@ -4499,12 +4504,12 @@
     "km": 150.5,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 78,
+    "priority_score": 81,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 100.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 45.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
@@ -4512,7 +4517,7 @@
     "priority_reasons": [
       "Critical railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Depreciated asset condition score (55/100) warrants intervention",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
@@ -4554,18 +4559,18 @@
     "km": 188.0,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 57,
+    "priority_score": 60,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 29.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 3 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-12",
     "estimated_duration_min": 90,
@@ -4599,12 +4604,12 @@
     "km": 206.0,
     "job_type": "CANTILEVER_DROPPERS_REPLACEMENT",
     "severity": "HIGH",
-    "priority_score": 65,
+    "priority_score": 69,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 28.0,
       "traffic_impact": 95.0,
       "dependency_risk": 50.0
@@ -4612,7 +4617,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C01) with tight headway constraints"
     ],
     "due_date": "2026-09-13",
@@ -4647,18 +4652,18 @@
     "km": 152.4,
     "job_type": "SUBSTATION_SWITCHGEAR_INSPECTION",
     "severity": "MEDIUM",
-    "priority_score": 54,
+    "priority_score": 58,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 27.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-14",
@@ -4692,12 +4697,12 @@
     "km": 124.8,
     "job_type": "ISOLATOR_SWITCH_OVERHAUL",
     "severity": "HIGH",
-    "priority_score": 72,
+    "priority_score": 78,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 100.0,
       "severity_score": 75.0,
-      "urgency_score": 35.0,
+      "urgency_score": 65.0,
       "condition_risk": 42.0,
       "traffic_impact": 95.0,
       "dependency_risk": 90.0
@@ -4705,6 +4710,7 @@
     "priority_reasons": [
       "Critical railway asset criticality designation",
       "High defect severity level requiring prompt possession",
+      "Maintenance due within upcoming weekly cycle",
       "Depreciated asset condition score (58/100) warrants intervention",
       "High traffic density corridor (C01) with tight headway constraints",
       "Safety-critical task (ISOLATOR_SWITCH_OVERHAUL) impacting corridor throughput"
@@ -4779,60 +4785,6 @@
       "status_mismatch_Engineering_Traction"
     ],
     "provisional_km": 124.4
-  },
-  {
-    "job_id": "TDMS-JOB-249",
-    "asset_id": "CAN-AST-C01-124.80-0021",
-    "canonical_asset_id": "CAN-AST-C01-124.80-0021",
-    "raw_asset_id": "TDMS-UNKNOWN-005",
-    "asset_type": "EXPANSION_JOINT_SEJ",
-    "owning_departments": [
-      "Engineering",
-      "S&T"
-    ],
-    "asset_cross_reference": {
-      "TMS_id": "TMS-C01-SEJ-1044",
-      "SMMS_id": "SMMS-C01-AXC-0502",
-      "TDMS_id": null
-    },
-    "department": "Traction",
-    "source_system": "TDMS",
-    "corridor_id": "C01",
-    "station": "OGL",
-    "km": 124.9,
-    "job_type": "OVERHEAD_FEEDER_MAINTENANCE",
-    "severity": "MEDIUM",
-    "priority_score": 63,
-    "priority_tier": "MEDIUM",
-    "priority_factors": {
-      "criticality_score": 100.0,
-      "severity_score": 50.0,
-      "urgency_score": 35.0,
-      "condition_risk": 46.0,
-      "traffic_impact": 95.0,
-      "dependency_risk": 50.0
-    },
-    "priority_reasons": [
-      "Critical railway asset criticality designation",
-      "Depreciated asset condition score (54/100) warrants intervention",
-      "High traffic density corridor (C01) with tight headway constraints"
-    ],
-    "due_date": "2026-09-20",
-    "estimated_duration_min": 60,
-    "crew_required": "CREW-TRD-BZA-01",
-    "equipment_required": "TOWER_WAGON_RU",
-    "block_required": "YES",
-    "status": "NORMALIZED",
-    "is_valid": false,
-    "data_quality_issues": [
-      "Unknown or missing asset_id",
-      "Missing duration, defaulted to 60 min",
-      "field_mismatch_Engineering_S&T",
-      "field_mismatch_ENGINEERING_S&T",
-      "condition_score_mismatch_Engineering_S&T",
-      "field_mismatch_SMMS_TMS",
-      "status_mismatch_Engineering_S&T"
-    ]
   },
   {
     "job_id": "SMMS-JOB-301",
@@ -4974,18 +4926,18 @@
     "km": 312.5,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 57,
+    "priority_score": 60,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 27.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 2 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-11",
     "estimated_duration_min": 30,
@@ -5017,12 +4969,12 @@
     "km": 12.5,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 73,
+    "priority_score": 76,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 26.0,
       "traffic_impact": 95.0,
       "dependency_risk": 90.0
@@ -5030,7 +4982,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 3 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "High traffic density corridor (C01) with tight headway constraints",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
@@ -5064,18 +5016,18 @@
     "km": 152.0,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 53,
+    "priority_score": 57,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 25.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-13",
@@ -5110,12 +5062,12 @@
     "km": 85.5,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 65,
+    "priority_score": 69,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 24.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
@@ -5123,7 +5075,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
     "due_date": "2026-09-14",
@@ -5303,12 +5255,12 @@
     "km": 255.0,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 69,
-    "priority_tier": "MEDIUM",
+    "priority_score": 72,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 20.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
@@ -5316,7 +5268,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
     "due_date": "2026-09-11",
@@ -5356,18 +5308,18 @@
     "km": 270.5,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 55,
+    "priority_score": 58,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 19.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 3 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-12",
     "estimated_duration_min": 60,
@@ -5406,12 +5358,12 @@
     "km": 291.0,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 68,
-    "priority_tier": "MEDIUM",
+    "priority_score": 72,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 18.0,
       "traffic_impact": 95.0,
       "dependency_risk": 90.0
@@ -5419,7 +5371,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C01) with tight headway constraints",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
@@ -5453,18 +5405,18 @@
     "km": 101.0,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 52,
+    "priority_score": 56,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 17.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-14",
@@ -5635,18 +5587,18 @@
     "km": 226.0,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 55,
+    "priority_score": 58,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 13.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-11",
@@ -5682,12 +5634,12 @@
     "km": 13.5,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 71,
+    "priority_score": 74,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 32.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
@@ -5695,7 +5647,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 3 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
     "due_date": "2026-09-12",
@@ -5735,18 +5687,18 @@
     "km": 239.0,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 50,
+    "priority_score": 54,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 11.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle"
+      "Maintenance due within 2 days"
     ],
     "due_date": "2026-09-13",
     "estimated_duration_min": 45,
@@ -5778,12 +5730,12 @@
     "km": 257.0,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 67,
-    "priority_tier": "MEDIUM",
+    "priority_score": 71,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 10.0,
       "traffic_impact": 95.0,
       "dependency_risk": 90.0
@@ -5791,7 +5743,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "High traffic density corridor (C01) with tight headway constraints",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
@@ -5966,12 +5918,12 @@
     "km": 78.5,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 70,
+    "priority_score": 73,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 6.0,
       "traffic_impact": 95.0,
       "dependency_risk": 90.0
@@ -5979,7 +5931,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "High traffic density corridor (C01) with tight headway constraints",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
@@ -6013,18 +5965,18 @@
     "km": 152.0,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 60,
+    "priority_score": 62,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 40.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 3 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Depreciated asset condition score (60/100) warrants intervention",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
@@ -6060,12 +6012,12 @@
     "km": 48.5,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 68,
-    "priority_tier": "MEDIUM",
+    "priority_score": 72,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 39.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
@@ -6073,7 +6025,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
     "due_date": "2026-09-13",
@@ -6106,18 +6058,18 @@
     "km": 187.0,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 54,
+    "priority_score": 58,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 38.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle"
+      "Maintenance due within 3 days"
     ],
     "due_date": "2026-09-14",
     "estimated_duration_min": 30,
@@ -6295,18 +6247,18 @@
     "km": 10.5,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 58,
+    "priority_score": 61,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 34.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 2 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-11",
     "estimated_duration_min": 45,
@@ -6338,12 +6290,12 @@
     "km": 36.0,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 74,
+    "priority_score": 77,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 33.0,
       "traffic_impact": 95.0,
       "dependency_risk": 90.0
@@ -6351,7 +6303,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 3 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "High traffic density corridor (C01) with tight headway constraints",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
@@ -6385,18 +6337,18 @@
     "km": 101.0,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 54,
+    "priority_score": 58,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 32.0,
       "traffic_impact": 90.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C02) with tight headway constraints"
     ],
     "due_date": "2026-09-13",
@@ -6431,12 +6383,12 @@
     "km": 87.0,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 66,
-    "priority_tier": "MEDIUM",
+    "priority_score": 70,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 31.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
@@ -6444,7 +6396,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 3 days",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
     "due_date": "2026-09-14",
@@ -6613,12 +6565,12 @@
     "km": 256.5,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 70,
+    "priority_score": 73,
     "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 27.0,
       "traffic_impact": 60.0,
       "dependency_risk": 90.0
@@ -6626,7 +6578,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within 2 days",
+      "Maintenance due immediately (overdue or <= 24 hours)",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],
     "due_date": "2026-09-11",
@@ -6660,18 +6612,18 @@
     "km": 313.0,
     "job_type": "LED_SIGNAL_LAMP_REPLACEMENT",
     "severity": "MEDIUM",
-    "priority_score": 56,
+    "priority_score": 59,
     "priority_tier": "MEDIUM",
     "priority_factors": {
       "criticality_score": 50.0,
       "severity_score": 50.0,
-      "urgency_score": 85.0,
+      "urgency_score": 100.0,
       "condition_risk": 26.0,
       "traffic_impact": 80.0,
       "dependency_risk": 50.0
     },
     "priority_reasons": [
-      "Maintenance due within 3 days"
+      "Maintenance due immediately (overdue or <= 24 hours)"
     ],
     "due_date": "2026-09-12",
     "estimated_duration_min": 30,
@@ -6709,12 +6661,12 @@
     "km": 10.5,
     "job_type": "INTERLOCKING_ROUTE_CHECK",
     "severity": "HIGH",
-    "priority_score": 69,
-    "priority_tier": "MEDIUM",
+    "priority_score": 73,
+    "priority_tier": "HIGH",
     "priority_factors": {
       "criticality_score": 75.0,
       "severity_score": 75.0,
-      "urgency_score": 65.0,
+      "urgency_score": 85.0,
       "condition_risk": 25.0,
       "traffic_impact": 95.0,
       "dependency_risk": 90.0
@@ -6722,7 +6674,7 @@
     "priority_reasons": [
       "High railway asset criticality designation",
       "High defect severity level requiring prompt possession",
-      "Maintenance due within upcoming weekly cycle",
+      "Maintenance due within 2 days",
       "High traffic density corridor (C01) with tight headway constraints",
       "Safety-critical task (INTERLOCKING_ROUTE_CHECK) impacting corridor throughput"
     ],

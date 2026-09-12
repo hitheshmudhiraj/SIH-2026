@@ -201,5 +201,14 @@ class DynamicReplanner:
             "message": f"Successfully re-optimized schedule. Generated Plan V{new_version} accommodating emergency item."
         }
 
+    def analyze_emergency_replan(self, emergency_data: Dict[str, Any]) -> Dict[str, Any]:
+        from app.services.replanner import replanner as service_replanner
+        return service_replanner.analyze_emergency_replan(emergency_data)
+
+    def accept_emergency_solution(self, payload: Dict[str, Any]) -> Dict[str, Any]:
+        from app.services.replanner import replanner as service_replanner
+        return service_replanner.accept_emergency_solution(payload)
+
 
 dynamic_replanner = DynamicReplanner()
+

@@ -1,5 +1,56 @@
 [
   {
+    "id": "AUD-00407653",
+    "timestamp": "2026-09-11T10:46:45.526630",
+    "event_type": "INTEGRATION_SYNC",
+    "action": "Executed Unified Synchronization, Deduplication & Conflict Detection across 5 Railway Systems",
+    "user": "DataIntegrationHub",
+    "details": {
+      "total_records_in": 143,
+      "exact_duplicates_resolved": 1,
+      "probable_duplicates_flagged": 6,
+      "net_unique_records_out": 142,
+      "quality_score": 96.7,
+      "cross_dept_matches": 220,
+      "canonical_assets": 173,
+      "multi_dept_merged_assets": 23,
+      "conflicts_detected": 33
+    }
+  },
+  {
+    "id": "AUD-41E8E49C",
+    "timestamp": "2026-09-11T10:40:24.385885",
+    "event_type": "INTEGRATION_SYNC",
+    "action": "Executed Unified Synchronization, Deduplication & Conflict Detection across 5 Railway Systems",
+    "user": "DataIntegrationHub",
+    "details": {
+      "total_records_in": 143,
+      "exact_duplicates_resolved": 1,
+      "probable_duplicates_flagged": 6,
+      "net_unique_records_out": 142,
+      "quality_score": 96.7,
+      "cross_dept_matches": 220,
+      "canonical_assets": 173,
+      "multi_dept_merged_assets": 23,
+      "conflicts_detected": 33
+    }
+  },
+  {
+    "id": "AUD-E3D4BA6A",
+    "timestamp": "2026-09-10T19:03:08.398431",
+    "event_type": "REVIEW_QUEUE_REJECT",
+    "action": "Rejected record TDMS-JOB-249 from unified maintenance dataset",
+    "user": "SafetyOfficer",
+    "details": {
+      "record_id": "INV-REC-TDMS-JOB-249",
+      "job_id": "TDMS-JOB-249",
+      "source_system": "TDMS",
+      "department": "Traction",
+      "rejection_reason": "Duplicate work order or decommissioned asset specification",
+      "rejection_timestamp": "2026-09-10T19:03:08.319372"
+    }
+  },
+  {
     "id": "AUD-50CB2F09",
     "timestamp": "2026-09-09T11:27:20.402388",
     "event_type": "INTEGRATION_SYNC",

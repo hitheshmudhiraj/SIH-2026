@@ -150,6 +150,31 @@ export async function fetchLatestMonthlyPlan() {
   return res.json();
 }
 
+// PROMPT 7: Current / Active Plan Reference APIs
+export async function fetchCurrentActivePlan(planType = 'WEEKLY') {
+  const res = await fetch(`${BASE_URL}/block-plan/current?plan_type=${encodeURIComponent(planType)}`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function fetchActivePlanPointer() {
+  const res = await fetch(`${BASE_URL}/block-plan/active-pointer`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function fetchPlanHistory(limit = 30) {
+  const res = await fetch(`${BASE_URL}/block-plan/history?limit=${limit}`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function fetchPlanById(planId) {
+  const res = await fetch(`${BASE_URL}/block-plan/${encodeURIComponent(planId)}`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
 // AI Maintenance Block Recommender APIs
 export async function getAiBlockRecommendation(payload) {
   const res = await fetch(`${BASE_URL}/block-planning/recommend`, {
@@ -176,3 +201,109 @@ export async function fetchModelMetadata() {
   if (!res.ok) throw new Error(await res.text());
   return res.json();
 }
+
+export async function updatePlanStatus(planId, status) {
+  const res = await fetch(`${BASE_URL}/block-plan/${encodeURIComponent(planId)}/status`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ status })
+  });
+  if (!res.ok) {
+    const errText = await res.text();
+    let msg = 'Failed to update plan status';
+    try {
+      const parsed = JSON.parse(errText);
+      msg = parsed.detail || msg;
+    } catch {
+      msg = errText || msg;
+    }
+    throw new Error(msg);
+  }
+  return res.json();
+}
+
+export async function analyzeEmergencyReplan(payload) {
+  const res = await fetch(`${BASE_URL}/block-plan/emergency-analyze`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) {
+    const errText = await res.text();
+    let msg = 'Emergency analysis failed';
+    try {
+      const parsed = JSON.parse(errText);
+      msg = parsed.detail || msg;
+    } catch {
+      msg = errText || msg;
+    }
+    throw new Error(msg);
+  }
+  return res.json();
+}
+
+export async function acceptEmergencySolution(payload) {
+  const res = await fetch(`${BASE_URL}/block-plan/emergency-accept`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) {
+    const errText = await res.text();
+    let msg = 'Emergency plan activation failed';
+    try {
+      const parsed = JSON.parse(errText);
+      msg = parsed.detail || msg;
+    } catch {
+      msg = errText || msg;
+    }
+    throw new Error(msg);
+  }
+  return res.json();
+}
+
+// ---------------- IN-APP NOTIFICATIONS & REMINDERS ----------------
+export async function fetchNotifications(limit = 100, unreadOnly = false) {
+  const q = unreadOnly ? `?limit=${limit}&unread_only=true` : `?limit=${limit}`;
+  const res = await fetch(`${BASE_URL}/notifications${q}`);
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function checkReminders(referenceTime = null) {
+  const body = referenceTime ? JSON.stringify({ reference_time: referenceTime }) : JSON.stringify({});
+  const res = await fetch(`${BASE_URL}/notifications/check-reminders`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function markNotificationAsRead(notificationId) {
+  const res = await fetch(`${BASE_URL}/notifications/${notificationId}/read`, {
+    method: 'POST'
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function markAllNotificationsAsRead() {
+  const res = await fetch(`${BASE_URL}/notifications/read-all`, {
+    method: 'POST'
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function clearAllNotifications() {
+  const res = await fetch(`${BASE_URL}/notifications/clear`, {
+    method: 'POST'
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+
+

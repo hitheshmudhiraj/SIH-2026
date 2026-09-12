@@ -1,0 +1,25 @@
+{
+  "plan_id": "PLAN-WK-07DD76C8",
+  "current_plan_id": "PLAN-WK-07DD76C8",
+  "is_current": true,
+  "is_active": true,
+  "plan_type": "WEEKLY",
+  "plan_status": "Draft",
+  "status": "Draft",
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-14",
+  "generated_at": "2026-09-10T21:48:03.553934",
+  "solver_status": "FEASIBLE",
+  "solve_duration_ms": 2639.3,
+  "summary": {
+    "total_blocks": 0,
+    "total_block_hours": 0,
+    "joint_megablocks": 0,
+    "joint_bundling_rate_pct": 0.0,
+    "total_tasks_scheduled": 0,
+    "critical_tasks_scheduled": 0,
+    "high_priority_tasks_scheduled": 0,
+    "sections_covered": 0
+  },
+  "blocks": []
+}

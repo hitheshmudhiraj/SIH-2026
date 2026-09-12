@@ -251,4 +251,149 @@ class CorridorAvailabilityEngine:
 
         return csv_path
 
+    def check_train_conflicts(
+        self,
+        section_id: str,
+        start_time: str,
+        end_time: str,
+        date_str: Optional[str] = None
+    ) -> Dict[str, Any]:
+        """
+        Determines whether a candidate maintenance block (section + time window)
+        overlaps with important scheduled train movements using existing timetable data.
+
+        Returns:
+            - conflict_count: int (number of overlapping train movements)
+            - affected_trains: List[str] (names of affected trains with numbers)
+            - conflicting_trains: List[Dict[str, Any]] (detailed train metadata)
+            - vip_trains: List[str] (names of high-priority VIP trains with priority >= 9)
+            - status: "Suitable" | "Not Recommended" | "No data — treat as unknown risk"
+            - has_conflict: bool
+            - reason: Human-readable explanation
+        """
+        all_trains = self.get_trains()
+        sec_trains = [t for t in all_trains if t.get("section_id") == section_id]
+
+        # 1. Validation / Error Handling: If section has no timetable data
+        if not sec_trains:
+            return {
+                "section_id": section_id,
+                "start_time": start_time,
+                "end_time": end_time,
+                "date": date_str,
+                "has_conflict": True,
+                "conflict_count": 0,
+                "affected_trains": [],
+                "conflicting_trains": [],
+                "vip_trains": [],
+                "status": "No data — treat as unknown risk",
+                "reason": f"No timetable data found for section {section_id} — treat as unknown risk."
+            }
+
+        # 2. Determine target day of run
+        if not date_str:
+            date_str = "2026-09-08" # Baseline Tuesday default
+
+        try:
+            target_date = datetime.strptime(date_str, "%Y-%m-%d")
+            day_abbr = DAY_MAP[target_date.weekday()]
+        except Exception:
+            day_abbr = "Tue"
+            date_str = "2026-09-08"
+
+        # 3. Parse block time window
+        st_m = parse_time_to_minutes(start_time)
+        en_m = parse_time_to_minutes(end_time)
+        if en_m <= st_m:
+            en_m += 1440 # Handle block spanning midnight
+
+        # 4. Filter trains operating on this day
+        running_trains = [
+            t for t in sec_trains
+            if not t.get("days_of_run") or day_abbr in t.get("days_of_run")
+        ]
+
+        # 5. Find overlapping train movements
+        overlapping = []
+        for t in running_trains:
+            arr_m = parse_time_to_minutes(t.get("arrival_time", "00:00"))
+            dep_m = parse_time_to_minutes(t.get("departure_time", "00:00"))
+            if dep_m < arr_m:
+                dep_m += 1440
+
+            # Check temporal overlap
+            if arr_m < en_m and dep_m > st_m:
+                overlapping.append({
+                    "train_number": t.get("train_number"),
+                    "train_name": t.get("train_name"),
+                    "train_type": t.get("train_type"),
+                    "direction": t.get("direction"),
+                    "arrival_time": t.get("arrival_time"),
+                    "departure_time": t.get("departure_time"),
+                    "priority_score": float(t.get("priority_score", 5))
+                })
+
+        conflict_count = len(overlapping)
+        affected_names = [f"{t['train_name']} (#{t['train_number']})" for t in overlapping]
+        vip_list = [
+            f"{t['train_name']} (#{t['train_number']})"
+            for t in overlapping
+            if t["priority_score"] >= 9.0
+        ]
+
+        # 6. Determine status & reason
+        if conflict_count == 0:
+            status = "Suitable"
+            has_conflict = False
+            reason = "Zero scheduled train clashes in this window. Full track possession clearance available."
+        elif len(vip_list) > 0:
+            status = "Not Recommended"
+            has_conflict = True
+            reason = f"Protected high-priority train ({', '.join(vip_list)}) scheduled during this window. Line closure strictly not recommended."
+        elif conflict_count >= 2:
+            status = "Not Recommended"
+            has_conflict = True
+            reason = f"High traffic density: {conflict_count} scheduled train movements overlap this block. Significant regulation delays expected."
+        else:
+            # 1 overlapping train
+            single_t = overlapping[0]
+            if single_t["priority_score"] >= 8.0:
+                status = "Not Recommended"
+                has_conflict = True
+                reason = f"Overlaps with priority service {single_t['train_name']} (#{single_t['train_number']}). Block not recommended."
+            else:
+                status = "Suitable"
+                has_conflict = True
+                reason = f"Low congestion: 1 train ({single_t['train_name']}) can be regulated with safe headway margins."
+
+        return {
+            "section_id": section_id,
+            "start_time": start_time,
+            "end_time": end_time,
+            "date": date_str,
+            "day_of_week": day_abbr,
+            "has_conflict": has_conflict,
+            "conflict_count": conflict_count,
+            "affected_trains": affected_names,
+            "conflicting_trains": overlapping,
+            "vip_trains": vip_list,
+            "status": status,
+            "reason": reason
+        }
+
+
 corridor_engine = CorridorAvailabilityEngine()
+
+def check_train_conflicts(
+    section_id: str,
+    start_time: str,
+    end_time: str,
+    date_str: Optional[str] = None
+) -> Dict[str, Any]:
+    """Helper wrapper for corridor_engine.check_train_conflicts."""
+    return corridor_engine.check_train_conflicts(
+        section_id=section_id,
+        start_time=start_time,
+        end_time=end_time,
+        date_str=date_str
+    )

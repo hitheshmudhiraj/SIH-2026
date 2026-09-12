@@ -216,6 +216,11 @@ export const fetchBlockPlanComparison = async (startDate, endDate) => {
 };
 export const fetchLatestWeeklyPlan = async () => request('/api/block-plan/latest-weekly');
 export const fetchLatestMonthlyPlan = async () => request('/api/block-plan/latest-monthly');
+export const fetchCurrentActivePlan = async (planType = 'WEEKLY') => request(`/api/block-plan/current?plan_type=${encodeURIComponent(planType)}`);
+export const fetchActivePlanPointer = async () => request('/api/block-plan/active-pointer');
+export const fetchPlanHistory = async (limit = 30) => request(`/api/block-plan/history?limit=${limit}`);
+export const fetchPlanById = async (planId) => request(`/api/block-plan/${encodeURIComponent(planId)}`);
+
 
 // BDMS Pre-Submission Conflict & Overlap Check
 export const checkBlockOverlap = async ({ corridor_id, km, date_start, date_end, department }) => {
@@ -234,3 +239,66 @@ export const submitBlockRequest = async (payload) => {
     body: JSON.stringify(payload)
   });
 };
+
+export const checkTrainConflicts = async ({ section_id, start_time, end_time, date }) => {
+  const params = new URLSearchParams();
+  if (section_id) params.append('section_id', section_id);
+  if (start_time) params.append('start_time', start_time);
+  if (end_time) params.append('end_time', end_time);
+  if (date) params.append('date', date);
+  return request(`/api/block-planning/check-conflicts?${params.toString()}`);
+};
+
+export const groupCompatibleJobs = async (requests, spatialToleranceKm = 2.0) => {
+  return request(`/api/block-planning/group-compatible-jobs?spatial_tolerance_km=${spatialToleranceKm}`, {
+    method: 'POST',
+    body: JSON.stringify(requests)
+  });
+};
+
+export const checkResourceAvailability = async (candidateBlock, params = {}) => {
+  const query = new URLSearchParams(params).toString();
+  return request(`/api/block-planning/check-resources${query ? `?${query}` : ''}`, {
+    method: 'POST',
+    body: JSON.stringify(candidateBlock)
+  });
+};
+
+export const selectBestBlock = async (payload) => {
+  return request('/api/block-planning/select-best-block', {
+    method: 'POST',
+    body: JSON.stringify(payload)
+  });
+};
+
+// ---------------- IN-APP NOTIFICATIONS & REMINDERS ----------------
+export async function fetchNotifications(limit = 100, unreadOnly = false) {
+  const q = unreadOnly ? `?limit=${limit}&unread_only=true` : `?limit=${limit}`;
+  return request(`/api/notifications${q}`);
+}
+
+export async function checkReminders(referenceTime = null) {
+  return request('/api/notifications/check-reminders', {
+    method: 'POST',
+    body: JSON.stringify(referenceTime ? { reference_time: referenceTime } : {})
+  });
+}
+
+export async function markNotificationAsRead(notificationId) {
+  return request(`/api/notifications/${notificationId}/read`, {
+    method: 'POST'
+  });
+}
+
+export async function markAllNotificationsAsRead() {
+  return request('/api/notifications/read-all', {
+    method: 'POST'
+  });
+}
+
+export async function clearAllNotifications() {
+  return request('/api/notifications/clear', {
+    method: 'POST'
+  });
+}
+

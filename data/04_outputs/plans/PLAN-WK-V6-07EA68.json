@@ -1,0 +1,565 @@
+{
+  "plan_id": "PLAN-WK-V6-07EA68",
+  "current_plan_id": "PLAN-WK-V6-07EA68",
+  "is_current": true,
+  "is_active": true,
+  "plan_type": "WEEKLY",
+  "plan_status": "Draft",
+  "status": "Draft",
+  "start_date": "2026-09-08",
+  "end_date": "2026-09-14",
+  "generated_at": "2026-09-10T20:50:57.325535",
+  "solver_status": "FEASIBLE",
+  "solve_duration_ms": 2643.8,
+  "summary": {
+    "total_blocks": 7,
+    "total_block_hours": 0,
+    "joint_megablocks": 0,
+    "joint_bundling_rate_pct": 0.0,
+    "total_tasks_scheduled": 0,
+    "critical_tasks_scheduled": 0,
+    "high_priority_tasks_scheduled": 0,
+    "sections_covered": 0,
+    "emergency_replan": true,
+    "previous_plan_id": "PLAN-WK-V5-05F0D5"
+  },
+  "blocks": [
+    {
+      "block_id": "BLK-EMG-SEC_C02_04-20260910210255",
+      "section_id": "SEC_C02_04",
+      "section_name": "Tuni - Annavaram",
+      "division": "Vijayawada",
+      "date": "2026-09-23",
+      "start_time": "01:00",
+      "end_time": "04:30",
+      "duration_hours": 3.5,
+      "duration_minutes": 210,
+      "window_name": "Night Rolling Megablock",
+      "departments": [
+        "Traction"
+      ],
+      "is_joint_megablock": false,
+      "is_emergency_new": true,
+      "tasks": [
+        {
+          "task_id": "TSK-EMG-F57E4D",
+          "department": "Traction",
+          "defect_type": "Track Buckling",
+          "work_type": "Track Buckling",
+          "severity": "critical",
+          "priority": "CRITICAL",
+          "required_resource": "25kV OHE Catenary Gang",
+          "description": "traction repair"
+        }
+      ],
+      "emergency_info": {
+        "emergency_type": "Track Buckling",
+        "department": "Traction",
+        "resource": "25kV OHE Catenary Gang"
+      },
+      "is_newly_generated": true,
+      "why_selected_bullets": [
+        "No existing scheduled block on section Tuni - Annavaram to modify; selected standalone window.",
+        "Identified optimal conflict-free window (Night Rolling Megablock, 01:00 \u2013 04:30) with 0 timetable clashes.",
+        "Assigned 25kV OHE Catenary Gang verified ready in depot inventory.",
+        "Immediate CRITICAL track possession scheduled to restore corridor safety standards."
+      ]
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_01-20260910205228",
+      "request_id": "REQ-REGRESS-01",
+      "section_id": "SEC_C01_01",
+      "location": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 2.0,
+      "window_name": "Standard Timetable Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_01",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-12",
+        "day_of_week": "Sat",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Track Gang (P-Way)",
+            "matched_resource_id": "RES-ENG-GANG-01",
+            "department": "Engineering",
+            "task_id": "REQ-REGRESS-01",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Heavy P-Way Track Maintenance Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-12",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Engineering"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-REGRESS-01",
+          "request_id": "REQ-REGRESS-01",
+          "department": "Engineering",
+          "defect_type": "Track Maintenance",
+          "work_type": "Track Maintenance",
+          "asset_type": "Engineering Asset",
+          "severity": "high",
+          "priority": "HIGH",
+          "priority_score": 80,
+          "required_resource": "Track Gang (P-Way)",
+          "equipment_required": "Track Gang (P-Way)",
+          "crew_required": "Track Gang (P-Way)"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 08:52 PM",
+      "why_selected_bullets": [
+        "Dedicated possession window scheduled exclusively for Engineering with zero adjacent interference",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (Track Maintenance)",
+        "Scheduled within Standard Timetable Window (15:00 \u2013 17:30, 2.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-EMG-SEC_C01_01-20260910205215",
+      "section_id": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-10",
+      "start_time": "01:00",
+      "end_time": "05:00",
+      "duration_hours": 4,
+      "duration_minutes": 240,
+      "window_name": "Night Rolling Megablock (Emergency Extended)",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "is_emergency_new": true,
+      "tasks": [
+        {
+          "task_id": "TSK-EMG-B39030",
+          "department": "Engineering",
+          "defect_type": "Rail Fracture",
+          "work_type": "Rail Fracture",
+          "severity": "critical",
+          "priority": "CRITICAL",
+          "priority_score": 99,
+          "required_resource": "Track Gang (P-Way)",
+          "description": "Emergency Defect Fix"
+        },
+        {
+          "task_id": "TSK-EMG-8ED51B",
+          "department": "Engineering",
+          "defect_type": "Rail Fracture",
+          "work_type": "Rail Fracture",
+          "severity": "critical",
+          "priority": "CRITICAL",
+          "required_resource": "Track Gang (P-Way)",
+          "description": "Urgent rail fracture flaw detected by ultrasonic scan"
+        }
+      ],
+      "emergency_info": {
+        "emergency_type": "Rail Fracture",
+        "added_duration_hours": 2,
+        "department": "Engineering",
+        "resource": "Track Gang (P-Way)"
+      },
+      "is_newly_generated": true,
+      "why_selected_bullets": [
+        "Detected overlapping scheduled possession (BLK-EMG-SEC_C01_01-20260910205215) on section Vijayawada - Tenali.",
+        "Safely extended window by +2.0h (01:00 \u2013 05:00, 4.0h total) within corridor limits.",
+        "Zero scheduled passenger train timetable conflicts on extended window.",
+        "Depot equipment and crew (Track Gang (P-Way)) verified ready without double-booking.",
+        "Bundles emergency defect repair with existing track work, minimizing overall line closures."
+      ],
+      "is_emergency_modified": true,
+      "task_count": 2
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_01-20260910205203",
+      "request_id": "REQ-REGRESS-01",
+      "section_id": "SEC_C01_01",
+      "location": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-12",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 2.0,
+      "window_name": "Standard Timetable Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_01",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-12",
+        "day_of_week": "Sat",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Track Gang (P-Way)",
+            "matched_resource_id": "RES-ENG-GANG-01",
+            "department": "Engineering",
+            "task_id": "REQ-REGRESS-01",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Heavy P-Way Track Maintenance Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-12",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Engineering"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-REGRESS-01",
+          "request_id": "REQ-REGRESS-01",
+          "department": "Engineering",
+          "defect_type": "Track Maintenance",
+          "work_type": "Track Maintenance",
+          "asset_type": "Engineering Asset",
+          "severity": "high",
+          "priority": "HIGH",
+          "priority_score": 80,
+          "required_resource": "Track Gang (P-Way)",
+          "equipment_required": "Track Gang (P-Way)",
+          "crew_required": "Track Gang (P-Way)"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 08:52 PM",
+      "why_selected_bullets": [
+        "Dedicated possession window scheduled exclusively for Engineering with zero adjacent interference",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (Track Maintenance)",
+        "Scheduled within Standard Timetable Window (15:00 \u2013 17:30, 2.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-EMG-SEC_C01_01-20260910205058",
+      "section_id": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "01:00",
+      "end_time": "04:30",
+      "duration_hours": 3.5,
+      "duration_minutes": 210,
+      "window_name": "Night Rolling Megablock (Emergency Extended)",
+      "departments": [
+        "Engineering"
+      ],
+      "is_joint_megablock": false,
+      "is_emergency_new": true,
+      "tasks": [
+        {
+          "task_id": "TSK-EMG-16E2E2",
+          "department": "Engineering",
+          "defect_type": "Rail Fracture",
+          "work_type": "Rail Fracture",
+          "severity": "critical",
+          "priority": "CRITICAL",
+          "priority_score": 99,
+          "required_resource": "Track Gang (P-Way)",
+          "description": "Emergency Defect Fix"
+        },
+        {
+          "task_id": "TSK-EMG-49D0DA",
+          "department": "Engineering",
+          "defect_type": "Ultrasonic Rail Fracture (USFD)",
+          "work_type": "Ultrasonic Rail Fracture (USFD)",
+          "severity": "critical",
+          "priority": "CRITICAL",
+          "required_resource": "Track Gang (P-Way)",
+          "description": "Urgent rail fracture detected by flaw detector trolley."
+        }
+      ],
+      "emergency_info": {
+        "emergency_type": "Rail Fracture",
+        "added_duration_hours": 2.0,
+        "department": "Engineering",
+        "resource": "Track Gang (P-Way)"
+      },
+      "is_newly_generated": true,
+      "why_selected_bullets": [
+        "Detected overlapping scheduled possession (BLK-EMG-SEC_C01_01-20260910205058) on section Vijayawada - Tenali.",
+        "Safely extended window by +2.0h (01:00 \u2013 04:30, 3.5h total) within corridor limits.",
+        "Zero scheduled passenger train timetable conflicts on extended window.",
+        "Depot equipment and crew (Track Gang (P-Way)) verified ready without double-booking.",
+        "Bundles emergency defect repair with existing track work, minimizing overall line closures."
+      ],
+      "is_emergency_modified": true,
+      "task_count": 2
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_01-20260910205058",
+      "request_id": "REQ-VAL-ENG-361AF2",
+      "section_id": "SEC_C01_01",
+      "location": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 2.0,
+      "window_name": "Early Morning Off-Peak Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_01",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-08",
+        "day_of_week": "Tue",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Track Gang (P-Way)",
+            "matched_resource_id": "RES-ENG-GANG-01",
+            "department": "Engineering",
+            "task_id": "REQ-VAL-ENG-361AF2",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Heavy P-Way Track Maintenance Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-08",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Engineering"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-VAL-ENG-361AF2",
+          "request_id": "REQ-VAL-ENG-361AF2",
+          "department": "Engineering",
+          "defect_type": "Track Maintenance",
+          "work_type": "Track Maintenance",
+          "asset_type": "Engineering Asset",
+          "severity": "high",
+          "priority": "HIGH",
+          "priority_score": 80,
+          "required_resource": "Track Gang (P-Way)",
+          "equipment_required": "Track Gang (P-Way)",
+          "crew_required": "Track Gang (P-Way)"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 08:50 PM",
+      "why_selected_bullets": [
+        "Dedicated possession window scheduled exclusively for Engineering with zero adjacent interference",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (Track Maintenance)",
+        "Scheduled within Early Morning Off-Peak Window (15:00 \u2013 17:30, 2.0h) optimizing track possession efficiency"
+      ]
+    },
+    {
+      "block_id": "BLK-NEW-SEC_C01_01-20260910205057",
+      "request_id": "REQ-P7-TEST-76C320",
+      "section_id": "SEC_C01_01",
+      "location": "SEC_C01_01",
+      "section_name": "Vijayawada - Tenali",
+      "division": "Vijayawada",
+      "date": "2026-09-08",
+      "start_time": "15:00",
+      "end_time": "17:30",
+      "duration_hours": 2.0,
+      "window_name": "Early Morning Off-Peak Window",
+      "conflict_check": {
+        "section_id": "SEC_C01_01",
+        "start_time": "15:00",
+        "end_time": "17:30",
+        "date": "2026-09-08",
+        "day_of_week": "Tue",
+        "has_conflict": false,
+        "conflict_count": 0,
+        "affected_trains": [],
+        "conflicting_trains": [],
+        "vip_trains": [],
+        "status": "Suitable",
+        "reason": "Zero scheduled train clashes in this window. Full track possession clearance available."
+      },
+      "resource_check": {
+        "all_available": true,
+        "status": "Available",
+        "has_conflict": false,
+        "conflicts_count": 0,
+        "total_resources_checked": 1,
+        "resources": [
+          {
+            "resource_name": "Track Gang (P-Way)",
+            "matched_resource_id": "RES-ENG-GANG-01",
+            "department": "Engineering",
+            "task_id": "REQ-P7-TEST-76C320",
+            "status": "Available",
+            "is_available": true,
+            "conflict_type": null,
+            "detail": "Verified available: Heavy P-Way Track Maintenance Gang (Base: Vijayawada)"
+          }
+        ],
+        "conflicts": [],
+        "summary": "\u2713 All 1 required resource verified available and conflict-free",
+        "date": "2026-09-08",
+        "time_window": "15:00\u201317:30"
+      },
+      "is_joint_megablock": false,
+      "departments": [
+        "Engineering"
+      ],
+      "tasks": [
+        {
+          "task_id": "REQ-P7-TEST-76C320",
+          "request_id": "REQ-P7-TEST-76C320",
+          "department": "Engineering",
+          "defect_type": "Track Maintenance",
+          "work_type": "Track Maintenance",
+          "asset_type": "Engineering Asset",
+          "severity": "high",
+          "priority": "HIGH",
+          "priority_score": 80,
+          "required_resource": "Track Gang (P-Way)",
+          "equipment_required": "Track Gang (P-Way)",
+          "crew_required": "Track Gang (P-Way)"
+        }
+      ],
+      "train_regulation": {
+        "affected_trains_count": 0,
+        "regulation_strategy": "Zero scheduled train clashes in this window. Full track possession clearance available.",
+        "regulated_trains": []
+      },
+      "status": "APPROVED",
+      "approved_by": "Sr. DOM (Vijayawada Division)",
+      "is_newly_generated": true,
+      "generated_at": "10 Sep 2026, 08:50 PM",
+      "why_selected_bullets": [
+        "Dedicated possession window scheduled exclusively for Engineering with zero adjacent interference",
+        "Zero scheduled passenger train conflicts during this window with safe timetable clearance",
+        "Immediate track safety priority: resolves critical defect(s) (Track Maintenance)",
+        "Scheduled within Early Morning Off-Peak Window (15:00 \u2013 17:30, 2.0h) optimizing track possession efficiency"
+      ]
+    }
+  ],
+  "latest_new_block": {
+    "block_id": "BLK-EMG-SEC_C02_04-20260910210255",
+    "section_id": "SEC_C02_04",
+    "section_name": "Tuni - Annavaram",
+    "division": "Vijayawada",
+    "date": "2026-09-23",
+    "start_time": "01:00",
+    "end_time": "04:30",
+    "duration_hours": 3.5,
+    "duration_minutes": 210,
+    "window_name": "Night Rolling Megablock",
+    "departments": [
+      "Traction"
+    ],
+    "is_joint_megablock": false,
+    "is_emergency_new": true,
+    "tasks": [
+      {
+        "task_id": "TSK-EMG-F57E4D",
+        "department": "Traction",
+        "defect_type": "Track Buckling",
+        "work_type": "Track Buckling",
+        "severity": "critical",
+        "priority": "CRITICAL",
+        "required_resource": "25kV OHE Catenary Gang",
+        "description": "traction repair"
+      }
+    ],
+    "emergency_info": {
+      "emergency_type": "Track Buckling",
+      "department": "Traction",
+      "resource": "25kV OHE Catenary Gang"
+    },
+    "is_newly_generated": true,
+    "why_selected_bullets": [
+      "No existing scheduled block on section Tuni - Annavaram to modify; selected standalone window.",
+      "Identified optimal conflict-free window (Night Rolling Megablock, 01:00 \u2013 04:30) with 0 timetable clashes.",
+      "Assigned 25kV OHE Catenary Gang verified ready in depot inventory.",
+      "Immediate CRITICAL track possession scheduled to restore corridor safety standards."
+    ]
+  },
+  "updated_at": "2026-09-10T21:03:04.977818",
+  "version": 6,
+  "title": "South Coast Railway Master Block Plan (Version 6 - Post Emergency)"
+}
